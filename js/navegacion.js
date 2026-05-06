@@ -1,13 +1,20 @@
 // ===== CARGA DINÁMICA DE LA BARRA DE NAVEGACIÓN =====
 
+function getBasePath() {
+    // Si estamos en una subcarpeta (pages/), subimos un nivel
+    if (window.location.pathname.includes('/pages/')) {
+        return '../';
+    }
+    return '';
+}
+
 async function cargarNavegacion() {
     try {
-        // Usar rutas relativas simples
-        const response = await fetch('data/navegacion.json');
+        const basePath = getBasePath();
+        const response = await fetch(basePath + 'data/navegacion.json');
         const menuItems = await response.json();
         
         const currentPath = window.location.pathname;
-        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
         
         const navHTML = `
             <div class="nav-bar">
@@ -16,6 +23,9 @@ async function cargarNavegacion() {
                 </div>
                 <ul class="nav-menu">
                     ${menuItems.map(item => {
+                        // Ajustar la URL con la base path
+                        const itemUrl = basePath + item.url;
+                        
                         let isActive = false;
                         if (item.activeMatch === 'index' && (currentPath.endsWith('/') || currentPath.endsWith('index.html'))) {
                             isActive = true;
@@ -25,7 +35,7 @@ async function cargarNavegacion() {
                         
                         return `
                             <li>
-                                <a href="${item.url}" class="${isActive ? 'active' : ''}">
+                                <a href="${itemUrl}" class="${isActive ? 'active' : ''}">
                                     <i class="${item.icon}"></i>
                                     <span>${item.texto}</span>
                                 </a>
@@ -59,17 +69,18 @@ async function cargarNavegacion() {
         
     } catch (error) {
         console.error('Error cargando navegación:', error);
-        // Fallback: menú manual
+        // Fallback manual
+        const basePath = getBasePath();
         document.getElementById('nav-container').innerHTML = `
             <div class="nav-bar">
                 <div class="nav-header">
                     <h2>ELARA METHOD</h2>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-                    <li><a href="curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
-                    <li><a href="alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
-                    <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
+                    <li><a href="${basePath}index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                    <li><a href="${basePath}curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
+                    <li><a href="${basePath}alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
+                    <li><a href="${basePath}calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
                 </ul>
             </div>
             <button class="menu-toggle" id="menuToggle">
