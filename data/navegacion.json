@@ -1,25 +1,25 @@
 [
     {
         "texto": "Inicio",
-        "url": "/",
+        "url": "index.html",
         "icon": "fas fa-home",
         "activeMatch": "index"
     },
     {
         "texto": "Índice curso",
-        "url": "/curso.html",
+        "url": "curso.html",
         "icon": "fas fa-book-open",
         "activeMatch": "curso"
     },
     {
         "texto": "Alumnos",
-        "url": "/alumno-lista.html",
+        "url": "alumno-lista.html",
         "icon": "fas fa-users",
         "activeMatch": "alumnos"
     },
     {
         "texto": "Calendario",
-        "url": "/calendario.html",
+        "url": "calendario.html",
         "icon": "fas fa-calendar-alt",
         "activeMatch": "calendario"
     }
