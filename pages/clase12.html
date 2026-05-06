@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 12 - Estructura semanal, sol y frío | ELARA METHOD</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+    <main class="main-content">
+        <div id="alumno-bar-container"></div>
+
+        <div class="clase-container">
+            <div class="clase-header">
+                <h1><i class="fas fa-sun"></i> Clase 12: Estructura semanal, sol y frío</h1>
+                <p>Capítulo 5 - Herramientas prácticas para la vida real</p>
+                <div class="clase-meta">
+                    <span><i class="fas fa-clock"></i> Duración: 75 min</span>
+                    <span><i class="fas fa-calendar-week"></i> Práctica semanal</span>
+                </div>
+            </div>
+
+            <div class="timer-panel">
+                <div class="timer-title">
+                    <i class="fas fa-hourglass-half"></i> ⏱️ Control de tiempos (click en cada bloque para ver contenido)
+                </div>
+
+                <div class="contenido-clase">
+                    <h2>📖 Contenido de la clase</h2>
+                    <h3>🎯 Objetivo de la clase</h3>
+                    <p>Dar herramientas que potencian todo lo anterior sin complicar: estructura semanal de comidas, exposición al sol y baños de agua fría.</p>
+                    
+                    <h3>💡 Palabras clave</h3>
+                    <ul>
+                        <li><strong>Luz solar matutina</strong> - 10-15 minutos regulan ritmo circadiano y vitamina D</li>
+                        <li><strong>Exposición al frío</strong> - Reduce inflamación, mejora ánimo (dopamina), fortalece sistema inmune</li>
+                        <li><strong>Preparación semanal de comida</strong> - Cocinar 2-3 fuentes de proteína, carbohidratos base y vegetales</li>
+                        <li><strong>Estructura en la nevera</strong> - Hoja con el menú semanal para no tener que pensar</li>
+                        <li><strong>Regla 80/20</strong> - 80% apegados al plan, 20% flexibilidad social</li>
+                    </ul>
+                </div>
+
+                <div id="bloques-container" class="bloques-container"></div>
+            </div>
+
+            <div class="practica-semana">
+                <i class="fas fa-tasks" style="font-size: 1.5rem; margin-bottom: 10px; display: inline-block;"></i>
+                <h3>📌 Práctica de la semana</h3>
+                <p><strong>Haz una lista de compras estructurada para los próximos 7 días (proteínas, carbohidratos de calidad, grasas buenas y vegetales). Pon la lista en la nevera. Además, un día toma sol por la mañana 10 minutos y otro día prueba 30 segundos de agua fría al final de la ducha.</strong></p>
+                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;"><i class="fas fa-lightbulb"></i> La estructura libera energía mental. Cuando no tienes que decidir qué comer, es más fácil mantener el hábito.</p>
+            </div>
+
+            <div class="videos-apoyo">
+                <h3><i class="fab fa-youtube"></i> 📺 Videos de apoyo</h3>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Carlos Jaramillo: "Cómo estructurar tu semana de comidas"</span>
+                </a>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Dr. La Rosa: "Beneficios del frío y el sol en el metabolismo"</span>
+                </a>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Meal prep: cómo preparar una semana de comida en 2 horas</span>
+                </a>
+            </div>
+
+            <div class="formulario-comentarios">
+                <h3><i class="fas fa-notes-medical"></i> 📝 Notas y comentarios del alumno</h3>
+                <textarea id="comentariosClase" rows="4" placeholder="Anota aquí el progreso, dudas, observaciones..."></textarea>
+                <button id="btnGuardarComentarios" class="btn-primary">💾 Guardar comentarios</button>
+            </div>
+
+            <div id="completada-badge-container" style="margin-top: 20px;"></div>
+            <button id="btnMarcarCompletada" class="btn-marcar-completada">
+                <i class="fas fa-check-circle"></i> ✅ Marcar esta clase como completada
+            </button>
+        </div>
+    </main>
+
+    <script src="../js/comunes.js"></script>
+    <script src="../js/navegacion.js"></script>
+    <script src="../js/alumno.js"></script>
+    <script src="../js/clase.js"></script>
+    <script>
+        inicializarClase('clase12', 'Estructura semanal, sol y frío');
+    </script>
+</body>
+</html>

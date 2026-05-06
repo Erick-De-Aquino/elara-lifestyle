@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5 - Alimentación: Nutrición inteligente | ELARA METHOD</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+    <main class="main-content">
+        <div id="alumno-bar-container"></div>
+
+        <div class="clase-container">
+            <div class="clase-header">
+                <h1><i class="fas fa-apple-alt"></i> Clase 5: Alimentación - Nutrición inteligente</h1>
+                <p>Capítulo 2 - Los 4 pilares de la salud</p>
+                <div class="clase-meta">
+                    <span><i class="fas fa-clock"></i> Duración: 75 min</span>
+                    <span><i class="fas fa-calendar-week"></i> Práctica semanal</span>
+                </div>
+            </div>
+
+            <div class="timer-panel">
+                <div class="timer-title">
+                    <i class="fas fa-hourglass-half"></i> ⏱️ Control de tiempos (click en cada bloque para ver contenido)
+                </div>
+
+                <div class="contenido-clase">
+                    <h2>📖 Contenido de la clase</h2>
+                    <h3>🎯 Objetivo de la clase</h3>
+                    <p>Introducir el concepto de que NO se trata de dietas extremas, sino de entender cómo funcionan los nutrientes y aplicarlo según el objetivo personal.</p>
+                    
+                    <h3>💡 Palabras clave</h3>
+                    <ul>
+                        <li><strong>Macronutrientes</strong> - Proteínas, carbohidratos y grasas (los 3 son necesarios)</li>
+                        <li><strong>Proteína</strong> - Construcción y reparación de tejidos (prioritaria para todos)</li>
+                        <li><strong>Carbohidratos</strong> - Energía rápida para el cerebro y músculos</li>
+                        <li><strong>Grasas saludables</strong> - Energía lenta, hormonas, absorción de vitaminas</li>
+                        <li><strong>Micronutrientes</strong> - Vitaminas y minerales (come colores)</li>
+                    </ul>
+                </div>
+
+                <div id="bloques-container" class="bloques-container"></div>
+            </div>
+
+            <div class="practica-semana">
+                <i class="fas fa-tasks" style="font-size: 1.5rem; margin-bottom: 10px; display: inline-block;"></i>
+                <h3>📌 Práctica de la semana</h3>
+                <p><strong>En UNA comida al día (la que más control tengas), identifica los 3 macronutrientes</strong>. Por ejemplo: pollo (proteína) + arroz (carbohidrato) + aguacate (grasa). Si falta uno, pregúntate: ¿puedo añadirlo mañana?</p>
+                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;"><i class="fas fa-lightbulb"></i> No se trata de perfección, sino de conciencia. El primer paso es observar, no cambiar todo de golpe.</p>
+            </div>
+
+            <div class="videos-apoyo">
+                <h3><i class="fab fa-youtube"></i> 📺 Videos de apoyo</h3>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Carlos Jaramillo: "Macronutrientes explicados fácil"</span>
+                </a>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Dr. La Rosa: "Proteína: cuánta y de dónde"</span>
+                </a>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Micronutrientes: cómo comer colores</span>
+                </a>
+            </div>
+
+            <div class="formulario-comentarios">
+                <h3><i class="fas fa-notes-medical"></i> 📝 Notas y comentarios del alumno</h3>
+                <textarea id="comentariosClase" rows="4" placeholder="Anota aquí el progreso, dudas, observaciones..."></textarea>
+                <button id="btnGuardarComentarios" class="btn-primary">💾 Guardar comentarios</button>
+            </div>
+
+            <div id="completada-badge-container" style="margin-top: 20px;"></div>
+            <button id="btnMarcarCompletada" class="btn-marcar-completada">
+                <i class="fas fa-check-circle"></i> ✅ Marcar esta clase como completada
+            </button>
+        </div>
+    </main>
+
+    <script src="../js/comunes.js"></script>
+    <script src="../js/navegacion.js"></script>
+    <script src="../js/alumno.js"></script>
+    <script src="../js/clase.js"></script>
+    <script>
+        inicializarClase('clase5', 'Alimentación - Nutrición inteligente');
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - ELARA METHOD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+    
+    <main class="main-content">
+        <div class="header-acciones">
+            <h1>📅 Calendario de clases</h1>
+            <div style="display: flex; gap: 10px;">
+                <button id="btnNuevoAlumno" class="btn-header">
+                    <i class="fas fa-user-plus"></i> + Nuevo alumno
+                </button>
+                <button id="btnListaAlumnos" class="btn-header" style="background: var(--primary-dark);">
+                    <i class="fas fa-list"></i> Ver alumnos
+                </button>
+            </div>
+        </div>
+        
+        <div class="calendario-container">
+            <div class="panel">
+                <div class="calendario-header">
+                    <button id="btnMesAnterior" class="btn-mes">
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </button>
+                    <h3 id="mesTitulo" class="mes-titulo"></h3>
+                    <button id="btnMesSiguiente" class="btn-mes">
+                        Siguiente <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div id="calendario"></div>
+            </div>
+            
+            <div class="panel">
+                <h3><i class="fas fa-list"></i> Clases programadas</h3>
+                <div id="listaEventos" class="lista-clases"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/comunes.js"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/alumno.js"></script>
+    <script src="js/calendario.js"></script>
+</body>
+</html>

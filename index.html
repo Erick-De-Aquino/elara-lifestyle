@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ELARA METHOD - Tu punto de partida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+    <main class="main-content">
+        <div class="hero">
+            <div class="hero-logo">
+                <img src="assets/elara-logo.svg" alt="ELARA METHOD" class="logo-img">
+            </div>
+            <h1 class="hero-title">Tu punto de partida</h1>
+            <p class="hero-subtitle">Descubre el método que transforma hábitos en salud, energía y longevidad</p>
+            <button id="btn-comenzar" class="btn-primary">COMENZAR <i class="fas fa-arrow-right"></i></button>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card" data-pilar="sueño">
+                <i class="fas fa-moon feature-icon"></i>
+                <h3>Sueño reparador</h3>
+                <p>Recupera tu energía nocturna</p>
+            </div>
+            <div class="feature-card" data-pilar="mente">
+                <i class="fas fa-brain feature-icon"></i>
+                <h3>Mente en calma</h3>
+                <p>Gestiona el estrés con herramientas prácticas</p>
+            </div>
+            <div class="feature-card" data-pilar="ejercicio">
+                <i class="fas fa-dumbbell feature-icon"></i>
+                <h3>Movimiento con propósito</h3>
+                <p>El músculo como tu farmacia interna</p>
+            </div>
+            <div class="feature-card" data-pilar="alimentacion">
+                <i class="fas fa-apple-alt feature-icon"></i>
+                <h3>Nutrición inteligente</h3>
+                <p>Come entendiendo, no prohibiendo</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal de opciones al hacer clic en COMENZAR -->
+    <div id="modalOpciones" class="modal-opciones">
+        <div class="modal-opciones-content">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <h2>Bienvenido a ELARA METHOD</h2>
+            <p>Elige cómo quieres continuar:</p>
+            <button id="opcionNuevo" class="opcion-boton opcion-nuevo">
+                <i class="fas fa-user-plus"></i> A) Nuevo alumno
+            </button>
+            <button id="opcionElegir" class="opcion-boton opcion-elegir">
+                <i class="fas fa-users"></i> B) Elegir alumno existente
+            </button>
+            <button id="opcionExplorar" class="opcion-boton opcion-explorar">
+                <i class="fas fa-eye"></i> C) Solo explorar el curso
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal para elegir alumno existente -->
+    <div id="modalElegirAlumno" class="modal-opciones">
+        <div class="modal-opciones-content">
+            <span class="close-modal" id="closeElegirBtn">&times;</span>
+            <h2>Selecciona tu alumno</h2>
+            <div id="listaAlumnosModal" class="lista-alumnos-modal"></div>
+            <button id="cancelarElegir" class="btn-cancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <!-- MODAL GRANDE: Nuevo alumno (formulario completo) -->
+    <div id="modalNuevoAlumnoCompleto" class="modal-nuevo-alumno">
+        <div class="modal-nuevo-alumno-content">
+            <h2>📝 Nuevo alumno</h2>
+            <p class="sub">Completa los datos para crear su ficha</p>
+            
+            <div class="form-group">
+                <label>Nombre completo *</label>
+                <input type="text" id="modalNombre" placeholder="Ej: Juan Pérez">
+            </div>
+            <div class="form-group">
+                <label>Edad</label>
+                <input type="number" id="modalEdad" placeholder="Ej: 38">
+            </div>
+            <div class="form-group">
+                <label>Objetivo principal</label>
+                <select id="modalObjetivo">
+                    <option value="">Seleccionar...</option>
+                    <option value="adelgazar">Adelgazar</option>
+                    <option value="ganar_musculo">Ganar masa muscular</option>
+                    <option value="salud_longevidad">Salud y longevidad</option>
+                    <option value="revertir_enfermedad">Revertir enfermedad</option>
+                    <option value="energia">Más energía</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Enfermedades (diabetes, hipertensión, etc.)</label>
+                <input type="text" id="modalEnfermedades" placeholder="Opcional">
+            </div>
+            <div class="form-group">
+                <label>Medicación actual</label>
+                <input type="text" id="modalMedicacion" placeholder="Opcional">
+            </div>
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input type="tel" id="modalTelefono" placeholder="Opcional">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="modalEmail" placeholder="Opcional">
+            </div>
+            <div class="form-group">
+                <label>Observaciones iniciales</label>
+                <textarea id="modalObservaciones" placeholder="Comentarios adicionales..."></textarea>
+            </div>
+            
+            <div class="botones-modal">
+                <button id="guardarAlumnoModal" class="btn-guardar-modal">✅ Guardar y comenzar</button>
+                <button id="cancelarModalNuevo" class="btn-cancelar-modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/comunes.js"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/alumno.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

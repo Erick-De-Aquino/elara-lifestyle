@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumnos - ELARA METHOD</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+    
+    <main class="main-content">
+        <div class="header-actions">
+            <h1>👥 Alumnos</h1>
+            <button id="btnNuevoAlumno" class="btn-nuevo">
+                <i class="fas fa-user-plus"></i> + Nuevo alumno
+            </button>
+        </div>
+        
+        <div class="acciones-batch">
+            <button id="exportarBtn" class="btn-batch success">
+                <i class="fas fa-download"></i> Exportar datos
+            </button>
+            <label for="importarInput" class="btn-batch" style="cursor: pointer;">
+                <i class="fas fa-upload"></i> Importar datos
+            </label>
+            <input type="file" id="importarInput" accept=".json" style="display: none;">
+            <button id="resetearBtn" class="btn-batch danger">
+                <i class="fas fa-trash-alt"></i> Resetear todo
+            </button>
+        </div>
+        
+        <div class="alumnos-container">
+            <div id="lista-alumnos"></div>
+        </div>
+    </main>
+    
+    <!-- Modal para ficha del alumno -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>📋 Ficha del alumno</h3>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="js/comunes.js"></script>
+    <script src="js/navegacion.js"></script>
+    <script src="js/alumno.js"></script>
+    <script src="js/alumnos-lista.js"></script>
+</body>
+</html>

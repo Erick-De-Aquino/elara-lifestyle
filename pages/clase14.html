@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 14 - Prevención de recaídas + cierre | ELARA METHOD</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="nav-container"></div>
+
+    <main class="main-content">
+        <div id="alumno-bar-container"></div>
+
+        <div class="clase-container">
+            <div class="clase-header">
+                <h1><i class="fas fa-heart"></i> Clase 14: Prevención de recaídas + cierre del curso</h1>
+                <p>Capítulo 5 - Herramientas prácticas para la vida real</p>
+                <div class="clase-meta">
+                    <span><i class="fas fa-clock"></i> Duración: 60 min</span>
+                    <span><i class="fas fa-calendar-week"></i> Práctica final</span>
+                </div>
+            </div>
+
+            <div class="timer-panel">
+                <div class="timer-title">
+                    <i class="fas fa-hourglass-half"></i> ⏱️ Control de tiempos (click en cada bloque para ver contenido)
+                </div>
+
+                <div class="contenido-clase">
+                    <h2>📖 Contenido de la clase</h2>
+                    <h3>🎯 Objetivo de la clase</h3>
+                    <p>Normalizar los tropiezos y dar herramientas para no abandonar. Cerrar el curso con motivación y un plan de acción a largo plazo.</p>
+                    
+                    <h3>💡 Palabras clave</h3>
+                    <ul>
+                        <li><strong>La perfección no existe</strong> - Todos tienen días malos. Una comida mala NO arruina el progreso.</li>
+                        <li><strong>Regla del 80/20</strong> - 80% apegados al plan, 20% flexibles. Sostenible a 10 años.</li>
+                        <li><strong>Qué hacer cuando recaes</strong> - No te castigues, no "compenses" con más restricción. Vuelves al plan en la siguiente comida.</li>
+                        <li><strong>Metáfora de la rueda pinchada</strong> - "Si pinchas una rueda, no pinchas las otras tres a propósito"</li>
+                        <li><strong>Círculo de apoyo</strong> - Compartir el proceso con alguien de confianza</li>
+                    </ul>
+                </div>
+
+                <div id="bloques-container" class="bloques-container"></div>
+            </div>
+
+            <div class="practica-semana">
+                <i class="fas fa-tasks" style="font-size: 1.5rem; margin-bottom: 10px; display: inline-block;"></i>
+                <h3>📌 Práctica final (para toda la vida)</h3>
+                <p><strong>Escribe una carta corta a ti mismo diciendo: "Si tengo un mal día, haré esto..." Guárdala y léela cuando la necesites.</strong></p>
+                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;"><i class="fas fa-lightbulb"></i> No se trata de ser perfecto, se trata de ser constante. Un mal día no borra semanas de buenos hábitos.</p>
+            </div>
+
+            <div class="videos-apoyo">
+                <h3><i class="fab fa-youtube"></i> 📺 Videos de apoyo</h3>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Cómo mantener hábitos saludables a largo plazo</span>
+                </a>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>La ciencia de la consistencia (no de la perfección)</span>
+                </a>
+                <a href="#" class="video-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span>Qué hacer cuando pierdes la motivación</span>
+                </a>
+            </div>
+
+            <div class="formulario-comentarios">
+                <h3><i class="fas fa-notes-medical"></i> 📝 Notas y comentarios del alumno</h3>
+                <textarea id="comentariosClase" rows="4" placeholder="Anota aquí tus reflexiones finales, lo que más te llevas del curso..."></textarea>
+                <button id="btnGuardarComentarios" class="btn-primary">💾 Guardar comentarios</button>
+            </div>
+
+            <div id="completada-badge-container" style="margin-top: 20px;"></div>
+            <button id="btnMarcarCompletada" class="btn-marcar-completada">
+                <i class="fas fa-check-circle"></i> ✅ Marcar esta clase como completada
+            </button>
+        </div>
+    </main>
+
+    <script src="../js/comunes.js"></script>
+    <script src="../js/navegacion.js"></script>
+    <script src="../js/alumno.js"></script>
+    <script src="../js/clase.js"></script>
+    <script>
+        inicializarClase('clase14', 'Prevención de recaídas + cierre');
+    </script>
+</body>
+</html>
