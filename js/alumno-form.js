@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const alumnos = getAlumnos();
         
-        // Verificar si ya existe
         if (alumnos.find(a => a.nombre === nombre)) {
             mostrarModalConfirmacion(
                 'Error',
@@ -50,18 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
         alumnos.push(nuevoAlumno);
         saveAlumnos(alumnos);
         
-        mostrarModalConfirmacion(
-            'Alumno guardado',
-            `"${nombre}" ha sido guardado correctamente.`,
-            'fa-check-circle',
-            'icono-exito',
-            () => {
-                if (confirm('¿Ir a la lista de alumnos?')) {
-                    window.location.href = 'alumnos-lista.html';
-                } else {
-                    form.reset();
-                }
-            }
-        );
+        // Modal de éxito personalizado (sin botones de confirmación)
+        let modalExito = document.getElementById('modalExitoAlumno');
+        if (!modalExito) {
+            modalExito = document.createElement('div');
+            modalExito.id = 'modalExitoAlumno';
+            modalExito.className = 'modal-confirmacion';
+            modalExito.innerHTML = `
+                <div class="modal-confirmacion-content">
+                    <i class="fas fa-check-circle icono-exito"></i>
+                    <h3>Alumno guardado</h3>
+                    <p id="mensajeExitoAlumno"></p>
+                    <div class="botones-modal">
+                        <button id="btnCerrarExitoAlumno" class="btn-aceptar">Aceptar</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modalExito);
+        }
+        
+        document.getElementById('mensajeExitoAlumno').textContent = `"${nombre}" ha sido guardado correctamente.`;
+        modalExito.style.display = 'flex';
+        
+        document.getElementById('btnCerrarExitoAlumno').onclick = () => {
+            modalExito.style.display = 'none';
+            window.location.href = 'alumno-lista.html';
+        };
     });
 });
