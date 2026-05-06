@@ -2,11 +2,12 @@
 
 async function cargarNavegacion() {
     try {
-        // Usar rutas absolutas desde la raíz
-        const response = await fetch('/data/navegacion.json');
+        // Usar rutas relativas simples
+        const response = await fetch('data/navegacion.json');
         const menuItems = await response.json();
         
         const currentPath = window.location.pathname;
+        const basePath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
         
         const navHTML = `
             <div class="nav-bar">
@@ -15,9 +16,8 @@ async function cargarNavegacion() {
                 </div>
                 <ul class="nav-menu">
                     ${menuItems.map(item => {
-                        // Determinar si este enlace es el activo
                         let isActive = false;
-                        if (item.activeMatch === 'index' && (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html'))) {
+                        if (item.activeMatch === 'index' && (currentPath.endsWith('/') || currentPath.endsWith('index.html'))) {
                             isActive = true;
                         } else if (item.activeMatch !== 'index' && currentPath.includes(item.activeMatch)) {
                             isActive = true;
@@ -41,7 +41,6 @@ async function cargarNavegacion() {
         
         document.getElementById('nav-container').innerHTML = navHTML;
         
-        // Toggle menú móvil
         const toggle = document.getElementById('menuToggle');
         const navBar = document.querySelector('.nav-bar');
         if (toggle) {
@@ -50,7 +49,6 @@ async function cargarNavegacion() {
             });
         }
         
-        // Cerrar menú al hacer clic en un enlace (móvil)
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -68,10 +66,10 @@ async function cargarNavegacion() {
                     <h2>ELARA METHOD</h2>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="/"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-                    <li><a href="/curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
-                    <li><a href="/alumnos-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
-                    <li><a href="/calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                    <li><a href="curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
+                    <li><a href="alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
+                    <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
                 </ul>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -89,5 +87,4 @@ async function cargarNavegacion() {
     }
 }
 
-// Inicializar
 document.addEventListener('DOMContentLoaded', cargarNavegacion);
