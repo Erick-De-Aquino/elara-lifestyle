@@ -5,44 +5,43 @@ const capitulos = [
     {
         titulo: "Capítulo 1: Tu punto de partida",
         clases: [
-            { id: "clase1", titulo: "Clase 1: Introducción y enfoque", url: "pages/clase1.html" }
+            { id: "clase1", titulo: "Clase 1: Introducción y enfoque", url: "clase.html?id=clase1" }
         ]
     },
     {
         titulo: "Capítulo 2: Los 4 pilares de la salud",
         clases: [
-            { id: "clase2", titulo: "Clase 2: Sueño - Reparación nocturna", url: "pages/clase2.html" },
-            { id: "clase3", titulo: "Clase 3: Mente - Paz y claridad", url: "pages/clase3.html" },
-            { id: "clase4", titulo: "Clase 4: Ejercicio - Movimiento con propósito", url: "pages/clase4.html" },
-            { id: "clase5", titulo: "Clase 5: Alimentación - Nutrición inteligente", url: "pages/clase5.html" }
+            { id: "clase2", titulo: "Clase 2: Sueño - Reparación nocturna", url: "clase.html?id=clase2" },
+            { id: "clase3", titulo: "Clase 3: Mente - Paz y claridad", url: "clase.html?id=clase3" },
+            { id: "clase4", titulo: "Clase 4: Ejercicio - Movimiento con propósito", url: "clase.html?id=clase4" },
+            { id: "clase5", titulo: "Clase 5: Alimentación - Nutrición inteligente", url: "clase.html?id=clase5" }
         ]
     },
     {
         titulo: "Capítulo 3: Alimentación sanadora",
         clases: [
-            { id: "clase6", titulo: "Clase 6: Qué NO comer", url: "pages/clase6.html" },
-            { id: "clase7", titulo: "Clase 7: Macronutrientes y cálculo", url: "pages/clase7.html" },
-            { id: "clase8", titulo: "Clase 8: Suplementación", url: "pages/clase8.html" }
+            { id: "clase6", titulo: "Clase 6: Qué NO comer", url: "clase.html?id=clase6" },
+            { id: "clase7", titulo: "Clase 7: Macronutrientes y cálculo", url: "clase.html?id=clase7" },
+            { id: "clase8", titulo: "Clase 8: Suplementación", url: "clase.html?id=clase8" }
         ]
     },
     {
         titulo: "Capítulo 4: Enfermedad, longevidad y prevención",
         clases: [
-            { id: "clase9", titulo: "Clase 9: Resistencia a la insulina", url: "pages/clase9.html" },
-            { id: "clase10", titulo: "Clase 10: Sarcopenia", url: "pages/clase10.html" },
-            { id: "clase11", titulo: "Clase 11: Ayuno intermitente", url: "pages/clase11.html" }
+            { id: "clase9", titulo: "Clase 9: Resistencia a la insulina", url: "clase.html?id=clase9" },
+            { id: "clase10", titulo: "Clase 10: Sarcopenia", url: "clase.html?id=clase10" },
+            { id: "clase11", titulo: "Clase 11: Ayuno intermitente", url: "clase.html?id=clase11" }
         ]
     },
     {
         titulo: "Capítulo 5: Herramientas prácticas para la vida real",
         clases: [
-            { id: "clase12", titulo: "Clase 12: Estructura, sol y frío", url: "pages/clase12.html" },
-            { id: "clase13", titulo: "Clase 13: Cómo leer etiquetas", url: "pages/clase13.html" },
-            { id: "clase14", titulo: "Clase 14: Prevención de recaídas + cierre", url: "pages/clase14.html" }
+            { id: "clase12", titulo: "Clase 12: Estructura, sol y frío", url: "clase.html?id=clase12" },
+            { id: "clase13", titulo: "Clase 13: Cómo leer etiquetas", url: "clase.html?id=clase13" },
+            { id: "clase14", titulo: "Clase 14: Prevención de recaídas + cierre", url: "clase.html?id=clase14" }
         ]
     }
 ];
-
 // Guardar/recuperar estado del acordeón
 // Guardar/recuperar estado del acordeón (inicia vacío)
 function getAccordionState() {

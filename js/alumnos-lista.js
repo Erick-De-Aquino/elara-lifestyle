@@ -2,20 +2,20 @@
 
 // Mapeo de IDs a URLs y títulos
 const claseUrls = {
-    clase1: "pages/clase1.html",
-    clase2: "pages/clase2.html",
-    clase3: "pages/clase3.html",
-    clase4: "pages/clase4.html",
-    clase5: "pages/clase5.html",
-    clase6: "pages/clase6.html",
-    clase7: "pages/clase7.html",
-    clase8: "pages/clase8.html",
-    clase9: "pages/clase9.html",
-    clase10: "pages/clase10.html",
-    clase11: "pages/clase11.html",
-    clase12: "pages/clase12.html",
-    clase13: "pages/clase13.html",
-    clase14: "pages/clase14.html"
+    clase1: "clase.html?id=clase1",
+    clase2: "clase.html?id=clase2",
+    clase3: "clase.html?id=clase3",
+    clase4: "clase.html?id=clase4",
+    clase5: "clase.html?id=clase5",
+    clase6: "clase.html?id=clase6",
+    clase7: "clase.html?id=clase7",
+    clase8: "clase.html?id=clase8",
+    clase9: "clase.html?id=clase9",
+    clase10: "clase.html?id=clase10",
+    clase11: "clase.html?id=clase11",
+    clase12: "clase.html?id=clase12",
+    clase13: "clase.html?id=clase13",
+    clase14: "clase.html?id=clase14"
 };
 
 const claseTitulos = {
@@ -46,7 +46,6 @@ function mostrarFicha(nombre) {
     const alumno = alumnos.find(a => a.nombre === nombre);
     const progreso = getProgreso(nombre);
     
-    // Determinar la próxima clase
     const clasesCompletadas = progreso.completadas || [];
     let siguienteClase = null;
     
@@ -57,7 +56,6 @@ function mostrarFicha(nombre) {
         }
     }
     
-    // Generar HTML de comentarios por clase
     let comentariosHTML = '';
     if (alumno.comentariosPorClase && Object.keys(alumno.comentariosPorClase).length > 0) {
         comentariosHTML = '<div style="margin-top: 20px;"><h4 style="color: var(--primary-dark); margin-bottom: 15px;"><i class="fas fa-comments"></i> 📝 Comentarios por clase:</h4>';
@@ -174,7 +172,6 @@ function renderLista() {
 
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
-    // Añadir estilo para header-actions si no existe
     const headerActions = document.querySelector('.header-actions');
     if (headerActions) {
         headerActions.style.display = 'flex';
@@ -187,13 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     renderLista();
     
-    // Exportar
     document.getElementById('exportarBtn')?.addEventListener('click', exportarDatos);
-    
-    // Importar
     document.getElementById('importarInput')?.addEventListener('change', importarDatos);
     
-    // Resetear
     document.getElementById('resetearBtn')?.addEventListener('click', () => {
         mostrarModalConfirmacion(
             '⚠️ Resetear todos los datos',
@@ -226,12 +219,10 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
     
-    // Botón nuevo alumno
     document.getElementById('btnNuevoAlumno')?.addEventListener('click', () => {
         window.location.href = 'alumno.html';
     });
     
-    // Cerrar modal
     document.querySelector('.close-modal')?.addEventListener('click', () => {
         document.getElementById('modal').style.display = 'none';
     });

@@ -1,0 +1,686 @@
+{
+    "clase1": {
+        "id": "clase1",
+        "numero": 1,
+        "titulo": "Introducción y enfoque",
+        "capitulo": "Capítulo 1 - Tu punto de partida",
+        "duracion": 75,
+        "objetivo": "Que cada alumno defina su objetivo REAL y entienda que todo el curso se adaptará a ese objetivo.",
+        "palabrasClave": [
+            "Objetivo REAL - Definir qué quieres lograr específicamente",
+            "Saber vs Entender - La diferencia entre conocer y comprender",
+            "Integralidad - Los 4 pilares trabajan juntos",
+            "Silla de 4 patas - Metáfora de los pilares"
+        ],
+        "bloques": [
+            {
+                "nombre": "Bienvenida y presentación",
+                "duracion": 10,
+                "contenido": "<p>Te presentas y cuentas tu historia: <strong>la camisa rosada</strong>, el sobrepeso, el espejo, la decepción. Explicas que empezaste buscando estética y terminaste en salud y longevidad.</p><p><strong>Puntos clave:</strong></p><ul><li>Conectar emocionalmente con los alumnos</li><li>Mostrar que es posible cambiar a cualquier edad</li><li>La evolución del objetivo: estética → salud → longevidad</li></ul>"
+            },
+            {
+                "nombre": "Filosofía del curso",
+                "duracion": 15,
+                "contenido": "<p><strong>'Saber vs Entender'</strong> - Ejemplo: saber que hay que comer proteína vs entender que la proteína repara tejidos y evita pérdida de masa muscular.</p><p><strong>Por qué entender potencia los resultados:</strong></p><ul><li>Motivación intrínseca</li><li>Capacidad de tomar decisiones informadas</li><li>Mayor adherencia a largo plazo</li></ul>"
+            },
+            {
+                "nombre": "¿Cuál es tu objetivo? (Participación)",
+                "duracion": 20,
+                "contenido": "<p>Preguntas uno por uno: adelgazar, ganar músculo, revertir enfermedad (diabetes, hipertensión), longevidad, energía.</p><p><strong>Dinámica:</strong></p><ul><li>Cada alumno comparte su objetivo</li><li>Explicas que según eso ajustarás la alimentación</li><li>Anotas en la ficha de cada alumno</li></ul>"
+            },
+            {
+                "nombre": "La integralidad",
+                "duracion": 15,
+                "contenido": "<p>Los 4 pilares funcionan juntos. <strong>Metáfora de la silla de 4 patas</strong>. Si una falla, todo tambalea.</p><p><strong>Los 4 pilares:</strong></p><ul><li>Sueño - reparación nocturna</li><li>Mente - paz y claridad</li><li>Ejercicio - movimiento con propósito</li><li>Alimentación - nutrición inteligente</li></ul>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 15,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana: <strong>escribir cada día el objetivo y anotar una cosa que te acerque y una que te aleje</strong>.</p><p>Respondes dudas finales.</p>"
+            }
+        ],
+        "practicaSemana": "Escribe cada día tu objetivo principal. Anota UNA cosa que te acerque a él y UNA que te aleje. Solo observa, no juzgues.",
+        "practicaTip": "El objetivo es tomar conciencia, no cambiar todo de golpe.",
+        "videos": [
+            "Carlos Jaramillo: \"Por qué fallamos al intentar cambiar hábitos\"",
+            "Dr. La Rosa: \"El poder del entendimiento en la salud metabólica\""
+        ]
+    },
+    "clase2": {
+        "id": "clase2",
+        "numero": 2,
+        "titulo": "Sueño - Reparación nocturna",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Entender que dormir NO es tiempo perdido, es el momento en que el cuerpo repara tejidos, regula hormonas y consolida aprendizaje.",
+        "palabrasClave": [
+            "Ciclos del sueño - Fases REM y no REM, ciclos de 90 minutos",
+            "Higiene del sueño - Hábitos que preparan el cuerpo para dormir",
+            "Melatonina - Hormona que regula el ritmo circadiano",
+            "Cortisol - Hormona del estrés, se eleva con mal sueño",
+            "Grehina y Leptina - Hormonas del hambre y saciedad"
+        ],
+        "bloques": [
+            {
+                "nombre": "La ciencia del sueño",
+                "duracion": 15,
+                "contenido": "<p>Explicas los ciclos de 90 minutos (REM y no REM). Qué pasa cuando duermes menos de 7h: cortisol alto, antojos de azúcar, menos fuerza, peor salud mental.</p><p><strong>Metáfora:</strong> 'Dormir mal es como intentar cargar el móvil con un cable roto'.</p>"
+            },
+            {
+                "nombre": "Higiene del sueño",
+                "duracion": 15,
+                "contenido": "<p>Lista concreta de hábitos:</p><ul><li>Horario fijo (acostarse y levantarse igual incluso fines de semana)</li><li>Nada de pantallas 1 hora antes</li><li>Habitación oscura y fresca (18-20°C)</li><li>Cena ligera 2-3 horas antes</li></ul>"
+            },
+            {
+                "nombre": "Relación con otros pilares",
+                "duracion": 15,
+                "contenido": "<p>El sueño regula el hambre (grehina y leptina). Si duermes mal, al día siguiente comes más y peor. También baja testosterona y energía para entrenar.</p>"
+            },
+            {
+                "nombre": "Ejemplos y casos prácticos",
+                "duracion": 15,
+                "contenido": "<p>Compartes ejemplos de alumnos que mejoraron su salud solo durmiendo mejor. Invitas a los alumnos a compartir sus dificultades con el sueño.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 15,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Acuéstate y levántate a la misma hora TODOS los días (incluyendo fines de semana). Apaga el móvil 45 minutos antes de dormir. Anota cada día la hora que te acuestas y te levantas.",
+        "practicaTip": "El primer paso no es dormir más, es dormir con horario regular. La regularidad es más importante que la cantidad.",
+        "videos": [
+            "Carlos Jaramillo: \"Sueño y metabolismo: la hormona del hambre\"",
+            "Dr. La Rosa: \"Cómo reparar tu sueño en 7 días\"",
+            "Matthew Walker: \"Por qué dormimos\" (resumen)"
+        ]
+    },
+    "clase3": {
+        "id": "clase3",
+        "numero": 3,
+        "titulo": "Mente - Paz y claridad",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Aprender que gestionar pensamientos y estrés es tan importante como comer bien. Introducir herramientas simples de respiración y aceptación.",
+        "palabrasClave": [
+            "Aceptación - 'Esto está pasando, ¿qué puedo hacer?' vs 'no debería estar pasando'",
+            "Respiración diafragmática - Técnica 4-4-6 para activar el sistema parasimpático",
+            "Cortisol crónico - Estrés mantenido → grasa abdominal, antojos, inflamación",
+            "Mindfulness - Atención plena al momento presente",
+            "Micro pausas - 30 segundos de respiración durante el día"
+        ],
+        "bloques": [
+            {
+                "nombre": "La mente como filtro",
+                "duracion": 15,
+                "contenido": "<p>La misma situación (un atasco, un error) puede generar estrés o calma según cómo la interpretas. Introduces la <strong>aceptación</strong>.</p>"
+            },
+            {
+                "nombre": "Respiración diafragmática",
+                "duracion": 15,
+                "contenido": "<p>Enseñas en directo: 4 segundos inhalar, 4 retener, 6 exhalar. Lo hacen todos juntos 2 minutos. Explicas que esto activa el sistema parasimpático (modo descanso).</p>"
+            },
+            {
+                "nombre": "Meditación breve",
+                "duracion": 15,
+                "contenido": "<p>Meditación guiada de 5 minutos. Enfócate en observar pensamientos sin juzgar.</p>"
+            },
+            {
+                "nombre": "Mente y metabolismo",
+                "duracion": 15,
+                "contenido": "<p>Estrés crónico = cortisol alto = grasa abdominal, antojos, peor sueño, inflamación. Conexión directa con el pilar ejercicio (desestresa) y alimentación (comer calmado, sin pantallas).</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 15,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Cada mañana al despertar y cada noche antes de dormir, haz 2 minutos de respiración 4-4-6 (inhalar 4 seg, retener 4, exhalar 6). Cuando sientas estrés durante el día, haz una pausa de 30 segundos y respira igual.",
+        "practicaTip": "No necesitas meditar 20 minutos. Las micro pausas de respiración son igual de efectivas y más fáciles de mantener.",
+        "videos": [
+            "Carlos Jaramillo: \"Cortisol, el enemigo silencioso\"",
+            "Dr. La Rosa: \"Estrés y alimentación emocional\"",
+            "Respiración guiada 4-4-6 (10 minutos)"
+        ]
+    },
+    "clase4": {
+        "id": "clase4",
+        "numero": 4,
+        "titulo": "Ejercicio - Movimiento con propósito",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Entender que el músculo es un órgano endocrino que regula salud metabólica, mental y de sueño. Adaptar el ejercicio al objetivo de cada alumno.",
+        "palabrasClave": [
+            "Miocinas - Sustancias liberadas por el músculo que reducen inflamación y mejoran la salud",
+            "Órgano endocrino - El músculo produce hormonas que afectan todo el cuerpo",
+            "Entrenamiento de fuerza - Prioridad número uno para salud y longevidad",
+            "Sarcopenia - Pérdida de masa muscular con la edad (se hablará más adelante)",
+            "Frecuencia óptima - 2-3 sesiones de fuerza por semana es suficiente"
+        ],
+        "bloques": [
+            {
+                "nombre": "El músculo como órgano endocrino",
+                "duracion": 20,
+                "contenido": "<p>Explicas que el músculo libera miocinas que reducen inflamación, mejoran sensibilidad a insulina, regulan apetito, mejoran ánimo (endorfinas).</p><p><strong>Metáfora:</strong> 'Tener músculo es tener una farmacia interna que trabaja gratis 24/7'.</p>"
+            },
+            {
+                "nombre": "Tipos de ejercicio según objetivo",
+                "duracion": 20,
+                "contenido": "<p><strong>Tabla visual:</strong></p><ul><li>Adelgazar: fuerza + déficit calórico</li><li>Ganar masa: hipertrofia + superávit proteico</li><li>Salud/longevidad: fuerza + movilidad + algo de cardio</li><li>Revertir enfermedad: fuerza suave + caminar</li></ul>"
+            },
+            {
+                "nombre": "Frecuencia y recuperación",
+                "duracion": 15,
+                "contenido": "<p>Explicas que el músculo crece en el descanso (pilar del sueño). Tu experiencia: entrenas 3 veces/semana y funciona. No hace falta 6 días. El exceso de cardio mata músculo.</p>"
+            },
+            {
+                "nombre": "Ejercicios prácticos en casa",
+                "duracion": 10,
+                "contenido": "<p>Muestras ejemplos de ejercicios sin equipamiento: sentadillas, flexiones, plancha, zancadas, desplantes.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 10,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Haz UNA sesión de fuerza en casa de 20 minutos (sentadillas, flexiones, plancha, zancadas). Si ya entrenas, añade un 10% más de peso o repeticiones.",
+        "practicaTip": "El objetivo no es agotarte, es activar el músculo como órgano endocrino. 20 minutos son suficientes para obtener beneficios metabólicos.",
+        "videos": [
+            "Carlos Jaramillo: \"Músculo y longevidad\"",
+            "Dr. La Rosa: \"Por qué el músculo es un órgano endocrino\"",
+            "Rutina de fuerza en casa para principiantes (20 min)"
+        ]
+    },
+    "clase5": {
+        "id": "clase5",
+        "numero": 5,
+        "titulo": "Alimentación - Nutrición inteligente",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Introducir el concepto de que NO se trata de dietas extremas, sino de entender cómo funcionan los nutrientes y aplicarlo según el objetivo personal.",
+        "palabrasClave": [
+            "Macronutrientes - Proteínas, carbohidratos y grasas (los 3 son necesarios)",
+            "Proteína - Construcción y reparación de tejidos (prioritaria para todos)",
+            "Carbohidratos - Energía rápida para el cerebro y músculos",
+            "Grasas saludables - Energía lenta, hormonas, absorción de vitaminas",
+            "Micronutrientes - Vitaminas y minerales (come colores)"
+        ],
+        "bloques": [
+            {
+                "nombre": "Rompiendo mitos",
+                "duracion": 15,
+                "contenido": "<p>Las dietas milagro no funcionan a largo plazo. Lo que funciona es entender y crear un sistema. No es 'prohibir', es 'elegir mejor'.</p>"
+            },
+            {
+                "nombre": "Los 3 macronutrientes",
+                "duracion": 20,
+                "contenido": "<p>Proteína (construcción), Carbohidratos (energía rápida), Grasas (energía lenta y hormonas). Explicas qué hace cada uno y por qué los 3 son necesarios.</p>"
+            },
+            {
+                "nombre": "Método del puño",
+                "duracion": 15,
+                "contenido": "<p>Enseñas la regla visual: 1 puño de proteína, 1 puño de carbohidrato, 1 dedo pulgar de grasa por comida.</p>"
+            },
+            {
+                "nombre": "Micronutrientes sin estrés",
+                "duracion": 15,
+                "contenido": "<p>No hace falta obsesionarse. La clave: comer colores (vegetales variados). Ejemplos: magnesio (cacao, brócoli), vitamina C (cítricos, pimientos), zinc (carnes, frutos secos).</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 10,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "En UNA comida al día (la que más control tengas), identifica los 3 macronutrientes. Ejemplo: pollo (proteína) + arroz (carbohidrato) + aguacate (grasa). Si falta uno, pregúntate: ¿puedo añadirlo mañana?",
+        "practicaTip": "No se trata de perfección, sino de conciencia. El primer paso es observar, no cambiar todo de golpe.",
+        "videos": [
+            "Carlos Jaramillo: \"Macronutrientes explicados fácil\"",
+            "Dr. La Rosa: \"Proteína: cuánta y de dónde\"",
+            "Micronutrientes: cómo comer colores"
+        ]
+    },
+    "clase6": {
+        "id": "clase6",
+        "numero": 6,
+        "titulo": "Qué NO comer",
+        "capitulo": "Capítulo 3 - Alimentación sanadora",
+        "duracion": 75,
+        "objetivo": "Identificar los alimentos que más daño hacen (inflamación, resistencia a insulina, malestar digestivo) y entender por qué.",
+        "palabrasClave": [
+            "Azúcares añadidos - Refrescos, bollería, salsas, cereales de caja",
+            "Harinas refinadas - Pan blanco, pasta blanca, arroz blanco",
+            "Aceites vegetales industriales - Soja, maíz, girasol (en ultraprocesados)",
+            "Ultraprocesados - Más de 5 ingredientes que no reconoces",
+            "Picos de glucosa - Causan inflamación, niebla mental y grasa acumulada"
+        ],
+        "bloques": [
+            {
+                "nombre": "La lista práctica de 'no prioritarios'",
+                "duracion": 15,
+                "contenido": "<p>Azúcares añadidos (refrescos, bollería, salsas), harinas refinadas (pan blanco, pasta blanca), aceites vegetales industriales (soja, maíz, girasol), ultraprocesados.</p><p>No es 'nunca jamás', es 'sé lo que comes'.</p>"
+            },
+            {
+                "nombre": "El efecto en tu cuerpo",
+                "duracion": 15,
+                "contenido": "<p>Picos de glucosa → insulina alta → inflamación → grasa acumulada, niebla mental, cansancio. Usas la metáfora de la 'montaña rusa de azúcar'.</p>"
+            },
+            {
+                "nombre": "Cómo reemplazar sin sufrir",
+                "duracion": 15,
+                "contenido": "<p>Cambios simples: refresco → agua con limón o infusiones; pan blanco → integral o de masa madre; snacks dulces → fruta con frutos secos o yogur natural.</p>"
+            },
+            {
+                "nombre": "Los permitidos programados",
+                "duracion": 15,
+                "contenido": "<p>Explicas: 'No se trata de vivir privado. Planifica UNA comida a la semana donde comas algo no prioritario SIN CULPA'.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 15,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Identifica en tu despensa y nevera los 3 alimentos ultraprocesados que más consumes. Esta semana, reemplaza UNO de ellos por una alternativa real.",
+        "practicaTip": "No se trata de eliminar todo para siempre. Se trata de identificar y reemplazar uno por uno, sin culpa.",
+        "videos": [
+            "Carlos Jaramillo: \"Qué pasa en tu cuerpo cuando dejas el azúcar\"",
+            "Dr. La Rosa: \"Ultraprocesados, inflamación silenciosa\"",
+            "Alternativas saludables para antojos"
+        ]
+    },
+    "clase7": {
+        "id": "clase7",
+        "numero": 7,
+        "titulo": "Macronutrientes y cálculo (g x kg x día)",
+        "capitulo": "Capítulo 3 - Alimentación sanadora",
+        "duracion": 75,
+        "objetivo": "Aprender a calcular necesidades diarias según objetivo (proteínas, grasas y carbohidratos) y aplicarlo sin volverse loco.",
+        "palabrasClave": [
+            "g x kg por día - Fórmula para calcular macronutrientes según peso corporal",
+            "Proteína: 1.6-2.2g/kg/día - Prioritaria para todos los objetivos",
+            "Grasas: 0.8-1g/kg/día - Mínimo necesario para salud hormonal",
+            "Carbohidratos: el resto - Ajustar según energía y objetivo",
+            "Método del puño - Medida visual para porciones"
+        ],
+        "bloques": [
+            {
+                "nombre": "Repaso de macronutrientes",
+                "duracion": 15,
+                "contenido": "<p>Recordatorio de la clase anterior: proteínas, carbohidratos y grasas. Refuerzas el método del puño.</p>"
+            },
+            {
+                "nombre": "Cálculo personalizado en vivo",
+                "duracion": 30,
+                "contenido": "<p>Tomas el objetivo de cada alumno. Ejemplo: persona de 70kg que quiere adelgazar → 1.8g proteína/kg = 126g proteína/día, grasas 0.8g=56g, carbohidratos 120-150g. Enseñas cómo pasar gramos a comida.</p>"
+            },
+            {
+                "nombre": "Micronutrientes prácticos",
+                "duracion": 15,
+                "contenido": "<p>Lista de 'come esto cada semana': vegetales de hoja verde, cacao (magnesio), cítricos (Vit C), huevos (colina), pescado azul (omega 3), frutos secos.</p>"
+            },
+            {
+                "nombre": "Ejemplos de menús",
+                "duracion": 10,
+                "contenido": "<p>Muestras ejemplos de un día de comidas según diferentes objetivos.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 5,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Elige UN día de esta semana y escribe TODO lo que comes. Al final del día, estima (sin app, solo a ojo) cuántos gramos de proteína crees que comiste. Compáralo con tu cálculo personalizado.",
+        "practicaTip": "No se trata de acertar, se trata de tomar conciencia. Si te quedaste corto de proteína, mañana puedes ajustar.",
+        "videos": [
+            "Carlos Jaramillo: \"Cómo calcular proteína sin apps\"",
+            "Dr. La Rosa: \"Micronutrientes que cambian tu vida\"",
+            "Método del puño: porciones visuales"
+        ]
+    },
+    "clase8": {
+        "id": "clase8",
+        "numero": 8,
+        "titulo": "Suplementación",
+        "capitulo": "Capítulo 3 - Alimentación sanadora",
+        "duracion": 75,
+        "objetivo": "Entender que los suplementos son COMPLEMENTOS (no reemplazan la comida) y cuáles tienen evidencia real.",
+        "palabrasClave": [
+            "Creatina monohidratada - 5g/día. Beneficios en músculo, cerebro y energía",
+            "Magnesio - 200-400mg/día. Mejora sueño, ansiedad y contracción muscular",
+            "Vitamina C - Antioxidante, producción de colágeno, sistema inmune",
+            "Vitamina D - Recomendada en España (poco sol)",
+            "Omega 3 - Antiinflamatorio, salud cardiovascular"
+        ],
+        "bloques": [
+            {
+                "nombre": "Filosofía de la suplementación",
+                "duracion": 15,
+                "contenido": "<p>'Primero la comida, luego lo que falte'. No sirve de nada tomar 10 suplementos si comes mal.</p>"
+            },
+            {
+                "nombre": "Los 3 que tú usas (experiencia personal)",
+                "duracion": 25,
+                "contenido": "<p>Explicas uno a uno:<br><strong>Creatina monohidratada 5g/día:</strong> beneficios en músculo, cerebro, energía. Segura, económica, la mejor estudiada.<br><strong>Magnesio 200-400mg/día:</strong> mejora sueño, ansiedad, contracción muscular.<br><strong>Vitamina C:</strong> colágeno, antioxidante, sistema inmune.</p>"
+            },
+            {
+                "nombre": "Otros útiles según objetivo",
+                "duracion": 15,
+                "contenido": "<p>Vitamina D (casi todos en España la necesitan), Omega 3 (antiinflamatorio), Probióticos (si hay digestión delicada). Aclaras: 'Consultad con médico si tenéis enfermedades o tomáis medicación'.</p>"
+            },
+            {
+                "nombre": "Qué evitar",
+                "duracion": 10,
+                "contenido": "<p>Suplementos mágicos, quemagrasas, dosis exageradas. Marcas que no tengan sellos de calidad.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 10,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Si NO tomas nada: investiga cuánto cuesta la creatina o magnesio en tu tienda de confianza. Si YA tomas algo: revisa si realmente lo necesitas o podrías obtenerlo de comida. No compres nada aún, solo observa.",
+        "practicaTip": "Primero la comida, luego lo que falte. Consulta siempre con un profesional si tienes enfermedades o tomas medicación.",
+        "videos": [
+            "Carlos Jaramillo: \"Creatina, el suplemento más estudiado\"",
+            "Dr. La Rosa: \"Magnesio, por qué todos deberíamos considerarlo\"",
+            "Vitamina D: ¿por qué la necesitas?"
+        ]
+    },
+    "clase9": {
+        "id": "clase9",
+        "numero": 9,
+        "titulo": "Resistencia a la insulina",
+        "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
+        "duracion": 75,
+        "objetivo": "Entender qué es la insulina, por qué se vuelve 'resistente' y cómo revertirlo con alimentación y ejercicio.",
+        "palabrasClave": [
+            "Insulina - Hormona que permite que el azúcar entre a las células (la llave)",
+            "Resistencia a la insulina - Las células dejan de responder (cerradura oxidada)",
+            "Prediabetes - Paso previo a la diabetes tipo 2",
+            "Síntomas - Hambre constante, grasa abdominal, sueño después de comer",
+            "Revertir - Reducir carbohidratos rápidos, aumentar músculo, caminar después de comer"
+        ],
+        "bloques": [
+            {
+                "nombre": "¿Qué es la insulina?",
+                "duracion": 15,
+                "contenido": "<p>Hormona que permite que el azúcar entre a las células. Metáfora: 'La insulina es la llave, la célula es la cerradura'.</p>"
+            },
+            {
+                "nombre": "Resistencia a la insulina = cerradura oxidada",
+                "duracion": 20,
+                "contenido": "<p>Las células dejan de responder. El páncreas fabrica más insulina. Con el tiempo se agota → prediabetes → diabetes tipo 2. Síntomas: hambre constante, grasa abdominal, sueño después de comer, manchas en la piel.</p>"
+            },
+            {
+                "nombre": "Qué la causa y cómo revertirla",
+                "duracion": 20,
+                "contenido": "<p>Causas: azúcares y harinas refinadas, sedentarismo, exceso de grasa visceral, mal sueño.<br>Revertir: reducir carbohidratos rápidos, aumentar músculo, caminar 10-15 min después de cada comida, dormir bien.</p>"
+            },
+            {
+                "nombre": "Ejemplo práctico",
+                "duracion": 10,
+                "contenido": "<p>Pones un ejemplo de alguien con resistencia a insulina: antes comía pan blanco + refresco, ahora come proteína + vegetales y camina 10 min después de comer. En 3 meses mejora.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 10,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Después de una comida principal, camina 10 minutos (puede ser dentro de casa). Observa cómo te sientes. Eso mejora la sensibilidad a insulina inmediatamente.",
+        "practicaTip": "Caminar después de comer ayuda a que la glucosa entre a los músculos sin necesidad de tanta insulina. Es una de las herramientas más infravaloradas.",
+        "videos": [
+            "Carlos Jaramillo: \"Resistencia a la insulina explicada en 15 min\"",
+            "Dr. La Rosa: \"Cómo revertir la diabetes tipo 2 sin medicamentos (con supervisión médica)\"",
+            "La importancia de caminar después de comer"
+        ]
+    },
+    "clase10": {
+        "id": "clase10",
+        "numero": 10,
+        "titulo": "Sarcopenia",
+        "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
+        "duracion": 60,
+        "objetivo": "Entender que perder músculo con la edad NO es 'normal' inevitable, sino que se puede frenar y revertir.",
+        "palabrasClave": [
+            "Sarcopenia - Pérdida progresiva de masa y función muscular",
+            "Empieza a los 30-40 años - Se acelera a los 60",
+            "Consecuencias - Caídas, fragilidad, pérdida de independencia",
+            "Prevención - Proteína suficiente + entrenamiento de fuerza",
+            "El músculo es tu pensión de salud - Metáfora clave"
+        ],
+        "bloques": [
+            {
+                "nombre": "¿Qué es la sarcopenia?",
+                "duracion": 15,
+                "contenido": "<p>Pérdida progresiva de masa y función muscular. Empieza a los 30-40 años, se acelera a los 60. No es solo 'fuerza', es perder capacidad de levantarte del sofá, subir escaleras, cargar la compra.</p>"
+            },
+            {
+                "nombre": "Consecuencias reales",
+                "duracion": 15,
+                "contenido": "<p>Caídas (principal causa de muerte por accidente en mayores), fragilidad, peor metabolismo, riesgo de diabetes, pérdida de independencia. Metáfora: 'El músculo es tu pensión de salud'.</p>"
+            },
+            {
+                "nombre": "Cómo prevenirla y revertirla",
+                "duracion": 15,
+                "contenido": "<p><strong>Tres pilares:</strong><br>1. Proteína suficiente: 1.6-2.2g/kg<br>2. Entrenamiento de fuerza: 2-3 veces/semana<br>3. Sueño y gestión del estrés</p>"
+            },
+            {
+                "nombre": "Test de la silla",
+                "duracion": 10,
+                "contenido": "<p>Haces el test con los alumnos: levantarse de una silla sin usar las manos. Explicas que ese es su punto de partida.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 5,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Haz un test simple: levántate de una silla sin usar las manos. Si te cuesta, ese es tu punto de partida. Practica levantarte así 3 veces al día.",
+        "practicaTip": "La sarcopenia no es solo para mayores. Prevenirla empieza hoy. Cada pequeño estímulo de fuerza cuenta.",
+        "videos": [
+            "Carlos Jaramillo: \"Sarcopenia, la epidemia silenciosa\"",
+            "Dr. La Rosa: \"Músculo y longevidad, lo que nadie te cuenta\"",
+            "Ejercicios para prevenir sarcopenia en casa"
+        ]
+    },
+    "clase11": {
+        "id": "clase11",
+        "numero": 11,
+        "titulo": "Ayuno intermitente",
+        "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
+        "duracion": 60,
+        "objetivo": "Explicar qué es el ayuno intermitente, para quién funciona, para quién NO y cómo hacerlo seguro.",
+        "palabrasClave": [
+            "Ayuno intermitente - Patrón de comidas, no una dieta (ej: 16/8)",
+            "Autofagia - Limpieza celular que se activa con el ayuno",
+            "Beneficios reales - Mejora sensibilidad a insulina, puede ayudar a adelgazar",
+            "Cuándo NO hacerlo - Embarazo, lactancia, desórdenes alimenticios, estrés alto",
+            "Cómo empezar - 12h de ayuno (ej: no comer de 9pm a 9am)"
+        ],
+        "bloques": [
+            {
+                "nombre": "¿Qué es el ayuno intermitente?",
+                "duracion": 15,
+                "contenido": "<p>No es una dieta, es un patrón de comidas. Ejemplo: comer en ventana de 8 horas (ej. 12pm a 8pm) y ayunar 16h.</p>"
+            },
+            {
+                "nombre": "Beneficios reales",
+                "duracion": 15,
+                "contenido": "<p>Mejora sensibilidad a insulina, activa autofagia (limpieza celular), puede ayudar a adelgazar. Pero NO es mágico.</p>"
+            },
+            {
+                "nombre": "Cuándo NO hacerlo",
+                "duracion": 15,
+                "contenido": "<p>Embarazo/lactancia, historial de desórdenes alimenticios, estrés muy alto, problemas de tiroides no controlados, niños/adolescentes. También si te hace comer en exceso luego.</p>"
+            },
+            {
+                "nombre": "Cómo empezar si aplica",
+                "duracion": 10,
+                "contenido": "<p>Empieza con 12h de ayuno (ej. no comer de 9pm a 9am). Es casi dormir y ya. Prioriza proteína en la primera comida. No obsesionarse.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 5,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Un día prueba 12h de ayuno (cena temprano, desayuno normal). No cambies nada más. Observa si sientes hambre real o solo costumbre.",
+        "practicaTip": "El ayuno no es para todos. Si te hace comer en exceso después, no es para ti. Escucha a tu cuerpo.",
+        "videos": [
+            "Carlos Jaramillo: \"Ayuno intermitente, ¿sí o no?\"",
+            "Dr. La Rosa: \"Autofagia, el reciclaje celular\"",
+            "Ayuno intermitente: mitos y realidades"
+        ]
+    },
+    "clase12": {
+        "id": "clase12",
+        "numero": 12,
+        "titulo": "Estructura semanal, sol y frío",
+        "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
+        "duracion": 75,
+        "objetivo": "Dar herramientas que potencian todo lo anterior sin complicar: estructura semanal de comidas, exposición al sol y baños de agua fría.",
+        "palabrasClave": [
+            "Luz solar matutina - 10-15 minutos regulan ritmo circadiano y vitamina D",
+            "Exposición al frío - Reduce inflamación, mejora ánimo, fortalece sistema inmune",
+            "Preparación semanal de comida - Cocinar 2-3 fuentes de proteína por adelantado",
+            "Estructura en la nevera - Hoja con el menú semanal",
+            "Regla 80/20 - 80% apegados al plan, 20% flexibilidad social"
+        ],
+        "bloques": [
+            {
+                "nombre": "Luz solar y ritmo circadiano",
+                "duracion": 15,
+                "contenido": "<p>Tomar sol por la mañana 10-15 min regula el sueño, la vitamina D y el ánimo. Relación directa con el pilar del sueño y la mente.</p>"
+            },
+            {
+                "nombre": "Exposición al frío",
+                "duracion": 15,
+                "contenido": "<p>Beneficios: reduce inflamación, mejora ánimo (dopamina), fortalece sistema inmune. Cómo empezar: últimos 30 segundos de la ducha en frío, o pies en agua fría.</p>"
+            },
+            {
+                "nombre": "Preparación semanal de comida",
+                "duracion": 25,
+                "contenido": "<p>Enseñas un ejemplo de estructura semanal: Lunes cocinas 2-3 fuentes de proteína (pollo, huevos, legumbres), carbohidratos base (arroz, patata, boniatos), verduras lavadas y cortadas. Así cada comida es 'ensamblar'. Les pones el ejemplo de una hoja en la nevera.</p>"
+            },
+            {
+                "nombre": "Relaciones sociales y entorno",
+                "duracion": 10,
+                "contenido": "<p>Explicas que no se vive en una burbuja. Cómo manejar comidas familiares, salidas, emergencias. La regla de 80/20: 80% bien, 20% sin culpa.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 10,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Haz una lista de compras estructurada para los próximos 7 días (proteínas, carbohidratos de calidad, grasas buenas y vegetales). Pon la lista en la nevera. Además, un día toma sol por la mañana 10 minutos y otro día prueba 30 segundos de agua fría al final de la ducha.",
+        "practicaTip": "La estructura libera energía mental. Cuando no tienes que decidir qué comer, es más fácil mantener el hábito.",
+        "videos": [
+            "Carlos Jaramillo: \"Cómo estructurar tu semana de comidas\"",
+            "Dr. La Rosa: \"Beneficios del frío y el sol en el metabolismo\"",
+            "Meal prep: cómo preparar una semana de comida en 2 horas"
+        ]
+    },
+    "clase13": {
+        "id": "clase13",
+        "numero": 13,
+        "titulo": "Cómo leer etiquetas",
+        "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
+        "duracion": 45,
+        "objetivo": "Que ningún alumno vuelva a comprar algo engañado por marketing.",
+        "palabrasClave": [
+            "Lista de ingredientes - Ordenados de mayor a menor cantidad",
+            "Nombres del azúcar - Jarabe de maíz, dextrosa, maltosa, fructosa, sacarosa",
+            "Grasas malas - Aceite de palma, soja, girasol (en ultraprocesados)",
+            "Etiquetas mentirosas - '0% grasa' pero lleno de azúcar",
+            "Regla práctica - Si tiene más de 5 ingredientes y no reconoces la mayoría, no lo compres"
+        ],
+        "bloques": [
+            {
+                "nombre": "Lista de ingredientes",
+                "duracion": 10,
+                "contenido": "<p>Ordenados de mayor a menor cantidad. Si el azúcar está entre los 3 primeros, NO.</p>"
+            },
+            {
+                "nombre": "Nombres del azúcar y grasas malas",
+                "duracion": 10,
+                "contenido": "<p><strong>Azúcar:</strong> jarabe de maíz, dextrosa, maltosa, fructosa, concentrados de fruta.<br><strong>Grasas:</strong> aceite de palma, soja, girasol (en ultraprocesados).</p>"
+            },
+            {
+                "nombre": "Etiquetas mentirosas",
+                "duracion": 10,
+                "contenido": "<p>'0% grasa' pero lleno de azúcar. 'Light' no significa sano. 'Fuente de fibra' pero con 20g de azúcar.</p>"
+            },
+            {
+                "nombre": "Regla práctica y ejemplos",
+                "duracion": 10,
+                "contenido": "<p>Si tiene más de 5 ingredientes y no reconoces la mayoría, no lo compres. Muestras ejemplos reales de productos.</p>"
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "duracion": 5,
+                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+            }
+        ],
+        "practicaSemana": "Ve al supermercado con 3 productos que crees que son sanos. Lee sus etiquetas. Si te engañaron, anótalo y compártelo en la próxima clase.",
+        "practicaTip": "El marketing alimentario está diseñado para confundirte. Una vez que sabes leer etiquetas, nadie puede engañarte.",
+        "videos": [
+            "Cómo leer etiquetas de alimentos (guía práctica)",
+            "Los 10 nombres del azúcar que debes conocer",
+            "Marketing vs realidad: productos 'saludables' que no lo son"
+        ]
+    },
+    "clase14": {
+        "id": "clase14",
+        "numero": 14,
+        "titulo": "Prevención de recaídas + cierre del curso",
+        "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
+        "duracion": 60,
+        "objetivo": "Normalizar los tropiezos y dar herramientas para no abandonar. Cerrar el curso con motivación y un plan de acción a largo plazo.",
+        "palabrasClave": [
+            "La perfección no existe - Todos tienen días malos",
+            "Regla del 80/20 - 80% apegados al plan, 20% flexibles",
+            "Qué hacer cuando recaes - No te castigues, vuelves al plan en la siguiente comida",
+            "Metáfora de la rueda pinchada - Si pinchas una rueda, no pinchas las otras tres",
+            "Círculo de apoyo - Compartir el proceso con alguien de confianza"
+        ],
+        "bloques": [
+            {
+                "nombre": "La perfección no existe",
+                "duracion": 10,
+                "contenido": "<p>Todos tendrás días malos. Una comida mala NO arruina el progreso.</p>"
+            },
+            {
+                "nombre": "Regla del 80/20",
+                "duracion": 10,
+                "contenido": "<p>80% apegados al plan, 20% flexibles. Eso es sostenible a 10 años.</p>"
+            },
+            {
+                "nombre": "Qué hacer cuando recaes",
+                "duracion": 10,
+                "contenido": "<p>No te castigues, no 'compenses' con más restricción. Vuelves al plan en la siguiente comida. Metáfora: 'Si pinchas una rueda, no pinchas las otras tres a propósito'.</p>"
+            },
+            {
+                "nombre": "Círculo de apoyo y cierre",
+                "duracion": 20,
+                "contenido": "<p>Tener a alguien con quien hablar (pueden ser otros alumnos del curso).<br><strong>Cierre emocional:</strong> Recorres los 4 pilares y lo aprendido. Preguntas: ¿Qué fue lo más impactante? ¿Qué vas a mantener en tu vida? Les agradeces y animas a seguir.</p>"
+            },
+            {
+                "nombre": "Práctica final",
+                "duracion": 10,
+                "contenido": "<p>Explicas la tarea final.</p>"
+            }
+        ],
+        "practicaSemana": "Escribe una carta corta a ti mismo diciendo: 'Si tengo un mal día, haré esto...' Guárdala y léela cuando la necesites.",
+        "practicaTip": "No se trata de ser perfecto, se trata de ser constante. Un mal día no borra semanas de buenos hábitos.",
+        "videos": [
+            "Cómo mantener hábitos saludables a largo plazo",
+            "La ciencia de la consistencia (no de la perfección)",
+            "Qué hacer cuando pierdes la motivación"
+        ]
+    }
+}
