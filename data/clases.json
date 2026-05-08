@@ -16,8 +16,8 @@
             {
                 "nombre": "Bienvenida y presentación",
                 "duracion": 10,
-                "contenido": "<p>Te presentas y cuentas tu historia: <strong>la camisa rosada</strong>, el sobrepeso, el espejo, la decepción. Explicas que empezaste buscando estética y terminaste en salud y longevidad.</p><p><strong>Puntos clave:</strong></p><ul><li>Conectar emocionalmente con los alumnos</li><li>Mostrar que es posible cambiar a cualquier edad</li><li>La evolución del objetivo: estética → salud → longevidad</li></ul>"
-            },
+                "contenido": "<p>Te presentas y cuentas tu historia: <strong>la camisa rosada</strong>, el sobrepeso, el espejo, la decepción. Explicas que empezaste buscando estética y terminaste en salud y longevidad.</p><p><strong>Puntos clave de tu historia:</strong></p><ul><li>A los 36 años pensaste que ya era tarde para cambiar</li><li>La frustración de no verte como querías en el espejo</li><li>El momento de inflexión que cambió tu vida</li><li>Cómo la curiosidad te llevó a investigar más allá de lo estético</li><li>La evolución: estética → energía → salud → longevidad</li></ul><p><strong>Pregunta para los alumnos:</strong><br>¿Qué les trae hoy a este curso? ¿Qué quieren lograr?</p>"
+        },
             {
                 "nombre": "Filosofía del curso",
                 "duracion": 15,
