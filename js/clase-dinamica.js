@@ -86,18 +86,20 @@ function renderizarClase() {
     document.getElementById('practica-texto').innerHTML = claseData.practicaSemana;
     document.getElementById('practica-tip').innerHTML = `<i class="fas fa-lightbulb"></i> ${claseData.practicaTip}`;
     
-    // Videos
+    // Videos (nueva versión con URLs desde JSON)
     const videosContainer = document.getElementById('videos-container');
-    videosContainer.innerHTML = '';
-    claseData.videos.forEach(video => {
-        const videoLink = document.createElement('a');
-        videoLink.href = '#';
-        videoLink.className = 'video-link';
-        videoLink.target = '_blank';
-        videoLink.innerHTML = `<i class="fab fa-youtube"></i> <span>${video}</span>`;
-        videosContainer.appendChild(videoLink);
-    });
-    
+        if (videosContainer) {
+        videosContainer.innerHTML = '';
+        claseData.videos.forEach(video => {
+            const videoLink = document.createElement('a');
+            videoLink.href = video.url;
+            videoLink.className = 'video-link';
+            videoLink.target = '_blank';
+            videoLink.innerHTML = `<i class="fab fa-youtube"></i> <span>${video.titulo}</span>`;
+            videosContainer.appendChild(videoLink);
+        });
+}
+
     // Bloques desplegables
     renderizarBloques();
 }
