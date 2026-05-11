@@ -42,8 +42,14 @@
         "practicaSemana": "Escribe cada día tu objetivo principal. Anota UNA cosa que te acerque a él y UNA que te aleje. Solo observa, no juzgues.",
         "practicaTip": "El objetivo es tomar conciencia, no cambiar todo de golpe.",
         "videos": [
-            "Carlos Jaramillo: \"Por qué fallamos al intentar cambiar hábitos\"",
-            "Dr. La Rosa: \"El poder del entendimiento en la salud metabólica\""
+            {
+                "titulo": "Carlos Jaramillo: \"Por Qué Fracasan Los Hábitos Saludables (Y Cómo Lograrlo)\"",
+                "url": "https://www.youtube.com/watch?v=Zq2xFbaehM8"
+            },
+            {
+                "titulo": "Dr. La Rosa: \"Cómo Cambiar tus Malos Hábitos\"",
+                "url": "https://www.youtube.com/watch?v=a3_ogNm8EIM&t=798s"
+            }
         ]
     },
     "clase2": {
