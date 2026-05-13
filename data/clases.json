@@ -178,56 +178,58 @@
                 "url": "https://www.youtube.com/watch?v=6LiMuJkp2Ig"
             }
     ]
-},
-    "clase4": {
-        "id": "clase4",
-        "numero": 4,
-        "titulo": "Ejercicio - Movimiento con propósito",
-        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
-        "duracion": 75,
-        "objetivo": "Entender que el músculo es un órgano endocrino que regula salud metabólica, mental y de sueño. Adaptar el ejercicio al objetivo de cada alumno.",
-        "palabrasClave": [
-            "Miocinas - Sustancias liberadas por el músculo que reducen inflamación y mejoran la salud",
-            "Órgano endocrino - El músculo produce hormonas que afectan todo el cuerpo",
-            "Entrenamiento de fuerza - Prioridad número uno para salud y longevidad",
-            "Sarcopenia - Pérdida de masa muscular con la edad (se hablará más adelante)",
-            "Frecuencia óptima - 2-3 sesiones de fuerza por semana es suficiente"
-        ],
-        "bloques": [
-            {
-                "nombre": "El músculo como órgano endocrino",
-                "duracion": 20,
-                "contenido": "<p>Explicas que el músculo libera miocinas que reducen inflamación, mejoran sensibilidad a insulina, regulan apetito, mejoran ánimo (endorfinas).</p><p><strong>Metáfora:</strong> 'Tener músculo es tener una farmacia interna que trabaja gratis 24/7'.</p>"
-            },
-            {
-                "nombre": "Tipos de ejercicio según objetivo",
-                "duracion": 20,
-                "contenido": "<p><strong>Tabla visual:</strong></p><ul><li>Adelgazar: fuerza + déficit calórico</li><li>Ganar masa: hipertrofia + superávit proteico</li><li>Salud/longevidad: fuerza + movilidad + algo de cardio</li><li>Revertir enfermedad: fuerza suave + caminar</li></ul>"
-            },
-            {
-                "nombre": "Frecuencia y recuperación",
-                "duracion": 15,
-                "contenido": "<p>Explicas que el músculo crece en el descanso (pilar del sueño). Tu experiencia: entrenas 3 veces/semana y funciona. No hace falta 6 días. El exceso de cardio mata músculo.</p>"
-            },
-            {
-                "nombre": "Ejercicios prácticos en casa",
-                "duracion": 10,
-                "contenido": "<p>Muestras ejemplos de ejercicios sin equipamiento: sentadillas, flexiones, plancha, zancadas, desplantes.</p>"
-            },
-            {
-                "nombre": "Cierre y práctica semanal",
-                "duracion": 10,
-                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
-            }
-        ],
-        "practicaSemana": "Haz UNA sesión de fuerza en casa de 20 minutos (sentadillas, flexiones, plancha, zancadas). Si ya entrenas, añade un 10% más de peso o repeticiones.",
-        "practicaTip": "El objetivo no es agotarte, es activar el músculo como órgano endocrino. 20 minutos son suficientes para obtener beneficios metabólicos.",
-        "videos": [
-            "Carlos Jaramillo: \"Músculo y longevidad\"",
-            "Dr. La Rosa: \"Por qué el músculo es un órgano endocrino\"",
-            "Rutina de fuerza en casa para principiantes (20 min)"
-        ]
     },
+    "clase4": {
+    "id": "clase4",
+    "numero": 4,
+    "titulo": "Ejercicio - Movimiento con propósito",
+    "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+    "duracion": 75,
+    "objetivo": "Que entiendas que el músculo no es solo para vernos bien; es un órgano endocrino que regula tu metabolismo, tu inflamación y tu longevidad. Y que aprendas a entrenar fuerza de forma eficiente, segura y sostenible, sea cual sea tu nivel actual.",
+    "palabrasClave": [
+        "Miocinas - Hormonas que secreta el músculo. Reducen inflamación y mejoran la salud metabólica",
+        "Sensibilidad a la insulina - Músculo entrenado absorbe glucosa sin tanta insulina",
+        "Endorfinas - Analgésicas naturales, generan bienestar post-entreno",
+        "Sarcopenia - Pérdida de masa muscular con la edad. Prevenible con fuerza",
+        "Frecuencia óptima - 2-3 sesiones de fuerza a la semana para salud metabólica",
+        "Recuperación - El músculo crece y se repara cuando descansas, no cuando entrenas"
+    ],
+    "bloques": [
+        {
+            "nombre": "El músculo como órgano endocrino",
+            "duracion": 12,
+            "contenido": "<p><strong>💪 El músculo no es solo mecánico (mover huesos). Es un órgano que secreta hormonas llamadas miocinas que se comunican con el cerebro, el hígado, el páncreas y la grasa corporal.</strong></p><p><strong>Relación concreta:</strong></p><ul><li><strong>Miocinas:</strong> Reducen la inflamación sistémica, mejoran la función inmunológica y protegen contra el cáncer y la diabetes.</li><li><strong>Sensibilidad a la insulina:</strong> Músculo entrenado absorbe glucosa sin necesidad de tanta insulina. Previene y revierte diabetes tipo 2.</li><li><strong>Regulación del apetito:</strong> Miocinas como la interleucina-6 (IL-6) actúan sobre el hipotálamo reduciendo el hambre y los antojos.</li><li><strong>Endorfinas:</strong> Analgésicas naturales, reducen la percepción del dolor y generan bienestar post-entreno.</li><li><strong>Efecto antienvejecimiento:</strong> El músculo produce miocinas que combaten la sarcopenia y protegen el cerebro (disminuye riesgo de Alzheimer).</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Principiantes: No necesitas ser culturista. Con 2 sesiones de fuerza a la semana ya activas este sistema hormonal.<br>• Si solo haces cardio, estás perdiendo el 80% de los beneficios metabólicos. Añade aunque sea 10 minutos de fuerza.</p><p><strong>📱 Metáfora:</strong><br>'Tu músculo es como una fábrica de medicamentos gratuitos que tú mismo fabricas con cada sentadilla. Esa fábrica produce antiinflamatorios, antidiabéticos, antidepresivos y rejuvenecedores. Solo tienes que encenderla moviéndote con fuerza.'</p>"
+        },
+        {
+            "nombre": "Tipos de ejercicio según tu objetivo",
+            "duracion": 12,
+            "contenido": "<p><strong>🎯 No todo el ejercicio sirve para todo. Depende de lo que quieras lograr.</strong></p><p><strong>Relación concreta por objetivo:</strong></p><ul><li><strong>Adelgazar:</strong> Fuerza (predominante) + déficit calórico leve. Fuerza preserva músculo mientras pierdes grasa. Cardio complementario, no protagonista.</li><li><strong>Aumentar masa muscular:</strong> Hipertrofia (8-12 repes, cerca del fallo) + superávit proteico (1.6-2.2g proteína/kg peso).</li><li><strong>Revertir patologías metabólicas:</strong> Fuerza suave (12-15 repes, sin llegar al fallo) + caminar diario (7-10k pasos). Mejora sensibilidad insulina, baja presión, reduce inflamación.</li><li><strong>Más energía vital:</strong> Fuerza moderada + movilidad + caminatas. El músculo entrena produce mitocondrias (centrales de energía).</li><li><strong>Longevidad:</strong> Fuerza (2-3 veces/sem) + equilibrio + flexibilidad. Previene sarcopenia y caídas.</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Si quieres adelgazar o revertir patologías, empieza con fuerza suave + caminar. No necesitas matarte en el gimnasio.<br>• Si llevas años haciendo solo bici o cinta y no ves cambios, es porque te falta fuerza. Añade 2 sesiones de fuerza a la semana.</p>"
+        },
+        {
+            "nombre": "Frecuencia y recuperación",
+            "duracion": 10,
+            "contenido": "<p><strong>⏰ Entrenar más no es mejor. Entrenar con la frecuencia adecuada y respetar la recuperación es lo que da resultados.</strong></p><p><strong>Frecuencia óptima de fuerza:</strong></p><ul><li><strong>Principiante absoluto:</strong> 2 veces por semana. Descansar 48h entre sesiones.</li><li><strong>Intermedio (solo cardio):</strong> 2-3 veces por semana.</li><li><strong>Avanzado (ya entrena fuerza):</strong> 3-4 veces por semana.</li></ul><p><strong>🚨 Señales de mala recuperación:</strong></p><ul><li>Fatiga extrema al día siguiente</li><li>Caída de rendimiento (antes hacías 10 repes y hoy solo 6)</li><li>Irritabilidad o mal sueño</li><li>Dolor articular que no desaparece con 48h de descanso</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Si entrenas fuerza un día, al día siguiente puedes caminar o estirar.<br>• La proteína post-entreno (20-30g) mejora la recuperación: un huevo, yogur griego, batido de proteína.</p><p><strong>📱 Metáfora:</strong><br>'Entrenar sin recuperación es como cavar un hoyo y no dejar que la tierra se asiente. Vuelves a cavar cada día y el hoyo nunca se llena. El descanso es parte del entrenamiento, no un premio.'</p>"
+        },
+        {
+            "nombre": "Ejercicios prácticos en casa",
+            "duracion": 15,
+            "contenido": "<p><strong>🏠 No necesitas gimnasio. Con tu peso corporal y elementos básicos puedes construir músculo y metabolismo.</strong></p><p><strong>Versión Principiante (10-15 min):</strong></p><ul><li>Sentadilla con silla: 10 rep</li><li>Flexión de pared: 8 rep</li><li>Puente de glúteo: 12 rep</li><li>Marcha estática con rodilla alta: 30 seg</li></ul><p><strong>Versión Intermedio/Avanzado (20 min):</strong></p><ul><li>Sentadillas: 12-15 rep</li><li>Flexiones (rodilla o punta): 8-12 rep</li><li>Zancadas alternas: 10-12 por pierna</li><li>Plancha estática: 20-40 seg</li><li>Puente de glúteo: 15 rep</li></ul><p><strong>📈 Progresión semanal:</strong></p><ul><li>Semana 1-2: 1 vuelta (principiante) / 2 vueltas (intermedio)</li><li>Semana 3-4: 2 vueltas (principiante) / 3 vueltas (intermedio)</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Calienta 3 minutos antes: movilidad de tobillos, caderas, hombros.<br>• Estira 3 minutos después: cuádriceps, isquiotibiales, pecho.<br>• Mejor 15 minutos bien ejecutados que 30 mal hechos.</p>"
+        },
+        {
+            "nombre": "Relación del ejercicio con los otros pilares",
+            "duracion": 10,
+            "contenido": "<p><strong>🔄 El ejercicio no es un pilar aislado. Potencia o debilita a los otros tres según cómo lo hagas.</strong></p><p><strong>Ejercicio y Alimentación:</strong><br>Entrenar fuerza mejora la sensibilidad a la insulina. Comer proteína post-entreno multiplica la ganancia muscular.</p><p><strong>Ejercicio y Sueño:</strong><br>Entrenar por la mañana regula el ciclo circadiano (duermes mejor). Entrenar muy intenso por la noche eleva cortisol.</p><p><strong>Ejercicio y Tranquilidad Mental:</strong><br>El ejercicio es el ansiolítico más potente sin fármacos. La fuerza reduce el cortisol crónico.</p><p><strong>💡 Tips prácticos:</strong><br>• Si entrenas en ayunas, prioriza fuerza suave, no intensa.<br>• Si solo puedes entrenar de noche, haz fuerza suave o movilidad.<br>• Cuando estés muy estresado, camina o haz fuerza suave. No te castigues.</p><p><strong>🔄 El círculo virtuoso:</strong><br>'Entrenas fuerza → duermes mejor → amaneces con energía → comes con más control → tu mente está más tranquila → entrenas mejor → el músculo produce miocinas que protegen tu cerebro y metabolismo.'</p>"
+        },
+        {
+            "nombre": "Cierre y feedback",
+            "duracion": 6,
+            "contenido": "<p><strong>📌 Resumen rápido de la clase</strong></p><ul><li>El músculo es un órgano endocrino (fabrica miocinas)</li><li>Elige ejercicio según tu objetivo (no todo sirve para todo)</li><li>La recuperación es parte del entrenamiento</li><li>Puedes entrenar fuerza en casa, sin gimnasio</li><li>El ejercicio potencia alimentación, sueño y mente</li></ul><p><strong>❓ Pregunta de feedback</strong></p><p>¿Qué tipo de ejercicio crees que se ajusta más a tu objetivo actual?</p><p><strong>🎯 Cierre</strong></p><p>La próxima clase: <strong>Alimentación - Nutrición inteligente</strong></p>"
+        }
+    ],
+    "practicaSemana": "🏋️ **Práctica de la semana**\n\n**Elige UNA opción según tu nivel:**\n\n🔹 **Opción A (principiante):**\n- Sesión de 10-15 min: sentadilla con silla + flexión de pared + puente de glúteo + marcha estática. 2 vueltas.\n- Caminata de 15-20 min al día siguiente.\n\n🔹 **Opción B (intermedio):**\n- Sesión de 20 min del circuito: sentadilla, flexión rodilla, zancadas, plancha, puente. 2-3 vueltas.\n\n🔹 **Opción C (avanzado):**\n- Añade cadencia explosiva en subida + excéntrica lenta (3 seg) en bajada. 3 vueltas.\n\n🔹 **Opción D (patología metabólica):**\n- Fuerza suave (12-15 repes sin llegar al fallo) + caminar 20 min después.\n\n**Autoevaluación después de la sesión:**\n1. ¿Cómo sentiste el esfuerzo (1-10)?\n2. ¿Cómo dormiste esa noche?\n3. ¿Qué antojos notaste al día siguiente?\n4. ¿Qué nivel elegiste y por qué?",
+    "practicaTip": "💡 No importa si empiezas desde cero o si ya llevas años moviéndote mal. Lo importante es que empieces hoy, con propósito. Una sesión de fuerza a la semana ya es mejor que ninguna. Domínala y luego añade más.",
+    "videos": []
+},
     "clase5": {
         "id": "clase5",
         "numero": 5,
