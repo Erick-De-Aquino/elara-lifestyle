@@ -168,7 +168,16 @@
     ],
     "practicaSemana": "🧘 **Práctica de la semana**\n\nElige UNA de estas herramientas y aplícala cada día durante 7 días:\n\n**Opción 1 (fácil):** 2 minutos de respiración diafragmática al despertar y antes de dormir.\n\n**Opción 2 (media):** Identifica 3 señales tempranas de estrés en tu cuerpo (ej: mandíbula apretada, hombros arriba) y cada vez que las notes, haz 3 respiraciones profundas.\n\n**Opción 3 (avanzada):** Practica la técnica STOP en algún momento de estrés real (tráfico, discusión, presión laboral).\n\n**Instrucción:** Anota cada día qué herramienta usaste y cómo te sentiste antes y después. No juzgues. Solo observa.",
     "practicaTip": "💡 La calma no es la ausencia de estrés, es la capacidad de volver a la calma después del estrés. Entrena tu freno biológico aunque no lo necesites hoy. Cuando llegue la tormenta, ya sabrás cómo parar.",
-    "videos": []
+    "videos": [
+            {
+                "titulo": "Carlos Jaramillo: \"¡ESTO TE ESTA MATANDO LENTAMENTE! EL ESTRÉS CAUSA TODO ESTO EN TU CUERPO\"",
+                "url": "https://www.youtube.com/watch?v=_9th8IlA7Jg"
+            },
+            {
+                "titulo": "Sharon Horesh Bergquist: \"Como afecta el estrés a su cuerpo\"",
+                "url": "https://www.youtube.com/watch?v=6LiMuJkp2Ig"
+            }
+    ]
 },
     "clase4": {
         "id": "clase4",

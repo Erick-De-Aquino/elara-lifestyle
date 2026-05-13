@@ -161,22 +161,58 @@ function inicializarTimer(index, duracionMinutos) {
     if (!display) return;
     
     let tiempoRestante = duracionMinutos * 60;
+    let tiempoTotal = duracionMinutos * 60;
     let intervalo = null;
     let corriendo = false;
+    let pausado = false;
+    
+    // Función para obtener color progresivo usando HSL
+    function obtenerColor(progreso) {
+        // progreso = tiempoRestante / tiempoTotal (0 a 1)
+        // Hue: 120° (verde) → 0° (rojo)
+        const hue = 120 * progreso;
+        return `hsl(${hue}, 70%, 55%)`;
+    }
     
     function actualizarDisplay() {
         if (display) {
-            display.textContent = formatearTiempo(tiempoRestante);
-            if (tiempoRestante <= 60 && tiempoRestante > 0) {
-                display.classList.add('rojo');
-                if (tiempoRestante <= 30) {
-                    display.classList.add('parpadeo');
-                } else {
-                    display.classList.remove('parpadeo');
-                }
+            const minutos = Math.floor(tiempoRestante / 60);
+            const segundos = tiempoRestante % 60;
+            display.textContent = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+            
+            // Calcular progreso (0 = tiempo agotado, 1 = tiempo completo)
+            const progreso = tiempoRestante / tiempoTotal;
+            
+            // Aplicar color progresivo
+            display.style.color = obtenerColor(progreso);
+            display.style.transition = 'color 0.1s ease';
+            
+            // Si queda menos de 10 segundos, agregar efecto de parpadeo
+            if (tiempoRestante <= 120 && tiempoRestante > 0) {
+                display.classList.add('parpadeo');
             } else {
-                display.classList.remove('rojo');
                 display.classList.remove('parpadeo');
+            }
+        }
+    }
+    
+    function avanzarAlSiguienteBloque() {
+        // Detener timer actual
+        if (intervalo) {
+            clearInterval(intervalo);
+            corriendo = false;
+            pausado = false;
+        }
+        
+        // Buscar el siguiente bloque
+        const bloques = document.querySelectorAll('.bloque-item');
+        const siguienteBloque = bloques[index + 1];
+        
+        if (siguienteBloque) {
+            // Iniciar el timer del siguiente bloque automáticamente
+            const siguienteStartBtn = siguienteBloque.querySelector('.start-btn');
+            if (siguienteStartBtn) {
+                siguienteStartBtn.click();
             }
         }
     }
@@ -186,34 +222,79 @@ function inicializarTimer(index, duracionMinutos) {
         if (tiempoRestante <= 0) return;
         
         corriendo = true;
+        pausado = false;
+        
         intervalo = setInterval(() => {
-            if (tiempoRestante > 0) {
+            if (tiempoRestante > 0 && !pausado) {
                 tiempoRestante--;
                 actualizarDisplay();
             }
+            
             if (tiempoRestante === 0) {
                 clearInterval(intervalo);
                 corriendo = false;
+                pausado = false;
                 actualizarDisplay();
+                // Auto-avanzar al siguiente bloque
+                avanzarAlSiguienteBloque();
             }
         }, 1000);
     }
     
+    function pausarTimer() {
+        if (corriendo && !pausado) {
+            pausado = true;
+        }
+    }
+    
+    function reanudarTimer() {
+        if (corriendo && pausado) {
+            pausado = false;
+        }
+    }
+    
     function resetearTimer() {
-        if (intervalo) clearInterval(intervalo);
-        corriendo = false;
-        tiempoRestante = duracionMinutos * 60;
+        if (intervalo) {
+            clearInterval(intervalo);
+            corriendo = false;
+            pausado = false;
+        }
+        tiempoRestante = tiempoTotal;
         actualizarDisplay();
     }
     
-    if (startBtn) startBtn.onclick = (e) => {
-        e.stopPropagation();
-        iniciarTimer();
-    };
-    if (resetBtn) resetBtn.onclick = (e) => {
-        e.stopPropagation();
-        resetearTimer();
-    };
+    // Eventos con stopPropagation para evitar que el click afecte al acordeón
+    if (startBtn) {
+        startBtn.onclick = (e) => {
+            e.stopPropagation();
+            if (pausado) {
+                reanudarTimer();
+            } else {
+                iniciarTimer();
+            }
+        };
+    }
+    
+    if (resetBtn) {
+        resetBtn.onclick = (e) => {
+            e.stopPropagation();
+            resetearTimer();
+        };
+    }
+    
+    // Crear botón de pausa si no existe
+    const timerControls = display?.parentElement;
+    if (timerControls && !timerControls.querySelector('.pause-btn')) {
+        const pauseBtn = document.createElement('button');
+        pauseBtn.className = 'timer-btn pause-btn';
+        pauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        pauseBtn.onclick = (e) => {
+            e.stopPropagation();
+            pausarTimer();
+        };
+        // Insertar después del botón start
+        startBtn?.insertAdjacentElement('afterend', pauseBtn);
+    }
     
     actualizarDisplay();
 }
