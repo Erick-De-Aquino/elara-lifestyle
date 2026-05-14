@@ -649,11 +649,12 @@ textarea { resize: vertical; min-height: 60px; }
 .bloque-contenido {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease-in-out;
     padding: 0 15px;
 }
 .bloque-contenido.abierto { 
-    max-height: none; padding: 15px; 
+    max-height: 2000px;
+    padding: 15px; 
 }
 .bloque-contenido p,
 .bloque-contenido ul { 
@@ -1008,4 +1009,21 @@ label[for="importarInput"]:hover,
 .btn-confirmar-horario:hover {
     background: #e07a2c !important;
     transform: scale(1.02) !important;
+}
+
+/* ===== ESTILO PARA BLOQUE ACTIVO (timer corriendo) ===== */
+.bloque-item.activo {
+    background: rgba(255, 140, 66, 0.25);
+    border-left: 4px solid var(--primary-orange);
+    box-shadow: 0 2px 12px rgba(255, 140, 66, 0.3);
+    transition: all 0.3s ease;
+}
+
+.bloque-item.activo .bloque-header {
+    background: rgba(255, 140, 66, 0.2);
+}
+
+.bloque-item.activo .bloque-nombre {
+    color: var(--primary-orange);
+    font-weight: bold;
 }

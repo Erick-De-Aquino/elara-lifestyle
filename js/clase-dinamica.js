@@ -148,7 +148,18 @@ function inicializarDespliegue(index) {
     if (header && contenido) {
         header.addEventListener('click', (e) => {
             if (e.target.closest('.timer-controls')) return;
-            contenido.classList.toggle('abierto');
+            
+            const estaAbierto = contenido.classList.contains('abierto');
+            
+            // Cerrar todos los bloques
+            document.querySelectorAll('.bloque-contenido').forEach(bloque => {
+                bloque.classList.remove('abierto');
+            });
+            
+            // Abrir solo el bloque clickeado si no estaba abierto
+            if (!estaAbierto) {
+                contenido.classList.add('abierto');
+            }
         });
     }
 }
@@ -218,50 +229,66 @@ function inicializarTimer(index, duracionMinutos) {
     }
     
     function iniciarTimer() {
-        if (corriendo) return;
-        if (tiempoRestante <= 0) return;
-        
-        corriendo = true;
-        pausado = false;
-        
-        intervalo = setInterval(() => {
-            if (tiempoRestante > 0 && !pausado) {
-                tiempoRestante--;
-                actualizarDisplay();
-            }
-            
-            if (tiempoRestante === 0) {
-                clearInterval(intervalo);
-                corriendo = false;
-                pausado = false;
-                actualizarDisplay();
-                // Auto-avanzar al siguiente bloque
-                avanzarAlSiguienteBloque();
-            }
-        }, 1000);
-    }
+    if (corriendo) return;
+    if (tiempoRestante <= 0) return;
     
-    function pausarTimer() {
-        if (corriendo && !pausado) {
-            pausado = true;
+    corriendo = true;
+    pausado = false;
+    
+    // Añadir clase activo al bloque
+    const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+    if (bloqueItem) bloqueItem.classList.add('activo');
+    
+    intervalo = setInterval(() => {
+        if (tiempoRestante > 0 && !pausado) {
+            tiempoRestante--;
+            actualizarDisplay();
         }
-    }
-    
-    function reanudarTimer() {
-        if (corriendo && pausado) {
-            pausado = false;
-        }
-    }
-    
-    function resetearTimer() {
-        if (intervalo) {
+        
+        if (tiempoRestante === 0) {
             clearInterval(intervalo);
             corriendo = false;
             pausado = false;
+            actualizarDisplay();
+            
+            // Quitar clase activo al terminar
+            if (bloqueItem) bloqueItem.classList.remove('activo');
+            
+            avanzarAlSiguienteBloque();
         }
-        tiempoRestante = tiempoTotal;
-        actualizarDisplay();
+    }, 1000);
+}
+    
+    function pausarTimer() {
+    if (corriendo && !pausado) {
+        pausado = true;
+        // Opcional: cambiar opacidad o color cuando está pausado
+        const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+        if (bloqueItem) bloqueItem.style.opacity = '0.7';
     }
+}
+    
+    function reanudarTimer() {
+    if (corriendo && pausado) {
+        pausado = false;
+        const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+        if (bloqueItem) bloqueItem.style.opacity = '1';
+    }
+}
+    
+    function resetearTimer() {
+    if (intervalo) {
+        clearInterval(intervalo);
+        corriendo = false;
+        pausado = false;
+    }
+    tiempoRestante = tiempoTotal;
+    actualizarDisplay();
+    
+    // Quitar clase activo al resetear
+    const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+    if (bloqueItem) bloqueItem.classList.remove('activo');
+}
     
     // Eventos con stopPropagation para evitar que el click afecte al acordeón
     if (startBtn) {
