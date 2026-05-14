@@ -180,104 +180,115 @@
     ]
     },
     "clase4": {
-    "id": "clase4",
-    "numero": 4,
-    "titulo": "Ejercicio - Movimiento con propósito",
-    "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
-    "duracion": 75,
-    "objetivo": "Que entiendas que el músculo no es solo para vernos bien; es un órgano endocrino que regula tu metabolismo, tu inflamación y tu longevidad. Y que aprendas a entrenar fuerza de forma eficiente, segura y sostenible, sea cual sea tu nivel actual.",
-    "palabrasClave": [
-        "Miocinas - Hormonas que secreta el músculo. Reducen inflamación y mejoran la salud metabólica",
-        "Sensibilidad a la insulina - Músculo entrenado absorbe glucosa sin tanta insulina",
-        "Endorfinas - Analgésicas naturales, generan bienestar post-entreno",
-        "Sarcopenia - Pérdida de masa muscular con la edad. Prevenible con fuerza",
-        "Frecuencia óptima - 2-3 sesiones de fuerza a la semana para salud metabólica",
-        "Recuperación - El músculo crece y se repara cuando descansas, no cuando entrenas"
-    ],
-    "bloques": [
-        {
-            "nombre": "El músculo como órgano endocrino",
-            "duracion": 12,
-            "contenido": "<p><strong>💪 El músculo no es solo mecánico (mover huesos). Es un órgano que secreta hormonas llamadas miocinas que se comunican con el cerebro, el hígado, el páncreas y la grasa corporal.</strong></p><p><strong>Relación concreta:</strong></p><ul><li><strong>Miocinas:</strong> Reducen la inflamación sistémica, mejoran la función inmunológica y protegen contra el cáncer y la diabetes.</li><li><strong>Sensibilidad a la insulina:</strong> Músculo entrenado absorbe glucosa sin necesidad de tanta insulina. Previene y revierte diabetes tipo 2.</li><li><strong>Regulación del apetito:</strong> Miocinas como la interleucina-6 (IL-6) actúan sobre el hipotálamo reduciendo el hambre y los antojos.</li><li><strong>Endorfinas:</strong> Analgésicas naturales, reducen la percepción del dolor y generan bienestar post-entreno.</li><li><strong>Efecto antienvejecimiento:</strong> El músculo produce miocinas que combaten la sarcopenia y protegen el cerebro (disminuye riesgo de Alzheimer).</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Principiantes: No necesitas ser culturista. Con 2 sesiones de fuerza a la semana ya activas este sistema hormonal.<br>• Si solo haces cardio, estás perdiendo el 80% de los beneficios metabólicos. Añade aunque sea 10 minutos de fuerza.</p><p><strong>📱 Metáfora:</strong><br>'Tu músculo es como una fábrica de medicamentos gratuitos que tú mismo fabricas con cada sentadilla. Esa fábrica produce antiinflamatorios, antidiabéticos, antidepresivos y rejuvenecedores. Solo tienes que encenderla moviéndote con fuerza.'</p>"
-        },
-        {
-            "nombre": "Tipos de ejercicio según tu objetivo",
-            "duracion": 12,
-            "contenido": "<p><strong>🎯 No todo el ejercicio sirve para todo. Depende de lo que quieras lograr.</strong></p><p><strong>Relación concreta por objetivo:</strong></p><ul><li><strong>Adelgazar:</strong> Fuerza (predominante) + déficit calórico leve. Fuerza preserva músculo mientras pierdes grasa. Cardio complementario, no protagonista.</li><li><strong>Aumentar masa muscular:</strong> Hipertrofia (8-12 repes, cerca del fallo) + superávit proteico (1.6-2.2g proteína/kg peso).</li><li><strong>Revertir patologías metabólicas:</strong> Fuerza suave (12-15 repes, sin llegar al fallo) + caminar diario (7-10k pasos). Mejora sensibilidad insulina, baja presión, reduce inflamación.</li><li><strong>Más energía vital:</strong> Fuerza moderada + movilidad + caminatas. El músculo entrena produce mitocondrias (centrales de energía).</li><li><strong>Longevidad:</strong> Fuerza (2-3 veces/sem) + equilibrio + flexibilidad. Previene sarcopenia y caídas.</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Si quieres adelgazar o revertir patologías, empieza con fuerza suave + caminar. No necesitas matarte en el gimnasio.<br>• Si llevas años haciendo solo bici o cinta y no ves cambios, es porque te falta fuerza. Añade 2 sesiones de fuerza a la semana.</p>"
-        },
-        {
-            "nombre": "Frecuencia y recuperación",
-            "duracion": 10,
-            "contenido": "<p><strong>⏰ Entrenar más no es mejor. Entrenar con la frecuencia adecuada y respetar la recuperación es lo que da resultados.</strong></p><p><strong>Frecuencia óptima de fuerza:</strong></p><ul><li><strong>Principiante absoluto:</strong> 2 veces por semana. Descansar 48h entre sesiones.</li><li><strong>Intermedio (solo cardio):</strong> 2-3 veces por semana.</li><li><strong>Avanzado (ya entrena fuerza):</strong> 3-4 veces por semana.</li></ul><p><strong>🚨 Señales de mala recuperación:</strong></p><ul><li>Fatiga extrema al día siguiente</li><li>Caída de rendimiento (antes hacías 10 repes y hoy solo 6)</li><li>Irritabilidad o mal sueño</li><li>Dolor articular que no desaparece con 48h de descanso</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Si entrenas fuerza un día, al día siguiente puedes caminar o estirar.<br>• La proteína post-entreno (20-30g) mejora la recuperación: un huevo, yogur griego, batido de proteína.</p><p><strong>📱 Metáfora:</strong><br>'Entrenar sin recuperación es como cavar un hoyo y no dejar que la tierra se asiente. Vuelves a cavar cada día y el hoyo nunca se llena. El descanso es parte del entrenamiento, no un premio.'</p>"
-        },
-        {
-            "nombre": "Ejercicios prácticos en casa",
-            "duracion": 15,
-            "contenido": "<p><strong>🏠 No necesitas gimnasio. Con tu peso corporal y elementos básicos puedes construir músculo y metabolismo.</strong></p><p><strong>Versión Principiante (10-15 min):</strong></p><ul><li>Sentadilla con silla: 10 rep</li><li>Flexión de pared: 8 rep</li><li>Puente de glúteo: 12 rep</li><li>Marcha estática con rodilla alta: 30 seg</li></ul><p><strong>Versión Intermedio/Avanzado (20 min):</strong></p><ul><li>Sentadillas: 12-15 rep</li><li>Flexiones (rodilla o punta): 8-12 rep</li><li>Zancadas alternas: 10-12 por pierna</li><li>Plancha estática: 20-40 seg</li><li>Puente de glúteo: 15 rep</li></ul><p><strong>📈 Progresión semanal:</strong></p><ul><li>Semana 1-2: 1 vuelta (principiante) / 2 vueltas (intermedio)</li><li>Semana 3-4: 2 vueltas (principiante) / 3 vueltas (intermedio)</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Calienta 3 minutos antes: movilidad de tobillos, caderas, hombros.<br>• Estira 3 minutos después: cuádriceps, isquiotibiales, pecho.<br>• Mejor 15 minutos bien ejecutados que 30 mal hechos.</p>"
-        },
-        {
-            "nombre": "Relación del ejercicio con los otros pilares",
-            "duracion": 10,
-            "contenido": "<p><strong>🔄 El ejercicio no es un pilar aislado. Potencia o debilita a los otros tres según cómo lo hagas.</strong></p><p><strong>Ejercicio y Alimentación:</strong><br>Entrenar fuerza mejora la sensibilidad a la insulina. Comer proteína post-entreno multiplica la ganancia muscular.</p><p><strong>Ejercicio y Sueño:</strong><br>Entrenar por la mañana regula el ciclo circadiano (duermes mejor). Entrenar muy intenso por la noche eleva cortisol.</p><p><strong>Ejercicio y Tranquilidad Mental:</strong><br>El ejercicio es el ansiolítico más potente sin fármacos. La fuerza reduce el cortisol crónico.</p><p><strong>💡 Tips prácticos:</strong><br>• Si entrenas en ayunas, prioriza fuerza suave, no intensa.<br>• Si solo puedes entrenar de noche, haz fuerza suave o movilidad.<br>• Cuando estés muy estresado, camina o haz fuerza suave. No te castigues.</p><p><strong>🔄 El círculo virtuoso:</strong><br>'Entrenas fuerza → duermes mejor → amaneces con energía → comes con más control → tu mente está más tranquila → entrenas mejor → el músculo produce miocinas que protegen tu cerebro y metabolismo.'</p>"
-        },
-        {
-            "nombre": "Cierre y feedback",
-            "duracion": 6,
-            "contenido": "<p><strong>📌 Resumen rápido de la clase</strong></p><ul><li>El músculo es un órgano endocrino (fabrica miocinas)</li><li>Elige ejercicio según tu objetivo (no todo sirve para todo)</li><li>La recuperación es parte del entrenamiento</li><li>Puedes entrenar fuerza en casa, sin gimnasio</li><li>El ejercicio potencia alimentación, sueño y mente</li></ul><p><strong>❓ Pregunta de feedback</strong></p><p>¿Qué tipo de ejercicio crees que se ajusta más a tu objetivo actual?</p><p><strong>🎯 Cierre</strong></p><p>La próxima clase: <strong>Alimentación - Nutrición inteligente</strong></p>"
-        }
-    ],
-    "practicaSemana": "🏋️ **Práctica de la semana**\n\n**Elige UNA opción según tu nivel:**\n\n🔹 **Opción A (principiante):**\n- Sesión de 10-15 min: sentadilla con silla + flexión de pared + puente de glúteo + marcha estática. 2 vueltas.\n- Caminata de 15-20 min al día siguiente.\n\n🔹 **Opción B (intermedio):**\n- Sesión de 20 min del circuito: sentadilla, flexión rodilla, zancadas, plancha, puente. 2-3 vueltas.\n\n🔹 **Opción C (avanzado):**\n- Añade cadencia explosiva en subida + excéntrica lenta (3 seg) en bajada. 3 vueltas.\n\n🔹 **Opción D (patología metabólica):**\n- Fuerza suave (12-15 repes sin llegar al fallo) + caminar 20 min después.\n\n**Autoevaluación después de la sesión:**\n1. ¿Cómo sentiste el esfuerzo (1-10)?\n2. ¿Cómo dormiste esa noche?\n3. ¿Qué antojos notaste al día siguiente?\n4. ¿Qué nivel elegiste y por qué?",
-    "practicaTip": "💡 No importa si empiezas desde cero o si ya llevas años moviéndote mal. Lo importante es que empieces hoy, con propósito. Una sesión de fuerza a la semana ya es mejor que ninguna. Domínala y luego añade más.",
-    "videos": []
-},
+        "id": "clase4",
+        "numero": 4,
+        "titulo": "Ejercicio - Movimiento con propósito",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Que entiendas que el músculo no es solo para vernos bien; es un órgano endocrino que regula tu metabolismo, tu inflamación y tu longevidad. Y que aprendas a entrenar fuerza de forma eficiente, segura y sostenible, sea cual sea tu nivel actual.",
+        "palabrasClave": [
+            "Miocinas - Hormonas que secreta el músculo. Reducen inflamación y mejoran la salud metabólica",
+            "Sensibilidad a la insulina - Músculo entrenado absorbe glucosa sin tanta insulina",
+            "Endorfinas - Analgésicas naturales, generan bienestar post-entreno",
+            "Sarcopenia - Pérdida de masa muscular con la edad. Prevenible con fuerza",
+            "Frecuencia óptima - 2-3 sesiones de fuerza a la semana para salud metabólica",
+            "Recuperación - El músculo crece y se repara cuando descansas, no cuando entrenas"
+        ],
+        "bloques": [
+            {
+                "nombre": "El músculo como órgano endocrino",
+                "duracion": 12,
+                "contenido": "<p><strong>💪 El músculo no es solo mecánico (mover huesos). Es un órgano que secreta hormonas llamadas miocinas que se comunican con el cerebro, el hígado, el páncreas y la grasa corporal.</strong></p><p><strong>Relación concreta:</strong></p><ul><li><strong>Miocinas:</strong> Reducen la inflamación sistémica, mejoran la función inmunológica y protegen contra el cáncer y la diabetes.</li><li><strong>Sensibilidad a la insulina:</strong> Músculo entrenado absorbe glucosa sin necesidad de tanta insulina. Previene y revierte diabetes tipo 2.</li><li><strong>Regulación del apetito:</strong> Miocinas como la interleucina-6 (IL-6) actúan sobre el hipotálamo reduciendo el hambre y los antojos.</li><li><strong>Endorfinas:</strong> Analgésicas naturales, reducen la percepción del dolor y generan bienestar post-entreno.</li><li><strong>Efecto antienvejecimiento:</strong> El músculo produce miocinas que combaten la sarcopenia y protegen el cerebro (disminuye riesgo de Alzheimer).</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Principiantes: No necesitas ser culturista. Con 2 sesiones de fuerza a la semana ya activas este sistema hormonal.<br>• Si solo haces cardio, estás perdiendo el 80% de los beneficios metabólicos. Añade aunque sea 10 minutos de fuerza.</p><p><strong>📱 Metáfora:</strong><br>'Tu músculo es como una fábrica de medicamentos gratuitos que tú mismo fabricas con cada sentadilla. Esa fábrica produce antiinflamatorios, antidiabéticos, antidepresivos y rejuvenecedores. Solo tienes que encenderla moviéndote con fuerza.'</p>"
+            },
+            {
+                "nombre": "Tipos de ejercicio según tu objetivo",
+                "duracion": 12,
+                "contenido": "<p><strong>🎯 No todo el ejercicio sirve para todo. Depende de lo que quieras lograr.</strong></p><p><strong>Relación concreta por objetivo:</strong></p><ul><li><strong>Adelgazar:</strong> Fuerza (predominante) + déficit calórico leve. Fuerza preserva músculo mientras pierdes grasa. Cardio complementario, no protagonista.</li><li><strong>Aumentar masa muscular:</strong> Hipertrofia (8-12 repes, cerca del fallo) + superávit proteico (1.6-2.2g proteína/kg peso).</li><li><strong>Revertir patologías metabólicas:</strong> Fuerza suave (12-15 repes, sin llegar al fallo) + caminar diario (7-10k pasos). Mejora sensibilidad insulina, baja presión, reduce inflamación.</li><li><strong>Más energía vital:</strong> Fuerza moderada + movilidad + caminatas. El músculo entrena produce mitocondrias (centrales de energía).</li><li><strong>Longevidad:</strong> Fuerza (2-3 veces/sem) + equilibrio + flexibilidad. Previene sarcopenia y caídas.</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Si quieres adelgazar o revertir patologías, empieza con fuerza suave + caminar. No necesitas matarte en el gimnasio.<br>• Si llevas años haciendo solo bici o cinta y no ves cambios, es porque te falta fuerza. Añade 2 sesiones de fuerza a la semana.</p>"
+            },
+            {
+                "nombre": "Frecuencia y recuperación",
+                "duracion": 10,
+                "contenido": "<p><strong>⏰ Entrenar más no es mejor. Entrenar con la frecuencia adecuada y respetar la recuperación es lo que da resultados.</strong></p><p><strong>Frecuencia óptima de fuerza:</strong></p><ul><li><strong>Principiante absoluto:</strong> 2 veces por semana. Descansar 48h entre sesiones.</li><li><strong>Intermedio (solo cardio):</strong> 2-3 veces por semana.</li><li><strong>Avanzado (ya entrena fuerza):</strong> 3-4 veces por semana.</li></ul><p><strong>🚨 Señales de mala recuperación:</strong></p><ul><li>Fatiga extrema al día siguiente</li><li>Caída de rendimiento (antes hacías 10 repes y hoy solo 6)</li><li>Irritabilidad o mal sueño</li><li>Dolor articular que no desaparece con 48h de descanso</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Si entrenas fuerza un día, al día siguiente puedes caminar o estirar.<br>• La proteína post-entreno (20-30g) mejora la recuperación: un huevo, yogur griego, batido de proteína.</p><p><strong>📱 Metáfora:</strong><br>'El músculo no se construye en el gimnasio. En el gimnasio lo estimulas. Se construye en la cama y en la cocina cuando descansas y comes bien. Sin recuperación, solo acumulas fatiga, no músculo.'</p>"
+            },
+            {
+                "nombre": "Ejercicios prácticos en casa",
+                "duracion": 15,
+                "contenido": "<p><strong>🏠 No necesitas gimnasio. Con tu peso corporal y elementos básicos puedes construir músculo y metabolismo.</strong></p><p><strong>Versión Principiante (10-15 min):</strong></p><ul><li>Sentadilla con silla: 10 rep</li><li>Flexión de pared: 8 rep</li><li>Puente de glúteo: 12 rep</li><li>Marcha estática con rodilla alta: 30 seg</li></ul><p><strong>Versión Intermedio/Avanzado (20 min):</strong></p><ul><li>Sentadillas: 12-15 rep</li><li>Flexiones (rodilla o punta): 8-12 rep</li><li>Zancadas alternas: 10-12 por pierna</li><li>Plancha estática: 20-40 seg</li><li>Puente de glúteo: 15 rep</li></ul><p><strong>📈 Progresión semanal:</strong></p><ul><li>Semana 1-2: 1 vuelta (principiante) / 2 vueltas (intermedio)</li><li>Semana 3-4: 2 vueltas (principiante) / 3 vueltas (intermedio)</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Calienta 3 minutos antes: movilidad de tobillos, caderas, hombros.<br>• Estira 3 minutos después: cuádriceps, isquiotibiales, pecho.<br>• Mejor 15 minutos bien ejecutados que 30 mal hechos.</p>"
+            },
+            {
+                "nombre": "Relación del ejercicio con los otros pilares",
+                "duracion": 10,
+                "contenido": "<p><strong>🔄 El ejercicio no es un pilar aislado. Potencia o debilita a los otros tres según cómo lo hagas.</strong></p><p><strong>Ejercicio y Alimentación:</strong><br>Entrenar fuerza mejora la sensibilidad a la insulina. Comer proteína post-entreno multiplica la ganancia muscular.</p><p><strong>Ejercicio y Sueño:</strong><br>Entrenar por la mañana regula el ciclo circadiano (duermes mejor). Entrenar muy intenso por la noche eleva cortisol.</p><p><strong>Ejercicio y Tranquilidad Mental:</strong><br>El ejercicio es el ansiolítico más potente sin fármacos. La fuerza reduce el cortisol crónico.</p><p><strong>💡 Tips prácticos:</strong><br>• Si entrenas en ayunas, prioriza fuerza suave, no intensa.<br>• Si solo puedes entrenar de noche, haz fuerza suave o movilidad.<br>• Cuando estés muy estresado, camina o haz fuerza suave. No te castigues.</p><p><strong>🔄 El círculo virtuoso:</strong><br>'Entrenas fuerza → duermes mejor → amaneces con energía → comes con más control → tu mente está más tranquila → entrenas mejor → el músculo produce miocinas que protegen tu cerebro y metabolismo.'</p>"
+            },
+            {
+                "nombre": "Cierre y feedback",
+                "duracion": 6,
+                "contenido": "<p><strong>📌 Resumen rápido de la clase</strong></p><ul><li>El músculo es un órgano endocrino (fabrica miocinas)</li><li>Elige ejercicio según tu objetivo (no todo sirve para todo)</li><li>La recuperación es parte del entrenamiento</li><li>Puedes entrenar fuerza en casa, sin gimnasio</li><li>El ejercicio potencia alimentación, sueño y mente</li></ul><p><strong>❓ Pregunta de feedback</strong></p><p>¿Qué tipo de ejercicio crees que se ajusta más a tu objetivo actual?</p><p><strong>🎯 Cierre</strong></p><p>La próxima clase: <strong>Alimentación - Nutrición inteligente</strong></p>"
+            }
+        ],
+        "practicaSemana": "🏋️ **Práctica de la semana**\n\n**Elige UNA opción según tu nivel:**\n\n🔹 **Opción A (principiante):**\n- Sesión de 10-15 min: sentadilla con silla + flexión de pared + puente de glúteo + marcha estática. 2 vueltas.\n- Caminata de 15-20 min al día siguiente.\n\n🔹 **Opción B (intermedio):**\n- Sesión de 20 min del circuito: sentadilla, flexión rodilla, zancadas, plancha, puente. 2-3 vueltas.\n\n🔹 **Opción C (avanzado):**\n- Añade cadencia explosiva en subida + excéntrica lenta (3 seg) en bajada. 3 vueltas.\n\n🔹 **Opción D (patología metabólica):**\n- Fuerza suave (12-15 repes sin llegar al fallo) + caminar 20 min después.\n\n**Autoevaluación después de la sesión:**\n1. ¿Cómo sentiste el esfuerzo (1-10)?\n2. ¿Cómo dormiste esa noche?\n3. ¿Qué antojos notaste al día siguiente?\n4. ¿Qué nivel elegiste y por qué?",
+        "practicaTip": "💡 No importa si empiezas desde cero o si ya llevas años moviéndote mal. Lo importante es que empieces hoy, con propósito. Una sesión de fuerza a la semana ya es mejor que ninguna. Domínala y luego añade más.",
+        "videos": [
+            {
+                "titulo": "Carlos Jaramillo: 11 beneficios de hacer pesas",
+                "url": "https://www.youtube.com/watch?v=NrQ9I8KaBGw"
+            },
+            {
+                "titulo": "Carlos Jaramillo: ¡Todos Los MAYORES De 40 Años DEBEN Ver Este Video! Esto DEVORA tus MÚSCULOS | SARCOPENIA GRAVE",
+                "url": "https://www.youtube.com/watch?v=bDIUb71Xqk4&t=562s"
+            }
+        ]
+    },
     "clase5": {
         "id": "clase5",
         "numero": 5,
-        "titulo": "Alimentación - Nutrición inteligente",
+        "titulo": "Alimentación - Nutrición inteligente (enfoque práctico)",
         "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
         "duracion": 75,
-        "objetivo": "Introducir el concepto de que NO se trata de dietas extremas, sino de entender cómo funcionan los nutrientes y aplicarlo según el objetivo personal.",
+        "objetivo": "Que entiendas que no necesitas dietas extremas ni restrictivas. Aprenderás cómo funcionan los alimentos y los nutrientes, y cómo usarlos de forma inteligente, consciente y sostenible a tu favor, sin obsesiones ni sacrificios innecesarios.",
         "palabrasClave": [
-            "Macronutrientes - Proteínas, carbohidratos y grasas (los 3 son necesarios)",
-            "Proteína - Construcción y reparación de tejidos (prioritaria para todos)",
-            "Carbohidratos - Energía rápida para el cerebro y músculos",
-            "Grasas saludables - Energía lenta, hormonas, absorción de vitaminas",
-            "Micronutrientes - Vitaminas y minerales (come colores)"
+            "Dietas milagro - No existen. Lo que baja rápido, se recupera rápido",
+            "Macronutrientes - Carbohidratos (energía rápida), Grasas (energía lenta + hormonas), Proteínas (reconstrucción)",
+            "Método del puño - Medir proporciones con tu mano (escala con tu tamaño corporal)",
+            "Micronutrientes - Vitaminas y minerales. Come colores variados",
+            "Ultraprocesados - Productos con >5 ingredientes que no reconoces. Calorías vacías",
+            "Azúcar añadido - Principal enemigo metabólico. Refrescos, bollería, zumos industriales"
         ],
         "bloques": [
             {
                 "nombre": "Rompiendo mitos",
-                "duracion": 15,
-                "contenido": "<p>Las dietas milagro no funcionan a largo plazo. Lo que funciona es entender y crear un sistema. No es 'prohibir', es 'elegir mejor'.</p>"
+                "duracion": 12,
+                "contenido": "<p><strong>📢 La industria y las redes sociales están llenas de promesas falsas. Antes de aprender qué hacer, tienes que saber qué no funciona.</strong></p><p><strong>Mitos que rompemos hoy:</strong></p><ul><li><strong>'Las dietas milagro existen':</strong> No. Si promete bajar 5 kilos en una semana, es mentira o es peligroso. Lo que baja rápido, se recupera rápido.</li><li><strong>'Hay comidas mágicas':</strong> No hay un superalimento que te cure o te haga adelgazar. Ni el té verde, ni el jengibre, ni la espirulina. La salud está en el conjunto, no en un ingrediente.</li><li><strong>'Los carbohidratos engordan':</strong> Falso. El exceso de calorías engorda. Los carbohidratos bien elegidos (legumbres, cereales integrales, frutas) son energía limpia.</li><li><strong>'Las grasas son malas':</strong> Falso. Las grasas saludables (aguacate, frutos secos, aceite de oliva) son esenciales para el cerebro y las hormonas.</li><li><strong>'Cenar solo fruta adelgaza':</strong> Falso. Te quedas sin proteínas y sin grasas, tendrás hambre a las 2 horas y perderás músculo.</li><li><strong>'Comer cada 3 horas acelera el metabolismo':</strong> Falso. La frecuencia no acelera nada. Lo importante es el total del día y la calidad de lo que comes.</li></ul><p><strong>💡 Tips prácticos:</strong><br>• Desconfía de cualquier título que diga 'lo que los nutricionistas no quieren que sepas' o 'el secreto que ocultan'.<br>• Si una dieta elimina un macronutriente entero (carbohidratos o grasas), huye. No es sostenible.</p><p><strong>📱 Metáfora:</strong><br>'Buscar una comida mágica es como buscar una llave que abra todas las puertas de tu casa. Esa llave no existe. Lo que existe es aprender a usar cada llave para cada puerta, y eso se aprende con conocimiento, no con atajos.'</p>"
             },
             {
-                "nombre": "Los 3 macronutrientes",
-                "duracion": 20,
-                "contenido": "<p>Proteína (construcción), Carbohidratos (energía rápida), Grasas (energía lenta y hormonas). Explicas qué hace cada uno y por qué los 3 son necesarios.</p>"
+                "nombre": "Los tres macronutrientes – todos son necesarios",
+                "duracion": 15,
+                "contenido": "<p><strong>🍚 Los macronutrientes son los que aportan energía (calorías) y material para construir tu cuerpo. Los tres son indispensables. El arte está en combinarlos bien.</strong></p><p><strong>Relación concreta:</strong></p><ul><li><strong>Carbohidratos:</strong> Energía rápida para cerebro y músculos. Fuentes: verduras, frutas, legumbres, arroz, patata, avena, pan integral. Proporción: 1/4 del plato (si eres activo, hasta 1/3).</li><li><strong>Grasas:</strong> Energía lenta y estable, absorción de vitaminas A, D, E, K, producción hormonal. Fuentes: aceite de oliva, aguacate, frutos secos, semillas, pescado azul, huevo. Proporción: un puñado (nuez o cucharada sopera) por comida.</li><li><strong>Proteínas:</strong> Reconstrucción de tejidos (músculo, piel, pelo, enzimas, anticuerpos). Fuentes: carne, pescado, huevo, lácteos, legumbres, tofu, seitán, quinoa. Proporción: 1/4 del plato (tamaño de tu palma).</li></ul><p><strong>💡 Tips prácticos:</strong><br>• No elimines ninguno. Cada uno cumple una función que los otros no pueden reemplazar.<br>• La calidad importa más que la cantidad: 100 calorías de bollería no son lo mismo que 100 calorías de legumbres.<br>• El orden en el plato: primero verduras, luego proteína, luego carbohidrato, luego grasa saludable.</p><p><strong>📱 Metáfora:</strong><br>'Los macronutrientes son como los pilares de una casa. Si quitas los carbohidratos, la casa se queda sin techo. Si quitas las grasas, sin paredes. Si quitas las proteínas, sin cimientos. Necesitas los tres para que se sostenga.'</p>"
             },
             {
-                "nombre": "Método del puño",
-                "duracion": 15,
-                "contenido": "<p>Enseñas la regla visual: 1 puño de proteína, 1 puño de carbohidrato, 1 dedo pulgar de grasa por comida.</p>"
+                "nombre": "El método del puño (proporciones sin pesar)",
+                "duracion": 12,
+                "contenido": "<p><strong>✋ No necesitas báscula, apps ni medir cada gramo. Tu propia mano es tu mejor herramienta de medición porque escala con tu tamaño corporal.</strong></p><p><strong>La regla del plato (para comida principal, ejemplo almuerzo o cena):</strong></p><ul><li><strong>Verduras:</strong> 1/2 plato → Dos puños cerrados</li><li><strong>Proteína:</strong> 1/4 plato → El tamaño de tu palma (sin dedos)</li><li><strong>Carbohidrato (arroz, pasta, patata, legumbre):</strong> 1/4 plato → Un puño cerrado</li><li><strong>Grasa saludable:</strong> Complemento → Un pulgar (aceite) o un puñado pequeño (frutos secos)</li></ul><p><strong>Ajustes según tu objetivo:</strong></p><ul><li><strong>Adelgazar:</strong> Reduce el carbohidrato a medio puño y aumenta verduras.</li><li><strong>Aumentar masa muscular:</strong> Aumenta proteína (palma más gruesa) y carbohidrato (puño lleno).</li><li><strong>Mantenimiento:</strong> Sigue la regla exacta.</li></ul><p><strong>💡 Tips prácticos:</strong><br>• No necesitas hacerlo en todas las comidas. Empieza con una comida al día (ej. la cena).<br>• Si comes fuera de casa, usa tu mano como referencia mental.<br>• Para el desayuno: un puño de carbohidrato (avena, pan), un pulgar de grasa, y una palma de proteína (huevo, yogur griego).</p><p><strong>📱 Metáfora:</strong><br>'Tu mano es tu báscula personal. No pesa igual la mano de un niño que la de un adulto, ni la de una mujer que la de un hombre. Por eso es la mejor herramienta: se ajusta a ti. Aprende a usarla y dejarás de contar calorías como un contable.'</p>"
             },
             {
-                "nombre": "Micronutrientes sin estrés",
-                "duracion": 15,
-                "contenido": "<p>No hace falta obsesionarse. La clave: comer colores (vegetales variados). Ejemplos: magnesio (cacao, brócoli), vitamina C (cítricos, pimientos), zinc (carnes, frutos secos).</p>"
+                "nombre": "Micronutrientes – come un poco de todo, sin obsesionarte",
+                "duracion": 12,
+                "contenido": "<p><strong>🥦 Los micronutrientes son vitaminas y minerales que no dan energía pero son imprescindibles para que tu cuerpo funcione bien. No necesitas obsesionarte con cada uno. Solo necesitas variedad real en tu plato.</strong></p><p><strong>Regla práctica (sin complicar):</strong><br>'Si tu plato tiene colores variados (verde, rojo, naranja, blanco, morado), estás cubriendo la mayoría de micronutrientes.'</p><p><strong>Ejemplos sencillos (solo como orientación, no para memorizar):</strong></p><ul><li><strong>Magnesio:</strong> (Relajación muscular y nerviosa, sueño) → Cacao puro, frutos secos, legumbres, plátano, verduras de hoja verde</li><li><strong>Hierro:</strong> (Transporta oxígeno en la sangre) → Carne roja, legumbres, espinacas (acompañar con vitamina C: limón, pimiento)</li><li><strong>Zinc:</strong> (Sistema inmune, cicatrización) → Mariscos, carne, huevo, semillas de calabaza</li><li><strong>Vitamina C:</strong> (Antioxidante, absorbe hierro, piel) → Cítricos, kiwi, pimiento rojo, brócoli</li><li><strong>Vitamina D:</strong> (Huesos, sistema inmune, ánimo) → Sol (15 min/día), pescado azul, yema de huevo</li><li><strong>Calcio:</strong> (Huesos, dientes, contracción muscular) → Lácteos, sardinas, brócoli, almendras, legumbres</li></ul><p><strong>💡 Tips prácticos (sin obsesión):</strong><br>• No necesitas suplementos si comes variado real (excepto Vitamina D si no tomas sol).<br>• Un truco: intenta comer 3 colores diferentes en cada comida principal.<br>• Los vegetales de hoja verde oscuro (espinacas, acelgas, kale) son los que más micronutrientes concentran por caloría.<br>• Si comes ultraprocesados, estás comiendo calorías vacías (energía sin micronutrientes).</p><p><strong>📱 Metáfora:</strong><br>'Los micronutrientes son como los empleados invisibles de una empresa. No los ves, pero si faltan, la empresa empieza a fallar: baja la productividad, se rompen máquinas, hay mal ambiente. Come colores variados para que todos los empleados estén presentes.'</p>"
+            },
+            {
+                "nombre": "Qué reducir o eliminar (sin culpa, con conciencia)",
+                "duracion": 12,
+                "contenido": "<p><strong>⚠️ No se trata de prohibir para siempre. Se trata de saber qué alimentos dañan tu metabolismo cuando se comen a menudo, y reducirlos conscientemente.</strong></p><p><strong>Lista prioritaria a reducir (no eliminar del todo si no quieres, pero disminuir frecuencia):</strong></p><ul><li><strong>Azúcar añadido (refrescos, bollería, galletas, zumos industriales):</strong> Picos de glucosa e insulina, inflamación, antojos, hígado graso → Reemplazar con fruta entera, agua con limón, infusiones, chocolate >85% cacao.</li><li><strong>Harinas refinadas (pan blanco, pasta blanca, arroz blanco, bollería):</strong> Mismo efecto que el azúcar, poca saciedad → Reemplazar con pan integral, pasta integral, arroz integral o legumbres.</li><li><strong>Aceites vegetales refinados (girasol, maíz, soja, palma, canola):</strong> Inflamación crónica, relación omega-6/omega-3 desequilibrada → Reemplazar con aceite de oliva virgen extra, aguacate, coco, mantequilla clarificada.</li><li><strong>Ultraprocesados (cualquier cosa con >5 ingredientes que no reconoces):</strong> Aditivos, azúcar oculto, grasas malas, baja calidad nutricional → Reemplazar con cocinar en casa con ingredientes reales.</li><li><strong>Alcohol en exceso:</strong> Daño hepático, altera sueño, añade calorías vacías, deshidrata → Reemplazar con agua con gas con limón, infusiones, kombucha.</li></ul><p><strong>Matiz importante (para que no se convierta en obsesión):</strong><br>• Una galleta de vez en cuando no te mata. Lo que te mata es la galleta diaria, varias veces al día.<br>• No se trata de 'nunca más'. Se trata de 'casi nunca' o 'solo en ocasiones especiales'.<br>• La dirección es más importante que la perfección.</p><p><strong>💡 Tips prácticos:</strong><br>• Empieza reduciendo lo más fácil: refrescos y zumos industriales. Solo con eso ya mejora mucho.<br>• Si tomas café, omite el azúcar o reduce a la mitad.<br>• Un buen hábito: antes de comprar algo, mira los primeros 3 ingredientes. Si ves azúcar, harina refinada o aceite vegetal refinado, piensa dos veces.</p><p><strong>📱 Metáfora:</strong><br>'Reducir ultraprocesados no es castigarte. Es hacer espacio en tu plato para comida de verdad. Imagina tu estómago como una maleta de viaje: si la llenas de piedras (ultraprocesados), no te cabe la ropa que necesitas (nutrientes).'</p>"
             },
             {
                 "nombre": "Cierre y práctica semanal",
-                "duracion": 10,
-                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+                "duracion": 12,
+                "contenido": "<p><strong>📌 Resumen rápido de la clase:</strong></p><ul><li>No existen dietas milagro ni comidas mágicas.</li><li>Los tres macronutrientes son necesarios: carbohidratos (energía), grasas (energía lenta + hormonas), proteínas (reconstrucción).</li><li>Usa el método del puño para medir proporciones sin pesar.</li><li>Come colores variados para micronutrientes, sin obsesionarte.</li><li>Reduce azúcar, harinas refinadas, aceites vegetales refinados y ultraprocesados.</li></ul><p><strong>❓ Preguntas de feedback para el alumno:</strong></p><ol><li>¿Cuál de los mitos del bloque 1 te sorprendió más o creías que era cierto?</li><li>¿Qué macronutriente crees que estás descuidando más en tu alimentación actual?</li><li>¿El método del puño te parece realista de aplicar? ¿En qué comida lo intentarás primero?</li><li>¿Qué alimento ultraprocesado crees que sería más fácil para ti reducir esta semana?</li><li>En una escala del 1 al 10, ¿cómo de claro tienes ahora que no necesitas una dieta restrictiva para mejorar tu salud?</li></ol><p><strong>🎯 Cierre:</strong><br>La próxima clase: <strong>Qué NO comer - Identificando los ladrones de salud</strong></p><p><strong>📱 Metáfora final de la Clase 5:</strong><br>'Tu alimentación no es una prisión de reglas, es un jardín que aprendes a cultivar. No necesitas saber el nombre de cada semilla, solo entender qué necesita la tierra para crecer. Y eso se aprende con conocimiento, no con castigos. Come real, come variado, come consciente. Y disfruta el proceso.'</p>"
             }
         ],
-        "practicaSemana": "En UNA comida al día (la que más control tengas), identifica los 3 macronutrientes. Ejemplo: pollo (proteína) + arroz (carbohidrato) + aguacate (grasa). Si falta uno, pregúntate: ¿puedo añadirlo mañana?",
-        "practicaTip": "No se trata de perfección, sino de conciencia. El primer paso es observar, no cambiar todo de golpe.",
-        "videos": [
-            "Carlos Jaramillo: \"Macronutrientes explicados fácil\"",
-            "Dr. La Rosa: \"Proteína: cuánta y de dónde\"",
-            "Micronutrientes: cómo comer colores"
-        ]
+        "practicaSemana": "🍽️ \n\n Identifica los macronutrientes en tus platos al menos una vez al día durante los próximos 7 días.\n\n**Instrucción concreta:**\n1. Antes de comer (en una comida principal, ejemplo almuerzo o cena), haz una pausa de 10 segundos.\n2. Pregúntate: '¿Dónde están los carbohidratos? ¿Dónde las proteínas? ¿Dónde las grasas?'\n3. Si falta alguno, piensa cómo podrías añadirlo la próxima vez (no te castigues si hoy falta, solo observa).\n\n**Opcional (si quieres más nivel):**\n- Toma una foto de tu plato cada día y escribe al lado qué macronutrientes identificas y si el método del puño se cumplió aproximadamente.",
+        "practicaTip": "💡 Observar es el primer paso antes de cambiar. No necesitas hacerlo perfecto esta semana. Solo necesitas empezar a ver qué hay en tu plato. La conciencia es el comienzo de la transformación.",
+        "videos": []
     },
     "clase6": {
         "id": "clase6",
