@@ -77,3 +77,20 @@ function resetearTodo() {
         }
     );
 }
+
+// ===== MODO OSCURO =====
+function toggleModoOscuro() {
+    document.body.classList.toggle('modo-oscuro');
+    const modoActivo = document.body.classList.contains('modo-oscuro');
+    localStorage.setItem('modo_oscuro', modoActivo);
+}
+
+function cargarModoOscuro() {
+    const modoGuardado = localStorage.getItem('modo_oscuro');
+    if (modoGuardado === 'true') {
+        document.body.classList.add('modo-oscuro');
+    }
+}
+
+// Inicializar modo oscuro cuando carga la página
+document.addEventListener('DOMContentLoaded', cargarModoOscuro);

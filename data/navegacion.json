@@ -22,5 +22,12 @@
         "url": "calendario.html",
         "icon": "fas fa-calendar-alt",
         "activeMatch": "calendario"
+    },
+    {
+        "texto": "",
+        "url": "#",
+        "icon": "fas fa-moon",
+        "activeMatch": "none",
+        "esModoOscuro": true
     }
 ]

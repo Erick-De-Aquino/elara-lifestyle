@@ -624,7 +624,7 @@ textarea { resize: vertical; min-height: 60px; }
     font-family: monospace;
     font-size: 1.5rem;
     font-weight: bold;
-    background: #f0f0f0;
+    background: #3d4f5f;
     padding: 5px 12px;
     border-radius: 8px;
     color: var(--success-green);
@@ -1026,4 +1026,262 @@ label[for="importarInput"]:hover,
 .bloque-item.activo .bloque-nombre {
     color: var(--primary-orange);
     font-weight: bold;
+}
+/* ===== MODO OSCURO ===== */
+body.modo-oscuro {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .main-content {
+    background-color: #121212;
+}
+
+body.modo-oscuro .feature-card,
+body.modo-oscuro .panel,
+body.modo-oscuro .contenido-clase,
+body.modo-oscuro .timer-panel,
+body.modo-oscuro .videos-apoyo,
+body.modo-oscuro .formulario-comentarios,
+body.modo-oscuro .alumnos-container,
+body.modo-oscuro .alumno-bar,
+body.modo-oscuro .resumen-alumno,
+body.modo-oscuro .accordion-section,
+body.modo-oscuro .clase-link,
+body.modo-oscuro .modal-content,
+body.modo-oscuro .modal-opciones-content,
+body.modo-oscuro .modal-nuevo-alumno-content,
+body.modo-oscuro .modal-confirmacion-content,
+body.modo-oscuro .modal-horario-content,
+body.modo-oscuro .modal-pilar-content {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #333;
+}
+
+body.modo-oscuro .alumno-bar {
+    background: #1e1e1e;
+    border-left-color: var(--primary-orange);
+}
+
+body.modo-oscuro .hero {
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3e 100%);
+}
+
+body.modo-oscuro .hero-title,
+body.modo-oscuro .hero-subtitle,
+body.modo-oscuro .hero p {
+    color: white;
+}
+
+body.modo-oscuro .feature-card p,
+body.modo-oscuro .alumno-detalle {
+    color: #cccccc;
+}
+
+body.modo-oscuro .contenido-clase h2,
+body.modo-oscuro .contenido-clase h3,
+body.modo-oscuro .contenido-clase h4,
+body.modo-oscuro .timer-title {
+    color: var(--primary-orange);
+}
+
+body.modo-oscuro .practica-semana {
+    background: linear-gradient(135deg, #1a4a3a 0%, #0d2a20 100%);
+}
+
+body.modo-oscuro .practica-semana p,
+body.modo-oscuro .practica-semana h3,
+body.modo-oscuro .practica-semana li,
+body.modo-oscuro .practica-semana strong {
+    color: white;
+}
+
+body.modo-oscuro .video-link {
+    background: #2d2d2d;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .video-link:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+body.modo-oscuro .video-link:hover span {
+    color: white;
+}
+
+body.modo-oscuro .clase-header h1,
+body.modo-oscuro .clase-header p {
+    color: white;
+}
+
+body.modo-oscuro .accordion-header {
+    background: #2a2a2a;
+    color: white;
+}
+
+body.modo-oscuro .accordion-header:hover {
+    background: #3a3a3a;
+}
+
+body.modo-oscuro .clase-link {
+    background: #2a2a2a;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .clase-link:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+body.modo-oscuro .badge-completada {
+    background: var(--success-green);
+    color: white;
+}
+
+body.modo-oscuro input,
+body.modo-oscuro select,
+body.modo-oscuro textarea {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    border-color: #444;
+}
+
+body.modo-oscuro input:focus,
+body.modo-oscuro select:focus,
+body.modo-oscuro textarea:focus {
+    border-color: var(--primary-orange);
+    outline: none;
+}
+
+body.modo-oscuro .timer-display {
+    background: #2d2d2d;
+    color: var(--success-green);
+}
+
+body.modo-oscuro .campo-info {
+    background: #2d2d2d;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .comentario-item {
+    background: #2d2d2d;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .comentario-titulo {
+    color: var(--primary-orange);
+}
+
+body.modo-oscuro .sin-comentarios {
+    background: #2d2d2d;
+    color: #cccccc;
+}
+
+body.modo-oscuro .horario-item.disponible {
+    background: #1a4a3a;
+    color: white;
+}
+
+body.modo-oscuro .horario-item.ocupado {
+    background: #5a1a1a;
+    color: white;
+}
+
+body.modo-oscuro .dia-pasado {
+    background: #2d2d2d;
+    color: #888;
+}
+
+body.modo-oscuro .evento-item {
+    background: #2d2d2d;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .evento-item strong {
+    color: var(--primary-orange);
+}
+
+body.modo-oscuro .btn-cancelar,
+body.modo-oscuro .btn-cancelar-modal,
+body.modo-oscuro .opcion-explorar,
+body.modo-oscuro .btn-cancelar-horario,
+body.modo-oscuro .btn-batch {
+    background: #3a3a3a;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .btn-cancelar:hover,
+body.modo-oscuro .btn-cancelar-modal:hover,
+body.modo-oscuro .btn-batch:hover {
+    background: #4a4a4a;
+}
+
+body.modo-oscuro .resumen-alumno {
+    background: #1e1e1e;
+    border-left-color: var(--primary-orange);
+}
+
+body.modo-oscuro .resumen-alumno-nombre {
+    color: white;
+}
+
+body.modo-oscuro .barra-progreso {
+    background: #3a3a3a;
+}
+
+body.modo-oscuro .barra-progreso-fill {
+    background: var(--primary-orange);
+}
+
+/* ===== BOTÓN MODO OSCURO EN NAV ===== */
+.nav-btn-modo-oscuro {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.nav-btn-modo-oscuro:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ===== MODO OSCURO - FONDO PARA CONTENIDO DE BLOQUES ===== */
+body.modo-oscuro .bloque-contenido,
+body.modo-oscuro .bloque-contenido.abierto {
+    background-color: #1a1a2e;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .bloque-contenido p,
+body.modo-oscuro .bloque-contenido li,
+body.modo-oscuro .bloque-contenido ul,
+body.modo-oscuro .bloque-contenido strong,
+body.modo-oscuro .bloque-contenido span {
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .contenido-clase {
+    background-color: #1a1a2e;
+}
+
+body.modo-oscuro .contenido-clase p,
+body.modo-oscuro .contenido-clase li,
+body.modo-oscuro .contenido-clase ul,
+body.modo-oscuro .contenido-clase strong {
+    color: #f0f0f0;
+}
+
+body.modo-oscuro .contenido-clase h2,
+body.modo-oscuro .contenido-clase h3 {
+    color: var(--primary-orange);
 }
