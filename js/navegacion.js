@@ -8,93 +8,11 @@ function getBasePath() {
     return '';
 }
 
-async function cargarNavegacion() {
-    try {
-        const basePath = getBasePath();
-        const response = await fetch(basePath + 'data/navegacion.json');
-        const menuItems = await response.json();
-        
-        const currentPath = window.location.pathname;
-        
-        const navHTML = `
-            <div class="nav-bar">
-                <div class="nav-header">
-                    <h2>ELARA METHOD</h2>
-                </div>
-                <ul class="nav-menu">
-                    ${menuItems.map(item => {
-                        // Ajustar la URL con la base path
-                        const itemUrl = basePath + item.url;
-                        
-                        let isActive = false;
-                        if (item.activeMatch === 'index' && (currentPath.endsWith('/') || currentPath.endsWith('index.html'))) {
-                            isActive = true;
-                        } else if (item.activeMatch !== 'index' && currentPath.includes(item.activeMatch)) {
-                            isActive = true;
-                        }
-                        
-                        return `
-                            <li>
-                                <a href="${itemUrl}" class="${isActive ? 'active' : ''}">
-                                    <i class="${item.icon}"></i>
-                                    <span>${item.texto}</span>
-                                </a>
-                            </li>
-                        `;
-                    }).join('')}
-                </ul>
-            </div>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        `;
-        
-        document.getElementById('nav-container').innerHTML = navHTML;
-        
-        const toggle = document.getElementById('menuToggle');
-        const navBar = document.querySelector('.nav-bar');
-        if (toggle) {
-            toggle.addEventListener('click', () => {
-                navBar.classList.toggle('open');
-            });
-        }
-        
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navBar.classList.remove('open');
-                }
-            });
-        });
-        
-    } catch (error) {
-        console.error('Error cargando navegación:', error);
-        // Fallback manual
-        const basePath = getBasePath();
-        document.getElementById('nav-container').innerHTML = `
-            <div class="nav-bar">
-                <div class="nav-header">
-                    <h2>ELARA METHOD</h2>
-                </div>
-                <ul class="nav-menu">
-                    <li><a href="${basePath}index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-                    <li><a href="${basePath}curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
-                    <li><a href="${basePath}alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
-                    <li><a href="${basePath}calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
-                </ul>
-            </div>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        `;
-        
-        const toggle = document.getElementById('menuToggle');
-        const navBar = document.querySelector('.nav-bar');
-        if (toggle) {
-            toggle.addEventListener('click', () => {
-                navBar.classList.toggle('open');
-            });
-        }
+// Cargar modo oscuro guardado al iniciar
+function cargarModoOscuro() {
+    const modoGuardado = localStorage.getItem('modo_oscuro');
+    if (modoGuardado === 'true') {
+        document.body.classList.add('modo-oscuro');
     }
 }
 
@@ -112,15 +30,17 @@ async function cargarNavegacion() {
                 </div>
                 <ul class="nav-menu">
                     ${menuItems.map(item => {
+                        // Botón de modo oscuro
                         if (item.esModoOscuro) return `
                             <li>
-                                <button id="btnModoOscuroNav" class="nav-btn-modo-oscuro" style="background: none; border: none; color: white; width: 100%; text-align: left; padding: 12px 20px; cursor: pointer; display: flex; align-items: center; gap: 12px;">
+                                <button id="btnModoOscuroNav" class="nav-btn-modo-oscuro">
                                     <i class="fas ${document.body.classList.contains('modo-oscuro') ? 'fa-sun' : 'fa-moon'}"></i>
                                     <span>${document.body.classList.contains('modo-oscuro') ? 'Modo claro' : 'Modo oscuro'}</span>
                                 </button>
                             </li>
                         `;
                         
+                        // Enlaces normales
                         let isActive = false;
                         if (item.activeMatch === 'index' && (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html'))) {
                             isActive = true;
@@ -186,18 +106,19 @@ async function cargarNavegacion() {
         
     } catch (error) {
         console.error('Error cargando navegación:', error);
-        // Fallback...
+        // Fallback manual
+        const basePath = getBasePath();
         document.getElementById('nav-container').innerHTML = `
             <div class="nav-bar">
                 <div class="nav-header">
                     <h2>ELARA METHOD</h2>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
-                    <li><a href="curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
-                    <li><a href="alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
-                    <li><a href="calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
-                    <li><button id="btnModoOscuroNavFallback" style="background:none; border:none; color:white; width:100%; text-align:left; padding:12px 20px; cursor:pointer; display:flex; align-items:center; gap:12px;">
+                    <li><a href="${basePath}index.html"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+                    <li><a href="${basePath}curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
+                    <li><a href="${basePath}alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
+                    <li><a href="${basePath}calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
+                    <li><button id="btnModoOscuroNavFallback" class="nav-btn-modo-oscuro">
                         <i class="fas fa-moon"></i> <span>Modo oscuro</span>
                     </button></li>
                 </ul>
@@ -235,17 +156,8 @@ async function cargarNavegacion() {
     }
 }
 
-// Cargar modo oscuro guardado al iniciar
-function cargarModoOscuro() {
-    const modoGuardado = localStorage.getItem('modo_oscuro');
-    if (modoGuardado === 'true') {
-        document.body.classList.add('modo-oscuro');
-    }
-}
-
+// Inicializar
 document.addEventListener('DOMContentLoaded', () => {
     cargarModoOscuro();
     cargarNavegacion();
 });
-
-document.addEventListener('DOMContentLoaded', cargarNavegacion);
