@@ -291,54 +291,51 @@
         "videos": []
     },
     "clase6": {
-        "id": "clase6",
-        "numero": 6,
-        "titulo": "Qué NO comer",
-        "capitulo": "Capítulo 3 - Alimentación sanadora",
-        "duracion": 75,
-        "objetivo": "Identificar los alimentos que más daño hacen (inflamación, resistencia a insulina, malestar digestivo) y entender por qué.",
-        "palabrasClave": [
-            "Azúcares añadidos - Refrescos, bollería, salsas, cereales de caja",
-            "Harinas refinadas - Pan blanco, pasta blanca, arroz blanco",
-            "Aceites vegetales industriales - Soja, maíz, girasol (en ultraprocesados)",
-            "Ultraprocesados - Más de 5 ingredientes que no reconoces",
-            "Picos de glucosa - Causan inflamación, niebla mental y grasa acumulada"
-        ],
-        "bloques": [
-            {
-                "nombre": "La lista práctica de 'no prioritarios'",
-                "duracion": 15,
-                "contenido": "<p>Azúcares añadidos (refrescos, bollería, salsas), harinas refinadas (pan blanco, pasta blanca), aceites vegetales industriales (soja, maíz, girasol), ultraprocesados.</p><p>No es 'nunca jamás', es 'sé lo que comes'.</p>"
-            },
-            {
-                "nombre": "El efecto en tu cuerpo",
-                "duracion": 15,
-                "contenido": "<p>Picos de glucosa → insulina alta → inflamación → grasa acumulada, niebla mental, cansancio. Usas la metáfora de la 'montaña rusa de azúcar'.</p>"
-            },
-            {
-                "nombre": "Cómo reemplazar sin sufrir",
-                "duracion": 15,
-                "contenido": "<p>Cambios simples: refresco → agua con limón o infusiones; pan blanco → integral o de masa madre; snacks dulces → fruta con frutos secos o yogur natural.</p>"
-            },
-            {
-                "nombre": "Los permitidos programados",
-                "duracion": 15,
-                "contenido": "<p>Explicas: 'No se trata de vivir privado. Planifica UNA comida a la semana donde comas algo no prioritario SIN CULPA'.</p>"
-            },
-            {
-                "nombre": "Cierre y práctica semanal",
-                "duracion": 15,
-                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
-            }
-        ],
-        "practicaSemana": "Identifica en tu despensa y nevera los 3 alimentos ultraprocesados que más consumes. Esta semana, reemplaza UNO de ellos por una alternativa real.",
-        "practicaTip": "No se trata de eliminar todo para siempre. Se trata de identificar y reemplazar uno por uno, sin culpa.",
-        "videos": [
-            "Carlos Jaramillo: \"Qué pasa en tu cuerpo cuando dejas el azúcar\"",
-            "Dr. La Rosa: \"Ultraprocesados, inflamación silenciosa\"",
-            "Alternativas saludables para antojos"
-        ]
-    },
+    "id": "clase6",
+    "numero": 6,
+    "titulo": "Qué NO comer – Identifica los alimentos que más daño hacen (enfoque práctico)",
+    "capitulo": "Capítulo 3 - Alimentación sanadora",
+    "duracion": 75,
+    "objetivo": "Que identifiques los alimentos que más daño generan en tu cuerpo (inflamación, resistencia a la insulina, malestar digestivo) y entiendas por qué. No se trata de miedo, sino de conciencia para tomar mejores decisiones.",
+    "palabrasClave": [
+        "Azúcares añadidos - Refrescos, bollería, zumos industriales. Principal fuente de picos de glucosa",
+        "Harinas refinadas - Pan blanco, pasta blanca, arroz blanco. Mismo efecto que el azúcar",
+        "Aceites vegetales industriales - Girasol, maíz, soja, palma. Inflamación crónica",
+        "Ultraprocesados - Productos con >5 ingredientes que no reconoces",
+        "Picos de glucosa - Causan inflamación, niebla mental, grasa acumulada",
+        "Permitidos programados - Una comida a la semana sin culpa, planificada por ti"
+    ],
+    "bloques": [
+        {
+            "nombre": "Lista práctica de 'no prioritarios' (lo que puedes reducir conscientemente)",
+            "duracion": 15,
+            "contenido": "<p><strong>📌 Llamarlos 'prohibidos' genera ansiedad y atracones. Llamarlos 'no prioritarios' te permite decidir: no es que nunca puedas, es que rara vez los eliges.</strong></p><p><strong>Lista concreta de no prioritarios (y dónde se esconden):</strong></p><ul><li><strong>Azúcares añadidos:</strong> Refrescos, bollería industrial, galletas, cereales de desayuno, zumos envasados, salsas (kétchup, barbacoa), yogures azucarados. Están en el 74% de los ultraprocesados. Mira etiquetas: 'azúcar', 'jarabe de maíz', 'dextrosa', 'maltosa', 'sacarosa'.</li><li><strong>Harinas refinadas:</strong> Pan blanco, pasta blanca, arroz blanco, bollería, pizza de supermercado, galletas saladas. Todo lo que sea 'harina de trigo' sin decir 'integral'.</li><li><strong>Aceites vegetales industriales:</strong> Aceite de soja, maíz, girasol, palma, canola. Están en casi todo producto envasado que no sea aceite de oliva o coco.</li><li><strong>Ultraprocesados:</strong> Cualquier producto con >5 ingredientes que no reconocerías como comida real (ej. 'malto dextrina', 'estearoil lactilato', 'glutamato monosódico'). Snacks, embutidos industriales, pizzas congeladas, comidas preparadas, cereales de caja.</li></ul><p><strong>💡 Tips prácticos para identificarlos rápido:</strong><br>• Regla del supermercado: Si no lo reconocería tu abuela como comida, probablemente es ultraprocesado.<br>• Regla de los 3 segundos: Mira los primeros 3 ingredientes. Si ves azúcar, harina refinada o aceite vegetal industrial, vuélvelo a dejar.<br>• No necesitas eliminarlos todos de golpe. Elige UNO esta semana para reducir (ej. refrescos) y empieza por ahí.</p><p><strong>📱 Metáfora:</strong><br>'Los no prioritarios son como las visitas incómodas: no las quieres todos los días en tu casa. Una vez al mes aún puede ser llevadero. Pero si se mudan a tu cocina, tu salud empieza a desahuciarte.'</p>"
+        },
+        {
+            "nombre": "El efecto en tu cuerpo – cómo estos alimentos degradan tu salud silenciosamente",
+            "duracion": 15,
+            "contenido": "<p><strong>⚠️ Un refresco no te enferma. Mil refrescos a lo largo de 10 años sí. El problema no es el pico de glucosa puntual, es vivir en picos constantes.</strong></p><p><strong>¿Qué pasa en tu cuerpo cuando comes estos no prioritarios?</strong></p><ul><li><strong>Efecto inmediato (1-2 horas):</strong> Pico de glucosa e insulina, inflamación silenciosa, niebla mental, fatiga, antojos de más azúcar.</li><li><strong>Efecto a semanas/meses:</strong> Resistencia a la insulina, aumento de grasa visceral, cortisol crónico, ansiedad, comer en bucle sin control.</li><li><strong>Efecto a años:</strong> Diabetes tipo 2, enfermedad cardiovascular, Alzheimer (relacionado), obesidad, hígado graso.</li></ul><p><strong>🔄 Cómo afecta a los 4 pilares:</strong></p><ul><li><strong>Sueño:</strong> Picos de glucosa nocturnos fragmentan el sueño. Azúcar antes de dormir = mal descanso.</li><li><strong>Tranquilidad mental:</strong> La inflamación cerebral (por ultraprocesados) se asocia con ansiedad y depresión.</li><li><strong>Ejercicio:</strong> Te dan fatiga y niebla mental. No rindes. La inflamación muscular empeora la recuperación.</li><li><strong>Alimentación:</strong> Crean un círculo vicioso: picos de glucosa → antojos de más azúcar → comes peor → más picos.</li></ul><p><strong>⚠️ La señal de alarma:</strong><br>'El cuerpo no avisa con carteles luminosos. Primero baja el rendimiento, luego aparecen digestiones pesadas, luego niebla mental, luego kilos de más, luego diagnósticos. Cuando el cuerpo empieza a gritar, ya llevaba años susurrando. La idea es aprender a escuchar los susurros.'</p><p><strong>📱 Metáfora:</strong><br>'Comer ultraprocesados a diario es como poner un granito de arena en una mochila cada día. El primer mes no notas nada. Al año, la mochila pesa 3 kilos. A los 10 años, cargas con 30 kilos a cuestas. Tu metabolismo es esa mochila.'</p>"
+        },
+        {
+            "nombre": "Cómo reemplazar sin sufrir (cambios sostenibles, sin obsesión)",
+            "duracion": 15,
+            "contenido": "<p><strong>🔄 No se trata de prohibir y sufrir. Se trata de cambiar la dirección, no la perfección. Un pequeño cambio sostenible vale más que una semana de dieta perfecta.</strong></p><p><strong>Tabla de reemplazos prácticos:</strong></p><ul><li><strong>Refresco, zumo industrial →</strong> Agua con limón, agua con gas + rodaja de naranja, infusiones frías. (Calma la sed, sin picos de glucosa, entrenas al paladar a menos dulce)</li><li><strong>Pan blanco, pasta blanca, arroz blanco →</strong> Pan integral de masa madre, pasta integral, arroz integral o legumbres (lentejas en lugar de pasta). (Más fibra = menos pico glucémico, más saciedad)</li><li><strong>Snack dulce (galletas, bollería, chocolate con leche) →</strong> Fruta entera + un puñado de frutos secos, yogur natural (sin azúcar) con canela, chocolate >85% cacao (una onza). (La fibra de la fruta y la grasa de los frutos secos frenan el pico de glucosa)</li><li><strong>Cereales de desayuno azucarados →</strong> Copos de avena integral + canela + fruta troceada. (Avena es carbohidrato de absorción lenta, sin azúcares añadidos)</li><li><strong>Salsas industriales (kétchup, alioli, barbacoa) →</strong> Aceite de oliva + limón, hummus, guacamole, yogur natural con hierbas. (Evitas azúcares ocultos y aceites vegetales refinados)</li><li><strong>Frituras de bolsa →</strong> Frutos secos tostados sin sal, palomitas caseras con aceite de oliva. (No tienes aceites industriales ni azúcares añadidos)</li></ul><p><strong>💡 Tips para que el cambio sea sostenible (sin estrés):</strong><br>• No cambies todo a la vez. Elige UN reemplazo esta semana. Cuando sea automático, añade otro.<br>• Progresión, no perfección. Si un día no lo logras, no pasa nada. Al día siguiente vuelves.<br>• Permite la ocasión especial. El 80% de los días bien hecho ya es un éxito.</p><p><strong>📱 Metáfora:</strong><br>'Reemplazar no es amputar. Es como cambiar las ruedas de un coche: no las cortas, las sustituyes por unas mejores. Y no cambias las cuatro el mismo día si no quieres. Empieza por una, después otra, y en un año tendrás un coche nuevo sin haber sufrido.'</p>"
+        },
+        {
+            "nombre": "Los permitidos programados (come sin culpa, planificadamente)",
+            "duracion": 10,
+            "contenido": "<p><strong>📅 No se trata de vivir privado. La restricción extrema genera atracones y culpa. La solución es planificar conscientemente cuándo te permites lo no prioritario.</strong></p><p><strong>¿Cómo funciona?</strong></p><ul><li>Elige UNA comida a la semana (ej. sábado comida) donde comerás algo que está en tu lista de 'no prioritario'.</li><li>La clave: Lo decides TÚ, con antelación, y lo DISFRUTAS sin culpa.</li><li>El resto de la semana: Vuelves a tu alimentación habitual (sin rigidez, pero sin excusas).</li></ul><p><strong>Ejemplos concretos:</strong></p><ul><li>Pizza de supermercado o de tu sitio favorito → Sábado comida. La comes tranquilo, con ensalada primero.</li><li>Chocolate con leche o helado → Viernes noche postre. Lo disfrutas, no lo devoras.</li><li>Bollería industrial → Una tarde con café. La acompañas de una infusión y la comes despacio.</li></ul><p><strong>Lo que NO es:</strong> Comer sin control el fin de semana porque 'ya me lo he ganado'. (Eso es trampa.) Sentir culpa después. La culpa mantiene el cortisol alto. Si lo programaste, lo disfrutas.</p><p><strong>Lo que SÍ es:</strong> Una estrategia psicológica para que el cerebro no sienta que está en una 'dieta prohibida'. Un entrenamiento para la libertad: eliges cuándo, no el antojo.</p><p><strong>📱 Metáfora:</strong><br>'Los permitidos programados son como las vacaciones. No vives de vacaciones, pero si sabes que en julio tienes 10 días en la playa, aguantas el resto del año sin sentirte preso. Planifica tu 'vacación alimentaria' semanal y el resto de la semana será más fácil.'</p>"
+        },
+        {
+            "nombre": "Cierre y práctica semanal",
+            "duracion": 20,
+            "contenido": "<p><strong>📌 Resumen rápido de la clase:</strong></p><ul><li>No prioritarios: azúcares añadidos, harinas refinadas, aceites vegetales industriales, ultraprocesados.</li><li>Efecto en tu cuerpo: inflamación, resistencia a insulina, niebla mental, grasa acumulada. Y afecta a los 4 pilares.</li><li>Reemplazos sostenibles: refresco → agua con limón; pan blanco → integral; snack dulce → fruta + frutos secos.</li><li>Permitidos programados: una comida a la semana sin culpa, planificada por ti.</li></ul><p><strong>💡 Tips finales adicionales:</strong></p><ul><li>No te peses cada día. El peso fluctúa. Mide cómo te sientes, tu energía, tu digestión.</li><li>El orden del plato también importa: Si vas a comer carbohidrato (arroz, pasta, pan), come primero verduras y proteína. Esto reduce el pico de glucosa.</li><li>Dos preguntas mágicas antes de comer algo: '¿Esto me acerca a mi salud o me aleja?' y '¿Esto lo elegí yo o es un antojo automático?'</li><li>Si te saltas la regla un día, no conviertas un desliz en una avalancha. Una comida no arruina una semana. Vuelves al siguiente plato.</li></ul><p><strong>❓ Preguntas de feedback para el alumno:</strong></p><ol><li>¿Cuál de los no prioritarios te sorprendió más? ¿Dónde pensabas que era sano y no lo es?</li><li>¿Qué reemplazo de la tabla crees que podrías aplicar esta misma semana?</li><li>Si tuvieras que programar un permitido ahora mismo, ¿qué elegirías y cuándo?</li><li>En una escala del 1 al 10, ¿cómo de claro tienes que no se trata de prohibir, sino de decidir?</li></ol><p><strong>🎯 Cierre:</strong><br>La próxima clase: <strong>Macronutrientes y cálculo (g x kg x día)</strong></p><p><strong>📱 Metáfora final de la Clase 6:</strong><br>'Tu cuerpo no es un cubo de basura donde tiras lo que sobra o lo que apetece. Es un jardín. Cada alimento es una semilla. Un día de semillas malas no destruye el jardín, pero si solo plantas malas hierbas durante años, el jardín deja de florecer. La buena noticia es que el jardín se recupera. Solo necesita que empieces a plantar mejor hoy.'</p>"
+        }
+    ],
+    "practicaSemana": "🥤 **Práctica de la semana**\n\n**Tarea obligatoria:** Identifica y reemplaza UN no prioritario durante 7 días.\n\n**Instrucción concreta:**\n1. Elige UNO de esta lista: refrescos / pan blanco / snack dulce industrial / cereales azucarados.\n2. Durante 7 días, cada vez que vayas a consumirlo, haz el reemplazo:\n   - Refresco → agua con limón, infusión fría, agua con gas.\n   - Pan blanco → pan integral de masa madre (si no encuentras, reduce la cantidad o cómelo con más proteína y verduras).\n   - Snack dulce → una fruta entera + 5 frutos secos.\n   - Cereales azucarados → avena integral con canela y fruta.\n3. Anota cada día (mentalmente o en papel): 'Hoy logré mi reemplazo' o 'Hoy no lo logré, vuelvo mañana'.\n\n**Autoevaluación al final de la semana:**\n1. ¿Cuál fue el no prioritario más fácil de reemplazar? ¿Y el más difícil?\n2. ¿Notaste algún cambio en tu energía, digestión o antojos?\n3. ¿Qué permitido programado te darías esta semana sin culpa?",
+    "practicaTip": "💡 No necesitas ser perfecto. Una semana de reemplazos no va a transformar tu cuerpo, pero sí va a transformar tu conciencia. Y la conciencia es el primer paso para cualquier cambio real.",
+    "videos": []
+},
     "clase7": {
         "id": "clase7",
         "numero": 7,
