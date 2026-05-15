@@ -15,7 +15,7 @@
         "texto": "Alumnos",
         "url": "alumno-lista.html",
         "icon": "fas fa-users",
-        "activeMatch": "alumnos"
+        "activeMatch": "alumno"
     },
     {
         "texto": "Calendario",
