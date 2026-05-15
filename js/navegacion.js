@@ -30,17 +30,18 @@ async function cargarNavegacion() {
                 </div>
                 <ul class="nav-menu">
                     ${menuItems.map(item => {
-                        // Botón de modo oscuro
-                        if (item.esModoOscuro) return `
-                            <li>
-                                <button id="btnModoOscuroNav" class="nav-btn-modo-oscuro">
-                                    <i class="fas ${document.body.classList.contains('modo-oscuro') ? 'fa-sun' : 'fa-moon'}"></i>
-                                    <span>${document.body.classList.contains('modo-oscuro') ? 'Modo claro' : 'Modo oscuro'}</span>
-                                </button>
-                            </li>
-                        `;
+                        // Para el modo oscuro, usamos un enlace normal con href="#"
+                        if (item.esModoOscuro) {
+                            return `
+                                <li>
+                                    <a href="#" id="btnModoOscuroNav" class="${item.activeMatch === 'none' ? '' : ''}">
+                                        <i class="fas ${document.body.classList.contains('modo-oscuro') ? 'fa-sun' : 'fa-moon'}"></i>
+                                        <span>${document.body.classList.contains('modo-oscuro') ? 'Modo claro' : item.texto}</span>
+                                    </a>
+                                </li>
+                            `;
+                        }
                         
-                        // Enlaces normales
                         let isActive = false;
                         if (item.activeMatch === 'index' && (currentPath === '/' || currentPath === '/index.html' || currentPath.endsWith('/index.html'))) {
                             isActive = true;
@@ -66,15 +67,15 @@ async function cargarNavegacion() {
         
         document.getElementById('nav-container').innerHTML = navHTML;
         
-        // Evento para el botón de modo oscuro en el nav
+        // Evento para el enlace de modo oscuro
         const btnModoOscuroNav = document.getElementById('btnModoOscuroNav');
         if (btnModoOscuroNav) {
-            btnModoOscuroNav.addEventListener('click', () => {
+            btnModoOscuroNav.addEventListener('click', (e) => {
+                e.preventDefault();
                 document.body.classList.toggle('modo-oscuro');
                 const esModoOscuro = document.body.classList.contains('modo-oscuro');
                 localStorage.setItem('modo_oscuro', esModoOscuro);
                 
-                // Actualizar icono y texto del botón
                 const icono = btnModoOscuroNav.querySelector('i');
                 const texto = btnModoOscuroNav.querySelector('span');
                 if (esModoOscuro) {
@@ -106,7 +107,7 @@ async function cargarNavegacion() {
         
     } catch (error) {
         console.error('Error cargando navegación:', error);
-        // Fallback manual
+        // Fallback...
         const basePath = getBasePath();
         document.getElementById('nav-container').innerHTML = `
             <div class="nav-bar">
@@ -118,9 +119,7 @@ async function cargarNavegacion() {
                     <li><a href="${basePath}curso.html"><i class="fas fa-book-open"></i><span>Índice curso</span></a></li>
                     <li><a href="${basePath}alumno-lista.html"><i class="fas fa-users"></i><span>Alumnos</span></a></li>
                     <li><a href="${basePath}calendario.html"><i class="fas fa-calendar-alt"></i><span>Calendario</span></a></li>
-                    <li><button id="btnModoOscuroNavFallback" class="nav-btn-modo-oscuro">
-                        <i class="fas fa-moon"></i> <span>Modo oscuro</span>
-                    </button></li>
+                    <li><a href="#" id="btnModoOscuroNavFallback"><i class="fas fa-moon"></i><span>Modo oscuro</span></a></li>
                 </ul>
             </div>
             <button class="menu-toggle" id="menuToggle">
@@ -130,7 +129,8 @@ async function cargarNavegacion() {
         
         const btnFallback = document.getElementById('btnModoOscuroNavFallback');
         if (btnFallback) {
-            btnFallback.addEventListener('click', () => {
+            btnFallback.addEventListener('click', (e) => {
+                e.preventDefault();
                 document.body.classList.toggle('modo-oscuro');
                 const esModoOscuro = document.body.classList.contains('modo-oscuro');
                 localStorage.setItem('modo_oscuro', esModoOscuro);

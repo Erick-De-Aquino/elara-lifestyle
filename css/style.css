@@ -1235,26 +1235,6 @@ body.modo-oscuro .barra-progreso-fill {
     background: var(--primary-orange);
 }
 
-/* ===== BOTÓN MODO OSCURO EN NAV ===== */
-.nav-btn-modo-oscuro {
-    background: none;
-    border: none;
-    color: var(--text-light);
-    width: 100%;
-    text-align: left;
-    padding: 12px 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-.nav-btn-modo-oscuro:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
 /* ===== MODO OSCURO - FONDO PARA CONTENIDO DE BLOQUES ===== */
 body.modo-oscuro .bloque-contenido,
 body.modo-oscuro .bloque-contenido.abierto {

@@ -24,7 +24,7 @@
         "activeMatch": "calendario"
     },
     {
-        "texto": "",
+        "texto": "Modo oscuro",
         "url": "#",
         "icon": "fas fa-moon",
         "activeMatch": "none",
