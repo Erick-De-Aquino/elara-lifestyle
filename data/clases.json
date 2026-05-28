@@ -494,51 +494,45 @@
     "clase10": {
         "id": "clase10",
         "numero": 10,
-        "titulo": "Sarcopenia",
+        "titulo": "Sarcopenia – El músculo es tu pensión de salud",
         "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
         "duracion": 60,
-        "objetivo": "Entender que perder músculo con la edad NO es 'normal' inevitable, sino que se puede frenar y revertir.",
+        "objetivo": "Que entiendas que perder músculo con la edad NO es un proceso 'normal' e inevitable, sino algo que puedes frenar, revertir y prevenir activamente para mantener tu independencia, metabolismo y calidad de vida.",
         "palabrasClave": [
-            "Sarcopenia - Pérdida progresiva de masa y función muscular",
-            "Empieza a los 30-40 años - Se acelera a los 60",
-            "Consecuencias - Caídas, fragilidad, pérdida de independencia",
-            "Prevención - Proteína suficiente + entrenamiento de fuerza",
-            "El músculo es tu pensión de salud - Metáfora clave"
+            "Sarcopenia - Pérdida progresiva de masa muscular, fuerza y función física",
+            "Pérdida de masa muscular - 3-8% por década desde los 30-40 años",
+            "Fragilidad - Estado de vulnerabilidad ante infecciones, operaciones o caídas",
+            "Caídas - Principal causa de muerte por accidente en mayores de 65 años",
+            "Independencia - El músculo te permite valerte por ti mismo",
+            "Entrenamiento de fuerza - 2-3 veces por semana. El estímulo principal",
+            "Proteína - 1.6-2.2 g/kg/día. La materia prima",
+            "Pensión de salud - El músculo que acumulas durante la vida"
         ],
         "bloques": [
             {
                 "nombre": "¿Qué es la sarcopenia?",
                 "duracion": 15,
-                "contenido": "<p>Pérdida progresiva de masa y función muscular. Empieza a los 30-40 años, se acelera a los 60. No es solo 'fuerza', es perder capacidad de levantarte del sofá, subir escaleras, cargar la compra.</p>"
-            },
-            {
-                "nombre": "Consecuencias reales",
-                "duracion": 15,
-                "contenido": "<p>Caídas (principal causa de muerte por accidente en mayores), fragilidad, peor metabolismo, riesgo de diabetes, pérdida de independencia. Metáfora: 'El músculo es tu pensión de salud'.</p>"
+                "contenido": "<p><strong>💪 La sarcopenia es la pérdida progresiva y generalizada de masa muscular, fuerza y función física. No es simplemente 'estar más débil'.</strong></p><p><strong>Empieza de forma silenciosa alrededor de los 30-40 años</strong>, donde puedes perder entre un 3% y un 8% de masa muscular por década. Este proceso se acelera significativamente a partir de los 60 años, pudiendo llegar a perder hasta un 1-2% de masa muscular por año.</p><p><strong>No es solo 'fuerza' (consecuencias más amplias):</strong></p><ul><li><strong>Movilidad básica:</strong> Dificultad para levantarte del sofá, subir escaleras, agacharte a por el zapato, caminar a buen ritmo.</li><li><strong>Capacidad funcional:</strong> Te cuesta cargar la bolsa de la compra, mover una silla, abrir un frasco, o jugar con tus nietos.</li><li><strong>Metabolismo:</strong> Menos músculo significa menos 'quemador de calorías' en reposo. Por eso la sarcopenia está muy vinculada al aumento de grasa corporal, la resistencia a la insulina y la diabetes tipo 2.</li><li><strong>Independencia:</strong> En etapas avanzadas, la pérdida de fuerza te hace dependiente de otras personas para levantarte de la cama, ir al baño o bañarte.</li></ul><p><strong>⚠️ Consecuencias reales y duras (para concienciar):</strong></p><ul><li><strong>Caídas:</strong> El músculo es lo que te estabiliza y protege las articulaciones. Menos músculo y fuerza equivale a un mayor riesgo de caídas.</li><li><strong>Las caídas son la principal causa de muerte por accidente en personas mayores de 65 años.</strong></li><li><strong>Fragilidad:</strong> Estado de vulnerabilidad ante cualquier estrés (una infección, una operación, una caída). El cuerpo frágil se recupera mucho peor.</li><li><strong>Pérdida de independencia:</strong> La consecuencia más temida para muchos. No poder valerte por ti mismo para las tareas básicas del día a día.</li></ul><p><strong>📱 Metáfora:</strong><br>'El músculo es tu pensión de salud. Cuando eres joven, haces aportes (entrenas, comes proteína). Esos aportes se acumulan en una cuenta (tu masa muscular). Al llegar a la vejez, no vives de la pensión económica, vives de esa pensión muscular. La sarcopenia es cuando te quedas sin ahorros. Empieza a ahorrar hoy.'</p>"
             },
             {
                 "nombre": "Cómo prevenirla y revertirla",
-                "duracion": 15,
-                "contenido": "<p><strong>Tres pilares:</strong><br>1. Proteína suficiente: 1.6-2.2g/kg<br>2. Entrenamiento de fuerza: 2-3 veces/semana<br>3. Sueño y gestión del estrés</p>"
+                "duracion": 20,
+                "contenido": "<p><strong>✅ La buena noticia es que la sarcopenia se puede prevenir y revertir con tres pilares fundamentales.</strong></p><p><strong>1. Proteína suficiente: la materia prima</strong></p><ul><li><strong>El papel clave:</strong> El músculo se construye y repara a partir de las proteínas. Sin suficiente materia prima, no hay construcción posible, solo desgaste.</li><li><strong>Cantidad recomendada (1.6-2.2 g/kg):</strong> Ese rango es óptimo para prevenir y revertir la sarcopenia. Si pesas 70 kg, necesitas entre 112g y 154g de proteína al día.</li><li><strong>Cómo distribuirla:</strong> Es mejor repartirla en 3-4 comidas (20-40g por comida) para estimular la síntesis muscular a lo largo del día.</li><li><strong>Fuentes de calidad:</strong> Huevos, carnes magras, pescado, lácteos (yogur griego, requesón), legumbres (combinadas con cereales) y suero de leche (si necesitas suplementar).</li></ul><p><strong>2. Entrenamiento de fuerza: el estímulo principal</strong></p><ul><li><strong>Es el desencadenante:</strong> La proteína sola no construye músculo sin un estímulo de fuerza. Es la 'llave' que enciende la maquinaria de construcción muscular.</li><li><strong>Frecuencia (2-3 veces/semana):</strong> Suficiente para generar adaptaciones. El descanso entre sesiones del mismo grupo muscular es clave (48h).</li><li><strong>Progresión:</strong> No es solo mover peso. Es importante ir aumentando la dificultad gradualmente (más peso, más repeticiones, más series).</li><li><strong>Tipos de ejercicio clave:</strong> Sentadillas, peso muerto, press de banca, dominadas (o variantes), zancadas, flexiones. Movimientos que involucran múltiples articulaciones.</li></ul><p><strong>3. Sueño y gestión del estrés: el entorno reparador</strong></p><ul><li>El sueño es el momento estrella para la reparación y el crecimiento muscular. Durante las fases de sueño profundo se liberan hormonas anabólicas (hormona del crecimiento y testosterona).</li><li>Dormir mal crónicamente aumenta el cortisol (hormona del estrés), que es catabólica → promueve la degradación muscular.</li><li>El estrés crónico, por la misma vía del cortisol, te empuja hacia la pérdida muscular.</li></ul><p><strong>📱 Metáfora:</strong><br>'Prevenir la sarcopenia es como construir una casa. La proteína son los ladrillos. El entrenamiento de fuerza es el arquitecto y los albañiles, que te indican cómo y dónde poner los ladrillos. El sueño y la gestión del estrés son el pegamento que permite que los ladrillos se fijen bien. Si falta uno de ellos, la casa se derrumba.'</p>"
             },
             {
-                "nombre": "Test de la silla",
+                "nombre": "El Test de la Silla (actividad práctica)",
                 "duracion": 10,
-                "contenido": "<p>Haces el test con los alumnos: levantarse de una silla sin usar las manos. Explicas que ese es su punto de partida.</p>"
+                "contenido": "<p><strong>🪑 Actividad práctica para conocer tu punto de partida.</strong></p><p><strong>Instrucción:</strong><br>'Busca una silla firme (sin ruedas). Siéntate completamente en ella, con la espalda recta y los pies apoyados en el suelo, separados al ancho de los hombros. Cruza los brazos sobre el pecho. Ahora, sin usar las manos, impulsándote solo con la fuerza de tus piernas y glúteos, levántate hasta quedar completamente de pie. Luego, siéntate de nuevo de forma controlada.'</p><p><strong>Interpretación del resultado:</strong></p><ul><li><strong>Sin dificultad:</strong> Tu fuerza funcional está en buen estado. El objetivo es mantenerla y mejorarla.</li><li><strong>Leve dificultad (usas un poco de impulso o balanceo):</strong> Es una señal temprana de pérdida de fuerza. Es momento de actuar.</li><li><strong>No puedes o te duele mucho:</strong> Este es tu punto de partida. Indica un déficit importante. Debes empezar con ejercicios suaves, idealmente supervisados.</li></ul><p><strong>Práctica recomendada:</strong><br>'Practica levantarte de la silla sin manos 3 veces al día (por ejemplo, antes de cada comida). Esto es tu 'tarea de fuerza' para activar las piernas y los glúteos de forma constante.'</p><p><strong>Por qué funciona:</strong><br>Es un ejercicio de transferencia directa a la vida diaria. Es exactamente la fuerza que necesitas para levantarte del inodoro, del sofá o de una silla del comedor. Repetirlo lo convierte en un patrón automático.</p>"
             },
             {
                 "nombre": "Cierre y práctica semanal",
-                "duracion": 5,
-                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+                "duracion": 15,
+                "contenido": "<p><strong>📌 Resumen rápido de la clase:</strong></p><ul><li>La sarcopenia (pérdida de músculo con la edad) NO es inevitable. Empieza a los 30-40 y se acelera a los 60.</li><li>Sus consecuencias no son solo estéticas: son caídas, fragilidad, pérdida de independencia y peor metabolismo.</li><li>Se previene y revierte con 3 pilares: proteína (1.6-2.2g/kg/día), entrenamiento de fuerza (2-3 veces/semana) y sueño/estrés (bajo cortisol).</li><li>Tu pensión de salud es tu músculo. Empieza a 'aportar' hoy.</li></ul><p><strong>❓ Preguntas de feedback para el alumno:</strong></p><ul><li>¿Cómo te fue con el Test de la Silla? ¿Cuál fue tu resultado?</li><li>¿Cuál de los 3 pilares (proteína, entrenamiento, sueño) crees que necesitas mejorar más?</li><li>¿Has notado alguna dificultad en tu día a día que pueda estar relacionada con pérdida de fuerza?</li><li>¿Qué acción concreta vas a tomar esta semana para empezar a 'aportar' a tu pensión muscular?</li></ul><p><strong>🎯 Cierre:</strong><br>La próxima clase: <strong>Ayuno intermitente – ¿herramienta o moda?</strong></p><p><strong>📱 Metáfora final de la Clase 10:</strong><br>'La sarcopenia es el envejecimiento del músculo. Pero el músculo no envejece por el paso del tiempo, sino por el desuso. Una bisagra que no se mueve se oxida. Un músculo que no se usa se debilita. No puedes parar el reloj, pero sí puedes mover la bisagra cada día. Ese es tu poder.'</p>"
             }
         ],
-        "practicaSemana": "Haz un test simple: levántate de una silla sin usar las manos. Si te cuesta, ese es tu punto de partida. Practica levantarte así 3 veces al día.",
-        "practicaTip": "La sarcopenia no es solo para mayores. Prevenirla empieza hoy. Cada pequeño estímulo de fuerza cuenta.",
-        "videos": [
-            "Carlos Jaramillo: \"Sarcopenia, la epidemia silenciosa\"",
-            "Dr. La Rosa: \"Músculo y longevidad, lo que nadie te cuenta\"",
-            "Ejercicios para prevenir sarcopenia en casa"
-        ]
+        "practicaSemana": "🪑 **Práctica de la semana**\n\n**Compromiso mínimo:**\n• Haz el Test de la Silla hoy mismo para conocer tu punto de partida.\n\n**Práctica diaria (3 veces al día):**\n• Levántate de una silla sin usar las manos antes de cada comida principal.\n\n**Acción adicional (elige UNA según tu nivel):**\n• **Nivel principiante:** Haz 3 series de 5-8 repeticiones de 'sentadilla con silla' (siéntate y levántate controladamente) en días alternos.\n• **Nivel intermedio:** Añade a tu rutina semanal 2 sesiones de 20-30 minutos de fuerza en casa (sentadillas, zancadas, flexiones, plancha, puente de glúteo).\n• **Nivel avanzado:** Asegura que en tus entrenamientos de fuerza estás progresando la carga (más peso o más dificultad) cada 1-2 semanas.\n\n**Autoevaluación al final de la semana:**\n1. ¿Cómo te fue con el Test de la Silla?\n2. ¿Lograste hacer las 3 repeticiones diarias?\n3. ¿Notaste alguna mejora en tu fuerza o estabilidad?\n\n**Nota importante:**\nNo te asustes si el Test de la Silla te resultó difícil o imposible. Eso es lo que queremos detectar. No es una sentencia, es un diagnóstico. Ahora sabes dónde estás y puedes trazar la ruta para mejorar. Cada pequeña repetición de levantarte de la silla es un voto a favor de tu futuro independiente. Empieza hoy.",
+        "practicaTip": "💡 No te asustes si el Test de la Silla te resultó difícil. Eso es lo que queremos detectar. No es una sentencia, es un diagnóstico. Ahora sabes dónde estás y puedes trazar la ruta para mejorar.",
+        "videos": []
     },
     "clase11": {
         "id": "clase11",
