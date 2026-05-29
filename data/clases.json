@@ -537,51 +537,48 @@
     "clase11": {
         "id": "clase11",
         "numero": 11,
-        "titulo": "Ayuno intermitente",
+        "titulo": "Ayuno intermitente – Un patrón de comidas, no una dieta (enfoque práctico)",
         "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
-        "duracion": 60,
-        "objetivo": "Explicar qué es el ayuno intermitente, para quién funciona, para quién NO y cómo hacerlo seguro.",
+        "duracion": 75,
+        "objetivo": "Explicar qué es el ayuno intermitente, para quién puede ser una herramienta útil, para quién NO lo es en absoluto, y cómo empezar de forma segura y gradual, entendiendo los mecanismos celulares como la autofagia.",
         "palabrasClave": [
-            "Ayuno intermitente - Patrón de comidas, no una dieta (ej: 16/8)",
-            "Autofagia - Limpieza celular que se activa con el ayuno",
-            "Beneficios reales - Mejora sensibilidad a insulina, puede ayudar a adelgazar",
-            "Cuándo NO hacerlo - Embarazo, lactancia, desórdenes alimenticios, estrés alto",
-            "Cómo empezar - 12h de ayuno (ej: no comer de 9pm a 9am)"
+            "Ayuno intermitente - Patrón de comidas, no una dieta. Alterna ayuno y alimentación",
+            "Autofagia - Limpieza celular. Reciclaje de componentes dañados",
+            "Apoptosis - Muerte celular programada. Elimina células muy dañadas",
+            "Sensibilidad a insulina - Mejora al mantener insulina baja durante horas",
+            "Ventana de alimentación - Período en el que se come (ej. 8 horas)",
+            "Contraindicaciones - Embarazo, niños, desórdenes alimenticios, estrés crónico"
         ],
         "bloques": [
             {
                 "nombre": "¿Qué es el ayuno intermitente?",
-                "duracion": 15,
-                "contenido": "<p>No es una dieta, es un patrón de comidas. Ejemplo: comer en ventana de 8 horas (ej. 12pm a 8pm) y ayunar 16h.</p>"
-            },
-            {
-                "nombre": "Beneficios reales",
-                "duracion": 15,
-                "contenido": "<p>Mejora sensibilidad a insulina, activa autofagia (limpieza celular), puede ayudar a adelgazar. Pero NO es mágico.</p>"
-            },
-            {
-                "nombre": "Cuándo NO hacerlo",
-                "duracion": 15,
-                "contenido": "<p>Embarazo/lactancia, historial de desórdenes alimenticios, estrés muy alto, problemas de tiroides no controlados, niños/adolescentes. También si te hace comer en exceso luego.</p>"
-            },
-            {
-                "nombre": "Cómo empezar si aplica",
                 "duracion": 10,
-                "contenido": "<p>Empieza con 12h de ayuno (ej. no comer de 9pm a 9am). Es casi dormir y ya. Prioriza proteína en la primera comida. No obsesionarse.</p>"
+                "contenido": "<p><strong>⏰ El ayuno intermitente NO es una dieta. Es un patrón de comidas que alterna períodos de ayuno (sin ingesta calórica) con períodos de alimentación. No te dice qué comer, sino cuándo comer.</strong></p><p><strong>El ejemplo más común (16/8):</strong></p><ul><li>Ayunas durante 16 horas seguidas.</li><li>Comes durante una ventana de 8 horas (ej. de 12 del mediodía a 8 de la tarde).</li><li>Dentro de esa ventana, haces 2 o 3 comidas.</li></ul><p><strong>No es pasar hambre deliberadamente:</strong> Es comprimir las comidas del día en un período más corto. La mayoría de las horas de ayuno incluyen el sueño.</p><p><strong>Qué NO es el ayuno intermitente:</strong></p><ul><li>No es una dieta de restricción calórica extrema (aunque puede ayudar a comer menos).</li><li>No es una 'limpieza' mágica que desintoxica el cuerpo (el hígado y los riñones ya hacen eso).</li><li>No es para todos (lo veremos en el bloque 3).</li></ul><p><strong>📱 Metáfora:</strong><br>'El ayuno intermitente no es cambiar el menú del restaurante, es cambiar el horario en que el restaurante abre y cierra. El menú sigue siendo importante, pero el descanso de la cocina también.'</p>"
+            },
+            {
+                "nombre": "Beneficios reales (con evidencia, sin exagerar)",
+                "duracion": 20,
+                "contenido": "<p><strong>✅ Los beneficios no son mágicos, pero son reales cuando el ayuno se adapta a la persona.</strong></p><p><strong>Beneficio 1: Mejora la sensibilidad a la insulina</strong><br>Al ayunar, los niveles de insulina bajan y se mantienen bajos durante horas. Esto permite que las células 'descansen' de la exposición constante a la insulina y recuperen sensibilidad.</p><p><strong>Beneficio 2: Activación de la autofagia (limpieza celular)</strong></p><p><strong>¿Qué es la autofagia?</strong> Es un proceso celular de reciclaje y limpieza. La célula detecta componentes dañados, los envuelve y los digiere para reutilizar sus piezas en nuevas estructuras sanas. Es como si la célula hiciera una limpieza de primavera.</p><p><strong>¿Cuándo se activa?</strong> Principalmente con ayuno (a partir de 16-24 horas), ejercicio físico y restricción calórica crónica.</p><p><strong>¿Para qué sirve?</strong> Prevención del envejecimiento celular, neuroprotección (Alzheimer, Parkinson), mejora de la función metabólica y defensa contra infecciones.</p><p><strong>Autofagia vs. Apoptosis (comparación clave):</strong></p><ul><li><strong>Autofagia:</strong> 'Reciclaje y limpieza'. La célula se limpia y recicla sus partes dañadas para seguir viva y funcionar mejor. Es un proceso pro-supervivencia.</li><li><strong>Apoptosis:</strong> 'Suicidio celular programado'. La célula se autodestruye porque está muy dañada (ej. ADN irreparable) o ya no es necesaria. Es muerte celular controlada.</li></ul><p><strong>Conclusión práctica:</strong> La autofagia recicla y repara. La apoptosis elimina cuando ya no hay solución. El ayuno intermitente activa principalmente la autofagia.</p><p><strong>Beneficio 3: Puede ayudar a adelgazar (sin ser mágico)</strong><br>Al reducir la ventana de alimentación, muchas personas comen menos calorías sin esfuerzo. Los niveles bajos de insulina favorecen la movilización de grasa almacenada. Pero si en tu ventana de 8 horas comes ultraprocesados, no adelgazarás.</p><p><strong>📱 Metáfora:</strong><br>'La autofagia es como el servicio de limpieza que trabaja en tu cuerpo cuando cierras el restaurante. Durante el día (con comida), los empleados cocinan y sirven. Por la noche (ayuno), entra el equipo de limpieza. Si el restaurante nunca cierra, la suciedad se acumula.'</p>"
+            },
+            {
+                "nombre": "Cuándo NO hacer ayuno intermitente (contraindicaciones)",
+                "duracion": 15,
+                "contenido": "<p><strong>⚠️ El ayuno no es para todos. En algunos casos, puede ser perjudicial.</strong></p><p><strong>Contraindicaciones absolutas (NO hacer bajo ninguna circunstancia):</strong></p><ul><li><strong>Embarazo y lactancia:</strong> El bebé necesita nutrientes constantes.</li><li><strong>Niños y adolescentes en crecimiento:</strong> Necesitan nutrientes regulares para su desarrollo.</li><li><strong>Historial de desórdenes alimenticios:</strong> Anorexia, bulimia, ortorexia. El ayuno puede ser una puerta a conductas restrictivas peligrosas.</li><li><strong>Bajo peso significativo (IMC menor 18.5):</strong> Necesitas aumentar masa, no restringir ventanas.</li><li><strong>Diabetes tipo 1 (sin supervisión médica estricta):</strong> El riesgo de hipoglucemias graves es muy alto.</li><li><strong>Medicación que requiere comida:</strong> Consulta con tu médico.</li></ul><p><strong>Contraindicaciones relativas (MUCHA precaución):</strong></p><ul><li><strong>Estrés crónico / cortisol alto:</strong> El ayuno es un estresor fisiológico leve. En una persona con sistema nervioso ya sobrecargado, el ayuno puede elevar más el cortisol, empeorando ansiedad, sueño y fatiga.</li><li><strong>Problemas de tiroides no controlados:</strong> El ayuno puede alterar la conversión de T4 a T3. Consulta a tu endocrino.</li><li><strong>Hipotensión crónica o tendencia a mareos:</strong> El ayuno puede bajar más la presión arterial.</li><li><strong>Deportistas de alta intensidad:</strong> Puede que necesites combustible antes y después del entrenamiento.</li><li><strong>Historial de gastritis o úlceras:</strong> El ayuno prolongado puede irritar el estómago vacío.</li></ul><p><strong>⚠️ Lo más importante:</strong><br>'Si el ayuno te genera ansiedad, te hace comer en exceso cuando rompes el ayuno, o te obsesiona con el reloj, NO es para ti. El ayuno debe ser una herramienta flexible, no una cárcel mental.'</p><p><strong>📱 Metáfora:</strong><br>'El ayuno es como una herramienta de jardinería. Las tijeras de podar son útiles para un rosal, pero si las usas en una planta recién regada, la dañas. Conoce tu 'planta' antes de podar.'</p>"
+            },
+            {
+                "nombre": "Cómo empezar (progresión gradual hasta 24h)",
+                "duracion": 15,
+                "contenido": "<p><strong>🚀 No empieces por 16 horas si nunca has ayunado. Empieza por algo tan sencillo que sea casi automático.</strong></p><p><strong>Progresión recomendada (semana a semana):</strong></p><ul><li><strong>Semana 1-2: 12 horas</strong> - Cena a las 20h, desayuno a las 8h. La mitad son horas durmiendo. Ideal para principiantes.</li><li><strong>Semana 3-4: 14 horas</strong> - Cena a las 20h, desayuno a las 10h. Desayuno un poco más tarde.</li><li><strong>Semana 5-6: 16 horas</strong> - Cena a las 20h, comida a las 12h. Aquí empiezan beneficios claros de autofagia.</li><li><strong>Avanzado (bajo supervisión): 18-24 horas</strong> - Ej. una comida al día o ayuno de 24h 1-2 veces por semana. No es necesario.</li></ul><p><strong>Beneficios según duración del ayuno:</strong></p><ul><li>12h: Descanso digestivo, baja insulina nocturna.</li><li>14-16h: Mejora sensibilidad a insulina, empieza autofagia leve.</li><li>16-18h: Autofagia más significativa.</li><li>18-24h: Autofagia potente (pero no necesario para la mayoría).</li><li>>24h: Ayunos más largos solo con supervisión profesional.</li></ul><p><strong>Cómo romper el ayuno (importante):</strong></p><ul><li>Primera comida: Prioriza proteína + grasa + fibra (ej. huevos con aguacate y espinacas).</li><li>Evita: Azúcar, harinas refinadas, bollería.</li><li>Hidratación durante el ayuno: Agua, café (sin azúcar), té, infusiones.</li></ul><p><strong>Qué hacer si sientes hambre (real vs costumbre):</strong></p><ul><li><strong>Hambre real (fisiológica):</strong> Molestia en el estómago, debilidad, mareo. Rompe el ayuno.</li><li><strong>Hambre por costumbre (psicológica):</strong> Duelo de la comida a cierta hora. Bebe agua, infusión, o sal a caminar 5 minutos.</li></ul><p><strong>Regla de oro:</strong><br>'El ayuno no debe ser una lucha constante. Si sufres más de lo que beneficias, no es para ti. Escucha a tu cuerpo.'</p><p><strong>📱 Metáfora:</strong><br>'Empezar con 16 horas de ayuno sin entrenamiento es como querer correr un maratón sin haber corrido nunca 5 km. Empieza por 12 horas (casi como dormir y ya). La paciencia es parte del método.'</p>"
             },
             {
                 "nombre": "Cierre y práctica semanal",
-                "duracion": 5,
-                "contenido": "<p>Resumen de la clase. Explicas la tarea para la semana.</p>"
+                "duracion": 15,
+                "contenido": "<p><strong>📌 Resumen rápido de la clase:</strong></p><ul><li><strong>Qué es:</strong> Patrón de comidas, no una dieta. Ej: ayuno 16h, comer en 8h.</li><li><strong>Beneficios reales:</strong> Mejora sensibilidad a insulina, activa autofagia (limpieza celular), puede ayudar a adelgazar.</li><li><strong>Autofagia ≠ Apoptosis:</strong> La autofagia recicla y repara. La apoptosis es muerte celular programada.</li><li><strong>Contraindicaciones claras:</strong> Embarazo, niños, desórdenes alimenticios, estrés crónico, problemas de tiroides no controlados.</li><li><strong>Cómo empezar:</strong> Progresión gradual desde 12h hasta 16h (máximo 24h con supervisión profesional).</li></ul><p><strong>❓ Preguntas de feedback para el alumno:</strong></p><ul><li>¿Cómo te sentiste durante las 12 horas de ayuno (energía, hambre, estado de ánimo)?</li><li>¿Notaste diferencia entre el hambre real y la costumbre de comer a cierta hora?</li><li>¿Hay alguna contraindicación de la lista que aplique a ti? Si es así, ¿consideras que el ayuno intermitente es seguro para ti?</li><li>¿Crees que este patrón podría integrarse en tu vida sin generar estrés o ansiedad?</li></ul><p><strong>🎯 Cierre:</strong><br>La próxima clase: <strong>Estructura semanal, sol y frío</strong></p><p><strong>📱 Metáfora final de la Clase 11:</strong><br>'El ayuno intermitente es como entrenar la flexibilidad. No empiezas haciendo la espagüeta el primer día. Empiezas tocándote los pies. Con paciencia, quizás llegas más lejos. Pero si te duele la espalda, no sigues estirando, vas al fisioterapeuta. El ayuno es una herramienta de estiramiento metabólico. Úsala con cuidado, escuchando a tu cuerpo, y solo si no te hace daño.'</p>"
             }
         ],
-        "practicaSemana": "Un día prueba 12h de ayuno (cena temprano, desayuno normal). No cambies nada más. Observa si sientes hambre real o solo costumbre.",
-        "practicaTip": "El ayuno no es para todos. Si te hace comer en exceso después, no es para ti. Escucha a tu cuerpo.",
-        "videos": [
-            "Carlos Jaramillo: \"Ayuno intermitente, ¿sí o no?\"",
-            "Dr. La Rosa: \"Autofagia, el reciclaje celular\"",
-            "Ayuno intermitente: mitos y realidades"
-        ]
+        "practicaSemana": "⏰ **Práctica de la semana**\n\n**Elige UN día de esta semana para probar un ayuno de 12 horas.** No cambies nada más de tu alimentación. Observa cómo te sientes.\n\n**Instrucción concreta:**\n• **La noche anterior:** Cena antes de las 20h (o 3 horas antes de acostarte).\n• **Al día siguiente:** Desayuna a las 8h (o 12 horas después de tu última cena). Entre medias, solo agua, café o té sin azúcar.\n• **Durante el ayuno:** Observa si sientes hambre real (fisiológica) o solo costumbre (psicológica).\n• **Al romper el ayuno:** Prioriza proteína y grasa (ej. huevos con aguacate, o yogur griego con frutos secos). Evita azúcar y harinas refinadas.\n\n**Opcional (si te fue bien y quieres más):**\n• A la semana siguiente, prueba 14 horas.\n• A la siguiente, 16 horas (pero solo si te sientes bien y sin estrés añadido).\n\n**Práctica avanzada (solo para perfiles sin contraindicaciones):**\nSi ya tienes experiencia con ayunos de 16-18 horas, prueba un ayuno de 24 horas una vez al mes. Elige un día sin entrenamiento intenso. Rompe con una comida ligera rica en proteína y vegetales. **No lo hagas sin haber consultado antes a un profesional de la salud.**\n\n**Nota importante:**\nEl ayuno intermitente no es una competición. No se gana un premio por ayunar más horas. Si 12 horas te funcionan, quédate ahí. Si 16 te generan ansiedad, baja a 14 o a 12. La flexibilidad es la clave. Y si después de leer esta clase decides que el ayuno no es para ti, es una decisión igual de válida. Escuchar a tu cuerpo es más importante que seguir modas.",
+        "practicaTip": "💡 El ayuno no es una competición. Si 12 horas te funcionan, quédate ahí. Si 16 te generan ansiedad, baja a 14. La flexibilidad es la clave. Escuchar a tu cuerpo es más importante que seguir modas.",
+        "videos": []
     },
     "clase12": {
         "id": "clase12",
