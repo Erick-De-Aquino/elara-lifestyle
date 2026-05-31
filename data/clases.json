@@ -677,7 +677,16 @@
         ],
         "practicaSemana": "🛒 **Práctica de la semana**\n\n**Ve al supermercado (o a tu despensa) con 3 productos que CREES que son sanos. Lee sus etiquetas. Si te engañaron, anótalo.**\n\n**Instrucción concreta:**\n1. Elige 3 productos empaquetados que normalmente compras o que crees que son saludables (ej. yogur de sabores, pan de molde, cereales de caja, galletas 'integrales', barritas 'fit', leches vegetales, etc.).\n2. Voltea el envase y busca:\n   - Lista de ingredientes: ¿El azúcar o grasa mala está entre los 3 primeros?\n   - Cantidad de azúcar por 100g: ¿Más de 5g? ¿Más de 15g?\n   - Número de ingredientes: ¿Más de 5? ¿Reconoces la mayoría?\n   - Claims en la portada: ¿Hay alguno de los mentirosos ('0% grasa', 'light', 'natural', etc.)?\n3. Anota:\n   - Nombre del producto.\n   - Lo que CREÍAS que era (ej. 'pensaba que era sano').\n   - Lo que REALMENTE es (ej. 'azúcar en 3er lugar, 18g azúcar por 100g, aceite de palma').\n\n**Opcional (para los más aplicados):**\n- Fotografía las 3 etiquetas.\n- Busca una alternativa más sana para cada producto (puede ser de otra marca o una versión casera).\n\n**Nota importante:**\nNo te sientas mal si has estado comprando productos que creías sanos y no lo eran. No es tu culpa. El marketing está diseñado para confundir. Ahora tienes las herramientas para no volver a caer. La próxima vez que vayas al supermercado, serás más libre.",
         "practicaTip": "💡 No te sientas mal si has estado comprando productos que creías sanos y no lo eran. No es tu culpa. El marketing está diseñado para confundir. Ahora tienes las herramientas para no volver a caer.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Dr. Carlos Jaramillo: \"10 Reglas Para Leer La Etiqueta de un Alimento\"",
+                "url": "https://www.youtube.com/watch?v=r9wP1MLYRm0"
+            },
+            {
+                "titulo": "Doctablet: \"ASÍ SE LEEN LAS ETIQUETAS EN LOS ALIMENTOS! Te puedes salvar\"",
+                "url": "https://www.youtube.com/watch?v=DDnETndcY2A"
+            }
+        ]
     },
     "clase14": {
         "id": "clase14",
@@ -685,47 +694,49 @@
         "titulo": "Prevención de recaídas + cierre del curso",
         "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
         "duracion": 60,
-        "objetivo": "Normalizar los tropiezos y dar herramientas para no abandonar. Cerrar el curso con motivación y un plan de acción a largo plazo.",
+        "objetivo": "Normalizar los tropiezos, darte herramientas para no abandonar cuando lleguen, y cerrar el curso con una reflexión profunda que te impulse a aplicar y compartir todo lo aprendido.",
         "palabrasClave": [
-            "La perfección no existe - Todos tienen días malos",
-            "Regla del 80/20 - 80% apegados al plan, 20% flexibles",
-            "Qué hacer cuando recaes - No te castigues, vuelves al plan en la siguiente comida",
-            "Metáfora de la rueda pinchada - Si pinchas una rueda, no pinchas las otras tres",
-            "Círculo de apoyo - Compartir el proceso con alguien de confianza"
+            "Perfección inexistente - Todos tienen días malos. No es fracaso, es ser humano",
+            "Regla del 80/20 - El 80% de acciones determinan el 100% de resultados",
+            "Gestión de la recaída - Protocolo de 3 pasos: para, respira, nombra, vuelve al plan",
+            "Círculo de apoyo - Compartir el proceso multiplica las probabilidades de éxito",
+            "Compromiso a largo plazo - La dirección es más importante que la velocidad",
+            "Carta a uno mismo - Herramienta para leer en los días difíciles"
         ],
         "bloques": [
             {
-                "nombre": "La perfección no existe",
-                "duracion": 10,
-                "contenido": "<p>Todos tendrás días malos. Una comida mala NO arruina el progreso.</p>"
+                "nombre": "La perfección no existe – normalicemos los tropiezos",
+                "duracion": 8,
+                "contenido": "<p><strong>🌧️ Todos, absolutamente todos, tienen días malos. Días donde duermes mal, comes sin ganas, no entrenas, te estresas y te saltas el plan. Eso no es un fracaso, es ser humano.</strong></p><p><strong>Lo que NO pasa por un día malo:</strong></p><ul><li>No pierdes toda tu masa muscular por un día sin entrenar.</li><li>No arruinas tu sensibilidad a la insulina por una comida con azúcar.</li><li>No deshaces semanas de buen sueño por una noche de poco descanso.</li></ul><p><strong>Lo que SÍ pasa:</strong> Te sientes culpable. Y la culpa es el peor enemigo, porque te lleva a pensar 'ya lo he estropeado, da igual lo que haga el resto del día'. Y entonces conviertes una comida mala en un día malo, y un día malo en una semana mala.</p><p><strong>📊 Ejemplo numérico:</strong> Si has comido bien 20 días de 21, ese día malo es solo el 5%. No arruina nada. El 95% de acierto sigue siendo extraordinario.</p><p><strong>📱 Metáfora:</strong><br>'Un día malo es como una gota de tinta en un vaso de agua. Al principio se ve, pero si el vaso está lleno de días buenos (agua limpia), la tinta se diluye y apenas se nota. El problema es cuando el vaso ya estaba sucio de antes. Por eso cuidar la mayoría de los días es lo que te da margen para los tropiezos.'</p>"
             },
             {
-                "nombre": "Regla del 80/20",
-                "duracion": 10,
-                "contenido": "<p>80% apegados al plan, 20% flexibles. Eso es sostenible a 10 años.</p>"
+                "nombre": "La regla del 80/20 (aplicada a la semana)",
+                "duracion": 8,
+                "contenido": "<p><strong>📊 El 80% de tus acciones determinan el 100% de tus resultados. El 20% restante es ruido, no impacto.</strong></p><p><strong>Aplicación concreta a una semana:</strong></p><ul><li>De lunes a viernes (5 días): Sigues el plan → 80%</li><li>Sábado comida: Comes lo que toca en casa de tu madre, incluido postre → 20%</li><li>Sábado cena: Sales con amigos, tomas una copa y algo diferente → 20%</li><li>Domingo: Vuelves al plan sin castigos ni compensaciones → 80%</li></ul><p><strong>Resultado:</strong> Has tenido 2 comidas 'libres' de 21 de la semana. Sigue siendo un 90% de acierto (incluso mejor que 80/20).</p><p><strong>La regla en una frase:</strong><br>'No necesitas ser perfecto el 100% del tiempo. Con ser coherente el 80% de las veces, ya obtienes el 95% de los resultados. El 20% de flexibilidad es lo que hace esto sostenible a 10 años.'</p><p><strong>📱 Metáfora:</strong><br>'La regla 80/20 es como un termostato. No necesitas que la temperatura esté exactamente en 21 grados cada minuto del día. Si oscila entre 20 y 22 grados, sigues estando cómodo. La flexibilidad es parte del sistema.'</p>"
             },
             {
-                "nombre": "Qué hacer cuando recaes",
-                "duracion": 10,
-                "contenido": "<p>No te castigues, no 'compenses' con más restricción. Vuelves al plan en la siguiente comida. Metáfora: 'Si pinchas una rueda, no pinchas las otras tres a propósito'.</p>"
+                "nombre": "Qué hacer cuando recaes – protocolo de 3 pasos (sin culpa)",
+                "duracion": 12,
+                "contenido": "<p><strong>🔄 No se trata de si vas a recaer, sino de cuándo. Y cuando ocurra, aquí tienes un protocolo para no caer en el agujero.</strong></p><p><strong>Protocolo de 3 pasos para el momento inmediato de la recaída:</strong></p><ul><li><strong>Paso 1: Para y respira.</strong> Detente. No hagas nada durante 30 segundos. Respira hondo (técnica 4-7-8 de la Clase 3). Cortas el bucle de culpa y activas el parasimpático.</li><li><strong>Paso 2: Nombra lo que pasó sin juzgarte.</strong> Dite a ti mismo: 'He comido esta galleta/pizza/helado. No pasa nada. He comido esto. No pasa nada. No soy ni mejor ni peor persona por ello. No soy un fracaso.' Separa el hecho de la emoción.</li><li><strong>Paso 3: Vuelve al plan en la siguiente comida.</strong> No compensas. No ayunas. No haces cardio extra. Solo vuelves a tu plan en la próxima comida. Cortas el ciclo de restricción-atracón-castigo.</li></ul><p><strong>Lo que NO debes hacer (y por qué):</strong></p><ul><li><strong>Castigarte con ayuno o ejercicio extremo:</strong> Estableces un ciclo de castigo-recompensa. El cuerpo entra en estrés.</li><li><strong>'Ya que he roto la dieta, hoy me da igual todo':</strong> Conviertes una comida mala en un día malo. El daño real viene de la continuación, no de la desviación puntual.</li><li><strong>Dejar el curso o abandonar los hábitos:</strong> Tiras por la borda semanas de progreso por un desliz insignificante.</li></ul><p><strong>🔄 La metáfora de la rueda pinchada (aplicada a los 4 pilares):</strong><br>'Imagina que vas conduciendo y pinchas una rueda. ¿Qué haces? ¿Bajas las otras tres ruedas a propósito para que el coche esté equilibrado? No. Cambias la rueda pinchada y sigues.'</p><ul><li>Si recaes en comida → No sabotear el sueño, el entrenamiento ni la gestión del estrés.</li><li>Si recaes en entrenamiento → No sabotear la alimentación, el sueño ni la mente.</li><li>Si recaes en sueño → No sabotear la alimentación (no uses azúcar para compensar), el entrenamiento (entrena igual aunque estés cansado), ni la mente (no te estreses).</li></ul><p><strong>📱 Metáfora:</strong><br>'La recaída no es un fracaso, es una curva en la carretera. No por tomar una curva dejas de conducir. Reduces la velocidad, tomas la curva y sigues recto. Lo que no haces es salirte del coche, prenderle fuego y comprar otro. Pues igual con tus hábitos.'</p>"
             },
             {
-                "nombre": "Círculo de apoyo y cierre",
-                "duracion": 20,
-                "contenido": "<p>Tener a alguien con quien hablar (pueden ser otros alumnos del curso).<br><strong>Cierre emocional:</strong> Recorres los 4 pilares y lo aprendido. Preguntas: ¿Qué fue lo más impactante? ¿Qué vas a mantener en tu vida? Les agradeces y animas a seguir.</p>"
+                "nombre": "Círculo de apoyo – no lo hagas solo",
+                "duracion": 8,
+                "contenido": "<p><strong>👥 Compartir el proceso con alguien multiplica las probabilidades de éxito. No por dependencia, sino por compromiso social.</strong></p><p><strong>Ideas concretas para crear tu círculo de apoyo:</strong></p><ul><li><strong>Compañero de curso:</strong> Crea un grupo de WhatsApp o Telegram. Compartan sus prácticas semanales. Anónimo si prefieres.</li><li><strong>Amigo o familiar:</strong> Elige a alguien de confianza. Pídele que te pregunte una vez a la semana: '¿Cómo va lo de los hábitos?'</li><li><strong>Cuenta pública (si te atreves):</strong> Comparte tu proceso en redes (puede ser anónimo o en un grupo cerrado).</li><li><strong>Diario privado:</strong> Escribe cada día 2 líneas: 'Hoy logré... / Hoy fallé en...'</li><li><strong>Leer la carta que escribiste en la práctica final:</strong> Vuelve a ella en los días difíciles.</li></ul><p><strong>Lo que NO es el círculo de apoyo:</strong> No es un grupo de quejas o competencia. No es para sentirte vigilado. Es para compartir logros y tropiezos sin miedo al juicio.</p><p><strong>📱 Metáfora:</strong><br>'Un círculo de apoyo es como las cuerdas en una montaña. No escalas por ellas, pero si resbalas, te agarran. No son muletas, son seguros. Y tener un seguro no te hace menos escalador, te hace más inteligente.'</p>"
             },
             {
-                "nombre": "Práctica final",
-                "duracion": 10,
-                "contenido": "<p>Explicas la tarea final.</p>"
+                "nombre": "Cierre emocional – repaso de los 4 pilares y preguntas reflexivas",
+                "duracion": 12,
+                "contenido": "<p><strong>🎯 Recorremos los 4 pilares que has aprendido en este curso. No es un repaso técnico, es un reconocimiento de todo lo que ahora sabes.</strong></p><p><strong>Alimentación:</strong> Ya sabes que no necesitas dietas milagro. Sabes leer etiquetas, calcular macros, priorizar proteína, reducir azúcar y ultraprocesados. Tu nevera tiene estructura.</p><p><strong>Ejercicio:</strong> Entiendes que el músculo es tu órgano de longevidad. Sabes que entrenar fuerza 2-3 veces por semana te da independencia y metabolismo.</p><p><strong>Sueño:</strong> Sabes que el ciclo circadiano lo es todo. Que la higiene del sueño (horarios, pantallas, temperatura) es tan importante como dormir las horas.</p><p><strong>Tranquilidad mental:</strong> Tienes herramientas: respiración diafragmática, pausas activas, gestión del estrés, aceptación. Sabes que el cortisol crónico es enemigo.</p><p><strong>❓ Preguntas reflexivas contundentes (tómate 2 minutos):</strong></p><ul><li><strong>Pregunta 1:</strong> 'Si toda esta información que has aprendido no la aplicas en tu vida real, ¿de qué te ha servido invertir tu tiempo? ¿Vas a ser de los que saben mucho pero hacen poco?'</li><li><strong>Pregunta 2:</strong> 'Si tú has logrado mejorar tu salud, tu energía, tu sueño, tu fuerza... ¿realmente vale la pena guardarte todo esto para ti solo? ¿O crees que hay alguien a tu alrededor que necesita escuchar lo que tú has aprendido?'</li></ul><p><strong>🎯 Cierre de las preguntas:</strong><br>'No te pido que contestes aquí. Solo que te las lleves contigo. Son preguntas que te acompañarán los próximos días. La respuesta honesta definirá si este curso fue un entretenimiento o un punto de inflexión en tu vida.'</p>"
+            },
+            {
+                "nombre": "Práctica final y despedida",
+                "duracion": 12,
+                "contenido": "<p><strong>✉️ Práctica final (tarea obligatoria):</strong><br>'Escribe una carta corta a ti mismo.'</p><p><strong>Instrucción concreta:</strong></p><ul><li>Coge un papel y un bolígrafo (o un documento digital privado).</li><li>Empieza con la frase: 'Si algún día tengo un mal día, un tropiezo, una recaída, haré esto...'</li><li>Incluye: Un recordatorio de por qué empezaste este curso. Un permiso explícito para fallar sin castigarte. El protocolo de 3 pasos (respira, nombra, vuelve al plan). Una frase que te anime (puede ser de alguien importante, o una de las metáforas del curso).</li><li>Guarda la carta en algún lugar visible (mesita de noche, nevera, móvil como nota anclada).</li><li>Cuando tengas un mal día (y lo tendrás), la lees antes de tomar cualquier decisión.</li></ul><p><strong>🎯 Cierre definitivo del curso:</strong><br>'Has llegado hasta aquí. No es casualidad. Has invertido horas en aprender sobre tu cuerpo, tu mente, tu metabolismo, tu sueño, tu fuerza. Eso ya es un acto de amor propio enorme.</p><p>Pero el curso no termina aquí. Termina cada día que aplicas una de estas herramientas. Termina cada vez que eliges caminar después de comer. Termina cada noche que priorizas dormir. Termina cada vez que respiras hondo antes de explotar.</p><p>No se trata de ser perfecto. Se trata de ser constante. De volver al plan una y otra vez, aunque te hayas desviado. De perdonarte y seguir.</p><p>Gracias por estar aquí. Gracias por querer mejorar. El mundo necesita más personas como tú, que se preocupan por su salud y por la de los suyos. Ahora, sal y aplica todo esto. No para impresionar a nadie. Para vivir más años, con más energía, más fuerza y más paz.</p><p>Te deseo una vida larga, saludable y feliz.'</p><p><strong>📱 Metáfora final del curso:</strong><br>'Tu salud es un jardín. No se cuida en un solo día, ni con una sola acción. Se cuida cada mañana al regar, cada temporada al podar, cada año al abonar. Algunos días lloverá demasiado, otros días hará sol en exceso, alguna plaga atacará. Pero el jardín no se abandona por una tormenta. El jardín se mantiene con constancia, con paciencia y con la certeza de que, a largo plazo, la dirección es más importante que la velocidad. Este curso te ha dado las semillas, las herramientas y el mapa. Ahora, el jardín es tuyo. ¿Qué vas a plantar hoy?'</p>"
             }
         ],
-        "practicaSemana": "Escribe una carta corta a ti mismo diciendo: 'Si tengo un mal día, haré esto...' Guárdala y léela cuando la necesites.",
-        "practicaTip": "No se trata de ser perfecto, se trata de ser constante. Un mal día no borra semanas de buenos hábitos.",
-        "videos": [
-            "Cómo mantener hábitos saludables a largo plazo",
-            "La ciencia de la consistencia (no de la perfección)",
-            "Qué hacer cuando pierdes la motivación"
-        ]
+        "practicaSemana": "✉️ **Práctica final (tarea obligatoria)**\n\n**Escribe una carta corta a ti mismo.** Empieza con la frase: 'Si algún día tengo un mal día, un tropiezo, una recaída, haré esto...'\n\n**Instrucción concreta:**\n1. Coge un papel y un bolígrafo (o un documento digital privado).\n2. Escribe 5-10 líneas dirigidas a tu 'yo futuro' que pueda estar desanimado.\n3. Incluye:\n   - Un recordatorio de por qué empezaste este curso.\n   - Un permiso explícito para fallar sin castigarte.\n   - El protocolo de 3 pasos (respira, nombra, vuelve al plan).\n   - Una frase que te anime (puede ser de alguien importante para ti, o una de las metáforas del curso).\n4. Guarda la carta en algún lugar visible (en la mesita de noche, en la nevera, en el móvil como nota anclada).\n5. Cuando tengas un mal día (y lo tendrás), la lees antes de tomar ninguna decisión.\n\n**Nota importante:**\nNo se trata de escribir bonito. Se trata de tener una herramienta de rescate para cuando la motivación falle. La motivación va y viene. La disciplina se entrena. Esta carta es tu entrenamiento de disciplina emocional.",
+        "practicaTip": "💡 No se trata de escribir bonito. Se trata de tener una herramienta de rescate para cuando la motivación falle. La motivación va y viene. La disciplina se entrena. Esta carta es tu entrenamiento de disciplina emocional.",
+        "videos": []
     }
 }
