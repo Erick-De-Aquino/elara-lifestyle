@@ -64,16 +64,12 @@ function mostrarErrorCarga() {
 function renderizarClase() {
     if (!claseData) return;
     
-    // Título y encabezado
     document.title = `Clase ${claseData.numero}: ${claseData.titulo} | ELARA METHOD`;
     document.getElementById('clase-titulo').innerHTML = `<i class="fas fa-play-circle"></i> Clase ${claseData.numero}: ${claseData.titulo}`;
     document.getElementById('clase-capitulo').textContent = claseData.capitulo;
     document.getElementById('clase-duracion').innerHTML = `<i class="fas fa-clock"></i> Duración: ${claseData.duracion} min`;
-    
-    // Objetivo
     document.getElementById('clase-objetivo').textContent = claseData.objetivo;
     
-    // Palabras clave
     const palabrasClaveUl = document.getElementById('clase-palabras-clave');
     palabrasClaveUl.innerHTML = '';
     claseData.palabrasClave.forEach(palabra => {
@@ -82,13 +78,11 @@ function renderizarClase() {
         palabrasClaveUl.appendChild(li);
     });
     
-    // Práctica de la semana
     document.getElementById('practica-texto').innerHTML = claseData.practicaSemana;
     document.getElementById('practica-tip').innerHTML = `<i class="fas fa-lightbulb"></i> ${claseData.practicaTip}`;
     
-    // Videos (nueva versión con URLs desde JSON)
     const videosContainer = document.getElementById('videos-container');
-        if (videosContainer) {
+    if (videosContainer) {
         videosContainer.innerHTML = '';
         claseData.videos.forEach(video => {
             const videoLink = document.createElement('a');
@@ -98,13 +92,11 @@ function renderizarClase() {
             videoLink.innerHTML = `<i class="fab fa-youtube"></i> <span>${video.titulo}</span>`;
             videosContainer.appendChild(videoLink);
         });
-}
+    }
 
-    // Bloques desplegables
     renderizarBloques();
 }
 
-// Configuración de bloques (se genera desde claseData)
 function renderizarBloques() {
     const container = document.getElementById('bloques-container');
     if (!container) return;
@@ -131,7 +123,6 @@ function renderizarBloques() {
     });
     container.innerHTML = html;
     
-    // Inicializar timers y eventos de despliegue
     claseData.bloques.forEach((bloque, index) => {
         inicializarTimer(index, bloque.duracion);
         inicializarDespliegue(index);
@@ -150,13 +141,9 @@ function inicializarDespliegue(index) {
             if (e.target.closest('.timer-controls')) return;
             
             const estaAbierto = contenido.classList.contains('abierto');
-            
-            // Cerrar todos los bloques
             document.querySelectorAll('.bloque-contenido').forEach(bloque => {
                 bloque.classList.remove('abierto');
             });
-            
-            // Abrir solo el bloque clickeado si no estaba abierto
             if (!estaAbierto) {
                 contenido.classList.add('abierto');
             }
@@ -177,10 +164,7 @@ function inicializarTimer(index, duracionMinutos) {
     let corriendo = false;
     let pausado = false;
     
-    // Función para obtener color progresivo usando HSL
     function obtenerColor(progreso) {
-        // progreso = tiempoRestante / tiempoTotal (0 a 1)
-        // Hue: 120° (verde) → 0° (rojo)
         const hue = 120 * progreso;
         return `hsl(${hue}, 70%, 55%)`;
     }
@@ -190,15 +174,10 @@ function inicializarTimer(index, duracionMinutos) {
             const minutos = Math.floor(tiempoRestante / 60);
             const segundos = tiempoRestante % 60;
             display.textContent = `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
-            
-            // Calcular progreso (0 = tiempo agotado, 1 = tiempo completo)
             const progreso = tiempoRestante / tiempoTotal;
-            
-            // Aplicar color progresivo
             display.style.color = obtenerColor(progreso);
             display.style.transition = 'color 0.1s ease';
             
-            // Si queda menos de 10 segundos, agregar efecto de parpadeo
             if (tiempoRestante <= 120 && tiempoRestante > 0) {
                 display.classList.add('parpadeo');
             } else {
@@ -208,19 +187,16 @@ function inicializarTimer(index, duracionMinutos) {
     }
     
     function avanzarAlSiguienteBloque() {
-        // Detener timer actual
         if (intervalo) {
             clearInterval(intervalo);
             corriendo = false;
             pausado = false;
         }
         
-        // Buscar el siguiente bloque
         const bloques = document.querySelectorAll('.bloque-item');
         const siguienteBloque = bloques[index + 1];
         
         if (siguienteBloque) {
-            // Iniciar el timer del siguiente bloque automáticamente
             const siguienteStartBtn = siguienteBloque.querySelector('.start-btn');
             if (siguienteStartBtn) {
                 siguienteStartBtn.click();
@@ -229,68 +205,62 @@ function inicializarTimer(index, duracionMinutos) {
     }
     
     function iniciarTimer() {
-    if (corriendo) return;
-    if (tiempoRestante <= 0) return;
-    
-    corriendo = true;
-    pausado = false;
-    
-    // Añadir clase activo al bloque
-    const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
-    if (bloqueItem) bloqueItem.classList.add('activo');
-    
-    intervalo = setInterval(() => {
-        if (tiempoRestante > 0 && !pausado) {
-            tiempoRestante--;
-            actualizarDisplay();
-        }
+        if (corriendo) return;
+        if (tiempoRestante <= 0) return;
         
-        if (tiempoRestante === 0) {
+        corriendo = true;
+        pausado = false;
+        
+        const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+        if (bloqueItem) bloqueItem.classList.add('activo');
+        
+        intervalo = setInterval(() => {
+            if (tiempoRestante > 0 && !pausado) {
+                tiempoRestante--;
+                actualizarDisplay();
+            }
+            
+            if (tiempoRestante === 0) {
+                clearInterval(intervalo);
+                corriendo = false;
+                pausado = false;
+                actualizarDisplay();
+                
+                if (bloqueItem) bloqueItem.classList.remove('activo');
+                avanzarAlSiguienteBloque();
+            }
+        }, 1000);
+    }
+    
+    function pausarTimer() {
+        if (corriendo && !pausado) {
+            pausado = true;
+            const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+            if (bloqueItem) bloqueItem.style.opacity = '0.7';
+        }
+    }
+    
+    function reanudarTimer() {
+        if (corriendo && pausado) {
+            pausado = false;
+            const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
+            if (bloqueItem) bloqueItem.style.opacity = '1';
+        }
+    }
+    
+    function resetearTimer() {
+        if (intervalo) {
             clearInterval(intervalo);
             corriendo = false;
             pausado = false;
-            actualizarDisplay();
-            
-            // Quitar clase activo al terminar
-            if (bloqueItem) bloqueItem.classList.remove('activo');
-            
-            avanzarAlSiguienteBloque();
         }
-    }, 1000);
-}
-    
-    function pausarTimer() {
-    if (corriendo && !pausado) {
-        pausado = true;
-        // Opcional: cambiar opacidad o color cuando está pausado
+        tiempoRestante = tiempoTotal;
+        actualizarDisplay();
+        
         const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
-        if (bloqueItem) bloqueItem.style.opacity = '0.7';
+        if (bloqueItem) bloqueItem.classList.remove('activo');
     }
-}
     
-    function reanudarTimer() {
-    if (corriendo && pausado) {
-        pausado = false;
-        const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
-        if (bloqueItem) bloqueItem.style.opacity = '1';
-    }
-}
-    
-    function resetearTimer() {
-    if (intervalo) {
-        clearInterval(intervalo);
-        corriendo = false;
-        pausado = false;
-    }
-    tiempoRestante = tiempoTotal;
-    actualizarDisplay();
-    
-    // Quitar clase activo al resetear
-    const bloqueItem = document.querySelector(`.bloque-item[data-bloque="${index}"]`);
-    if (bloqueItem) bloqueItem.classList.remove('activo');
-}
-    
-    // Eventos con stopPropagation para evitar que el click afecte al acordeón
     if (startBtn) {
         startBtn.onclick = (e) => {
             e.stopPropagation();
@@ -309,7 +279,6 @@ function inicializarTimer(index, duracionMinutos) {
         };
     }
     
-    // Crear botón de pausa si no existe
     const timerControls = display?.parentElement;
     if (timerControls && !timerControls.querySelector('.pause-btn')) {
         const pauseBtn = document.createElement('button');
@@ -319,7 +288,6 @@ function inicializarTimer(index, duracionMinutos) {
             e.stopPropagation();
             pausarTimer();
         };
-        // Insertar después del botón start
         startBtn?.insertAdjacentElement('afterend', pauseBtn);
     }
     
@@ -332,7 +300,7 @@ function formatearTiempo(segundos) {
     return `${mins.toString().padStart(2, '0')}:${segs.toString().padStart(2, '0')}`;
 }
 
-// Mostrar datos del alumno actual
+// Mostrar datos del alumno actual (solo para UI, el progreso viene de Supabase)
 function mostrarAlumnoActual() {
     const alumnoActual = localStorage.getItem('alumno_actual');
     const container = document.getElementById('alumno-bar-container');
@@ -357,11 +325,8 @@ function mostrarAlumnoActual() {
         return;
     }
     
-    const alumnos = getAlumnos();
-    const alumno = alumnos.find(a => a.nombre === alumnoActual);
-    const progreso = getProgreso(alumnoActual);
-    const totalClases = 14;
-    const porcentaje = (progreso.completadas.length / totalClases) * 100;
+    // Cargar progreso desde Supabase para mostrar en la barra
+    cargarProgresoParaBarra(alumnoActual);
     
     container.innerHTML = `
         <div class="alumno-bar">
@@ -369,100 +334,217 @@ function mostrarAlumnoActual() {
                 <div class="alumno-avatar"><i class="fas fa-user-graduate"></i></div>
                 <div class="alumno-datos">
                     <h4>${alumnoActual}</h4>
-                    <p>🎯 ${alumno?.objetivo || 'Sin objetivo'} | 📞 ${alumno?.telefono || 'Sin teléfono'}</p>
-                </div>
-            </div>
-            <div class="alumno-progreso">
-                <span style="font-size: 0.8rem;">Progreso: ${progreso.completadas.length}/${totalClases}</span>
-                <div class="barra-progreso">
-                    <div class="barra-progreso-fill" style="width: ${porcentaje}%;"></div>
+                    <p>Progreso: <span id="barra-progreso-texto">cargando...</span></p>
+                    <div class="barra-progreso">
+                        <div class="barra-progreso-fill" id="barra-progreso-fill"></div>
+                    </div>
                 </div>
             </div>
             <button id="btnCambiarAlumno" class="btn-cambiar-alumno"><i class="fas fa-exchange-alt"></i> Cambiar alumno</button>
         </div>
     `;
     
-    // CORRECCIÓN AQUÍ: cambiar alumno lleva a la lista, no al inicio
     document.getElementById('btnCambiarAlumno')?.addEventListener('click', () => {
         localStorage.removeItem('alumno_actual');
-        window.location.href = 'alumno-lista.html';  // <-- ESTA ES LA LÍNEA CORREGIDA
+        window.location.href = 'alumno-lista.html';
     });
 }
 
-// Cargar comentarios guardados
-function cargarComentariosGuardados() {
+async function cargarProgresoParaBarra(alumnoActual) {
+    try {
+        const { data, error } = await supabaseClient
+            .from('alumnos')
+            .select('progreso')
+            .eq('usuario', alumnoActual)
+            .single();
+        
+        if (error) return;
+        
+        const completadas = data?.progreso?.completadas || [];
+        const totalClases = 14;
+        const porcentaje = (completadas.length / totalClases) * 100;
+        
+        const textoElement = document.getElementById('barra-progreso-texto');
+        const fillElement = document.getElementById('barra-progreso-fill');
+        
+        if (textoElement) textoElement.textContent = `${completadas.length}/${totalClases}`;
+        if (fillElement) fillElement.style.width = `${porcentaje}%`;
+        
+    } catch (err) {
+        console.error('Error:', err);
+    }
+}
+
+// ===== NOTAS DEL PROFESOR (SUPABASE) =====
+
+async function cargarComentariosGuardados() {
     const alumnoActual = localStorage.getItem('alumno_actual');
     if (!alumnoActual || !claseId) return;
     
-    const alumnos = getAlumnos();
-    const alumno = alumnos.find(a => a.nombre === alumnoActual);
-    if (alumno && alumno.comentariosPorClase && alumno.comentariosPorClase[claseId]) {
-        document.getElementById('comentariosClase').value = alumno.comentariosPorClase[claseId];
-    }
-}
-
-// Guardar comentarios
-function guardarComentarios() {
-    const alumnoActual = localStorage.getItem('alumno_actual');
-    if (!alumnoActual) {
-        mostrarModalConfirmacion('Error', 'No hay alumno seleccionado', 'fa-exclamation-circle', 'icono-peligro', null);
-        return;
-    }
-    
-    const comentarios = document.getElementById('comentariosClase').value;
-    const alumnos = getAlumnos();
-    const index = alumnos.findIndex(a => a.nombre === alumnoActual);
-    
-    if (index !== -1) {
-        if (!alumnos[index].comentariosPorClase) {
-            alumnos[index].comentariosPorClase = {};
+    try {
+        const { data, error } = await supabaseClient
+            .from('alumnos')
+            .select('notas_profesor')
+            .eq('usuario', alumnoActual)
+            .single();
+        
+        if (error) {
+            console.error('Error cargando notas:', error);
+            return;
         }
-        alumnos[index].comentariosPorClase[claseId] = comentarios;
-        saveAlumnos(alumnos);
-        mostrarModalConfirmacion('Éxito', 'Comentarios guardados', 'fa-check-circle', 'icono-exito', null);
+        
+        if (data && data.notas_profesor && data.notas_profesor[claseId]) {
+            document.getElementById('comentariosClase').value = data.notas_profesor[claseId];
+        }
+    } catch (err) {
+        console.error('Error:', err);
     }
 }
 
-// Marcar clase como completada
-function marcarClaseCompletada() {
+async function guardarComentarios() {
     const alumnoActual = localStorage.getItem('alumno_actual');
     if (!alumnoActual) {
         mostrarModalConfirmacion('Error', 'No hay alumno seleccionado', 'fa-exclamation-circle', 'icono-peligro', null);
         return;
     }
     
-    const progreso = getProgreso(alumnoActual);
-    if (!progreso.completadas.includes(claseId)) {
+    const comentario = document.getElementById('comentariosClase').value;
+    
+    try {
+        const { data, error } = await supabaseClient
+            .from('alumnos')
+            .select('notas_profesor')
+            .eq('usuario', alumnoActual)
+            .single();
+        
+        if (error && error.code !== 'PGRST116') {
+            console.error('Error al obtener notas:', error);
+            mostrarModalConfirmacion('Error', 'Error al obtener notas', 'fa-exclamation-circle', 'icono-peligro', null);
+            return;
+        }
+        
+        const notasProfesor = data?.notas_profesor || {};
+        notasProfesor[claseId] = comentario;
+        
+        const { error: updateError } = await supabaseClient
+            .from('alumnos')
+            .update({ notas_profesor: notasProfesor })
+            .eq('usuario', alumnoActual);
+        
+        if (updateError) {
+            console.error('Error al guardar:', updateError);
+            mostrarModalConfirmacion('Error', 'Error al guardar notas', 'fa-exclamation-circle', 'icono-peligro', null);
+            return;
+        }
+        
+        mostrarModalConfirmacion('Éxito', 'Notas guardadas correctamente', 'fa-check-circle', 'icono-exito', null);
+        
+    } catch (err) {
+        console.error('Error:', err);
+        mostrarModalConfirmacion('Error', 'Error inesperado', 'fa-exclamation-circle', 'icono-peligro', null);
+    }
+}
+
+// ===== PROGRESO (SUPABASE) =====
+
+async function marcarClaseCompletada() {
+    const alumnoActual = localStorage.getItem('alumno_actual');
+    if (!alumnoActual) {
+        mostrarModalConfirmacion('Error', 'No hay alumno seleccionado', 'fa-exclamation-circle', 'icono-peligro', null);
+        return;
+    }
+    
+    try {
+        const { data, error } = await supabaseClient
+            .from('alumnos')
+            .select('progreso')
+            .eq('usuario', alumnoActual)
+            .single();
+        
+        if (error && error.code !== 'PGRST116') {
+            console.error('Error al obtener progreso:', error);
+            mostrarModalConfirmacion('Error', 'Error al obtener progreso', 'fa-exclamation-circle', 'icono-peligro', null);
+            return;
+        }
+        
+        const progreso = data?.progreso || { completadas: [] };
+        
+        if (progreso.completadas.includes(claseId)) {
+            mostrarModalConfirmacion('Info', 'Ya habías completado esta clase', 'fa-info-circle', 'icono-exito', null);
+            return;
+        }
+        
         progreso.completadas.push(claseId);
-        progreso.ultimaClase = claseId;
-        saveProgreso(alumnoActual, progreso);
         
-        const badgeContainer = document.getElementById('completada-badge-container');
-        if (badgeContainer) {
-            badgeContainer.innerHTML = '<div class="completada-badge"><i class="fas fa-check-circle"></i> ✅ Clase marcada como completada</div>';
+        const { error: updateError } = await supabaseClient
+            .from('alumnos')
+            .update({ progreso: progreso })
+            .eq('usuario', alumnoActual);
+        
+        if (updateError) {
+            console.error('Error al guardar progreso:', updateError);
+            mostrarModalConfirmacion('Error', 'Error al guardar progreso', 'fa-exclamation-circle', 'icono-peligro', null);
+            return;
         }
         
-        mostrarModalConfirmacion('Felicidades', `Has completado la clase "${claseData.titulo}"`, 'fa-check-circle', 'icono-exito', null);
-    } else {
-        mostrarModalConfirmacion('Info', `Ya habías completado esta clase`, 'fa-info-circle', 'icono-exito', null);
-    }
-}
-
-// Verificar si la clase ya está completada
-function verificarClaseCompletada() {
-    const alumnoActual = localStorage.getItem('alumno_actual');
-    if (!alumnoActual || !claseId) return false;
-    
-    const progreso = getProgreso(alumnoActual);
-    const estaCompletada = progreso.completadas.includes(claseId);
-    
-    if (estaCompletada) {
         const badgeContainer = document.getElementById('completada-badge-container');
         if (badgeContainer) {
             badgeContainer.innerHTML = '<div class="completada-badge"><i class="fas fa-check-circle"></i> ✅ Clase completada</div>';
         }
+        
+        const btnCompletada = document.getElementById('btnMarcarCompletada');
+        if (btnCompletada) {
+            btnCompletada.disabled = true;
+            btnCompletada.style.opacity = '0.5';
+        }
+        
+        // Actualizar la barra de progreso
+        cargarProgresoParaBarra(alumnoActual);
+        
+        mostrarModalConfirmacion('Felicidades', `Has completado la clase "${claseData.titulo}"`, 'fa-check-circle', 'icono-exito', null);
+        
+    } catch (err) {
+        console.error('Error:', err);
+        mostrarModalConfirmacion('Error', 'Error inesperado', 'fa-exclamation-circle', 'icono-peligro', null);
     }
-    return estaCompletada;
+}
+
+async function verificarClaseCompletada() {
+    const alumnoActual = localStorage.getItem('alumno_actual');
+    if (!alumnoActual || !claseId) return false;
+    
+    try {
+        const { data, error } = await supabaseClient
+            .from('alumnos')
+            .select('progreso')
+            .eq('usuario', alumnoActual)
+            .single();
+        
+        if (error) {
+            console.error('Error al verificar progreso:', error);
+            return false;
+        }
+        
+        const completadas = data?.progreso?.completadas || [];
+        const estaCompletada = completadas.includes(claseId);
+        
+        if (estaCompletada) {
+            const badgeContainer = document.getElementById('completada-badge-container');
+            if (badgeContainer) {
+                badgeContainer.innerHTML = '<div class="completada-badge"><i class="fas fa-check-circle"></i> ✅ Clase completada</div>';
+            }
+            const btnCompletada = document.getElementById('btnMarcarCompletada');
+            if (btnCompletada) {
+                btnCompletada.disabled = true;
+                btnCompletada.style.opacity = '0.5';
+            }
+        }
+        return estaCompletada;
+        
+    } catch (err) {
+        console.error('Error:', err);
+        return false;
+    }
 }
 
 // Inicializar la página
@@ -472,12 +554,11 @@ async function inicializar() {
     
     mostrarAlumnoActual();
     renderizarClase();
-    cargarComentariosGuardados();
-    verificarClaseCompletada();
+    await cargarComentariosGuardados();
+    await verificarClaseCompletada();
     
     document.getElementById('btnGuardarComentarios')?.addEventListener('click', guardarComentarios);
     document.getElementById('btnMarcarCompletada')?.addEventListener('click', marcarClaseCompletada);
 }
 
-// Iniciar
 inicializar();

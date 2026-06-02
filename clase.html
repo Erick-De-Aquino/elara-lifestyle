@@ -6,12 +6,12 @@
     <title>Cargando clase... | ELARA METHOD</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div id="nav-container"></div>
 
     <main class="main-content">
-        <!-- Barra de alumno (sticky) -->
         <div id="alumno-bar-container"></div>
 
         <div class="clase-container" id="clase-container">
@@ -29,7 +29,6 @@
                     <i class="fas fa-hourglass-half"></i> ⏱️ Control de tiempos (click en cada bloque para ver contenido)
                 </div>
 
-                <!-- Contenido general de la clase -->
                 <div class="contenido-clase">
                     <h2>📖 Contenido de la clase</h2>
                     <h3>🎯 Objetivo de la clase</h3>
@@ -39,11 +38,9 @@
                     <ul id="clase-palabras-clave"></ul>
                 </div>
 
-                <!-- Bloques desplegables -->
                 <div id="bloques-container" class="bloques-container"></div>
             </div>
 
-            <!-- Práctica de la semana -->
             <div class="practica-semana" id="practica-semana">
                 <i class="fas fa-tasks" style="font-size: 1.5rem; margin-bottom: 10px; display: inline-block;"></i>
                 <h3>📌 Práctica de la semana</h3>
@@ -51,17 +48,15 @@
                 <p id="practica-tip" style="margin-top: 10px; font-size: 0.9rem; opacity: 0.9;"></p>
             </div>
 
-            <!-- Videos de apoyo -->
             <div class="videos-apoyo">
                 <h3><i class="fab fa-youtube"></i> 📺 Videos de apoyo</h3>
                 <div id="videos-container"></div>
             </div>
 
-            <!-- Formulario de comentarios -->
             <div class="formulario-comentarios">
-                <h3><i class="fas fa-notes-medical"></i> 📝 Notas y comentarios del alumno</h3>
+                <h3><i class="fas fa-notes-medical"></i> 📝 Mis notas sobre el alumno</h3>
                 <textarea id="comentariosClase" rows="4" placeholder="Anota aquí el progreso, dudas, observaciones..."></textarea>
-                <button id="btnGuardarComentarios" class="btn-primary">💾 Guardar comentarios</button>
+                <button id="btnGuardarComentarios" class="btn-primary">💾 Guardar notas</button>
             </div>
 
             <div id="completada-badge-container" style="margin-top: 20px;"></div>
@@ -71,6 +66,8 @@
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
     <script src="js/comunes.js"></script>
     <script src="js/navegacion.js"></script>
     <script src="js/alumno.js"></script>

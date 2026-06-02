@@ -1,21 +1,15 @@
 [
     {
         "texto": "Inicio",
-        "url": "index.html",
+        "url": "profesor.html",
         "icon": "fas fa-home",
-        "activeMatch": "index"
+        "activeMatch": "profesor"
     },
     {
         "texto": "Índice curso",
         "url": "curso.html",
         "icon": "fas fa-book-open",
         "activeMatch": "curso"
-    },
-    {
-        "texto": "Alumnos",
-        "url": "alumno-lista.html",
-        "icon": "fas fa-users",
-        "activeMatch": "alumno"
     },
     {
         "texto": "Calendario",

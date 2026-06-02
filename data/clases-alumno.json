@@ -1,0 +1,827 @@
+{
+    "clase1": {
+        "id": "clase1",
+        "numero": 1,
+        "titulo": "Introducción y enfoque",
+        "capitulo": "Capítulo 1 - Tu punto de partida",
+        "duracion": 75,
+        "objetivo": "Que cada alumno defina su objetivo REAL y entienda la filosofía del curso.",
+        "palabrasClave": [
+            "Objetivo REAL - Definir qué quieres lograr específicamente",
+            "Saber vs Entender - La diferencia entre conocer y comprender",
+            "Integralidad - Los 4 pilares trabajan juntos",
+            "Silla de 4 patas - Metáfora de los pilares"
+        ],
+        "bloques": [
+            {
+                "nombre": "Bienvenida y presentación",
+                "subtitulos": [
+                    "Presentación del facilitador",
+                    "La historia de la camisa rosada",
+                    "El sobrepeso a los 36 años",
+                    "La frustración del espejo",
+                    "El momento de inflexión",
+                    "De lo estético a la salud y longevidad"
+                ]
+            },
+            {
+                "nombre": "Filosofía del curso: Saber vs Entender",
+                "subtitulos": [
+                    "Saber vs Entender",
+                    "Motivación intrínseca",
+                    "Capacidad de tomar decisiones informadas",
+                    "Mayor adherencia a largo plazo"
+                ]
+            },
+            {
+                "nombre": "Objetivo del alumno",
+                "subtitulos": [
+                    "Adelgazar",
+                    "Ganar masa muscular",
+                    "Revertir enfermedad (diabetes, hipertensión)",
+                    "Aumentar energía",
+                    "Longevidad",
+                    "Mejorar salud mental"
+                ]
+            },
+            {
+                "nombre": "La integralidad (La silla de 4 patas)",
+                "subtitulos": [
+                    "Los 4 pilares no son independientes",
+                    "Sueño - Reparación nocturna",
+                    "Mente - Paz y claridad",
+                    "Ejercicio - Movimiento con propósito",
+                    "Alimentación - Nutrición inteligente",
+                    "Ejemplo: cómo el mal sueño afecta a los otros pilares"
+                ]
+            },
+            {
+                "nombre": "Cierre y práctica semanal",
+                "subtitulos": [
+                    "Resumen de la clase",
+                    "Práctica: diario de observación",
+                    "La próxima clase: El sueño"
+                ]
+            }
+        ],
+        "practicaSemana": "Escribe cada día tu objetivo principal. Anota UNA cosa que te acerque a él y UNA que te aleje. Solo observa, no juzgues.",
+        "practicaTip": "El objetivo es tomar conciencia, no cambiar todo de golpe.",
+        "videos": [
+            "Carlos Jaramillo: \"Por qué fallamos al intentar cambiar hábitos\"",
+            "Dr. La Rosa: \"El poder del entendimiento en la salud metabólica\""
+        ]
+    },
+    "clase2": {
+        "id": "clase2",
+        "numero": 2,
+        "titulo": "Sueño - Reparación nocturna",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Entender la ciencia del sueño, aplicar higiene del sueño y conectar este pilar con alimentación, ejercicio y tranquilidad mental.",
+        "palabrasClave": [
+            "Ciclo circadiano - Reloj interno de 24 horas",
+            "Ciclo del sueño - Ciclos de 90 minutos (REM y No REM)",
+            "Cortisol alto - Consecuencia de dormir mal",
+            "Antojos de azúcar - El cerebro cansado pide energía rápida",
+            "Higiene del sueño - Hábitos que preparan el cuerpo para dormir",
+            "Melatonina - Hormona del sueño"
+        ],
+        "bloques": [
+            {
+                "nombre": "La ciencia del sueño",
+                "subtitulos": [
+                    "Ciclo circadiano",
+                    "Ciclo del sueño (REM y No REM)",
+                    "Qué pasa cuando duermes poco (efectos clave)",
+                    "Cortisol alto",
+                    "Antojos de azúcar",
+                    "Mayor fatiga",
+                    "Peor salud mental",
+                    "Menos control del apetito",
+                    "Peor recuperación muscular",
+                    "Menos capacidad para tomar decisiones"
+                ]
+            },
+            {
+                "nombre": "Higiene del sueño",
+                "subtitulos": [
+                    "Horarios fijos para dormir y levantarse",
+                    "Nada de pantallas antes de acostarse",
+                    "Habitación fresca (18-21 grados)",
+                    "Cena ligera y distanciada del dormir",
+                    "Rutina de relajación previa",
+                    "Silencio o ruido blanco",
+                    "Cama solo para dormir",
+                    "Nada de alcohol ni cafeína en horas previas"
+                ]
+            },
+            {
+                "nombre": "Relación del sueño con los otros pilares",
+                "subtitulos": [
+                    "Sueño y Alimentación",
+                    "Sueño y Ejercicio",
+                    "Sueño y Tranquilidad Mental",
+                    "El círculo virtuoso"
+                ]
+            }
+        ],
+        "practicaSemana": "Elige UN solo ajuste de sueño y aplícalo durante 7 días. Puede ser: apagar el móvil 1 hora antes, cenar 2-3 horas antes, bajar la temperatura, o hacer respiración 4-7-8.",
+        "practicaTip": "No intentes aplicar todos los cambios a la vez. Elige UNO. Domínalo. Luego añade otro.",
+        "videos": [
+            "Carlos Jaramillo: \"Sueño y metabolismo: la hormona del hambre\"",
+            "Dr. La Rosa: \"Cómo reparar tu sueño en 7 días\""
+        ]
+    },
+    "clase3": {
+        "id": "clase3",
+        "numero": 3,
+        "titulo": "Mente - Paz y claridad",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Aprender a gestionar el estrés y activar el sistema nervioso parasimpático.",
+        "palabrasClave": [
+            "Sistema nervioso simpático - Acelerador (lucha o huida)",
+            "Sistema nervioso parasimpático - Freno (descanso y digestión)",
+            "Cortisol crónico - Enemigo silencioso",
+            "Respiración diafragmática - Freno de mano biológico",
+            "Mindfulness - Atención al presente"
+        ],
+        "bloques": [
+            {
+                "nombre": "La ciencia del estrés y el cortisol",
+                "subtitulos": [
+                    "Sistema nervioso simpático (lucha o huida)",
+                    "Sistema nervioso parasimpático (descanso y digestión)",
+                    "Cortisol crónico (el enemigo silencioso)",
+                    "¿Qué pasa cuando vives en simpático crónico?",
+                    "El objetivo: volver a parasimpático después de cada estrés"
+                ]
+            },
+            {
+                "nombre": "Aceptación – el primer paso",
+                "subtitulos": [
+                    "¿Qué es la aceptación?",
+                    "Por qué la evitación empeora todo",
+                    "Diferencia entre aceptación y resignación",
+                    "El precio de no aceptar"
+                ]
+            },
+            {
+                "nombre": "Respiración diafragmática",
+                "subtitulos": [
+                    "¿Qué es la respiración diafragmática?",
+                    "Respiración torácica vs diafragmática",
+                    "Beneficios: baja cortisol, reduce inflamación",
+                    "Cómo hacerla paso a paso",
+                    "Cuándo usarla"
+                ]
+            },
+            {
+                "nombre": "Mindfulness y pausas activas",
+                "subtitulos": [
+                    "¿Qué es mindfulness?",
+                    "Beneficios para el estrés",
+                    "Micro pausas activas (1-3 minutos)",
+                    "Respiración consciente",
+                    "Escaneo corporal rápido",
+                    "Anclaje sensorial",
+                    "Pausa entre tareas"
+                ]
+            },
+            {
+                "nombre": "Relación con los otros pilares",
+                "subtitulos": [
+                    "Mente tranquila y Alimentación",
+                    "Mente tranquila y Ejercicio",
+                    "Mente tranquila y Sueño",
+                    "El círculo virtuoso"
+                ]
+            }
+        ],
+        "practicaSemana": "Elige UNA herramienta de las que vimos hoy (respiración, pausa activa) y aplícala cada día durante 7 días. Anota cómo te sientes antes y después.",
+        "practicaTip": "No necesitas hacer todo. Una herramienta bien aplicada cambia tu día. Domínala y luego añade otra.",
+        "videos": [
+            "Carlos Jaramillo: \"Cortisol, el enemigo silencioso\"",
+            "Dr. La Rosa: \"Estrés y alimentación emocional\""
+        ]
+    },
+    "clase4": {
+        "id": "clase4",
+        "numero": 4,
+        "titulo": "Ejercicio - Movimiento con propósito",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Entender que el músculo es un órgano endocrino y aprender a entrenar fuerza de forma eficiente.",
+        "palabrasClave": [
+            "Miocinas - Hormonas que secreta el músculo",
+            "Sensibilidad a la insulina - Mejora con el entrenamiento",
+            "Endorfinas - Analgésicas naturales",
+            "Sarcopenia - Pérdida de masa muscular con la edad",
+            "Entrenamiento de fuerza - 2-3 veces por semana"
+        ],
+        "bloques": [
+            {
+                "nombre": "El músculo como órgano endocrino",
+                "subtitulos": [
+                    "Miocinas: reducen inflamación",
+                    "Sensibilidad a la insulina",
+                    "Regulación del apetito",
+                    "Endorfinas (bienestar post-entreno)",
+                    "Efecto antienvejecimiento"
+                ]
+            },
+            {
+                "nombre": "Tipos de ejercicio según tu objetivo",
+                "subtitulos": [
+                    "Adelgazar",
+                    "Aumentar masa muscular",
+                    "Revertir patologías metabólicas",
+                    "Más energía vital",
+                    "Longevidad"
+                ]
+            },
+            {
+                "nombre": "Frecuencia y recuperación",
+                "subtitulos": [
+                    "Frecuencia óptima según nivel",
+                    "Señales de mala recuperación",
+                    "La proteína post-entreno"
+                ]
+            },
+            {
+                "nombre": "Ejercicios prácticos en casa",
+                "subtitulos": [
+                    "Versión principiante (10-15 min)",
+                    "Versión intermedio/avanzado (20 min)",
+                    "Progresión semanal"
+                ]
+            },
+            {
+                "nombre": "Relación con los otros pilares",
+                "subtitulos": [
+                    "Ejercicio y Alimentación",
+                    "Ejercicio y Sueño",
+                    "Ejercicio y Tranquilidad Mental"
+                ]
+            }
+        ],
+        "practicaSemana": "Haz UNA sesión de fuerza en casa esta semana, siguiendo la versión que corresponda a tu nivel (principiante, intermedio o avanzado).",
+        "practicaTip": "No importa si empiezas desde cero. Una sesión de fuerza a la semana ya es mejor que ninguna.",
+        "videos": [
+            "Carlos Jaramillo: \"Músculo y longevidad\"",
+            "Carlos Jaramillo: \"11 beneficios de hacer pesas\""
+        ]
+    },
+    "clase5": {
+        "id": "clase5",
+        "numero": 5,
+        "titulo": "Alimentación - Nutrición inteligente",
+        "capitulo": "Capítulo 2 - Los 4 pilares de la salud",
+        "duracion": 75,
+        "objetivo": "Entender cómo funcionan los nutrientes y aplicarlos sin dietas extremas.",
+        "palabrasClave": [
+            "Macronutrientes - Proteínas, carbohidratos y grasas",
+            "Proteína - Reconstrucción de tejidos",
+            "Carbohidratos - Energía rápida",
+            "Grasas saludables - Energía lenta y hormonas",
+            "Método del puño - Medir proporciones con la mano"
+        ],
+        "bloques": [
+            {
+                "nombre": "Rompiendo mitos",
+                "subtitulos": [
+                    "Las dietas milagro no existen",
+                    "No hay comidas mágicas",
+                    "Los carbohidratos no engordan",
+                    "Las grasas no son malas",
+                    "La frecuencia de las comidas no acelera el metabolismo"
+                ]
+            },
+            {
+                "nombre": "Los tres macronutrientes",
+                "subtitulos": [
+                    "Carbohidratos: energía rápida",
+                    "Grasas: energía lenta y hormonas",
+                    "Proteínas: reconstrucción de tejidos"
+                ]
+            },
+            {
+                "nombre": "El método del puño",
+                "subtitulos": [
+                    "Verduras: 1/2 plato (dos puños)",
+                    "Proteína: 1/4 plato (tamaño de la palma)",
+                    "Carbohidrato: 1/4 plato (un puño)",
+                    "Grasa saludable: un pulgar o puñado pequeño",
+                    "Ajustes según objetivo"
+                ]
+            },
+            {
+                "nombre": "Micronutrientes sin obsesión",
+                "subtitulos": [
+                    "Regla práctica: come colores variados",
+                    "Magnesio, hierro, zinc, vitaminas C y D",
+                    "Los vegetales de hoja verde son los que más concentran"
+                ]
+            }
+        ],
+        "practicaSemana": "Antes de comer (en una comida principal), identifica los 3 macronutrientes. Si falta alguno, piensa cómo podrías añadirlo la próxima vez.",
+        "practicaTip": "No se trata de perfección, sino de conciencia. El primer paso es observar.",
+        "videos": [
+            "Carlos Jaramillo: \"Macronutrientes explicados fácil\"",
+            "Dr. La Rosa: \"Proteína: cuánta y de dónde\""
+        ]
+    },
+    "clase6": {
+        "id": "clase6",
+        "numero": 6,
+        "titulo": "Qué NO comer",
+        "capitulo": "Capítulo 3 - Alimentación sanadora",
+        "duracion": 75,
+        "objetivo": "Identificar los alimentos que más daño generan y reducirlos conscientemente.",
+        "palabrasClave": [
+            "Azúcares añadidos - Refrescos, bollería, zumos industriales",
+            "Harinas refinadas - Pan blanco, pasta blanca",
+            "Aceites vegetales industriales - Palma, soja, girasol",
+            "Ultraprocesados - Más de 5 ingredientes no reconocibles",
+            "Picos de glucosa - Causan inflamación y grasa acumulada"
+        ],
+        "bloques": [
+            {
+                "nombre": "Lista práctica de 'no prioritarios'",
+                "subtitulos": [
+                    "Azúcares añadidos",
+                    "Nombres del azúcar en las etiquetas",
+                    "Harinas refinadas",
+                    "Aceites vegetales industriales",
+                    "Ultraprocesados"
+                ]
+            },
+            {
+                "nombre": "El efecto en tu cuerpo",
+                "subtitulos": [
+                    "Efecto inmediato (1-2 horas)",
+                    "Efecto a semanas/meses",
+                    "Efecto a años",
+                    "Cómo afecta a los 4 pilares"
+                ]
+            },
+            {
+                "nombre": "Cómo reemplazar sin sufrir",
+                "subtitulos": [
+                    "Refresco → agua con limón",
+                    "Pan blanco → integral",
+                    "Snack dulce → fruta + frutos secos",
+                    "Cereales azucarados → avena integral",
+                    "Salsas industriales → aceite y limón",
+                    "Frituras de bolsa → frutos secos o palomitas caseras"
+                ]
+            },
+            {
+                "nombre": "Los permitidos programados",
+                "subtitulos": [
+                    "Elige UNA comida a la semana",
+                    "Disfruta sin culpa",
+                    "El resto de la semana: vuelves al plan"
+                ]
+            }
+        ],
+        "practicaSemana": "Identifica y reemplaza UN no prioritario durante 7 días (refrescos, pan blanco, snack dulce o cereales azucarados).",
+        "practicaTip": "No necesitas ser perfecto. Una semana de reemplazos transforma tu conciencia.",
+        "videos": [
+            "Carlos Jaramillo: \"Qué pasa en tu cuerpo cuando dejas el azúcar\"",
+            "Dr. La Rosa: \"Ultraprocesados, inflamación silenciosa\""
+        ]
+    },
+    "clase7": {
+        "id": "clase7",
+        "numero": 7,
+        "titulo": "Macronutrientes y cálculos (g x kg x día)",
+        "capitulo": "Capítulo 3 - Alimentación sanadora",
+        "duracion": 75,
+        "objetivo": "Aprender a calcular necesidades diarias de proteína, carbohidratos y grasa según el objetivo.",
+        "palabrasClave": [
+            "Gramos por kilo por día - Fórmula base",
+            "Proteína real - No todo lo que pesa es proteína",
+            "Peso ajustado - Para personas con sobrepeso",
+            "Requerimientos diarios - Según objetivo"
+        ],
+        "bloques": [
+            {
+                "nombre": "Reforzando macronutrientes",
+                "subtitulos": [
+                    "100g de pollo no son 100g de proteína",
+                    "Distribución real de alimentos comunes",
+                    "Todos los alimentos tienen los tres macronutrientes"
+                ]
+            },
+            {
+                "nombre": "Cálculo de requerimientos",
+                "subtitulos": [
+                    "Rangos recomendados por objetivo",
+                    "¿Qué peso uso? El problema del sobrepeso",
+                    "Fórmula de peso ajustado",
+                    "Ejemplos completos"
+                ]
+            },
+            {
+                "nombre": "Micronutrientes",
+                "subtitulos": [
+                    "Vitamina D",
+                    "Magnesio",
+                    "Hierro",
+                    "Zinc",
+                    "Vitamina C",
+                    "Calcio"
+                ]
+            }
+        ],
+        "practicaSemana": "Elige UN día, anota todos los alimentos que comes, calcula los macronutrientes aproximados y compáralos con tus números objetivo.",
+        "practicaTip": "No se trata de acertar, se trata de tomar conciencia.",
+        "videos": [
+            "Carlos Jaramillo: \"Cómo calcular proteína sin apps\"",
+            "Dr. La Rosa: \"Micronutrientes que cambian tu vida\""
+        ]
+    },
+    "clase8": {
+        "id": "clase8",
+        "numero": 8,
+        "titulo": "Suplementación",
+        "capitulo": "Capítulo 3 - Alimentación sanadora",
+        "duracion": 75,
+        "objetivo": "Entender cuándo los suplementos tienen sentido y cuándo son un gasto innecesario.",
+        "palabrasClave": [
+            "Filosofía de suplementación - Complemento, no reemplazo",
+            "Creatina monohidratada - Evidencia sólida para fuerza",
+            "Magnesio - El más deficitario",
+            "Vitamina C - Antioxidante e inmunidad"
+        ],
+        "bloques": [
+            {
+                "nombre": "Filosofía de la suplementación",
+                "subtitulos": [
+                    "¿Cuándo tiene sentido suplementarse?",
+                    "¿Hasta qué punto es beneficioso?",
+                    "Lo que NO sirve de la suplementación"
+                ]
+            },
+            {
+                "nombre": "Suplementos clave",
+                "subtitulos": [
+                    "Creatina monohidratada",
+                    "Magnesio (tipos y dosis)",
+                    "Vitamina C"
+                ]
+            },
+            {
+                "nombre": "Otros suplementos según objetivo",
+                "subtitulos": [
+                    "Aumentar masa muscular",
+                    "Recuperar salud metabólica",
+                    "Más energía",
+                    "Articulaciones",
+                    "Estrés y ansiedad"
+                ]
+            },
+            {
+                "nombre": "Qué evitar",
+                "subtitulos": [
+                    "Suplementos de moda que NO necesitas",
+                    "Prácticas populares que conviene evitar",
+                    "Los suplementos más peligrosos"
+                ]
+            }
+        ],
+        "practicaSemana": "Revisa tu botiquín de suplementos. Clasifícalos en: útiles, innecesarios o peligrosos. Toma una decisión informada.",
+        "practicaTip": "No se trata de tirar todo a la basura. Se trata de tomar decisiones informadas.",
+        "videos": [
+            "Carlos Jaramillo: \"Creatina, el suplemento más estudiado\"",
+            "Dr. La Rosa: \"Magnesio, por qué todos deberíamos considerarlo\""
+        ]
+    },
+    "clase9": {
+        "id": "clase9",
+        "numero": 9,
+        "titulo": "Resistencia a la insulina",
+        "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
+        "duracion": 75,
+        "objetivo": "Entender qué es la insulina, por qué se vuelve resistente y cómo revertirlo.",
+        "palabrasClave": [
+            "Insulina - Hormona que mete la glucosa en las células",
+            "Resistencia a la insulina - Las células dejan de responder",
+            "Prediabetes - Paso previo a la diabetes tipo 2",
+            "Remisión - Es posible revertirla con cambios de hábitos"
+        ],
+        "bloques": [
+            {
+                "nombre": "¿Qué es la insulina?",
+                "subtitulos": [
+                    "¿Cómo nos beneficia?",
+                    "¿Cómo nos perjudica?",
+                    "El ciclo normal (sano)"
+                ]
+            },
+            {
+                "nombre": "Resistencia a la insulina = cerradura oxidada",
+                "subtitulos": [
+                    "¿Por qué se oxida la cerradura?",
+                    "El camino silencioso hacia la diabetes tipo 2",
+                    "Síntomas de resistencia a la insulina"
+                ]
+            },
+            {
+                "nombre": "Qué la causa y cómo revertirla",
+                "subtitulos": [
+                    "Causas principales",
+                    "Acciones para revertir",
+                    "Orden de prioridades"
+                ]
+            },
+            {
+                "nombre": "Ejemplos prácticos",
+                "subtitulos": [
+                    "Cómo reconocerlo en ti mismo",
+                    "Caso 1: Hambre constante",
+                    "Caso 2: Sueño después de comer",
+                    "Caso 3: Grasa abdominal rebelde"
+                ]
+            }
+        ],
+        "practicaSemana": "Elige TRES acciones para revertir la resistencia a la insulina (reducir azúcar, caminar post-comida, entrenar fuerza, ayuno nocturno, cambiar orden del plato, dormir 7 horas).",
+        "practicaTip": "No se trata de hacerlo perfecto. Se trata de empezar a abrir la cerradura oxidada.",
+        "videos": [
+            "Carlos Jaramillo: \"Resistencia a la insulina explicada en 15 min\"",
+            "Dr. La Rosa: \"Cómo revertir la diabetes tipo 2\""
+        ]
+    },
+    "clase10": {
+        "id": "clase10",
+        "numero": 10,
+        "titulo": "Sarcopenia – El músculo es tu pensión de salud",
+        "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
+        "duracion": 60,
+        "objetivo": "Entender que perder músculo con la edad NO es inevitable y que se puede prevenir.",
+        "palabrasClave": [
+            "Sarcopenia - Pérdida de masa muscular con la edad",
+            "Fragilidad - Estado de vulnerabilidad",
+            "Caídas - Principal causa de muerte en mayores",
+            "Independencia - El músculo te permite valerte por ti mismo"
+        ],
+        "bloques": [
+            {
+                "nombre": "¿Qué es la sarcopenia?",
+                "subtitulos": [
+                    "Pérdida de masa muscular desde los 30-40 años",
+                    "Consecuencias: movilidad, capacidad funcional, metabolismo",
+                    "Caídas y pérdida de independencia"
+                ]
+            },
+            {
+                "nombre": "Cómo prevenirla y revertirla",
+                "subtitulos": [
+                    "Proteína suficiente (1.6-2.2g/kg/día)",
+                    "Entrenamiento de fuerza (2-3 veces/semana)",
+                    "Sueño y gestión del estrés"
+                ]
+            },
+            {
+                "nombre": "El Test de la Silla",
+                "subtitulos": [
+                    "Instrucción paso a paso",
+                    "Interpretación del resultado",
+                    "Práctica recomendada"
+                ]
+            }
+        ],
+        "practicaSemana": "Haz el Test de la Silla. Practica levantarte sin manos 3 veces al día. Elige una acción adicional según tu nivel.",
+        "practicaTip": "No te asustes si el Test te resultó difícil. Es un diagnóstico, no una sentencia.",
+        "videos": [
+            "Carlos Jaramillo: \"Sarcopenia, la epidemia silenciosa\"",
+            "Carlos Jaramillo: \"Esto devora tus músculos\""
+        ]
+    },
+    "clase11": {
+        "id": "clase11",
+        "numero": 11,
+        "titulo": "Ayuno intermitente",
+        "capitulo": "Capítulo 4 - Enfermedad, longevidad y prevención",
+        "duracion": 75,
+        "objetivo": "Entender qué es el ayuno intermitente, para quién funciona y cómo empezar de forma segura.",
+        "palabrasClave": [
+            "Ayuno intermitente - Patrón de comidas, no una dieta",
+            "Autofagia - Limpieza celular",
+            "Apoptosis - Muerte celular programada",
+            "Contraindicaciones - No es para todos"
+        ],
+        "bloques": [
+            {
+                "nombre": "¿Qué es el ayuno intermitente?",
+                "subtitulos": [
+                    "Patrón de comidas (ej: 16/8)",
+                    "No es pasar hambre deliberadamente",
+                    "Qué NO es el ayuno intermitente"
+                ]
+            },
+            {
+                "nombre": "Beneficios reales",
+                "subtitulos": [
+                    "Mejora la sensibilidad a la insulina",
+                    "Activación de la autofagia (limpieza celular)",
+                    "Autofagia vs Apoptosis",
+                    "Puede ayudar a adelgazar"
+                ]
+            },
+            {
+                "nombre": "Contraindicaciones",
+                "subtitulos": [
+                    "Absolutas: embarazo, niños, desórdenes alimenticios",
+                    "Relativas: estrés crónico, problemas de tiroides"
+                ]
+            },
+            {
+                "nombre": "Cómo empezar",
+                "subtitulos": [
+                    "Progresión semana a semana",
+                    "Cómo romper el ayuno",
+                    "Hambre real vs costumbre"
+                ]
+            }
+        ],
+        "practicaSemana": "Prueba un ayuno de 12 horas un día esta semana (cena a las 20h, desayuno a las 8h). Observa cómo te sientes.",
+        "practicaTip": "El ayuno no es una competición. Si 12 horas te funcionan, quédate ahí.",
+        "videos": [
+            "Carlos Jaramillo: \"Ayuno intermitente, ¿sí o no?\"",
+            "Dr. La Rosa: \"Autofagia, el reciclaje celular\""
+        ]
+    },
+    "clase12": {
+        "id": "clase12",
+        "numero": 12,
+        "titulo": "Estructura semanal, sol y frío",
+        "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
+        "duracion": 75,
+        "objetivo": "Incorporar herramientas prácticas que potencian la salud: luz solar, frío y estructura semanal.",
+        "palabrasClave": [
+            "Luz solar matutina - Sincroniza el ritmo circadiano",
+            "Exposición al frío - Herramienta de estrés positivo",
+            "Preparación semanal de comida - Libera energía mental",
+            "Regla 80/20 - Flexibilidad sin culpa"
+        ],
+        "bloques": [
+            {
+                "nombre": "Luz solar y ritmo circadiano",
+                "subtitulos": [
+                    "La luz solar sincroniza tu reloj biológico",
+                    "Tipos de rayos solares (UVA, UVB, infrarrojos)",
+                    "Recomendación por horario"
+                ]
+            },
+            {
+                "nombre": "Exposición al frío",
+                "subtitulos": [
+                    "Beneficios: reduce inflamación, mejora el ánimo",
+                    "Progresión segura semana a semana",
+                    "Contraindicaciones claras"
+                ]
+            },
+            {
+                "nombre": "Preparación semanal de comida",
+                "subtitulos": [
+                    "Estructura que libera energía mental",
+                    "Ejemplo de preparación semanal",
+                    "Hoja con el menú en la nevera"
+                ]
+            },
+            {
+                "nombre": "Regla 80/20",
+                "subtitulos": [
+                    "80% comidas estructuradas, 20% flexibilidad",
+                    "Cómo manejar situaciones sociales"
+                ]
+            }
+        ],
+        "practicaSemana": "Haz una lista de compras estructurada. Sal al sol 10-15 minutos al despertar. Prueba pies fríos 10-15 segundos.",
+        "practicaTip": "La estructura no es rigidez. Es una herramienta para liberar tu mente de decisiones triviales.",
+        "videos": [
+            "Carlos Jaramillo: \"Cómo estructurar tu semana de comidas\"",
+            "Dr. La Rosa: \"Beneficios del frío y el sol\""
+        ]
+    },
+    "clase13": {
+        "id": "clase13",
+        "numero": 13,
+        "titulo": "Cómo leer etiquetas",
+        "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
+        "duracion": 60,
+        "objetivo": "Aprender a leer etiquetas como un profesional y no ser engañado por el marketing.",
+        "palabrasClave": [
+            "Lista de ingredientes - Ordenados de mayor a menor",
+            "Nombres del azúcar - -osa, jarabes, concentrados",
+            "Grasas malas - Palma, soja, girasol",
+            "Claims trampa - '0% grasa', 'light', 'natural'"
+        ],
+        "bloques": [
+            {
+                "nombre": "La lista de ingredientes",
+                "subtitulos": [
+                    "Orden de mayor a menor cantidad",
+                    "La regla del tercio"
+                ]
+            },
+            {
+                "nombre": "Los nombres del azúcar",
+                "subtitulos": [
+                    "Azúcares clásicos, jarabes, palabras en -osa",
+                    "¿A partir de cuánto azúcar es perjudicial?",
+                    "Edulcorantes: ¿mejores o peores?"
+                ]
+            },
+            {
+                "nombre": "Grasas buenas vs malas",
+                "subtitulos": [
+                    "Grasas buenas: oliva, aguacate, frutos secos",
+                    "Grasas malas a evitar: palma, soja, girasol"
+                ]
+            },
+            {
+                "nombre": "Etiquetas mentirosas",
+                "subtitulos": [
+                    "'0% grasa', 'light', 'fuente de fibra'",
+                    "'0% azúcares añadidos', 'natural', 'fit'"
+                ]
+            },
+            {
+                "nombre": "Regla práctica",
+                "subtitulos": [
+                    "Si tiene más de 5 ingredientes no reconocibles, no lo compres",
+                    "Ingredientes buenos que SÍ quieres ver"
+                ]
+            }
+        ],
+        "practicaSemana": "Ve al supermercado con 3 productos que crees que son sanos. Lee sus etiquetas. Anota si te engañaron.",
+        "practicaTip": "No te sientas mal si has comprado productos que creías sanos. El marketing está diseñado para confundir.",
+        "videos": [
+            "Cómo leer etiquetas de alimentos (guía práctica)",
+            "Los 10 nombres del azúcar que debes conocer"
+        ]
+    },
+    "clase14": {
+        "id": "clase14",
+        "numero": 14,
+        "titulo": "Prevención de recaídas y cierre",
+        "capitulo": "Capítulo 5 - Herramientas prácticas para la vida real",
+        "duracion": 60,
+        "objetivo": "Normalizar los tropiezos y aprender a no abandonar cuando lleguen.",
+        "palabrasClave": [
+            "Perfección inexistente - Todos tienen días malos",
+            "Regla 80/20 - Flexibilidad sostenible",
+            "Protocolo de recaída - 3 pasos sin culpa",
+            "Círculo de apoyo - Compartir el proceso"
+        ],
+        "bloques": [
+            {
+                "nombre": "La perfección no existe",
+                "subtitulos": [
+                    "Todos tienen días malos",
+                    "Lo que NO pasa por un día malo",
+                    "Ejemplo numérico: 95% de acierto sigue siendo extraordinario"
+                ]
+            },
+            {
+                "nombre": "La regla 80/20",
+                "subtitulos": [
+                    "El 80% determina el 100% de resultados",
+                    "Aplicación concreta a una semana"
+                ]
+            },
+            {
+                "nombre": "Qué hacer cuando recaes",
+                "subtitulos": [
+                    "Protocolo de 3 pasos: para, respira, nombra, vuelve",
+                    "Lo que NO debes hacer",
+                    "La metáfora de la rueda pinchada"
+                ]
+            },
+            {
+                "nombre": "Círculo de apoyo",
+                "subtitulos": [
+                    "Compañero de curso",
+                    "Amigo o familiar",
+                    "Diario privado"
+                ]
+            },
+            {
+                "nombre": "Cierre del curso",
+                "subtitulos": [
+                    "Repaso de los 4 pilares",
+                    "Preguntas reflexivas"
+                ]
+            }
+        ],
+        "practicaSemana": "Escribe una carta a ti mismo: 'Si algún día tengo un mal día, haré esto...' Guárdala en un lugar visible.",
+        "practicaTip": "No se trata de escribir bonito. Se trata de tener una herramienta de rescate para cuando la motivación falle.",
+        "videos": [
+            "Cómo mantener hábitos saludables a largo plazo",
+            "La ciencia de la consistencia"
+        ]
+    }
+}
