@@ -1037,6 +1037,7 @@ body.modo-oscuro .contenido-clase p, body.modo-oscuro .contenido-clase li,
 body.modo-oscuro .contenido-clase ul, body.modo-oscuro .contenido-clase strong { color: #f0f0f0; }
 body.modo-oscuro .contenido-clase h2, body.modo-oscuro .contenido-clase h3 { color: var(--primary-orange); }
 
+
 /* ===== TABLA DE ALUMNOS - VERSIÓN CORREGIDA ===== */
 .dashboard-card .tabla-alumnos,
 .panel-alumnos .tabla-alumnos,
@@ -1156,4 +1157,24 @@ body.modo-oscuro .contenido-clase h2, body.modo-oscuro .contenido-clase h3 { col
 .btn-cambiar-alumno:hover {
     background: #2a4a6e;
     transform: scale(1.02);
+}
+
+/* Forzar contraste en tabla de alumnos durante modo oscuro */
+body.modo-oscuro .tabla-alumnos td,
+body.modo-oscuro .tabla-alumnos tr,
+body.modo-oscuro #lista-alumnos-container td,
+body.modo-oscuro #lista-alumnos-container tr {
+    color: #121212 !important;
+    background-color: #f0f0f0 !important;
+}
+
+body.modo-oscuro .tabla-alumnos td a,
+body.modo-oscuro .tabla-alumnos td span,
+body.modo-oscuro #lista-alumnos-container td a {
+    color: #121212 !important;
+}
+
+body.modo-oscuro .tabla-alumnos th {
+    background-color: #1D3557 !important;
+    color: white !important;
 }
