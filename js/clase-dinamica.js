@@ -333,7 +333,7 @@ function mostrarAlumnoActual() {
             <div class="alumno-info">
                 <div class="alumno-avatar"><i class="fas fa-user-graduate"></i></div>
                 <div class="alumno-datos">
-                    <h4>${alumnoActual}</h4>
+                    <h4 id="alumno-nombre-bar">${alumnoActual}</h4>
                     <p>Progreso: <span id="barra-progreso-texto">cargando...</span></p>
                     <div class="barra-progreso">
                         <div class="barra-progreso-fill" id="barra-progreso-fill"></div>
@@ -346,7 +346,7 @@ function mostrarAlumnoActual() {
     
     document.getElementById('btnCambiarAlumno')?.addEventListener('click', () => {
         localStorage.removeItem('alumno_actual');
-        window.location.href = 'alumno-lista.html';
+        window.location.href = '../profesor.html';
     });
 }
 
@@ -354,7 +354,7 @@ async function cargarProgresoParaBarra(alumnoActual) {
     try {
         const { data, error } = await supabaseClient
             .from('alumnos')
-            .select('progreso')
+            .select('progreso, nombre')
             .eq('usuario', alumnoActual)
             .single();
         
@@ -366,9 +366,11 @@ async function cargarProgresoParaBarra(alumnoActual) {
         
         const textoElement = document.getElementById('barra-progreso-texto');
         const fillElement = document.getElementById('barra-progreso-fill');
+        const nombreElement = document.getElementById('alumno-nombre-bar');
         
         if (textoElement) textoElement.textContent = `${completadas.length}/${totalClases}`;
         if (fillElement) fillElement.style.width = `${porcentaje}%`;
+        if (nombreElement) nombreElement.textContent = data.nombre || alumnoActual;
         
     } catch (err) {
         console.error('Error:', err);

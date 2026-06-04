@@ -1,4 +1,4 @@
-// ===== LÓGICA DEL ÍNDICE CURSO (ACORDEÓN) =====
+// ===== LÓGICA DEL ÍNDICE CURSO (ACORDEÓN) - VERSIÓN PROFESOR =====
 
 // Estructura de capítulos y clases
 const capitulos = [
@@ -42,99 +42,88 @@ const capitulos = [
         ]
     }
 ];
-// Guardar/recuperar estado del acordeón
+
 // Guardar/recuperar estado del acordeón (inicia vacío)
 function getAccordionState() {
-    const saved = localStorage.getItem('accordion_state_curso');
+    const saved = localStorage.getItem('accordion_state_curso_profesor');
     if (saved) {
         return JSON.parse(saved);
     }
-    // Si no hay estado guardado, devolver objeto vacío (todos cerrados)
     return {};
 }
 
 function saveAccordionState(state) {
-    localStorage.setItem('accordion_state_curso', JSON.stringify(state));
+    localStorage.setItem('accordion_state_curso_profesor', JSON.stringify(state));
 }
 
-// Obtener clases completadas del alumno actual
-function getClasesCompletadas() {
-    const alumnoActual = localStorage.getItem('alumno_actual');
-    if (!alumnoActual) return [];
-    const progreso = getProgreso(alumnoActual);
-    return progreso.completadas || [];
+// Función para aplicar estilos unificados al botón cerrar sesión
+function aplicarEstiloBotonCerrarSesion(btn) {
+    if (!btn) return;
+    btn.style.backgroundColor = '#dc3545';
+    btn.style.color = 'white';
+    btn.style.border = 'none';
+    btn.style.borderRadius = '8px';
+    btn.style.padding = '10px 20px';
+    btn.style.cursor = 'pointer';
+    btn.style.fontSize = '0.9rem';
+    btn.style.display = 'inline-flex';
+    btn.style.alignItems = 'center';
+    btn.style.gap = '8px';
+    btn.style.width = 'auto';
+    btn.style.minWidth = '0';
+    btn.style.margin = '0';
+    btn.style.boxShadow = 'none';
+    btn.style.outline = 'none';
 }
 
-// Mostrar resumen del alumno actual
-// Mostrar resumen del alumno actual
-function mostrarResumenAlumno() {
-    const alumnoActual = localStorage.getItem('alumno_actual');
+// Función para cerrar sesión (eliminar datos de sesión y redirigir)
+function cerrarSesion() {
+    localStorage.removeItem('profesor_actual');
+    localStorage.removeItem('alumno_actual');
+    localStorage.removeItem('acceso_tipo');
+    localStorage.removeItem('usuario');
+    window.location.href = 'index.html';
+}
+
+// Mostrar solo el botón de cerrar sesión (sin recuadro de info)
+function mostrarBotonCerrarSesion() {
     const container = document.getElementById('resumen-alumno');
+    if (!container) return;
     
-    if (!alumnoActual) {
+    // Limpiar estilos del contenedor
+    container.style.background = 'transparent';
+    container.style.boxShadow = 'none';
+    container.style.padding = '0';
+    container.style.margin = '0 0 20px 0';
+    container.style.border = 'none';
+    
+    // Crear botón con el mismo icono que el panel principal
     container.innerHTML = `
-        <i class="fas fa-eye"></i>
-        <div class="resumen-alumno-info">
-            <div class="resumen-alumno-nombre">Modo explorador</div>
-            <div class="resumen-alumno-progreso">Estás viendo el curso sin registro. Las clases no se guardarán como completadas.</div>
-        </div>
-        <button id="btnRegistrar" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 8px;">
-            <i class="fas fa-user-plus" style="font-size: 1rem; color: white;"></i> Registrar alumno
-        </button>
-    `;
-    const btnRegistrar = document.getElementById('btnRegistrar');
-    if (btnRegistrar) {
-        btnRegistrar.onclick = () => {
-            window.location.href = 'alumno.html';
-        };
-    }
-    return;
-}
-    
-    const alumnos = getAlumnos();
-    const alumno = alumnos.find(a => a.nombre === alumnoActual);
-    const clasesCompletadas = getClasesCompletadas();
-    const totalClases = 14;
-    const porcentaje = (clasesCompletadas.length / totalClases) * 100;
-    
-    container.innerHTML = `
-        <i class="fas fa-user-graduate"></i>
-        <div class="resumen-alumno-info">
-            <div class="resumen-alumno-nombre">${alumnoActual}</div>
-            <div class="resumen-alumno-progreso">
-                ${alumno?.objetivo ? `🎯 ${alumno.objetivo.replace('_', ' ')} | ` : ''}
-                Clases completadas: ${clasesCompletadas.length} / ${totalClases}
-            </div>
-            <div class="barra-progreso">
-                <div class="barra-progreso-fill" style="width: ${porcentaje}%;"></div>
-            </div>
-        </div>
-        <button id="btnCambiarAlumno" class="btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">
-            <i class="fas fa-exchange-alt"></i> Cambiar alumno
+        <button id="btnCerrarSesion">
+            Cerrar sesión
         </button>
     `;
     
-    const btnCambiar = document.getElementById('btnCambiarAlumno');
-    if (btnCambiar) {
-        btnCambiar.onclick = () => {
-            localStorage.removeItem('alumno_actual');
-            window.location.href = 'index.html';
-        };
+    const btnCerrar = document.getElementById('btnCerrarSesion');
+    if (btnCerrar) {
+        aplicarEstiloBotonCerrarSesion(btnCerrar);
+        btnCerrar.onclick = cerrarSesion;
     }
 }
 
 // Renderizar acordeón (solo un capítulo abierto a la vez, inicia cerrado)
 function renderAccordion() {
     const container = document.getElementById('accordion-container');
+    if (!container) {
+        console.error('No se encontró el contenedor accordion-container');
+        return;
+    }
+    
     const state = getAccordionState();
-    const clasesCompletadas = getClasesCompletadas();
     
     let html = '';
     capitulos.forEach((cap, idx) => {
-        // Solo abrir si existe openChapter y coincide
         const isOpen = state.openChapter !== undefined && state.openChapter === idx;
-        
-        const completadasEnCapitulo = cap.clases.filter(c => clasesCompletadas.includes(c.id)).length;
         const totalEnCapitulo = cap.clases.length;
         
         html += `
@@ -143,7 +132,7 @@ function renderAccordion() {
                     <span>${cap.titulo}</span>
                     <div style="display: flex; align-items: center; gap: 15px;">
                         <span style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 20px;">
-                            ${completadasEnCapitulo}/${totalEnCapitulo}
+                            ${totalEnCapitulo} clases
                         </span>
                         <i class="fas fa-chevron-down"></i>
                     </div>
@@ -151,14 +140,13 @@ function renderAccordion() {
                 <div class="accordion-content" style="${isOpen ? 'max-height: 800px;' : ''}">
                     <div class="accordion-content-inner">
                         ${cap.clases.map(clase => {
-                            const estaCompletada = clasesCompletadas.includes(clase.id);
                             return `
                                 <a href="${clase.url}" class="clase-link" data-clase-id="${clase.id}">
                                     <div class="clase-info">
-                                        <i class="fas ${estaCompletada ? 'fa-check-circle' : 'fa-play-circle'}"></i>
+                                        <i class="fas fa-book-open"></i>
                                         <span>${clase.titulo}</span>
                                     </div>
-                                    ${estaCompletada ? '<span class="badge-completada"><i class="fas fa-check"></i> Completada</span>' : ''}
+                                    <span class="badge-profesor"><i class="fas fa-eye"></i> Ver clase</span>
                                 </a>
                             `;
                         }).join('')}
@@ -194,7 +182,6 @@ function renderAccordion() {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 currentState.openChapter = clickedIdx;
             } else {
-                // Si estaba abierto, lo cerramos y no guardamos ninguno
                 currentState.openChapter = undefined;
             }
             
@@ -203,16 +190,8 @@ function renderAccordion() {
     });
 }
 
-// Botón volver al inicio
-const btnVolver = document.getElementById('btnVolverInicio');
-if (btnVolver) {
-    btnVolver.onclick = () => {
-        window.location.href = 'index.html';
-    };
-}
-
 // Inicializar
 document.addEventListener('DOMContentLoaded', () => {
-    mostrarResumenAlumno();
+    mostrarBotonCerrarSesion();
     renderAccordion();
 });

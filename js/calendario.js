@@ -1,18 +1,19 @@
-// ===== LÓGICA PARA CALENDARIO.HTML =====
+// ===== CALENDARIO CON SUPABASE =====
 
 let fechaSeleccionada = null;
 let horaSeleccionada = null;
 let eventos = [];
+let alumnos = [];
 let añoActual = new Date().getFullYear();
 let mesActual = new Date().getMonth();
 
-// Todas las horas del día (00:00 a 23:00)
 const horariosDisponibles = [
     "00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00",
     "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00",
     "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
 ];
 
+// ===== FUNCIONES AUXILIARES =====
 function esFechaPasada(fechaStr) {
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
@@ -23,9 +24,7 @@ function esFechaPasada(fechaStr) {
 function calcularHoraSiguiente(hora) {
     const [horas] = hora.split(':').map(Number);
     let nuevaHora = horas + 1;
-    if (nuevaHora >= 24) {
-        return null;
-    }
+    if (nuevaHora >= 24) return null;
     return `${nuevaHora.toString().padStart(2, '0')}:00`;
 }
 
@@ -36,37 +35,97 @@ function calcularHoraAnterior(hora) {
     return `${nuevaHora.toString().padStart(2, '0')}:00`;
 }
 
-function getEventos() {
-    return JSON.parse(localStorage.getItem('clases_agendadas') || '[]');
+// ===== CRUD CON SUPABASE =====
+async function cargarEventos() {
+    const { data, error } = await supabaseClient
+        .from('eventos')
+        .select('*')
+        .order('fecha', { ascending: true });
+    
+    if (error) {
+        console.error('Error cargando eventos:', error);
+        return [];
+    }
+    eventos = data || [];
+    return eventos;
 }
 
-function saveEventos(eventos) {
-    localStorage.setItem('clases_agendadas', JSON.stringify(eventos));
+async function cargarAlumnos() {
+    const { data, error } = await supabaseClient
+        .from('alumnos')
+        .select('id, usuario, nombre')
+        .eq('es_profesor', false);
+    
+    if (error) {
+        console.error('Error cargando alumnos:', error);
+        return [];
+    }
+    alumnos = data || [];
+    return alumnos;
 }
 
+async function agregarEvento(evento) {
+    const { error } = await supabaseClient
+        .from('eventos')
+        .insert([evento]);
+    
+    if (error) {
+        console.error('Error creando evento:', error);
+        mostrarModalConfirmacion('Error', 'No se pudo agendar la clase: ' + error.message, 'fa-exclamation-circle', 'icono-peligro', null);
+        return false;
+    }
+    await cargarEventos();
+    return true;
+}
+
+async function eliminarEventoDB(id) {
+    const { error } = await supabaseClient
+        .from('eventos')
+        .delete()
+        .eq('id', id);
+    
+    if (error) {
+        console.error('Error eliminando evento:', error);
+        mostrarModalConfirmacion('Error', 'No se pudo eliminar la clase', 'fa-exclamation-circle', 'icono-peligro', null);
+        return false;
+    }
+    await cargarEventos();
+    return true;
+}
+
+async function actualizarEventoDB(id, updates) {
+    const { error } = await supabaseClient
+        .from('eventos')
+        .update(updates)
+        .eq('id', id);
+    
+    if (error) {
+        console.error('Error actualizando evento:', error);
+        mostrarModalConfirmacion('Error', 'No se pudo actualizar la clase', 'fa-exclamation-circle', 'icono-peligro', null);
+        return false;
+    }
+    await cargarEventos();
+    return true;
+}
+
+// ===== RENDERIZADO DEL CALENDARIO =====
 function renderCalendario() {
     const primerDia = new Date(añoActual, mesActual, 1);
     const ultimoDia = new Date(añoActual, mesActual + 1, 0);
     const diasEnMes = ultimoDia.getDate();
     const diaInicioSemana = primerDia.getDay();
     
-    const nombresMeses = [
-        'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-    ];
+    const nombresMeses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+        'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
     
     const mesTitulo = document.getElementById('mesTitulo');
-    if (mesTitulo) {
-        mesTitulo.textContent = `${nombresMeses[mesActual]} ${añoActual}`;
-    }
+    if (mesTitulo) mesTitulo.textContent = `${nombresMeses[mesActual]} ${añoActual}`;
     
     let html = `<div class="mes-calendario">`;
     const diasSemana = ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'];
     diasSemana.forEach(d => html += `<div class="dia-nombre">${d}</div>`);
     
-    for (let i = 0; i < diaInicioSemana; i++) {
-        html += `<div class="dia vacio"></div>`;
-    }
+    for (let i = 0; i < diaInicioSemana; i++) html += `<div class="dia vacio"></div>`;
     
     for (let d = 1; d <= diasEnMes; d++) {
         const fechaStr = `${añoActual}-${String(mesActual + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
@@ -80,9 +139,7 @@ function renderCalendario() {
     html += `</div>`;
     
     const calendarioDiv = document.getElementById('calendario');
-    if (calendarioDiv) {
-        calendarioDiv.innerHTML = html;
-    }
+    if (calendarioDiv) calendarioDiv.innerHTML = html;
     
     document.querySelectorAll('.dia[data-fecha]').forEach(el => {
         el.addEventListener('click', () => {
@@ -95,35 +152,24 @@ function renderCalendario() {
 
 function mesAnterior() {
     mesActual--;
-    if (mesActual < 0) {
-        mesActual = 11;
-        añoActual--;
-    }
+    if (mesActual < 0) { mesActual = 11; añoActual--; }
     fechaSeleccionada = null;
     renderCalendario();
 }
 
 function mesSiguiente() {
     mesActual++;
-    if (mesActual > 11) {
-        mesActual = 0;
-        añoActual++;
-    }
+    if (mesActual > 11) { mesActual = 0; añoActual++; }
     fechaSeleccionada = null;
     renderCalendario();
 }
 
+// ===== MODAL DE HORARIOS =====
 function mostrarModalHorarios() {
     if (!fechaSeleccionada) return;
     
     if (esFechaPasada(fechaSeleccionada)) {
-        mostrarModalConfirmacion(
-            'Fecha no válida',
-            'No puedes agendar clases en fechas pasadas. Selecciona una fecha actual o futura.',
-            'fa-exclamation-circle',
-            'icono-peligro',
-            null
-        );
+        mostrarModalConfirmacion('Fecha no válida', 'No puedes agendar clases en fechas pasadas.', 'fa-exclamation-circle', 'icono-peligro', null);
         fechaSeleccionada = null;
         renderCalendario();
         return;
@@ -136,10 +182,7 @@ function mostrarModalHorarios() {
     const hoy = new Date();
     const esHoy = fechaSeleccionada === `${hoy.getFullYear()}-${String(hoy.getMonth() + 1).padStart(2, '0')}-${String(hoy.getDate()).padStart(2, '0')}`;
     const horaActual = hoy.getHours();
-    
-    const horasFiltradas = esHoy 
-        ? horariosDisponibles.filter(hora => parseInt(hora) >= horaActual)
-        : horariosDisponibles;
+    const horasFiltradas = esHoy ? horariosDisponibles.filter(hora => parseInt(hora) >= horaActual) : horariosDisponibles;
     
     let modal = document.getElementById('modalHorario');
     if (!modal) {
@@ -160,7 +203,6 @@ function mostrarModalHorarios() {
     }
     
     document.getElementById('modalFecha').textContent = `📅 ${fechaLegible}`;
-    
     const grid = document.getElementById('horariosGrid');
     let html = '';
     
@@ -168,49 +210,36 @@ function mostrarModalHorarios() {
         const eventoEnHora = eventosDelDia.find(e => e.hora === hora);
         const horaAnterior = calcularHoraAnterior(hora);
         const eventoEnHoraAnterior = horaAnterior ? eventosDelDia.find(e => e.hora === horaAnterior) : null;
-        
         const estaOcupado = !!eventoEnHora || (horaAnterior !== null && !!eventoEnHoraAnterior);
-        const alumnoOcupante = eventoEnHora ? eventoEnHora.alumno : (eventoEnHoraAnterior ? eventoEnHoraAnterior.alumno : null);
+        const alumnoOcupante = eventoEnHora ? eventoEnHora.alumno_nombre : (eventoEnHoraAnterior ? eventoEnHoraAnterior.alumno_nombre : null);
         
         if (estaOcupado) {
-            html += `
-                <div class="horario-item ocupado" data-hora="${hora}" data-ocupado="true" data-alumno="${alumnoOcupante}">
-                    <strong>${hora}</strong>
-                    <div class="alumno-nombre">👤 ${alumnoOcupante}</div>
-                    <small>Ocupado</small>
-                </div>
-            `;
+            html += `<div class="horario-item ocupado" data-hora="${hora}" data-ocupado="true" data-alumno="${alumnoOcupante}">
+                        <strong>${hora}</strong>
+                        <div class="alumno-nombre">👤 ${alumnoOcupante}</div>
+                        <small>Ocupado</small>
+                    </div>`;
         } else {
-            html += `
-                <div class="horario-item disponible" data-hora="${hora}" data-ocupado="false">
-                    <strong>${hora}</strong>
-                    <small>Disponible</small>
-                </div>
-            `;
+            html += `<div class="horario-item disponible" data-hora="${hora}" data-ocupado="false">
+                        <strong>${hora}</strong>
+                        <small>Disponible</small>
+                    </div>`;
         }
     });
-    
     grid.innerHTML = html;
     
     document.querySelectorAll('.horario-item').forEach(item => {
-        item.addEventListener('click', () => {
+        item.addEventListener('click', async () => {
             const ocupado = item.getAttribute('data-ocupado') === 'true';
             const hora = item.getAttribute('data-hora');
             
             if (ocupado) {
                 const alumno = item.getAttribute('data-alumno');
-                mostrarModalConfirmacion(
-                    'Horario no disponible',
-                    `La hora ${hora} no está disponible. ${alumno} ya tiene clase de ${hora} a ${calcularHoraSiguiente(hora) || 'fin del día'}.`,
-                    'fa-exclamation-circle',
-                    'icono-peligro',
-                    null
-                );
+                mostrarModalConfirmacion('Horario no disponible', `La hora ${hora} no está disponible. ${alumno} ya tiene clase.`, 'fa-exclamation-circle', 'icono-peligro', null);
                 return;
             }
             
             horaSeleccionada = hora;
-            
             document.querySelectorAll('.horario-item').forEach(h => {
                 h.classList.remove('seleccionado');
                 h.style.border = '';
@@ -237,25 +266,20 @@ function mostrarModalHorarios() {
     });
     
     const btnCancelar = document.getElementById('btnCancelarHorario');
-    if (btnCancelar) {
-        btnCancelar.onclick = () => {
-            modal.style.display = 'none';
-            horaSeleccionada = null;
-        };
-    }
+    if (btnCancelar) btnCancelar.onclick = () => {
+        modal.style.display = 'none';
+        horaSeleccionada = null;
+    };
     
     modal.style.display = 'flex';
-    
-    window.onclick = (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            horaSeleccionada = null;
-        }
-    };
+    window.onclick = (event) => { if (event.target === modal) { modal.style.display = 'none'; horaSeleccionada = null; } };
 }
 
-function mostrarFormularioAgendar() {
+// ===== FORMULARIO PARA AGENDAR =====
+async function mostrarFormularioAgendar() {
     if (!fechaSeleccionada || !horaSeleccionada) return;
+    
+    await cargarAlumnos();
     
     const [año, mes, dia] = fechaSeleccionada.split('-');
     const fechaLegible = `${dia}/${mes}/${año}`;
@@ -289,72 +313,57 @@ function mostrarFormularioAgendar() {
     document.getElementById('fechaHoraSeleccionada').innerHTML = `
         <i class="fas fa-calendar-day"></i> ${fechaLegible}<br>
         <i class="fas fa-clock"></i> ${horaSeleccionada} a ${horaFin || 'fin del día'}<br>
-        <small style="color: var(--gray-dark);">(1.5h de clase + 0.5h de preparación)</small>
+        <small>(1.5h de clase + 0.5h de preparación)</small>
     `;
     
-    const alumnos = getAlumnos();
     const select = document.getElementById('alumnoSelectAgendar');
     select.innerHTML = '<option value="">Seleccionar alumno</option>';
     alumnos.forEach(a => {
-        select.innerHTML += `<option value="${a.nombre}">${a.nombre}</option>`;
+        const nombreMostrar = a.nombre || a.usuario;
+        select.innerHTML += `<option value="${a.id}" data-nombre="${nombreMostrar}">${nombreMostrar}</option>`;
     });
     
     modal.style.display = 'flex';
     
-    document.getElementById('confirmarAgendar').onclick = () => {
-        const alumno = select.value;
+    document.getElementById('confirmarAgendar').onclick = async () => {
+        const alumnoId = select.value;
+        const selectedOption = select.options[select.selectedIndex];
+        const alumnoNombre = selectedOption?.getAttribute('data-nombre') || '';
         
-        if (!alumno) {
+        if (!alumnoId) {
             mostrarModalConfirmacion('Error', 'Selecciona un alumno', 'fa-exclamation-circle', 'icono-peligro', null);
             return;
         }
         
-        const eventosActuales = getEventos();
-        const eventosDelDia = eventosActuales.filter(e => e.fecha === fechaSeleccionada);
+        const eventosDelDia = eventos.filter(e => e.fecha === fechaSeleccionada);
         const horaAnterior = calcularHoraAnterior(horaSeleccionada);
-        
-        const yaOcupado = eventosDelDia.some(e => 
-            e.hora === horaSeleccionada || (horaAnterior && e.hora === horaAnterior)
-        );
+        const yaOcupado = eventosDelDia.some(e => e.hora === horaSeleccionada || (horaAnterior && e.hora === horaAnterior));
         
         if (yaOcupado) {
-            mostrarModalConfirmacion(
-                'Horario no disponible',
-                'Este horario ya no está disponible. Por favor selecciona otro.',
-                'fa-exclamation-circle',
-                'icono-peligro',
-                () => {
-                    modal.style.display = 'none';
-                    fechaSeleccionada = null;
-                    horaSeleccionada = null;
-                    renderCalendario();
-                }
-            );
+            mostrarModalConfirmacion('Horario no disponible', 'Este horario ya no está disponible.', 'fa-exclamation-circle', 'icono-peligro', () => {
+                modal.style.display = 'none';
+                fechaSeleccionada = null;
+                horaSeleccionada = null;
+                renderCalendario();
+            });
             return;
         }
         
-        eventos = eventosActuales;
-        eventos.push({
+        const exito = await agregarEvento({
+            alumno_id: parseInt(alumnoId),
+            alumno_nombre: alumnoNombre,
             fecha: fechaSeleccionada,
             hora: horaSeleccionada,
-            alumno: alumno,
             duracion: "1.5 horas de clase + 0.5 horas de preparación",
             visto: false
         });
-        saveEventos(eventos);
         
-        modal.style.display = 'none';
-        
-        mostrarModalConfirmacion(
-            '✅ Clase agendada',
-            `Clase agendada para ${alumno}<br>el ${fechaLegible} de ${horaSeleccionada} a ${horaFin || 'fin del día'}`,
-            'fa-check-circle',
-            'icono-exito',
-            null
-        );
-        
-        renderCalendario();
-        renderListaEventos();
+        if (exito) {
+            modal.style.display = 'none';
+            mostrarModalConfirmacion('✅ Clase agendada', `Clase agendada para ${alumnoNombre}<br>el ${fechaLegible} de ${horaSeleccionada} a ${horaFin || 'fin del día'}`, 'fa-check-circle', 'icono-exito', null);
+            renderCalendario();
+            renderListaEventos();
+        }
         fechaSeleccionada = null;
         horaSeleccionada = null;
     };
@@ -366,54 +375,41 @@ function mostrarFormularioAgendar() {
     };
 }
 
-function generarEventoHTML(e, idxGlobal, tipo) {
+// ===== LISTA DE EVENTOS =====
+function generarEventoHTML(e) {
     const [año, mes, dia] = e.fecha.split('-');
     const fechaLegible = `${dia}/${mes}/${año}`;
     const horaFin = calcularHoraSiguiente(e.hora);
-    const claseColor = tipo === 'proximo' ? 'evento-proximo' : 'evento-pasado';
+    const claseColor = 'evento-proximo';
     const vistoClass = e.visto ? 'visto' : '';
     const vistoTexto = e.visto ? '✅ Vista' : '👁️ Marcar como vista';
     
     return `
-        <div class="evento-item ${claseColor}" data-idx="${idxGlobal}">
+        <div class="evento-item ${claseColor}" data-id="${e.id}">
             <strong>📅 ${fechaLegible} - ${e.hora} a ${horaFin || 'fin del día'}</strong><br>
-            👤 ${e.alumno}<br>
+            👤 ${e.alumno_nombre}<br>
             ⏰ ${e.duracion}
             <br>
             <div style="display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap;">
-                <button class="btn-reprogramar" data-idx="${idxGlobal}"><i class="fas fa-edit"></i> Reprogramar</button>
-                <button class="btn-marcar-vista ${vistoClass}" data-idx="${idxGlobal}"><i class="fas ${e.visto ? 'fa-check-circle' : 'fa-eye'}"></i> ${vistoTexto}</button>
-                <button class="btn-eliminar-evento" data-idx="${idxGlobal}"><i class="fas fa-trash"></i> Eliminar</button>
+                <button class="btn-reprogramar" data-id="${e.id}"><i class="fas fa-edit"></i> Reprogramar</button>
+                <button class="btn-marcar-vista ${vistoClass}" data-id="${e.id}"><i class="fas ${e.visto ? 'fa-check-circle' : 'fa-eye'}"></i> ${vistoTexto}</button>
+                <button class="btn-eliminar-evento" data-id="${e.id}"><i class="fas fa-trash"></i> Eliminar</button>
             </div>
         </div>
     `;
 }
 
-function eliminarEvento(idx) {
-    mostrarModalConfirmacion(
-        'Eliminar clase',
-        '¿Estás seguro de que quieres eliminar esta clase del calendario?',
-        'fa-exclamation-triangle',
-        'icono-advertencia',
-        () => {
-            eventos.splice(idx, 1);
-            saveEventos(eventos);
-            renderCalendario();
-            renderListaEventos();
-            
-            mostrarModalConfirmacion(
-                'Evento eliminado',
-                'La clase ha sido eliminada del calendario',
-                'fa-check-circle',
-                'icono-exito',
-                null
-            );
-        }
-    );
+async function eliminarEventoUI(id) {
+    mostrarModalConfirmacion('Eliminar clase', '¿Estás seguro de que quieres eliminar esta clase?', 'fa-exclamation-triangle', 'icono-advertencia', async () => {
+        await eliminarEventoDB(id);
+        renderCalendario();
+        renderListaEventos();
+        mostrarModalConfirmacion('Evento eliminado', 'La clase ha sido eliminada.', 'fa-check-circle', 'icono-exito', null);
+    });
 }
 
-function reprogramarEvento(idx) {
-    const evento = eventos[idx];
+async function reprogramarEventoUI(id) {
+    const evento = eventos.find(e => e.id === id);
     if (!evento) return;
     
     let modal = document.getElementById('modalReprogramar');
@@ -445,7 +441,6 @@ function reprogramarEvento(idx) {
         document.body.appendChild(modal);
     }
     
-    // Fecha mínima = hoy
     const hoy = new Date().toISOString().split('T')[0];
     document.getElementById('nuevaFecha').min = hoy;
     document.getElementById('nuevaFecha').value = evento.fecha;
@@ -455,12 +450,11 @@ function reprogramarEvento(idx) {
     horariosDisponibles.forEach(hora => {
         selectHora.innerHTML += `<option value="${hora}" ${hora === evento.hora ? 'selected' : ''}>${hora}</option>`;
     });
-    
-    document.getElementById('alumnoReprogramar').value = evento.alumno;
+    document.getElementById('alumnoReprogramar').value = evento.alumno_nombre;
     
     modal.style.display = 'flex';
     
-    document.getElementById('confirmarReprogramar').onclick = () => {
+    document.getElementById('confirmarReprogramar').onclick = async () => {
         const nuevaFecha = document.getElementById('nuevaFecha').value;
         const nuevaHora = document.getElementById('nuevaHora').value;
         
@@ -474,171 +468,119 @@ function reprogramarEvento(idx) {
             return;
         }
         
-        const eventosActuales = getEventos();
-        const conflicto = eventosActuales.some((e, i) => 
-            i !== idx && e.fecha === nuevaFecha && e.hora === nuevaHora
-        );
-        
+        const conflicto = eventos.some(e => e.id !== id && e.fecha === nuevaFecha && e.hora === nuevaHora);
         if (conflicto) {
-            mostrarModalConfirmacion(
-                'Horario no disponible',
-                'Ya hay una clase agendada en esa fecha y hora. Selecciona otro horario.',
-                'fa-exclamation-circle',
-                'icono-peligro',
-                null
-            );
+            mostrarModalConfirmacion('Horario no disponible', 'Ya hay una clase en esa fecha y hora.', 'fa-exclamation-circle', 'icono-peligro', null);
             return;
         }
         
-        eventos[idx].fecha = nuevaFecha;
-        eventos[idx].hora = nuevaHora;
-        saveEventos(eventos);
-        
+        await actualizarEventoDB(id, { fecha: nuevaFecha, hora: nuevaHora });
         modal.style.display = 'none';
-        
-        // Modal de éxito SIN botones de confirmación adicionales
-        let modalExito = document.getElementById('modalExitoReprogramar');
-        if (!modalExito) {
-            modalExito = document.createElement('div');
-            modalExito.id = 'modalExitoReprogramar';
-            modalExito.className = 'modal-confirmacion';
-            modalExito.innerHTML = `
-                <div class="modal-confirmacion-content">
-                    <i class="fas fa-check-circle icono-exito"></i>
-                    <h3>✅ Clase reprogramada</h3>
-                    <p id="mensajeExitoReprogramar"></p>
-                    <div class="botones-modal">
-                        <button id="btnCerrarExitoReprogramar" class="btn-aceptar">Aceptar</button>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(modalExito);
-        }
-        
-        document.getElementById('mensajeExitoReprogramar').innerHTML = `
-            Clase reprogramada para ${evento.alumno}<br>el ${nuevaFecha} a las ${nuevaHora}
-        `;
-        
-        modalExito.style.display = 'flex';
-        
-        document.getElementById('btnCerrarExitoReprogramar').onclick = () => {
-            modalExito.style.display = 'none';
-            renderCalendario();
-            renderListaEventos();
-        };
-        
-        window.onclick = (event) => {
-            if (event.target === modalExito) {
-                modalExito.style.display = 'none';
-                renderCalendario();
-                renderListaEventos();
-            }
-        };
+        mostrarModalConfirmacion('✅ Clase reprogramada', `Clase reprogramada para ${evento.alumno_nombre}<br>el ${nuevaFecha} a las ${nuevaHora}`, 'fa-check-circle', 'icono-exito', null);
+        renderCalendario();
+        renderListaEventos();
     };
     
-    document.getElementById('cancelarReprogramar').onclick = () => {
-        modal.style.display = 'none';
-    };
+    document.getElementById('cancelarReprogramar').onclick = () => modal.style.display = 'none';
 }
-function marcarComoVisto(idx) {
-    eventos[idx].visto = !eventos[idx].visto;
-    saveEventos(eventos);
-    renderListaEventos();
+
+async function marcarComoVistoUI(id) {
+    const evento = eventos.find(e => e.id === id);
+    if (!evento) return;
     
     mostrarModalConfirmacion(
-        eventos[idx].visto ? '✅ Clase marcada como vista' : '📝 Clase marcada como pendiente',
-        `La clase de ${eventos[idx].alumno} ha sido ${eventos[idx].visto ? 'marcada como vista' : 'marcada como pendiente'}.`,
-        'fa-check-circle',
-        'icono-exito',
-        null
+        'Confirmar clase vista',
+        `¿Marcar como vista la clase de ${evento.alumno_nombre} del ${evento.fecha} a las ${evento.hora}?`,
+        'fa-question-circle',
+        'icono-advertencia',
+        async () => {
+            await actualizarEventoDB(id, { visto: true });
+            renderListaEventos();
+            mostrarModalConfirmacion('✅ Clase marcada como vista', `La clase ha pasado al historial.`, 'fa-check-circle', 'icono-exito', null);
+        }
     );
 }
 
-function renderListaEventos() {
-    eventos = getEventos();
+async function renderListaEventos() {
     const container = document.getElementById('listaEventos');
     if (!container) return;
     
     const hoy = new Date();
     hoy.setHours(0, 0, 0, 0);
     
-    const eventosProximos = [];
-    const eventosPasados = [];
-    
-    eventos.forEach(e => {
-        const [año, mes, dia] = e.fecha.split('-');
-        const fechaEvento = new Date(año, parseInt(mes) - 1, dia);
-        if (fechaEvento >= hoy) {
-            eventosProximos.push(e);
-        } else {
-            eventosPasados.push(e);
-        }
-    });
-    
-    eventosProximos.sort((a, b) => a.fecha.localeCompare(b.fecha));
-    eventosPasados.sort((a, b) => b.fecha.localeCompare(a.fecha));
+    // Separar clases: futuras no vistas, pasadas + vistas
+    const clasesFuturas = eventos.filter(e => new Date(e.fecha) >= hoy && !e.visto).sort((a, b) => a.fecha.localeCompare(b.fecha));
+    const clasesHistoricas = eventos.filter(e => new Date(e.fecha) < hoy || e.visto).sort((a, b) => b.fecha.localeCompare(a.fecha));
     
     let html = '';
     
-    if (eventosProximos.length > 0) {
-        html += `<h4 style="color: var(--success-green); margin: 15px 0 10px;"><i class="fas fa-calendar-week"></i> 📅 Próximas clases</h4>`;
-        eventosProximos.forEach(e => {
-            const idxGlobal = eventos.findIndex(ev => ev === e);
-            html += generarEventoHTML(e, idxGlobal, 'proximo');
-        });
+    // Clases futuras
+    if (clasesFuturas.length > 0) {
+        html += `<h4 style="color: var(--success-green); margin: 15px 0 10px;"><i class="fas fa-calendar-week"></i> 📅 Clases agendadas</h4>`;
+        clasesFuturas.forEach(e => html += generarEventoHTML(e));
+    } else {
+        html += `<p style="text-align:center; padding:10px; color: var(--gray-dark);">No hay clases agendadas</p>`;
     }
     
-    if (eventosPasados.length > 0) {
-        html += `<h4 style="color: var(--gray-dark); margin: 20px 0 10px;"><i class="fas fa-history"></i> 📜 Clases pasadas</h4>`;
-        eventosPasados.forEach(e => {
-            const idxGlobal = eventos.findIndex(ev => ev === e);
-            html += generarEventoHTML(e, idxGlobal, 'pasado');
-        });
-    }
-    
-    if (eventos.length === 0) {
-        html = '<p style="text-align:center; padding:20px;">No hay clases programadas</p>';
+    // Clases históricas (colapsable)
+    if (clasesHistoricas.length > 0) {
+        html += `
+            <div id="historial-colapsable" style="margin-top: 20px;">
+                <div id="historial-header" style="cursor: pointer; padding: 10px; background: var(--gray-medium); border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <span><i class="fas fa-history"></i> 📜 Historial de clases (${clasesHistoricas.length})</span>
+                    <i id="historial-icono" class="fas fa-chevron-down"></i>
+                </div>
+                <div id="historial-contenido" style="display: block; margin-top: 10px;">
+                    ${clasesHistoricas.map(e => generarEventoHTML(e)).join('')}
+                </div>
+            </div>
+        `;
     }
     
     container.innerHTML = html;
     
+    // Evento para colapsar/expandir historial
+    const historialHeader = document.getElementById('historial-header');
+    if (historialHeader) {
+        historialHeader.addEventListener('click', () => {
+            const contenido = document.getElementById('historial-contenido');
+            const icono = document.getElementById('historial-icono');
+            if (contenido.style.display === 'none') {
+                contenido.style.display = 'block';
+                icono.className = 'fas fa-chevron-down';
+            } else {
+                contenido.style.display = 'none';
+                icono.className = 'fas fa-chevron-right';
+            }
+        });
+    }
+    
+    // Eventos de botones
     document.querySelectorAll('.btn-eliminar-evento').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const idx = parseInt(btn.getAttribute('data-idx'));
-            eliminarEvento(idx);
-        });
+        btn.addEventListener('click', (e) => { e.stopPropagation(); eliminarEventoUI(parseInt(btn.getAttribute('data-id'))); });
     });
-    
     document.querySelectorAll('.btn-reprogramar').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const idx = parseInt(btn.getAttribute('data-idx'));
-            reprogramarEvento(idx);
-        });
+        btn.addEventListener('click', (e) => { e.stopPropagation(); reprogramarEventoUI(parseInt(btn.getAttribute('data-id'))); });
     });
-    
     document.querySelectorAll('.btn-marcar-vista').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const idx = parseInt(btn.getAttribute('data-idx'));
-            marcarComoVisto(idx);
-        });
+        btn.addEventListener('click', (e) => { e.stopPropagation(); marcarComoVistoUI(parseInt(btn.getAttribute('data-id'))); });
     });
 }
 
-// Inicializar
-document.addEventListener('DOMContentLoaded', () => {
-    eventos = getEventos();
+// ===== INICIALIZACIÓN =====
+document.addEventListener('DOMContentLoaded', async () => {
+    await cargarEventos();
+    await cargarAlumnos();
     renderCalendario();
     renderListaEventos();
     
-    document.getElementById('btnNuevoAlumno')?.addEventListener('click', () => {
-        window.location.href = 'alumno.html';
+    // Botón cerrar sesión (nuevo)
+    document.getElementById('btnCerrarSesion')?.addEventListener('click', () => {
+        localStorage.removeItem('acceso_tipo');
+        localStorage.removeItem('usuario');
+        window.location.href = 'index.html';
     });
-    document.getElementById('btnListaAlumnos')?.addEventListener('click', () => {
-        window.location.href = 'alumnos-lista.html';
-    });
+    
     document.getElementById('btnMesAnterior')?.addEventListener('click', mesAnterior);
     document.getElementById('btnMesSiguiente')?.addEventListener('click', mesSiguiente);
 });

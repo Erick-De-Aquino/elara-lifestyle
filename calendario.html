@@ -13,12 +13,8 @@
     <main class="main-content">
         <div class="header-acciones">
             <h1>📅 Calendario de clases</h1>
-            <div style="display: flex; gap: 10px;">
-                <button id="btnNuevoAlumno" class="btn-header">
-                    <i class="fas fa-user-plus"></i> + Nuevo alumno
-                </button>
-                <button id="btnListaAlumnos" class="btn-header" style="background: var(--primary-dark);">
-                    <i class="fas fa-list"></i> Ver alumnos
+                <button id="btnCerrarSesion" class="btn-header" style="background: var(--danger-red);">
+                    </i> Cerrar sesión
                 </button>
             </div>
         </div>
@@ -43,10 +39,23 @@
             </div>
         </div>
     </main>
+    <!-- Modal para confirmaciones -->
+<div id="modalConfirmarProfesor" class="modal-confirmacion" style="display: none;">
+    <div class="modal-confirmacion-content">
+        <i class="fas fa-exclamation-triangle icono-advertencia"></i>
+        <h3>Confirmar acción</h3>
+        <p id="confirmarMensaje"></p>
+        <div class="botones-modal">
+            <button id="confirmarSi" class="btn-confirmar">Sí</button>
+            <button id="confirmarNo" class="btn-cancelar-modal">No</button>
+        </div>
+    </div>
+</div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-config.js"></script>
     <script src="js/comunes.js"></script>
     <script src="js/navegacion.js"></script>
-    <script src="js/alumno.js"></script>
     <script src="js/calendario.js"></script>
 </body>
 </html>

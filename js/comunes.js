@@ -92,5 +92,49 @@ function cargarModoOscuro() {
     }
 }
 
+// ===== MODALES PARA CALENDARIO =====
+function mostrarModalConfirmacion(titulo, mensaje, icono, iconoClass, callback) {
+    const modal = document.getElementById('modalConfirmarProfesor');
+    if (!modal) return;
+    
+    document.getElementById('confirmarMensaje').innerHTML = mensaje;
+    
+    const confirmarSi = document.getElementById('confirmarSi');
+    const confirmarNo = document.getElementById('confirmarNo');
+    
+    if (callback === null) {
+        // Es una notificación, mostrar solo botón "Aceptar"
+        confirmarSi.textContent = 'Aceptar';
+        confirmarSi.style.backgroundColor = '#2A9D8F'; // Verde éxito
+        confirmarNo.style.display = 'none';
+        
+        confirmarSi.onclick = () => {
+            modal.style.display = 'none';
+            confirmarSi.textContent = 'Sí'; // Restaurar para próximos usos
+            confirmarNo.style.display = 'inline-flex';
+        };
+    } else {
+        // Es confirmación con Sí/No
+        confirmarSi.textContent = 'Sí';
+        confirmarNo.style.display = 'inline-flex';
+        
+        confirmarSi.onclick = () => {
+            modal.style.display = 'none';
+            if (callback) callback();
+        };
+        confirmarNo.onclick = () => {
+            modal.style.display = 'none';
+        };
+    }
+    
+    modal.style.display = 'flex';
+}
+
+// ===== OBTENER ALUMNOS =====
+function getAlumnos() {
+    return JSON.parse(localStorage.getItem('alumnos') || '[]');
+}
+
 // Inicializar modo oscuro cuando carga la página
 document.addEventListener('DOMContentLoaded', cargarModoOscuro);
+

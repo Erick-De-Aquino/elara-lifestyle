@@ -31,17 +31,106 @@ async function cargarDatos() {
         document.getElementById('alumno-nombre').textContent = data.nombre || alumnoUsuario;
         const completadasLength = progreso.completadas.length;
         const totalClases = 14;
-        const porcentaje = (completadasLength / totalClases) * 100;
         document.getElementById('clases-completadas').textContent = `${completadasLength}/${totalClases}`;
-        
-        // Ya no actualizamos la barra de progreso (fue eliminada)
         
         setTimeout(() => {
             dibujarGrafico(progreso.completadas, totalClases);
         }, 100);
     }
+    
+    // ===== PRÓXIMA CLASE =====
+    const resumenAlumno = document.querySelector('.resumen-alumno');
+    if (resumenAlumno && !document.getElementById('proxima-clase-simple')) {
+        const bloque = document.createElement('div');
+        bloque.id = 'proxima-clase-simple';
+        bloque.style.cssText = `
+            margin: 15px 0 0 0;
+            padding: 8px 12px;
+            background: rgba(255,140,66,0.25);
+            border-radius: 8px;
+            font-size: 1.05rem;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            order: 3;
+        `;
+        bloque.innerHTML = `
+            <i class="fas fa-calendar-alt" style="color: #FF8C42;"></i>
+            <strong>Próxima clase:</strong> <span id="proxima-clase-texto">Cargando...</span>
+        `;
+        resumenAlumno.appendChild(bloque);
+        
+        cargarProximaClaseSimple();
+    }
 }
 
+// Esta función va FUERA de cargarDatos, al final del archivo
+async function cargarProximaClaseSimple() {
+    const usuario = localStorage.getItem('alumno_usuario');
+    if (!usuario) return;
+    
+    const { data: alumnoData } = await supabaseClient
+        .from('alumnos')
+        .select('id')
+        .eq('usuario', usuario)
+        .single();
+    
+    if (!alumnoData) return;
+    
+    const hoy = new Date().toISOString().split('T')[0];
+    const { data: eventos } = await supabaseClient
+        .from('eventos')
+        .select('fecha, hora')
+        .eq('alumno_id', alumnoData.id)
+        .gte('fecha', hoy)
+        .order('fecha', { ascending: true })
+        .order('hora', { ascending: true })
+        .limit(1);
+    
+    const texto = document.getElementById('proxima-clase-texto');
+    if (texto) {
+        if (eventos && eventos.length > 0) {
+            const [año, mes, dia] = eventos[0].fecha.split('-');
+            texto.innerHTML = `${dia}/${mes}/${año} a las ${eventos[0].hora}`;
+        } else {
+            texto.innerHTML = '✅ No hay clases agendadas';
+        }
+    }
+}
+
+// Agrega esta función DESPUÉS de cargarDatos()
+async function cargarProximaClaseSimple() {
+    const usuario = localStorage.getItem('alumno_usuario');
+    if (!usuario) return;
+    
+    const { data: alumnoData, error: alumnoError } = await supabaseClient
+        .from('alumnos')
+        .select('id')
+        .eq('usuario', usuario)
+        .single();
+    
+    if (alumnoError || !alumnoData) return;
+    
+    const hoy = new Date().toISOString().split('T')[0];
+    const { data: eventos, error: eventosError } = await supabaseClient
+        .from('eventos')
+        .select('fecha, hora')
+        .eq('alumno_id', alumnoData.id)
+        .gte('fecha', hoy)
+        .order('fecha', { ascending: true })
+        .order('hora', { ascending: true })
+        .limit(1);
+    
+    const texto = document.getElementById('proxima-clase-texto');
+    if (texto) {
+        if (eventos && eventos.length > 0) {
+            const [año, mes, dia] = eventos[0].fecha.split('-');
+            texto.innerHTML = `${dia}/${mes}/${año} a las ${eventos[0].hora}`;
+        } else {
+            texto.innerHTML = '✅ No hay clases agendadas';
+        }
+    }
+}
 // Añadir evento del modo oscuro en la inicialización
 document.addEventListener('DOMContentLoaded', () => {
     cargarDatos().then(() => renderAcordeon());

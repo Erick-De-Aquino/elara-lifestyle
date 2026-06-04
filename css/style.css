@@ -115,7 +115,7 @@ button, .btn-primary, .btn-hero, .btn-guardar-modal, .btn-marcar-completada, .op
 }
 
 .btn-secondary, .btn-cambiar-alumno, .opcion-elegir, .btn-mes, .btn-cerrar-sesion {
-    background: var(--primary-dark);
+    background: #dc3545;
     color: white;
     padding: 10px 20px;
     border-radius: 8px;
@@ -123,6 +123,8 @@ button, .btn-primary, .btn-hero, .btn-guardar-modal, .btn-marcar-completada, .op
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    border: none;
+    box-shadow: none;
 }
 .btn-secondary:hover, .btn-cambiar-alumno:hover, .opcion-elegir:hover, .btn-mes:hover, .btn-cerrar-sesion:hover {
     background: #2a4a6e;
@@ -357,15 +359,15 @@ textarea { resize: vertical; min-height: 60px; }
 .curso-header h1 { color: var(--primary-dark); margin-bottom: 15px; }
 
 .resumen-alumno {
-    background: white;
-    padding: 15px 20px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
     display: flex;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
-    border-left: 4px solid var(--primary-orange);
+    border-left: none;
 }
 .resumen-alumno i { font-size: 1.8rem; color: var(--primary-orange); }
 .resumen-alumno-info { flex: 1; }
@@ -1178,3 +1180,39 @@ body.modo-oscuro .tabla-alumnos th {
     background-color: #1D3557 !important;
     color: white !important;
 }
+
+/* Eliminar recuadros en panel profesor */
+.dashboard-header {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 0 20px 0 !important;
+    border: none !important;
+}
+
+/* Ajuste de z-index para modales */
+#modalConfirmarProfesor {
+    z-index: 10001 !important;
+}
+
+#modalAgendar {
+    z-index: 10000 !important;
+}
+
+/* Modo oscuro: texto del horario seleccionado */
+body.modo-oscuro #fechaHoraSeleccionada {
+    background-color: #2d2d2d !important;
+    color: #f0f0f0 !important;
+}
+
+/* Forzar altura del panel derecho */
+.panel:last-child {
+    height: auto !important;
+    min-height: 650px !important;
+}
+
+#listaEventos {
+    max-height: 600px !important;
+    min-height: 500px !important;
+    overflow-y: auto !important;
+}
+
