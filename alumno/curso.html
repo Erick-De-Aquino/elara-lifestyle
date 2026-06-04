@@ -20,19 +20,19 @@
                 <div class="resumen-alumno-info">
                     <div class="resumen-alumno-nombre" id="alumno-nombre">Cargando...</div>
                     <div>Clases completadas: <span id="clases-completadas">0/14</span></div>
-                    <div class="barra-progreso">
-                        <div class="barra-progreso-fill" id="barra-progreso"></div>
-                    </div>
                     <div style="margin-top: 15px;">
-                        <canvas id="graficoProgreso" width="200" height="200" style="max-width: 200px; max-height: 200px; margin: 0 auto;"></canvas>
+                        <canvas id="graficoProgreso" width="200" height="200" style="max-width: 180px; max-height: 180px; margin: 0 auto;"></canvas>
                     </div>
                 </div>
-                <div style="display: flex; gap: 10px;">
+                <div class="botones-vertical">
                     <button id="btnVerApuntes" class="btn-secondary">
                         <i class="fas fa-notes-medical"></i> Ver mis apuntes
                     </button>
                     <button id="btnDescargarPDF" class="btn-secondary">
                         <i class="fas fa-file-pdf"></i> Descargar PDF
+                    </button>
+                    <button id="btnModoOscuroAlumno" class="btn-secondary">
+                        <i class="fas fa-moon"></i> Modo oscuro
                     </button>
                     <button id="btnCerrarSesion" class="btn-cerrar-sesion">
                         <i class="fas fa-sign-out-alt"></i> Cerrar sesión

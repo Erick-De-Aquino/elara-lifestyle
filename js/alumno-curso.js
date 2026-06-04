@@ -11,6 +11,15 @@ async function cargarDatos() {
         return;
     }
     
+    // Cargar modo oscuro guardado
+    if (localStorage.getItem('modo_oscuro_alumno') === 'true') {
+        document.body.classList.add('modo-oscuro-alumno');
+        const btnModoOscuro = document.getElementById('btnModoOscuroAlumno');
+        if (btnModoOscuro) {
+            btnModoOscuro.innerHTML = '<i class="fas fa-sun"></i> Modo claro';
+        }
+    }
+    
     const { data, error } = await supabaseClient
         .from('alumnos')
         .select('progreso, nombre')
@@ -24,14 +33,54 @@ async function cargarDatos() {
         const totalClases = 14;
         const porcentaje = (completadasLength / totalClases) * 100;
         document.getElementById('clases-completadas').textContent = `${completadasLength}/${totalClases}`;
-        document.getElementById('barra-progreso').style.width = `${porcentaje}%`;
         
-        // Esperar un momento para que el canvas esté listo
+        // Ya no actualizamos la barra de progreso (fue eliminada)
+        
         setTimeout(() => {
             dibujarGrafico(progreso.completadas, totalClases);
         }, 100);
     }
 }
+
+// Añadir evento del modo oscuro en la inicialización
+document.addEventListener('DOMContentLoaded', () => {
+    cargarDatos().then(() => renderAcordeon());
+    
+    document.getElementById('btnCerrarSesion')?.addEventListener('click', cerrarSesion);
+    
+    const btnVerApuntes = document.getElementById('btnVerApuntes');
+    if (btnVerApuntes) {
+        btnVerApuntes.addEventListener('click', mostrarModalApuntes);
+    }
+    
+    const btnDescargarPDF = document.getElementById('btnDescargarPDF');
+    if (btnDescargarPDF) {
+        btnDescargarPDF.addEventListener('click', descargarApuntesPDF);
+    }
+    
+    // Modo oscuro
+    const btnModoOscuro = document.getElementById('btnModoOscuroAlumno');
+    if (btnModoOscuro) {
+        btnModoOscuro.addEventListener('click', () => {
+            document.body.classList.toggle('modo-oscuro-alumno');
+            const esModoOscuro = document.body.classList.contains('modo-oscuro-alumno');
+            localStorage.setItem('modo_oscuro_alumno', esModoOscuro);
+            
+            if (esModoOscuro) {
+                btnModoOscuro.innerHTML = '<i class="fas fa-sun"></i> Modo claro';
+            } else {
+                btnModoOscuro.innerHTML = '<i class="fas fa-moon"></i> Modo oscuro';
+            }
+        });
+    }
+    
+    const btnCerrarApuntes = document.getElementById('btnCerrarApuntes');
+    if (btnCerrarApuntes) {
+        btnCerrarApuntes.addEventListener('click', () => {
+            document.getElementById('modalApuntes').style.display = 'none';
+        });
+    }
+});
 
 // Dibujar gráfico de progreso
 function dibujarGrafico(completadasArray, total) {

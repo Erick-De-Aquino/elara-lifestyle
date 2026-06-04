@@ -170,12 +170,7 @@
     margin-bottom: 15px;
 }
 
-.curso-footer {
-    text-align: center;
-    margin-top: 30px;
-}
-
-/* ===== BLOQUES CON ACORDEÓN Y SUBTÍTULOS ===== */
+/* ===== BLOQUES CON ACORDEÓN ===== */
 .bloque-tema {
     margin-bottom: 15px;
     background: white;
@@ -242,15 +237,15 @@
     margin: 0;
 }
 
-#graficoProgreso {
-    display: block;
-    margin: 10px auto;
-}
-
-/* Panel de resumen del alumno - ancho completo */
+/* ===== PROGRESO Y GRÁFICO ===== */
 .resumen-alumno {
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .resumen-alumno-info {
@@ -261,6 +256,221 @@
 #graficoProgreso {
     display: block;
     margin: 10px auto;
-    width: 180px !important;
-    height: 180px !important;
+    width: 160px !important;
+    height: 160px !important;
+}
+
+/* ===== BOTONES VERTICALES ===== */
+.botones-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 160px;
+}
+
+.botones-vertical button {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 15px;
+}
+
+/* ===== MODO OSCURO PARA ALUMNO ===== */
+body.modo-oscuro-alumno {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro-alumno .main-content {
+    background-color: #121212;
+}
+
+body.modo-oscuro-alumno .contenido-clase,
+body.modo-oscuro-alumno .videos-apoyo,
+body.modo-oscuro-alumno .formulario-comentarios,
+body.modo-oscuro-alumno .bloque-tema,
+body.modo-oscuro-alumno .resumen-alumno {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    border-color: #333;
+}
+
+body.modo-oscuro-alumno .clase-header {
+    background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3e 100%);
+}
+
+body.modo-oscuro-alumno .clase-header h1,
+body.modo-oscuro-alumno .clase-header p {
+    color: white;
+}
+
+body.modo-oscuro-alumno .practica-semana {
+    background: linear-gradient(135deg, #1a4a3a 0%, #0d2a20 100%);
+}
+
+body.modo-oscuro-alumno .video-link {
+    background: #2d2d2d;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro-alumno .video-link:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+body.modo-oscuro-alumno .accordion-header {
+    background: #2a2a2a;
+    color: white;
+}
+
+body.modo-oscuro-alumno .accordion-header:hover {
+    background: #3a3a3a;
+}
+
+body.modo-oscuro-alumno .clase-link {
+    background: #2a2a2a;
+    color: #f0f0f0;
+}
+
+body.modo-oscuro-alumno .clase-link:hover {
+    background: var(--primary-orange);
+    color: white;
+}
+
+body.modo-oscuro-alumno .badge-completada {
+    background: var(--success-green);
+    color: white;
+}
+
+body.modo-oscuro-alumno .lista-subtemas li {
+    color: #f0f0f0;
+    border-bottom-color: #444;
+}
+
+/* ===== LAYOUT CON SIDEBAR DERECHO ===== */
+.clase-page-wrapper {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+/* Contenido principal */
+.clase-contenido-principal {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Sidebar derecho sticky */
+.alumno-sidebar-derecho {
+    position: sticky;
+    top: 20px;
+    width: 260px;
+    height: fit-content;
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    border-left: 4px solid var(--primary-orange);
+    align-self: flex-start;
+}
+
+/* Info del alumno en sidebar */
+.sidebar-info-alumno {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray-medium);
+}
+
+.sidebar-nombre {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.sidebar-progreso-texto {
+    font-size: 0.85rem;
+    color: var(--gray-dark);
+    margin-bottom: 10px;
+}
+
+/* Botones del sidebar */
+.sidebar-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn-sidebar {
+    background: var(--primary-dark);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-sidebar:hover {
+    background: var(--primary-orange);
+    transform: translateX(-3px);
+}
+
+.btn-sidebar.cerrar {
+    background: var(--danger-red);
+    margin-top: 10px;
+}
+
+.btn-sidebar.cerrar:hover {
+    background: #c03542;
+}
+
+/* Modo oscuro para sidebar */
+body.modo-oscuro-alumno .alumno-sidebar-derecho {
+    background-color: #1e1e1e;
+    border-left-color: var(--primary-orange);
+}
+
+body.modo-oscuro-alumno .sidebar-nombre {
+    color: white;
+}
+
+body.modo-oscuro-alumno .btn-sidebar {
+    background: #3a3a3a;
+}
+
+body.modo-oscuro-alumno .btn-sidebar:hover {
+    background: var(--primary-orange);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .clase-page-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .alumno-sidebar-derecho {
+        position: static;
+        width: 100%;
+        order: 2;
+        margin-top: 20px;
+    }
+    
+    .sidebar-botones {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .btn-sidebar {
+        flex: 1;
+    }
 }

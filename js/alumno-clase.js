@@ -3,6 +3,7 @@
 let claseId = null;
 let claseData = null;
 let alumnoUsuario = null;
+let sidebarGraficoInstance = null;
 
 function obtenerIdClase() {
     const urlParams = new URLSearchParams(window.location.search);
@@ -42,21 +43,113 @@ function mostrarModal(mensaje, tipo) {
     };
 }
 
+// ===== DATOS DEL SIDEBAR =====
+async function cargarDatosSidebar() {
+    const alumnoUsuario = localStorage.getItem('alumno_usuario');
+    if (!alumnoUsuario) return;
+    
+    const { data, error } = await supabaseClient
+        .from('alumnos')
+        .select('progreso, nombre')
+        .eq('usuario', alumnoUsuario)
+        .single();
+    
+    if (data) {
+        const completadasLength = data.progreso?.completadas?.length || 0;
+        const totalClases = 14;
+        document.getElementById('sidebar-nombre').textContent = data.nombre || alumnoUsuario;
+        document.getElementById('sidebar-progreso-texto').textContent = `Clases: ${completadasLength}/${totalClases}`;
+        
+        setTimeout(() => {
+            dibujarGraficoSidebar(data.progreso?.completadas || [], totalClases);
+        }, 100);
+    }
+}
+
+function dibujarGraficoSidebar(completadasArray, total) {
+    const canvas = document.getElementById('sidebarGrafico');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const completadasNum = completadasArray.length;
+    const pendientes = total - completadasNum;
+    
+    if (sidebarGraficoInstance) {
+        sidebarGraficoInstance.destroy();
+    }
+    
+    sidebarGraficoInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Completadas', 'Pendientes'],
+            datasets: [{
+                data: [completadasNum, pendientes],
+                backgroundColor: ['#2A9D8F', '#E0E0E0'],
+                borderWidth: 0,
+                cutout: '70%'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const label = context.label || '';
+                            const value = context.raw || 0;
+                            const porcentaje = (value / total) * 100;
+                            return `${label}: ${value} (${porcentaje.toFixed(1)}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// ===== CARGA PRINCIPAL DE LA CLASE =====
 async function cargarDatos() {
     alumnoUsuario = localStorage.getItem('alumno_usuario');
+    console.log('1. alumnoUsuario:', alumnoUsuario);
+    
     if (!alumnoUsuario) {
         window.location.href = '../index.html';
         return false;
     }
     
-    const response = await fetch('../data/clases-alumno.json');
-    const todas = await response.json();
+    // Cargar datos del sidebar
+    cargarDatosSidebar();
+    
+    // Cargar modo oscuro guardado
+    if (localStorage.getItem('modo_oscuro_alumno') === 'true') {
+        document.body.classList.add('modo-oscuro-alumno');
+    }
+    
+    // Cargar contenido resumido desde clases-alumno.json
+    const responseAlumno = await fetch('../data/clases-alumno.json');
+    const todasAlumno = await responseAlumno.json();
     claseId = obtenerIdClase();
-    claseData = todas[claseId];
+    console.log('2. claseId:', claseId);
+    
+    claseData = todasAlumno[claseId];
     
     if (!claseData) {
         document.getElementById('clase-container').innerHTML = '<div style="text-align:center; padding:50px;"><h2>Clase no encontrada</h2><a href="curso.html" class="btn-primary">Volver</a></div>';
         return false;
+    }
+    
+    // Cargar videos desde clases.json (profesor) para obtener las URLs
+    let videosData = { videos: [] };
+    try {
+        const responseProfesor = await fetch('../data/clases.json');
+        const todasProfesor = await responseProfesor.json();
+        if (todasProfesor[claseId] && todasProfesor[claseId].videos) {
+            videosData = todasProfesor[claseId];
+        }
+    } catch (err) {
+        console.error('Error cargando videos desde clases.json:', err);
     }
     
     document.title = `Clase ${claseData.numero}: ${claseData.titulo} | ELARA METHOD`;
@@ -74,6 +167,7 @@ async function cargarDatos() {
         palabrasUl.appendChild(li);
     });
     
+    // Bloques de la clase
     const bloquesContainer = document.getElementById('bloques-container');
     if (bloquesContainer && claseData.bloques && claseData.bloques.length > 0) {
         let bloquesHtml = '<h3>📋 Temas de la clase</h3>';
@@ -116,43 +210,62 @@ async function cargarDatos() {
     document.getElementById('practica-texto').innerHTML = claseData.practicaSemana;
     document.getElementById('practica-tip').innerHTML = `<i class="fas fa-lightbulb"></i> ${claseData.practicaTip}`;
     
+    // Videos - usando datos desde clases.json (con URLs)
     const videosDiv = document.getElementById('videos-container');
     videosDiv.innerHTML = '';
-    if (claseData.videos) {
-        claseData.videos.forEach(v => {
+    if (videosData.videos && videosData.videos.length > 0) {
+        videosData.videos.forEach(v => {
             const a = document.createElement('a');
-            a.href = '#';
+            a.href = v.url || '#';
             a.className = 'video-link';
+            a.target = '_blank';
             a.innerHTML = `<i class="fab fa-youtube"></i> <span>${v.titulo || v}</span>`;
             videosDiv.appendChild(a);
         });
     }
     
-    // === CORREGIDO: seleccionar progreso Y comentarios ===
+    // ===== VERIFICAR PROGRESO Y CARGAR COMENTARIOS =====
+    console.log('3. Consultando Supabase para usuario:', alumnoUsuario);
+    
     const { data, error } = await supabaseClient
         .from('alumnos')
         .select('progreso, comentarios')
         .eq('usuario', alumnoUsuario)
         .single();
     
+    console.log('4. Datos recibidos:', data);
+    console.log('5. Error:', error);
+    
     if (data) {
         // Progreso
         const completadas = data.progreso?.completadas || [];
+        console.log('6. Clases completadas:', completadas);
+        
         if (completadas.includes(claseId)) {
             document.getElementById('completada-badge-container').innerHTML = '<div class="completada-badge"><i class="fas fa-check-circle"></i> Clase completada</div>';
         }
         
-        // Comentario guardado
+        // Cargar comentario guardado en el textarea
         const comentarios = data.comentarios || {};
+        console.log('7. Todos los comentarios:', comentarios);
+        console.log('8. Comentario para esta clase:', comentarios[claseId]);
+        
         if (comentarios[claseId]) {
             document.getElementById('comentariosClase').value = comentarios[claseId];
+            console.log('9. Comentario cargado en textarea');
+        } else {
+            console.log('10. No hay comentario para esta clase');
         }
+    } else {
+        console.log('11. No se recibieron datos de Supabase');
     }
     
     return true;
 }
+
 async function guardarComentario() {
     const comentario = document.getElementById('comentariosClase').value;
+    
     const { data, error } = await supabaseClient
         .from('alumnos')
         .select('comentarios')
@@ -217,13 +330,11 @@ function mostrarModalApuntes() {
             clase14: "Clase 14: Prevención de recaídas + cierre"
         };
         
-        // Orden de las clases (del 1 al 14)
         const ordenClases = ["clase1", "clase2", "clase3", "clase4", "clase5", "clase6", "clase7", "clase8", "clase9", "clase10", "clase11", "clase12", "clase13", "clase14"];
         
         let html = '';
         let tieneApuntes = false;
         
-        // Recorrer en orden de clase
         for (const claseId of ordenClases) {
             const comentario = comentarios[claseId];
             if (comentario && comentario.trim() !== '') {
@@ -249,14 +360,156 @@ function mostrarModalApuntes() {
     });
 }
 
+// ===== DESCARGA DE APUNTES EN PDF =====
+
+async function cargarTodosLosApuntes() {
+    const usuario = localStorage.getItem('alumno_usuario');
+    if (!usuario) return {};
+    
+    const { data, error } = await supabaseClient
+        .from('alumnos')
+        .select('comentarios')
+        .eq('usuario', usuario)
+        .single();
+    
+    if (error) {
+        console.error('Error cargando apuntes:', error);
+        return {};
+    }
+    
+    return data?.comentarios || {};
+}
+
+async function descargarApuntesPDF() {
+    const usuario = localStorage.getItem('alumno_usuario');
+    const nombreAlumno = localStorage.getItem('alumno_nombre') || usuario;
+    
+    const comentarios = await cargarTodosLosApuntes();
+    
+    const apuntesExistentes = Object.values(comentarios).some(c => c && c.trim() !== '');
+    if (!apuntesExistentes) {
+        mostrarModal('No tienes apuntes guardados para descargar', 'error');
+        return;
+    }
+    
+    const claseTitulos = {
+        clase1: "Clase 1: Introducción y enfoque",
+        clase2: "Clase 2: Sueño - Reparación nocturna",
+        clase3: "Clase 3: Mente - Paz y claridad",
+        clase4: "Clase 4: Ejercicio - Movimiento con propósito",
+        clase5: "Clase 5: Alimentación - Nutrición inteligente",
+        clase6: "Clase 6: Qué NO comer",
+        clase7: "Clase 7: Macronutrientes y cálculo",
+        clase8: "Clase 8: Suplementación",
+        clase9: "Clase 9: Resistencia a la insulina",
+        clase10: "Clase 10: Sarcopenia",
+        clase11: "Clase 11: Ayuno intermitente",
+        clase12: "Clase 12: Estructura, sol y frío",
+        clase13: "Clase 13: Cómo leer etiquetas",
+        clase14: "Clase 14: Prevención de recaídas + cierre"
+    };
+    
+    const ordenClases = ["clase1", "clase2", "clase3", "clase4", "clase5", "clase6", "clase7", "clase8", "clase9", "clase10", "clase11", "clase12", "clase13", "clase14"];
+    
+    let contenidoHTML = `
+        <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: #1D3557;">ELARA METHOD</h1>
+                <h2 style="color: #FF8C42;">Mis apuntes del curso</h2>
+                <p>Alumno: <strong>${nombreAlumno}</strong></p>
+                <p>Fecha: ${new Date().toLocaleDateString()}</p>
+                <hr style="border: 1px solid #E0E0E0;">
+            </div>
+    `;
+    
+    for (const claseId of ordenClases) {
+        const comentario = comentarios[claseId];
+        if (comentario && comentario.trim() !== '') {
+            const claseTitulo = claseTitulos[claseId];
+            contenidoHTML += `
+                <div style="margin-bottom: 25px; page-break-inside: avoid;">
+                    <h3 style="color: #1D3557; border-bottom: 2px solid #FF8C42; padding-bottom: 5px;">${claseTitulo}</h3>
+                    <div style="margin-top: 10px; padding-left: 10px; border-left: 3px solid #FF8C42;">
+                        ${comentario.replace(/\n/g, '<br>')}
+                    </div>
+                </div>
+            `;
+        }
+    }
+    
+    contenidoHTML += `
+            <div style="text-align: center; margin-top: 40px; font-size: 12px; color: #6C757D;">
+                <hr>
+                <p>Apuntes generados desde ELARA METHOD - ${new Date().toLocaleString()}</p>
+            </div>
+        </div>
+    `;
+    
+    const elemento = document.createElement('div');
+    elemento.innerHTML = contenidoHTML;
+    elemento.style.position = 'absolute';
+    elemento.style.left = '-9999px';
+    document.body.appendChild(elemento);
+    
+    try {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        
+        const canvas = await html2canvas(elemento, {
+            scale: 2,
+            backgroundColor: '#ffffff'
+        });
+        
+        const imgData = canvas.toDataURL('image/png');
+        const imgWidth = 190;
+        const pageHeight = 277;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+        let position = 10;
+        
+        pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        
+        let heightLeft = imgHeight - (pageHeight - 20);
+        while (heightLeft > 0) {
+            position = -(imgHeight - heightLeft);
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+            heightLeft -= (pageHeight - 20);
+        }
+        
+        pdf.save(`mis_apuntes_${nombreAlumno.replace(/\s/g, '_')}.pdf`);
+        
+    } catch (err) {
+        console.error('Error al generar PDF:', err);
+        mostrarModal('Error al generar el PDF', 'error');
+    }
+    
+    document.body.removeChild(elemento);
+}
+
+// ===== INICIALIZACIÓN =====
 document.addEventListener('DOMContentLoaded', async () => {
     const ok = await cargarDatos();
     if (ok) {
         document.getElementById('btnGuardarComentarios')?.addEventListener('click', guardarComentario);
         
-        const btnVerApuntes = document.getElementById('btnVerApuntesClase');
-        if (btnVerApuntes) {
-            btnVerApuntes.addEventListener('click', mostrarModalApuntes);
+        // Botones del sidebar derecho
+        document.getElementById('btnVerApuntesSidebar')?.addEventListener('click', mostrarModalApuntes);
+        document.getElementById('btnDescargarPDFSidebar')?.addEventListener('click', descargarApuntesPDF);
+        document.getElementById('btnCerrarSesionSidebar')?.addEventListener('click', () => {
+            localStorage.removeItem('alumno_usuario');
+            localStorage.removeItem('alumno_nombre');
+            window.location.href = '../index.html';
+        });
+        
+        // Modo oscuro sidebar
+        const btnModoOscuroSidebar = document.getElementById('btnModoOscuroSidebar');
+        if (btnModoOscuroSidebar) {
+            btnModoOscuroSidebar.addEventListener('click', () => {
+                document.body.classList.toggle('modo-oscuro-alumno');
+                const esModoOscuro = document.body.classList.contains('modo-oscuro-alumno');
+                localStorage.setItem('modo_oscuro_alumno', esModoOscuro);
+                btnModoOscuroSidebar.innerHTML = esModoOscuro ? '<i class="fas fa-sun"></i> Modo claro' : '<i class="fas fa-moon"></i> Modo oscuro';
+            });
         }
         
         const btnCerrarApuntes = document.getElementById('btnCerrarApuntes');
@@ -266,4 +519,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
     }
+
+    // Botón volver al índice
+    document.getElementById('btnVolverIndiceSidebar')?.addEventListener('click', () => {
+        window.location.href = 'curso.html';
+    });
 });
