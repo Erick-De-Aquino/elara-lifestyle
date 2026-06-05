@@ -234,8 +234,8 @@
                 "url": "https://www.youtube.com/watch?v=NrQ9I8KaBGw"
             },
             {
-                "titulo": "Carlos Jaramillo: ¡Todos Los MAYORES De 40 Años DEBEN Ver Este Video! Esto DEVORA tus MÚSCULOS | SARCOPENIA GRAVE",
-                "url": "https://www.youtube.com/watch?v=bDIUb71Xqk4&t=562s"
+                "titulo": "Oswaldo Restrepo RSC: Beneficios Del Ejercicio Físico Top 10",
+                "url": "https://www.youtube.com/watch?v=Z8OYBxgSfCM"
             }
         ]
     },
@@ -288,7 +288,16 @@
         ],
         "practicaSemana": "🍽️ \n\n Identifica los macronutrientes en tus platos al menos una vez al día durante los próximos 7 días.\n\n**Instrucción concreta:**\n1. Antes de comer (en una comida principal, ejemplo almuerzo o cena), haz una pausa de 10 segundos.\n2. Pregúntate: '¿Dónde están los carbohidratos? ¿Dónde las proteínas? ¿Dónde las grasas?'\n3. Si falta alguno, piensa cómo podrías añadirlo la próxima vez (no te castigues si hoy falta, solo observa).\n\n**Opcional (si quieres más nivel):**\n- Toma una foto de tu plato cada día y escribe al lado qué macronutrientes identificas y si el método del puño se cumplió aproximadamente.",
         "practicaTip": "💡 Observar es el primer paso antes de cambiar. No necesitas hacerlo perfecto esta semana. Solo necesitas empezar a ver qué hay en tu plato. La conciencia es el comienzo de la transformación.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Nutrición Inteligente: El Secreto para Elegir Alimentos que Transforman tu Cuerpo, tu Energía y Vida",
+                "url": "https://www.youtube.com/watch?v=nc1Oejm_-5E"
+            },
+            {
+                "titulo": "Nutrición Inteligente: Come Bien, Vive Mejor",
+                "url": "https://www.youtube.com/watch?v=UTUDcnFBX6k"
+            }
+        ]
     },
     "clase6": {
         "id": "clase6",
@@ -334,7 +343,16 @@
         ],
         "practicaSemana": "🥤 **Práctica de la semana**\n\n**Tarea obligatoria:** Identifica y reemplaza UN no prioritario durante 7 días.\n\n**Instrucción concreta:**\n1. Elige UNO de esta lista: refrescos / pan blanco / snack dulce industrial / cereales azucarados.\n2. Durante 7 días, cada vez que vayas a consumirlo, haz el reemplazo:\n   - Refresco → agua con limón, infusión fría, agua con gas.\n   - Pan blanco → pan integral de masa madre (si no encuentras, reduce la cantidad o cómelo con más proteína y verduras).\n   - Snack dulce → una fruta entera + 5 frutos secos.\n   - Cereales azucarados → avena integral con canela y fruta.\n3. Anota cada día (mentalmente o en papel): 'Hoy logré mi reemplazo' o 'Hoy no lo logré, vuelvo mañana'.\n\n**Autoevaluación al final de la semana:**\n1. ¿Cuál fue el no prioritario más fácil de reemplazar? ¿Y el más difícil?\n2. ¿Notaste algún cambio en tu energía, digestión o antojos?\n3. ¿Qué permitido programado te darías esta semana sin culpa?",
         "practicaTip": "💡 No necesitas ser perfecto. Una semana de reemplazos no va a transformar tu cuerpo, pero sí va a transformar tu conciencia. Y la conciencia es el primer paso para cualquier cambio real.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Dr Carlos Jaramillo: ¡DESPÍDETE DE ESTOS 17 ALIMENTOS! MEJORA TU SALUD HOY",
+                "url": "https://www.youtube.com/watch?v=y1KJfQ1VZzc"
+            },
+            {
+                "titulo": "Dr Carlos Jaramillo: 8 comidas que cobran miles de vidas al año y NADIE te lo dice | Alimentos dañinos para el cuerpo",
+                "url": "https://www.youtube.com/watch?v=Scro_RyOqdc"
+            }
+        ]
     },
     "clase7": {
         "id": "clase7",
@@ -379,7 +397,16 @@
         ],
         "practicaSemana": "📝 **Práctica de la semana**\n\n**Tarea obligatoria:** Elige UN día de esta semana. Anota TODOS los alimentos que comes. Luego calcula los macronutrientes aproximados de ese día (proteína, carbohidratos, grasa). Compáralo con el cálculo que hiciste según tu objetivo y peso ajustado.\n\n**Instrucción concreta:**\n1. Elige un día típico (no un día de 'permitido programado').\n2. Anota: qué comiste y cuánto (en porciones visuales: una pechuga, un plato de arroz, 2 huevos, etc.).\n3. Usa la tabla de ejemplo del bloque 1 o busca 'valor nutricional de [alimento]'.\n4. Suma las cantidades aproximadas de proteína, carbohidratos y grasa del día.\n5. Compáralas con tus números objetivo.\n\n**Nota importante:**\nNo se trata de acertar. Se trata de tomar conciencia. Si te quedaste corto de proteína, mañana puedes ajustar. Si te sobró carbohidrato, ya lo sabes para la próxima. Esto no es un examen, es un espejo.",
         "practicaTip": "💡 No se trata de acertar. Se trata de tomar conciencia. Si te quedaste corto de proteína, mañana puedes ajustar. Si te sobró carbohidrato, ya lo sabes para la próxima. Esto no es un examen, es un espejo.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Paula Suárez: CALCULA TUS MACROS DESDE CERO! - Cuánto comer de proteínas, carbos y grasas?",
+                "url": "https://www.youtube.com/watch?v=5TQn1rJ6gLw"
+            },
+            {
+                "titulo": "Jefillysh: Cómo calcular tus calorías diarias y macros recomendados (Mifflin-St Jeor)",
+                "url": "https://www.youtube.com/watch?v=GMhVzAauJTY"
+            }
+        ]
     },
     "clase8": {
         "id": "clase8",
@@ -532,7 +559,16 @@
         ],
         "practicaSemana": "🪑 **Práctica de la semana**\n\n**Compromiso mínimo:**\n• Haz el Test de la Silla hoy mismo para conocer tu punto de partida.\n\n**Práctica diaria (3 veces al día):**\n• Levántate de una silla sin usar las manos antes de cada comida principal.\n\n**Acción adicional (elige UNA según tu nivel):**\n• **Nivel principiante:** Haz 3 series de 5-8 repeticiones de 'sentadilla con silla' (siéntate y levántate controladamente) en días alternos.\n• **Nivel intermedio:** Añade a tu rutina semanal 2 sesiones de 20-30 minutos de fuerza en casa (sentadillas, zancadas, flexiones, plancha, puente de glúteo).\n• **Nivel avanzado:** Asegura que en tus entrenamientos de fuerza estás progresando la carga (más peso o más dificultad) cada 1-2 semanas.\n\n**Autoevaluación al final de la semana:**\n1. ¿Cómo te fue con el Test de la Silla?\n2. ¿Lograste hacer las 3 repeticiones diarias?\n3. ¿Notaste alguna mejora en tu fuerza o estabilidad?\n\n**Nota importante:**\nNo te asustes si el Test de la Silla te resultó difícil o imposible. Eso es lo que queremos detectar. No es una sentencia, es un diagnóstico. Ahora sabes dónde estás y puedes trazar la ruta para mejorar. Cada pequeña repetición de levantarte de la silla es un voto a favor de tu futuro independiente. Empieza hoy.",
         "practicaTip": "💡 No te asustes si el Test de la Silla te resultó difícil. Eso es lo que queremos detectar. No es una sentencia, es un diagnóstico. Ahora sabes dónde estás y puedes trazar la ruta para mejorar.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Carlos Jaramillo: ¡Todos Los MAYORES De 40 Años DEBEN Ver Este Video! Esto DEVORA tus MÚSCULOS | SARCOPENIA GRAVE",
+                "url": "https://www.youtube.com/watch?v=bDIUb71Xqk4&t=562s"
+            },
+            {
+                "titulo": "Centro Médico ABC: ¿Qué es la sarcopenia?",
+                "url": "https://www.youtube.com/watch?v=pHtmDn0KFGM"
+            }
+        ]
     },
     "clase11": {
         "id": "clase11",
@@ -578,7 +614,16 @@
         ],
         "practicaSemana": "⏰ **Práctica de la semana**\n\n**Elige UN día de esta semana para probar un ayuno de 12 horas.** No cambies nada más de tu alimentación. Observa cómo te sientes.\n\n**Instrucción concreta:**\n• **La noche anterior:** Cena antes de las 20h (o 3 horas antes de acostarte).\n• **Al día siguiente:** Desayuna a las 8h (o 12 horas después de tu última cena). Entre medias, solo agua, café o té sin azúcar.\n• **Durante el ayuno:** Observa si sientes hambre real (fisiológica) o solo costumbre (psicológica).\n• **Al romper el ayuno:** Prioriza proteína y grasa (ej. huevos con aguacate, o yogur griego con frutos secos). Evita azúcar y harinas refinadas.\n\n**Opcional (si te fue bien y quieres más):**\n• A la semana siguiente, prueba 14 horas.\n• A la siguiente, 16 horas (pero solo si te sientes bien y sin estrés añadido).\n\n**Práctica avanzada (solo para perfiles sin contraindicaciones):**\nSi ya tienes experiencia con ayunos de 16-18 horas, prueba un ayuno de 24 horas una vez al mes. Elige un día sin entrenamiento intenso. Rompe con una comida ligera rica en proteína y vegetales. **No lo hagas sin haber consultado antes a un profesional de la salud.**\n\n**Nota importante:**\nEl ayuno intermitente no es una competición. No se gana un premio por ayunar más horas. Si 12 horas te funcionan, quédate ahí. Si 16 te generan ansiedad, baja a 14 o a 12. La flexibilidad es la clave. Y si después de leer esta clase decides que el ayuno no es para ti, es una decisión igual de válida. Escuchar a tu cuerpo es más importante que seguir modas.",
         "practicaTip": "💡 El ayuno no es una competición. Si 12 horas te funcionan, quédate ahí. Si 16 te generan ansiedad, baja a 14. La flexibilidad es la clave. Escuchar a tu cuerpo es más importante que seguir modas.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Carlos Jaramillo: AYUNO INTERMITENTE: ¿CÓMO HACERLO BIEN?",
+                "url": "https://www.youtube.com/watch?v=HnBATIXlI5k"
+            },
+            {
+                "titulo": "DR LA ROSA: Cómo el Ayuno Daña Unas Hormonas y Mejora Otras",
+                "url": "https://www.youtube.com/watch?v=ljzi1-Tg6AE"
+            }
+        ]
     },
     "clase12": {
         "id": "clase12",
@@ -625,7 +670,16 @@
         ],
         "practicaSemana": "☀️ **Práctica de la semana (tres partes)**\n\n**Parte 1: Estructura en la nevera**\nHaz una lista de compras estructurada para los próximos 7 días (proteínas, carbohidratos de calidad, grasas buenas y vegetales). Pon la lista en la nevera. Dedica 1-2 horas un día (ej. domingo) para cocinar/preparar las bases de la semana.\n\n**Parte 2: Luz solar**\nElige un día de esta semana. Sal a la calle (o a un balcón/patio) durante 10-15 minutos dentro de la primera hora tras despertarte. No uses gafas de sol ni pantalla. Observa cómo te sientes el resto del día.\n\n**Parte 3: Exposición al frío (segura, opcional)**\nSi no tienes contraindicaciones, elige otro día de la semana. Al terminar tu ducha habitual, baja el agua a fría (no helada) y expón solo los pies durante 10-15 segundos. Al día siguiente, si toleras bien, 20 segundos. No hagas más. Si en algún momento sientes dolor, mareo o entumecimiento excesivo, sales inmediatamente.\n\n**Registro de la práctica:**\n• ¿Cuándo hiciste la lista de compras y la preparación semanal?\n• ¿Cómo afectó la luz solar matutina a tu energía y sueño ese día?\n• ¿Cómo te sentiste con los pies en agua fría (si lo hiciste)?\n\n**Nota importante:**\nLa estructura no es rigidez. Es una herramienta para liberar tu mente de decisiones triviales. Si una semana solo lograste la luz solar y la lista de la compra, genial. Si además hiciste los pies fríos, fantástico. Si no hiciste nada, vuelve a intentarlo la semana que viene. No se trata de perfección, se trata de dirección.",
         "practicaTip": "💡 La estructura no es rigidez. Es una herramienta para liberar tu mente de decisiones triviales. Si una semana solo lograste la luz solar y la lista de la compra, genial. No se trata de perfección, se trata de dirección.",
-        "videos": []
+        "videos": [
+            {
+                "titulo": "Fitness Revolucionario: Beneficios del Frío y Cómo Empezar",
+                "url": "https://www.youtube.com/watch?v=HnBATIXlI5k"
+            },
+            {
+                "titulo": "DR LA ROSA: Los BENEFICIOS del SOL que no conocías",
+                "url": "https://www.youtube.com/watch?v=VxwutVisImk&t=415s"
+            }
+        ]
     },
     "clase13": {
         "id": "clase13",
@@ -679,11 +733,11 @@
         "practicaTip": "💡 No te sientas mal si has estado comprando productos que creías sanos y no lo eran. No es tu culpa. El marketing está diseñado para confundir. Ahora tienes las herramientas para no volver a caer.",
         "videos": [
             {
-                "titulo": "Dr. Carlos Jaramillo: \"10 Reglas Para Leer La Etiqueta de un Alimento\"",
+                "titulo": "Doctablet: \"10 Reglas Para Leer La Etiqueta de un Alimento\"",
                 "url": "https://www.youtube.com/watch?v=r9wP1MLYRm0"
             },
             {
-                "titulo": "Doctablet: \"ASÍ SE LEEN LAS ETIQUETAS EN LOS ALIMENTOS! Te puedes salvar\"",
+                "titulo": "Dr Carlos Jaramillo: \"ASÍ SE LEEN LAS ETIQUETAS EN LOS ALIMENTOS! Te puedes salvar\"",
                 "url": "https://www.youtube.com/watch?v=DDnETndcY2A"
             }
         ]

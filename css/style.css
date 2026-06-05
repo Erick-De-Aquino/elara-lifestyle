@@ -5,13 +5,13 @@
     --bg-light: #F5F5F5;
     --text-dark: #2C3E50;
     --text-light: #FFFFFF;
-    --gray-medium: #E0E0E0;
+    --gray-medium: #d3d2d2;
     --gray-dark: #6C757D;
     --success-green: #2A9D8F;
     --danger-red: #E63946;
     --warning-yellow: #F4A261;
     --shadow-sm: 0 2px 5px rgba(0,0,0,0.1);
-    --shadow-md: 0 5px 15px rgba(0,0,0,0.1);
+    --shadow-md: 0 5px 15px rgba(0,0,0,0.2);
     --transition: all 0.3s ease;
 }
 
@@ -828,16 +828,21 @@ label[for="importarInput"] { background: var(--primary-dark); color: white; }
     text-align: center;
 }
 .logo-placeholder {
-    width: 100px;
-    height: 100px;
-    background: var(--primary-dark);
-    border-radius: 50%;
+    width: 130px;
+    height: auto;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 2rem;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.logo-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 .login-input {
     width: 100%;

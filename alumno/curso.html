@@ -14,8 +14,14 @@
 </head>
 <body>
     <main class="main-content">
-        <div class="curso-header">
+        <div class="curso-header-wrapper">
+            
+            <div class="logo-header">
+                <img src="../assets/logos/nombreSolo.svg" alt="ELARA METHOD">
+            </div>
+        
             <h1>📚 Índice del curso</h1>
+
             <div class="resumen-alumno" id="resumen-alumno">
                 <div class="resumen-alumno-info">
                     <div class="resumen-alumno-nombre" id="alumno-nombre">Cargando...</div>
@@ -24,7 +30,7 @@
                         <canvas id="graficoProgreso" width="200" height="200" style="max-width: 180px; max-height: 180px; margin: 0 auto;"></canvas>
                     </div>
                 </div>
-                
+
                 <div class="botones-vertical">
                     <button id="btnVerApuntes" class="btn-secondary">
                         <i class="fas fa-notes-medical"></i> Ver mis apuntes
@@ -41,8 +47,8 @@
                 </div>
             </div>
         </div>
-        
-        <div id="accordion-container" class="accordion-container"></div>
+
+    <div id="accordion-container" class="accordion-container"></div>
     </main>
 
     <!-- Modal de apuntes -->
