@@ -26,7 +26,7 @@ async function cargarNavegacion() {
         const navHTML = `
             <div class="nav-bar">
                 <div class="nav-header">
-                    <h2>ELARA METHOD</h2>
+                    <img src="./assets/logos/logoSolo.png" alt="" width="100" height="100">
                 </div>
                 <ul class="nav-menu">
                     ${menuItems.map(item => {
