@@ -235,7 +235,8 @@ async function renderizarDashboard() {
     document.querySelectorAll('.btn-ver-alumno').forEach(btn => {
         btn.addEventListener('click', (e) => {
             const id = btn.getAttribute('data-id');
-            window.modal.mostrar(`Funcionalidad en desarrollo. ID: ${id}`, 'info');
+            const nombre = btn.getAttribute('data-nombre');
+            verDetalleAlumno(id, nombre);
         });
     });
     
@@ -276,6 +277,176 @@ function exportarAlumnos() {
     if (csv) {
         window.alumnos?.descargarCSV(csv, `alumnos_${new Date().toISOString().split('T')[0]}.csv`);
         window.modal.mostrar('Exportación completada', 'exito');
+    }
+}
+
+// ===== VER DETALLE COMPLETO DEL ALUMNO =====
+async function verDetalleAlumno(alumnoId, alumnoNombre) {
+    const supabase = window.supabaseClient;
+    if (!supabase) return;
+    
+    // Mostrar loading
+    const loadingOverlay = document.createElement('div');
+    loadingOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;justify-content:center;align-items:center;z-index:1300;';
+    loadingOverlay.innerHTML = '<div style="background:var(--bg-card);padding:20px;border-radius:12px;">Cargando datos...</div>';
+    document.body.appendChild(loadingOverlay);
+    
+    try {
+        // 1. Obtener datos del alumno
+        const { data: alumno } = await supabase
+            .from('usuarios')
+            .select('*')
+            .eq('id', alumnoId)
+            .single();
+        
+        // 2. Obtener progreso del alumno
+        const { data: progreso } = await supabase
+            .from('progreso')
+            .select('clase_id, completada, fecha_completado')
+            .eq('usuario_id', alumnoId);
+        
+        // 3. Obtener todas las clases
+        const response = await fetch('../../data/clases-alumno.json');
+        const todasClases = await response.json();
+        const clasesArray = Object.values(todasClases).sort((a, b) => a.numero - b.numero);
+        
+        // 4. Obtener notas del profesor
+        const { data: notas } = await supabase
+            .from('comentarios_profesor')
+            .select('clase_id, comentario, created_at')
+            .eq('alumno_id', alumnoId)
+            .order('clase_id', { ascending: true });
+        
+        // Mapa de progreso
+        const progresoMap = {};
+        if (progreso) {
+            progreso.forEach(p => {
+                progresoMap[p.clase_id] = {
+                    completada: p.completada,
+                    fecha: p.fecha_completado ? new Date(p.fecha_completado).toLocaleDateString('es-CL') : null
+                };
+            });
+        }
+        
+        // Mapa de notas
+        const notasMap = {};
+        if (notas) {
+            notas.forEach(n => {
+                notasMap[n.clase_id] = n.comentario;
+            });
+        }
+        
+        // Calcular estadísticas
+        const totalClases = clasesArray.length;
+        const completadas = Object.values(progresoMap).filter(p => p.completada).length;
+        const porcentaje = Math.round((completadas / totalClases) * 100);
+        
+        // Generar HTML del detalle de progreso (solo clases completadas)
+        let detalleHtml = '';
+        const clasesCompletadas = clasesArray.filter(clase => progresoMap[clase.numero]?.completada);
+        const clasesPendientesCount = clasesArray.length - clasesCompletadas.length;
+        
+        if (clasesCompletadas.length === 0) {
+            detalleHtml = '<p style="color: var(--text-muted);">No hay clases completadas aún.</p>';
+        } else {
+            for (const clase of clasesCompletadas) {
+                const estado = progresoMap[clase.numero];
+                const fecha = estado?.fecha || '';
+                
+                detalleHtml += `
+                    <div style="margin-bottom: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-color);">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="color: var(--success);">✅</span>
+                            <strong>Clase ${clase.numero}: ${escapeHtml(clase.titulo)}</strong>
+                        </div>
+                        <div style="margin-left: 28px; font-size: var(--font-size-sm); color: var(--text-muted);">
+                            Completada: ${fecha}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if (clasesPendientesCount > 0) {
+                detalleHtml += `
+                    <div style="margin-top: 12px; padding: 8px; text-align: center; color: var(--text-muted);">
+                        ⏳ ${clasesPendientesCount} clases pendientes por completar
+                    </div>
+                `;
+            }
+        }
+        
+        // Generar HTML de notas
+        let notasHtml = '';
+        if (notas && notas.length > 0) {
+            for (const nota of notas) {
+                const clase = clasesArray.find(c => c.id === nota.clase_id);
+                notasHtml += `
+                    <div style="margin-bottom: 16px; padding: 12px; background: var(--gray-50); border-radius: 8px; border-left: 3px solid var(--primary);">
+                        <strong>${clase ? `Clase ${clase.numero}: ${clase.titulo}` : nota.clase_id}</strong>
+                        <p style="margin: 8px 0 4px 0; white-space: pre-wrap;">${escapeHtml(nota.comentario)}</p>
+                        <small style="color: var(--text-muted);">📅 ${new Date(nota.created_at).toLocaleDateString('es-CL')}</small>
+                    </div>
+                `;
+            }
+        } else {
+            notasHtml = '<p style="color: var(--text-muted);">No hay notas registradas.</p>';
+        }
+        
+        // Construir modal
+        const modalHtml = `
+            <div style="max-height: 80vh; overflow-y: auto;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                    <h2 style="margin: 0;">📊 Detalle del Alumno</h2>
+                    <button id="modalDetalleCerrar" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+                </div>
+                
+                <div style="background: var(--primary-bg); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
+                    <h3 style="margin: 0 0 8px 0;">👤 Datos Personales</h3>
+                    <p><strong>Nombre:</strong> ${escapeHtml(alumno.nombre)}</p>
+                    <p><strong>Email:</strong> ${escapeHtml(alumno.email)}</p>
+                    <p><strong>Teléfono:</strong> ${alumno.telefono || 'No registrado'}</p>
+                    <p><strong>Registro:</strong> ${new Date(alumno.created_at).toLocaleDateString('es-CL')}</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h3>📈 Progreso General</h3>
+                    <div style="background: var(--gray-200); border-radius: 10px; height: 20px; overflow: hidden;">
+                        <div style="width: ${porcentaje}%; height: 100%; background: var(--success);"></div>
+                    </div>
+                    <p style="margin-top: 8px;"><strong>${completadas}</strong> de <strong>${totalClases}</strong> clases completadas (${porcentaje}%)</p>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h3>📚 Detalle de Progreso</h3>
+                    ${detalleHtml}
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <h3>📝 Notas del Profesor</h3>
+                    ${notasHtml}
+                </div>
+            </div>
+        `;
+        
+        // Remover loading
+        loadingOverlay.remove();
+        
+        // Mostrar modal
+        const overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;justify-content:center;align-items:center;z-index:1300;';
+        const modal = document.createElement('div');
+        modal.style.cssText = 'background:var(--bg-card);border-radius:12px;max-width:600px;width:90%;max-height:85vh;overflow-y:auto;padding:20px;';
+        modal.innerHTML = modalHtml;
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+        
+        document.getElementById('modalDetalleCerrar')?.addEventListener('click', () => overlay.remove());
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+        
+    } catch (error) {
+        console.error('Error:', error);
+        loadingOverlay.remove();
+        window.modal.mostrar('Error al cargar los datos', 'error');
     }
 }
 
