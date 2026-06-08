@@ -124,7 +124,7 @@ async function logout() {
     localStorage.removeItem('elara_alumno_actual');
     
     // Redirigir siempre a la raíz
-    window.location.href = './index.html';
+    window.location.href = '/elara-lifestyle/index.html';
 }
 
 // ===== OBTENER USUARIO ACTUAL =====
