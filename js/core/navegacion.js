@@ -133,6 +133,19 @@ function cargarHeader(titulo) {
       }
     });
   }
+
+    // Cerrar sidebar al hacer clic fuera de él
+  document.addEventListener('click', (e) => {
+      const sidebar = document.querySelector('.sidebar');
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      
+      if (sidebar && sidebar.classList.contains('mobile-open')) {
+          // Si el clic no es en el sidebar ni en el botón del menú
+          if (!sidebar.contains(e.target) && !mobileBtn?.contains(e.target)) {
+              sidebar.classList.remove('mobile-open');
+          }
+      }
+  });
 }
 
 async function initNavegacion(rol, paginaActual, nombreUsuario = '') {
