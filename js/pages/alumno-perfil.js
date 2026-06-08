@@ -55,12 +55,15 @@ async function cargarProgreso() {
     const supabase = window.supabaseClient;
     if (!supabase) return;
     
-    // Obtener todas las clases
-    const { data: clases } = await supabase
-    .from('clases_contenido')
-    .select('id, numero, titulo, capitulo');
-    
-    todasClases = clases || [];
+    // Obtener todas las clases desde el JSON local
+    try {
+        const response = await fetch('../../data/clases-alumno.json');
+        const data = await response.json();
+        todasClases = Object.values(data).sort((a, b) => a.numero - b.numero);
+    } catch (error) {
+        console.error('Error cargando clases:', error);
+        todasClases = [];
+    }
     
     // Obtener progreso del alumno
     const { data: progreso } = await supabase
@@ -71,6 +74,7 @@ async function cargarProgreso() {
     if (progreso) {
         progresoActual = {};
         progreso.forEach(p => {
+            // La clase_id en progreso es número (1, 2, 3...)
             progresoActual[p.clase_id] = p.completada;
         });
     }
