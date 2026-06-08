@@ -41,10 +41,9 @@ async function cargarSidebar(rol, paginaActual = '') {
   let sidebarHtml = `
     <div class="sidebar">
       <div class="sidebar-logo">
-        <img src="./assets/logos/nombreSolo.png" 
-             alt="Elara LifeStyle" 
-             class="logo-navbar"
-             style="width: 80%; max-width: 180px; margin: 0 auto; display: block;">
+        <div style="padding: 20px; text-align: center; font-size: 20px; font-weight: bold; color: var(--primary);">
+          ELARA LifeStyle
+        </div>
       </div>
       <nav class="sidebar-nav">
   `;
