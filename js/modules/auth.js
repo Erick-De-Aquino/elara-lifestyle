@@ -112,7 +112,6 @@ async function login(email, password) {
 }
 
 // ===== CERRAR SESIÓN =====
-// ===== CERRAR SESIÓN =====
 async function logout() {
     const supabaseClient = getSupabaseClient();
     if (supabaseClient) {
@@ -123,9 +122,11 @@ async function logout() {
     localStorage.removeItem('elara_acceso_tipo');
     localStorage.removeItem('elara_alumno_actual');
     
-    // Redirigir siempre a la raíz
-    window.location.href = '/elara-lifestyle/index.html';
+    // Usar la misma lógica que el login para redirigir
+    const basePath = window.utils?.getBasePath() || './';
+    window.location.href = basePath + 'index.html';
 }
+
 
 // ===== OBTENER USUARIO ACTUAL =====
 function getCurrentUser() {
