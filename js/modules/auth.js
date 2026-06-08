@@ -204,8 +204,11 @@ async function recuperarContrasenna(email) {
         return false;
     }
     
+    // URL dinámica según el entorno
+    const redirectUrl = window.location.origin + '/reset-password.html';
+    
     const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
-        redirectTo: window.location.origin + window.location.pathname.replace('index.html', '') + 'reset-password.html'
+        redirectTo: redirectUrl
     });
     
     if (error) {
