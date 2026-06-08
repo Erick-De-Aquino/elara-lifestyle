@@ -77,7 +77,7 @@ function renderizarCalendario() {
                 <span style="font-weight: var(--font-weight-semibold); min-width: 150px; text-align: center;">${nombreMes} ${año}</span>
                 <button id="btnMesSiguiente" class="btn-secondary">▶</button>
                 <button id="btnHoy" class="btn-outline">Hoy</button>
-                <button id="btnNuevoEvento" class="btn-primary">📅 Agendar Clase</button>
+                <button id="btnNuevoEvento" class="btn-primary">Agendar Clase</button>
             </div>
         </div>
         
