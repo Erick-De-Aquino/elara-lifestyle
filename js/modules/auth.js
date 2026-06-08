@@ -112,7 +112,6 @@ async function login(email, password) {
 }
 
 // ===== CERRAR SESIÓN =====
-// ===== CERRAR SESIÓN =====
 async function logout() {
     const supabaseClient = getSupabaseClient();
     if (supabaseClient) {
@@ -211,8 +210,11 @@ async function recuperarContrasenna(email) {
         return false;
     }
     
-    // URL dinámica según el entorno
-    const redirectUrl = window.location.origin + '/reset-password.html';
+    // Detectar si estamos en GitHub Pages
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const redirectUrl = isGitHubPages 
+        ? 'https://erick-de-aquino.github.io/elara-lifestyle/reset-password.html'
+        : window.location.origin + '/reset-password.html';
     
     const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
         redirectTo: redirectUrl
