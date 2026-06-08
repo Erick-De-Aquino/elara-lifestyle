@@ -239,15 +239,6 @@ async function renderizarDashboard() {
         });
     });
     
-    document.querySelectorAll('.btn-next-clase').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const id = btn.getAttribute('data-id');
-            const nombre = btn.getAttribute('data-nombre');
-            irSiguienteClaseAlumno(id, nombre);
-        });
-    });
-    
     // Cargar progresos después de renderizar
     cargarTodosLosProgresos();
 }
@@ -268,7 +259,6 @@ function renderizarFilasAlumnos(alumnos) {
             <td>
                 <div class="table-actions">
                     <button class="action-btn edit btn-ver-alumno" data-id="${alumno.id}" title="Ver detalles">👁️</button>
-                    <button class="action-btn next-clase btn-next-clase" data-id="${alumno.id}" data-nombre="${escapeHtml(alumno.nombre)}" title="Siguiente clase">▶</button>
                 </div>
             </td>
         </tr>
@@ -286,40 +276,6 @@ function exportarAlumnos() {
     if (csv) {
         window.alumnos?.descargarCSV(csv, `alumnos_${new Date().toISOString().split('T')[0]}.csv`);
         window.modal.mostrar('Exportación completada', 'exito');
-    }
-}
-
-
-// ===== IR A LA SIGUIENTE CLASE DEL ALUMNO =====
-async function irSiguienteClaseAlumno(alumnoId, alumnoNombre) {
-    const supabase = window.supabaseClient;
-    if (!supabase) return;
-    
-    const { data: progreso } = await supabase
-        .from('progreso')
-        .select('clase_id, completada')
-        .eq('usuario_id', alumnoId);
-    
-    const completadas = new Set();
-    if (progreso) {
-        progreso.forEach(p => {
-            if (p.completada) completadas.add(p.clase_id);
-        });
-    }
-    
-    let siguienteClaseNumero = null;
-    for (let i = 1; i <= 14; i++) {
-        const claseKey = `clase${i}`;
-        if (!completadas.has(claseKey)) {
-            siguienteClaseNumero = i;
-            break;
-        }
-    }
-    
-    if (siguienteClaseNumero) {
-        window.open(`clase-preview.html?id=${siguienteClaseNumero}&alumnoId=${alumnoId}&alumnoNombre=${encodeURIComponent(alumnoNombre)}`, '_blank');
-    } else {
-        window.modal.mostrar(`🎉 ¡${alumnoNombre} ha completado todas las clases!`, 'exito');
     }
 }
 
