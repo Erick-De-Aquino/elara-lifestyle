@@ -1,0 +1,160 @@
+/* navbar.css - Estilos de barra lateral y barra superior */
+
+/* ===== BARRA LATERAL ===== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal);
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  padding: var(--spacing-6);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-navbar {
+  width: 80%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: var(--spacing-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-6);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+
+.sidebar-link:hover {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.sidebar-link.active {
+  background: var(--primary-bg);
+  color: var(--primary);
+  border-right: 3px solid var(--primary);
+}
+
+.sidebar-icon {
+  font-size: 1.25rem;
+  width: 24px;
+}
+
+.sidebar-footer {
+  padding: var(--spacing-4) 0;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ===== BARRA SUPERIOR ===== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 260px;
+  height: 60px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-6);
+  z-index: 99;
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.mobile-menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.page-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+}
+
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+.user-name {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  background: var(--primary-bg);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--border-radius-md);
+}
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+.main-content {
+  margin-left: 260px;
+  margin-top: 60px;
+  padding: var(--spacing-6);
+  min-height: calc(100vh - 60px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+  
+  .top-bar {
+    left: 0;
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+}

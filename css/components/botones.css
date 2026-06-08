@@ -1,0 +1,119 @@
+/* botones.css - Estilos de botones */
+
+/* ===== BOTÓN PRIMARIO ===== */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ===== BOTÓN SECUNDARIO ===== */
+.btn-secondary {
+  background: var(--gray-200);
+  color: var(--gray-700);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: none;
+}
+
+.btn-secondary:hover {
+  background: var(--gray-300);
+}
+
+/* ===== BOTÓN PELIGRO (ELIMINAR) ===== */
+.btn-danger {
+  background: var(--error);
+  color: white;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: none;
+}
+
+.btn-danger:hover {
+  background: var(--error-dark);
+}
+
+/* ===== BOTÓN ÉXITO ===== */
+.btn-success {
+  background: var(--success);
+  color: white;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: none;
+}
+
+.btn-success:hover {
+  background: var(--success-dark);
+}
+
+/* ===== BOTÓN OUTLINE ===== */
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  border: 1px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary-bg);
+}
+
+/* ===== TAMAÑOS ===== */
+.btn-sm {
+  padding: var(--spacing-1) var(--spacing-3);
+  font-size: var(--font-size-sm);
+}
+
+.btn-lg {
+  padding: var(--spacing-3) var(--spacing-6);
+  font-size: var(--font-size-lg);
+}
+
+/* ===== BOTÓN DESHABILITADO ===== */
+.btn-disabled,
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}

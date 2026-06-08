@@ -1,0 +1,222 @@
+/* dark-mode.css - Estilos completos del modo oscuro */
+
+.dark-mode {
+  color-scheme: dark;
+}
+
+/* ===== AJUSTES GENERALES ===== */
+.dark-mode body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+}
+
+.dark-mode a {
+  color: var(--primary-light);
+}
+
+/* ===== TARJETAS Y CONTENEDORES ===== */
+.dark-mode .card,
+.dark-mode .modal-content,
+.dark-mode .dropdown-menu {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+/* ===== TABLAS ===== */
+.dark-mode table {
+  background-color: var(--bg-card);
+}
+
+.dark-mode th,
+.dark-mode td {
+  border-color: var(--border-color);
+}
+
+.dark-mode th {
+  background-color: var(--gray-800);
+}
+
+.dark-mode tr:hover {
+  background-color: var(--gray-800);
+}
+
+/* ===== INPUTS Y FORMULARIOS ===== */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea {
+  background-color: var(--gray-800);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode input:focus,
+.dark-mode select:focus,
+.dark-mode textarea:focus {
+  border-color: var(--primary);
+  background-color: var(--gray-800);
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: var(--gray-500);
+}
+
+/* ===== BOTONES ===== */
+.dark-mode .btn-secondary {
+  background-color: var(--gray-700);
+  color: var(--gray-200);
+}
+
+.dark-mode .btn-secondary:hover {
+  background-color: var(--gray-600);
+}
+
+.dark-mode .btn-outline {
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+}
+
+/* ===== BARRA LATERAL Y SUPERIOR ===== */
+.dark-mode .sidebar {
+  background-color: var(--bg-sidebar);
+  border-right-color: var(--border-color);
+}
+
+.dark-mode .sidebar-link {
+  color: var(--text-secondary);
+}
+
+.dark-mode .sidebar-link:hover,
+.dark-mode .sidebar-link.active {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--primary-light);
+}
+
+.dark-mode .top-bar {
+  background-color: var(--bg-card);
+  border-bottom-color: var(--border-color);
+}
+
+.dark-mode .user-name {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: var(--primary-light);
+}
+
+/* ===== MODALES ===== */
+.dark-mode #elara-modal-container {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode .modal-close {
+  color: var(--text-muted);
+}
+
+/* ===== SCROLLBAR ===== */
+.dark-mode ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background: var(--gray-800);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background: var(--gray-600);
+  border-radius: 5px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* ===== SELECT Y OPTIONS ===== */
+.dark-mode select option {
+  background-color: var(--gray-800);
+  color: var(--text-primary);
+}
+
+/* ===== PROGRESS Y MÉTRICAS ===== */
+.dark-mode .progress-bar-container {
+  background-color: var(--gray-700);
+}
+
+.dark-mode .stat-card {
+  background-color: var(--bg-card);
+}
+
+/* ===== ALERTAS ===== */
+.dark-mode .alert-info {
+  background-color: rgba(59, 130, 246, 0.2);
+  border-color: var(--primary);
+  color: var(--primary-light);
+}
+
+.dark-mode .alert-success {
+  background-color: rgba(34, 197, 94, 0.2);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.dark-mode .alert-warning {
+  background-color: rgba(245, 158, 11, 0.2);
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+.dark-mode .alert-error {
+  background-color: rgba(239, 68, 68, 0.2);
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* ===== CALENDARIO ===== */
+.dark-mode .evento {
+  background-color: var(--gray-700);
+  border-left-color: var(--primary-light);
+}
+
+.dark-mode .evento-titulo {
+  color: #ffffff;
+}
+
+.dark-mode .evento-hora {
+  color: #cccccc;
+}
+
+.dark-mode .evento:hover {
+  background-color: var(--gray-600);
+}
+
+/* ===== VISTA PREVIA DE CLASE ===== */
+.dark-mode .practica-card {
+  background-color: var(--gray-800);
+  border: 1px solid var(--gray-700);
+}
+
+.dark-mode .practica-tip,
+.dark-mode .clase-capitulo {
+  color: var(--primary-light);
+}
+
+.dark-mode .clase-duracion {
+  color: var(--gray-400);
+}
+
+/* ===== TIMER EN MODO OSCURO ===== */
+.dark-mode .timer-display-header {
+    background-color: var(--gray-700);
+    color: var(--primary-light);
+}
+
+.dark-mode .btn-timer-action {
+    background: transparent;
+    color: var(--gray-300);
+    border: none;
+}
+
+.dark-mode .btn-timer-action:hover {
+    background: transparent;
+    color: var(--primary-light);
+}

@@ -1,0 +1,74 @@
+/* reset.css - Normalización de estilos base */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Eliminar estilos por defecto de listas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Eliminar decoración de enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Establecer tamaño base de fuente para usar rem */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mejorar renderizado de imágenes */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Eliminar bordes y fondo de botones por defecto */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Hacer que los botones tengan cursor pointer */
+button {
+  cursor: pointer;
+}
+
+/* Mejorar la altura de línea para textos */
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Ocultar decoraciones de input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Mejorar focus visible para accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--primary, #2563eb);
+  outline-offset: 2px;
+}

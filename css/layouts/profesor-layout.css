@@ -1,0 +1,356 @@
+/* profesor-layout.css - Layout específico para vista profesor */
+
+/* ===== CONTENEDOR PRINCIPAL PROFESOR ===== */
+.profesor-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-4);
+}
+
+/* ===== TARJETAS DE ESTADÍSTICAS ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-4);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.stat-title {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-2);
+}
+
+.stat-value {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary);
+}
+
+/* ===== TABLA DE ALUMNOS ===== */
+.alumnos-table-container {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  overflow-x: auto;
+  box-shadow: var(--shadow-sm);
+}
+
+.alumnos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.alumnos-table th,
+.alumnos-table td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.alumnos-table th {
+  background: var(--gray-50);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.alumnos-table tr:hover {
+  background: var(--gray-50);
+}
+
+.dark-mode .alumnos-table th {
+  background: var(--gray-800);
+}
+
+.dark-mode .alumnos-table tr:hover {
+  background: var(--gray-800);
+}
+
+/* ===== ACCIONES DE TABLA ===== */
+.table-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: var(--spacing-1);
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.action-btn.edit:hover {
+  background: var(--primary-bg);
+  color: var(--primary);
+}
+
+.action-btn.delete:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+}
+
+/* ===== BARRA DE BÚSQUEDA ===== */
+.search-bar {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* ===== BOTONES DE ACCIÓN SUPERIOR ===== */
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+  flex-wrap: wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-3);
+  }
+  
+  .stat-value {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .alumnos-table th,
+  .alumnos-table td {
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .table-actions {
+    flex-direction: column;
+    gap: var(--spacing-1);
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-bar {
+    flex-direction: column;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+  }
+}
+
+/* ===== ACORDEONES PARA EDITOR DE CURSO ===== */
+.modulos-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+}
+
+.modulo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.modulo-header {
+    padding: var(--spacing-3) var(--spacing-4);
+    background: var(--gray-50);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: var(--font-weight-semibold);
+    transition: background var(--transition-fast);
+}
+
+.modulo-header:hover {
+    background: var(--gray-100);
+}
+
+.modulo-titulo {
+    flex: 1;
+}
+
+.modulo-info {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-right: var(--spacing-3);
+}
+
+.modulo-icono {
+    transition: transform var(--transition-fast);
+    color: var(--text-muted);
+}
+
+.modulo-card.open .modulo-icono {
+    transform: rotate(90deg);
+}
+
+.modulo-contenido {
+    display: none;
+    padding: var(--spacing-4);
+    border-top: 1px solid var(--border-color);
+}
+
+.modulo-card.open .modulo-contenido {
+    display: block;
+    animation: slideDown 0.25s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.clases-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.clase-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.clase-item:hover {
+    background: var(--gray-50);
+    border-color: var(--primary);
+}
+
+.clase-check {
+    width: 28px;
+    height: 28px;
+    background: var(--gray-200);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--text-secondary);
+}
+
+.clase-info {
+    flex: 1;
+}
+
+.clase-nombre {
+    font-weight: var(--font-weight-medium);
+}
+
+.clase-duracion {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.clase-estado {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
+    background: var(--primary-bg);
+    color: var(--primary);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Modo oscuro para acordeones */
+.dark-mode .modulo-header {
+    background: var(--gray-800);
+}
+
+.dark-mode .modulo-header:hover {
+    background: var(--gray-700);
+}
+
+.dark-mode .clase-item:hover {
+    background: var(--gray-800);
+}
+
+.dark-mode .clase-check {
+    background: var(--gray-700);
+    color: var(--gray-300);
+}
+
+
+
+/* ===== TEMPORIZADOR MINI ===== */
+.timer-display-mini {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: var(--gray-100);
+    padding: 4px 12px;
+    border-radius: 20px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.dark-mode .timer-display-mini {
+    background: var(--gray-700);
+    color: var(--primary-light);
+}
+
+.timer-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.btn-sm {
+    padding: 4px 10px;
+    font-size: var(--font-size-sm);
+}
+
+/* ===== ANIMACIÓN PARPADEO PARA TIMER ===== */
+@keyframes parpadeo {
+    0% { background-color: #dc2626; color: white; }
+    50% { background-color: #1e293b; color: #dc2626; }
+    100% { background-color: #dc2626; color: white; }
+}
+
+.timer-display-header {
+    transition: all 0.2s ease;
+}

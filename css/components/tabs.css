@@ -1,0 +1,123 @@
+/* tabs.css - Estilos de pestañas */
+
+/* ===== CONTENEDOR DE TABS ===== */
+.tabs-container {
+  width: 100%;
+}
+
+/* ===== CABECERA DE TABS ===== */
+.tabs-header {
+  display: flex;
+  gap: var(--spacing-1);
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: var(--spacing-4);
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+/* ===== BOTÓN DE TAB ===== */
+.tab-btn {
+  padding: var(--spacing-3) var(--spacing-6);
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+}
+
+.tab-btn:hover {
+  color: var(--primary);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+}
+
+/* ===== CONTENIDO DE TABS ===== */
+.tab-content {
+  display: none;
+  animation: tabFadeIn var(--transition-fast) ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ===== ANIMACIÓN ===== */
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== VARIANTE VERTICAL ===== */
+.tabs-vertical {
+  display: flex;
+  gap: var(--spacing-6);
+}
+
+.tabs-vertical .tabs-header {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 2px solid var(--border-color);
+  min-width: 150px;
+}
+
+.tabs-vertical .tab-btn.active::after {
+  bottom: 0;
+  left: auto;
+  right: -2px;
+  top: 0;
+  width: 2px;
+  height: auto;
+}
+
+.tabs-vertical .tab-content {
+  flex: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .tab-btn {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-xs);
+  }
+  
+  .tabs-vertical {
+    flex-direction: column;
+  }
+  
+  .tabs-vertical .tabs-header {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 2px solid var(--border-color);
+    overflow-x: auto;
+  }
+  
+  .tabs-vertical .tab-btn.active::after {
+    bottom: -2px;
+    right: 0;
+    top: auto;
+    width: auto;
+    height: 2px;
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Elara LifeStyle</title>
+    
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="../../css/base/reset.css">
+    <link rel="stylesheet" href="../../css/base/variables.css">
+    <link rel="stylesheet" href="../../css/base/typography.css">
+    
+    <!-- CSS Components -->
+    <link rel="stylesheet" href="../../css/components/navbar.css">
+    <link rel="stylesheet" href="../../css/components/botones.css">
+    <link rel="stylesheet" href="../../css/components/modales.css">
+    <link rel="stylesheet" href="../../css/components/formularios.css">
+    
+    <!-- CSS Layouts -->
+    <link rel="stylesheet" href="../../css/layouts/alumno-layout.css">
+    
+    <!-- Tema oscuro -->
+    <link rel="stylesheet" href="../../css/themes/dark-mode.css">
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <div id="header-container"></div>
+    
+    <main class="main-content">
+        <div class="alumno-container" id="perfil-container">
+            <div class="loading-container" style="text-align: center; padding: var(--spacing-12);">
+                <div style="width: 40px; height: 40px; border: 3px solid var(--gray-200); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto var(--spacing-4);"></div>
+                <p>Cargando perfil...</p>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Core JS -->
+    <script src="../../js/core/config.js"></script>
+    <script src="../../js/core/utils.js"></script>
+    <script src="../../js/core/modal.js"></script>
+    <script src="../../js/core/dark-mode.js"></script>
+    <script src="../../js/core/navegacion.js"></script>
+    <script src="../../js/modules/auth.js"></script>
+    <script src="../../js/pages/alumno-perfil.js"></script>
+</body>
+</html>

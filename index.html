@@ -2,35 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso - ELARA METHOD</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/alumno.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Elara LifeStyle - Iniciar Sesión</title>
+    
+    <!-- CSS Base -->
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    
+    <!-- CSS Components -->
+    <link rel="stylesheet" href="css/components/botones.css">
+    <link rel="stylesheet" href="css/components/formularios.css">
+    
+    <!-- CSS Pages -->
+    <link rel="stylesheet" href="css/pages/login.css">
+    
+    <!-- Tema oscuro -->
+    <link rel="stylesheet" href="css/themes/dark-mode.css">
+    
+    <!-- Supabase JS -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="login-container">
-        <div class="logo-placeholder">
-            <img src="./assets/logos/logoNombre.svg" alt="ELARA">
-        </div>
-        
-<!-- El h1 ya no es necesario porque el logo incluye el nombre -->
-        <p class="subtitle">Acceso para alumnos y profesor</p>
-        
-        <input type="text" id="loginUsuario" class="login-input" placeholder="Usuario" autocomplete="off">
-        
-        <div style="position: relative; width: 100%;">
-            <input type="password" id="loginPassword" class="login-input" placeholder="Contraseña" style="padding-right: 40px;">
-            <i class="fas fa-eye toggle-password" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: var(--gray-dark); z-index: 10;"></i>
-        </div>
-        
-        <button id="loginBtn" class="login-btn">Acceder</button>
-        
-        <div id="errorMsg" class="error-msg"></div>
-    </div>
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="assets/logos/logoNombre.svg" alt="Elara Method" onerror="this.src='assets/logos/logoSolo.png'">
+            </div>
+            
+            <h1 class="login-title">Bienvenido</h1>
+            <p class="login-subtitle">Inicia sesión para continuar</p>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required placeholder="••••••••">
+                </div>
+                
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
 
-    <script src="js/supabase-config.js"></script>
-    <script src="js/login-universal.js"></script>
+                <div class="login-footer-links">
+                    <a href="#" id="btnOlvideContrasenna">¿Olvidaste tu contraseña?</a>
+                </div>
+                
+            </form>
+            
+            <div class="login-footer">
+                <p>© 2026 Elara lifeStyle - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Core JS -->
+    <script src="js/core/config.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/modal.js"></script>
+    <script src="js/core/dark-mode.js"></script>
+    <script src="js/modules/auth.js"></script>
+    <script src="js/pages/login.js"></script>
+    
 </body>
 </html>

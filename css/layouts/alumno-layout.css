@@ -1,0 +1,562 @@
+/* alumno-layout.css - Layout específico para vista alumno */
+
+/* ===== CONTENEDOR PRINCIPAL ALUMNO ===== */
+.alumno-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-4);
+}
+
+/* ===== TARJETA DE PROGRESO ===== */
+.progress-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+  box-shadow: var(--shadow-md);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+.progress-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.progress-percentage {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary);
+}
+
+/* ===== BARRA DE PROGRESO ===== */
+.progress-bar-container {
+  background: var(--gray-200);
+  border-radius: var(--border-radius-full);
+  height: 8px;
+  overflow: hidden;
+  margin: var(--spacing-3) 0;
+}
+
+.progress-bar-fill {
+  background: var(--primary);
+  height: 100%;
+  border-radius: var(--border-radius-full);
+  transition: width var(--transition-normal);
+  width: 0%;
+}
+
+/* ===== GRÁFICO CIRCULAR ===== */
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-4);
+}
+
+/* ===== LISTA DE CLASES ===== */
+.clases-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.clase-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-4);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.clase-item:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
+}
+
+
+.clase-item.completed {
+  background: linear-gradient(135deg, var(--success) 0%, var(--success-dark) 100%);
+  color: white;
+}
+
+.clase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-2);
+}
+
+.clase-titulo {
+  font-weight: var(--font-weight-semibold);
+}
+
+.clase-estado {
+  font-size: var(--font-size-xs);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--border-radius-sm);
+}
+
+/* ===== PRÓXIMA CLASE DESTACADA ===== */
+.proxima-clase {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+}
+
+.proxima-clase .clase-titulo {
+  color: white;
+}
+
+/* ===== SECCIÓN DE APUNTES ===== */
+.apuntes-section {
+  margin-top: var(--spacing-6);
+}
+
+.apuntes-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: var(--spacing-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: inherit;
+  resize: vertical;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .alumno-container {
+    padding: var(--spacing-3);
+  }
+  
+  .progress-card {
+    padding: var(--spacing-4);
+  }
+  
+  .clase-item {
+    padding: var(--spacing-3);
+  }
+}
+
+/* ===== ACORDEONES PARA BLOQUES DE CLASE ===== */
+.bloques-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  margin-top: var(--spacing-4);
+}
+
+.bloque-tema {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.bloque-titulo {
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--gray-50);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  color: var(--secondary);
+  transition: background var(--transition-fast);
+  border-left: 4px solid var(--primary);
+}
+
+.dark-mode .bloque-titulo {
+  background: var(--gray-800);
+}
+
+.bloque-titulo:hover {
+  background: var(--primary-bg);
+}
+
+.bloque-titulo i {
+  transition: transform var(--transition-fast);
+  color: var(--primary);
+  font-size: 1rem;
+  background: white;
+  padding: 4px 6px;
+  border-radius: 50%;
+}
+
+.dark-mode .bloque-titulo i {
+  background: var(--gray-700);
+}
+
+.bloque-tema.abierto .bloque-titulo i {
+  transform: rotate(180deg);
+  background: var(--primary);
+  color: white;
+}
+
+.bloque-contenido-alumno {
+  display: none;
+  padding: var(--spacing-4);
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+}
+
+.bloque-tema.abierto .bloque-contenido-alumno {
+  display: block;
+}
+
+.lista-subtemas {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.lista-subtemas li {
+  padding: var(--spacing-2) 0;
+  padding-left: var(--spacing-5);
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.lista-subtemas li:last-child {
+  border-bottom: none;
+}
+
+.lista-subtemas li::before {
+  content: "▸";
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.practica-card {
+  background: var(--primary-bg);
+  padding: var(--spacing-4);
+  border-radius: var(--border-radius-md);
+  margin: var(--spacing-4) 0;
+}
+
+.practica-tip {
+  margin-top: var(--spacing-3);
+  padding-top: var(--spacing-3);
+  border-top: 1px solid var(--border-color);
+  font-style: italic;
+  color: var(--primary-dark);
+}
+
+.videos-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
+}
+
+.video-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  background: var(--gray-50);
+  border-radius: var(--border-radius-md);
+  color: var(--primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.dark-mode .video-link {
+  background: var(--gray-800);
+}
+
+.video-link:hover {
+  background: var(--primary-bg);
+  transform: translateX(5px);
+}
+
+.video-link i {
+  font-size: 1.25rem;
+}
+
+.clase-capitulo {
+  color: var(--primary);
+  font-weight: var(--font-weight-semibold);
+  margin: var(--spacing-2) 0;
+}
+
+.clase-duracion {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  margin: var(--spacing-1) 0;
+}
+
+/* ===== PROGRESO POR MÓDULO ===== */
+.modulo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: var(--spacing-2);
+}
+
+.modulo-titulo {
+  flex: 1;
+  font-weight: var(--font-weight-semibold);
+}
+
+.modulo-info {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary);
+  background: var(--primary-bg);
+  padding: 2px 8px;
+  border-radius: 20px;
+  min-width: 45px;
+  text-align: center;
+  margin: 0 var(--spacing-2);
+}
+
+.modulo-icono {
+  transition: transform var(--transition-fast);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.dark-mode .modulo-info {
+  background: rgba(230,126,34,0.2);
+  color: #f39c12;
+}
+
+/* ===== TABLA DE CLASES AGENDADAS ===== */
+.alumnos-table-container {
+  overflow-x: auto;
+}
+
+.alumnos-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 300px;
+}
+
+.alumnos-table th,
+.alumnos-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.alumnos-table th {
+  background-color: var(--gray-50);
+  font-weight: 600;
+}
+
+.dark-mode .alumnos-table th {
+  background-color: var(--gray-800);
+}
+
+.alumnos-table th:nth-child(1) { width: 40%; }
+.alumnos-table th:nth-child(2) { width: 25%; }
+.alumnos-table th:nth-child(3) { width: 35%; }
+
+/* ===== MODAL LATERAL DE APUNTES Y NOTAS ===== */
+.modal-apuntes-lateral {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1300;
+  display: none;
+}
+
+.modal-apuntes-lateral.active {
+  display: block;
+}
+
+.modal-apuntes-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.modal-apuntes-content {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  width: 340px;
+  max-width: 90%;
+  max-height: 70vh;
+  background: var(--bg-card);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.modal-apuntes-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-apuntes-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-cerrar-apuntes {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  line-height: 1;
+}
+
+.btn-cerrar-apuntes:hover {
+  color: var(--error);
+}
+
+.modal-apuntes-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.modal-apuntes-body .apuntes-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: var(--font-size-sm);
+  resize: vertical;
+}
+
+.modal-apuntes-body .apuntes-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.modal-apuntes-footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-apuntes-footer small {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Modo oscuro para el modal */
+.dark-mode .modal-apuntes-content {
+  background: var(--bg-card);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .modal-apuntes-header {
+  border-bottom-color: var(--border-color);
+}
+
+.dark-mode .modal-apuntes-footer {
+  border-top-color: var(--border-color);
+}
+
+/* ===== BOTÓN FLOTANTE DE APUNTES ===== */
+.btn-apuntes-flotante {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.btn-apuntes-flotante:hover {
+  transform: scale(1.05);
+  background: var(--primary-dark);
+}
+
+.btn-apuntes-flotante i {
+  font-size: 1.5rem;
+}
+
+.dark-mode .btn-apuntes-flotante {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+/* ===== FONDO PRINCIPAL ===== */
+.main-content {
+  background-color: #eef2f3;
+}
+
+/* Mantener fondo verde en hover para clases completadas */
+.clase-item.completed:hover {
+    background: linear-gradient(135deg, var(--success) 0%, var(--success-dark) 100%);
+    border-color: var(--success-dark);
+}
+
+.clase-item.completed:hover .clase-check {
+    background: rgba(255,255,255,0.3);
+}
+
+.clase-item.completed:hover .clase-nombre,
+.clase-item.completed:hover .clase-duracion {
+    color: white;
+}
+
+/* Borde más oscuro para clases pendientes */
+.clase-item:not(.completed) {
+    border: 2px solid var(--gray-400);
+}

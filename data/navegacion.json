@@ -1,27 +1,57 @@
-[
-    {
-        "texto": "Inicio",
-        "url": "profesor.html",
-        "icon": "fas fa-home",
-        "activeMatch": "profesor"
-    },
-    {
-        "texto": "Índice curso",
-        "url": "curso.html",
-        "icon": "fas fa-book-open",
-        "activeMatch": "curso"
-    },
-    {
-        "texto": "Calendario",
-        "url": "calendario.html",
-        "icon": "fas fa-calendar-alt",
-        "activeMatch": "calendario"
-    },
-    {
-        "texto": "Modo oscuro",
-        "url": "#",
-        "icon": "fas fa-moon",
-        "activeMatch": "none",
-        "esModoOscuro": true
+{
+  "alumno": {
+    "menu": [
+      {
+        "id": "curso",
+        "icono": "📚",
+        "texto": "Mi Curso",
+        "url": "curso.html"
+      },
+      {
+        "id": "perfil",
+        "icono": "👤",
+        "texto": "Mi Perfil",
+        "url": "perfil.html"
+      }
+    ],
+    "breadcrumbs": {
+      "curso": "Mi Curso",
+      "clase": "Clase",
+      "perfil": "Mi Perfil"
     }
-]
+  },
+  "profesor": {
+    "menu": [
+      {
+        "id": "dashboard",
+        "icono": "📊",
+        "texto": "Dashboard",
+        "url": "dashboard.html"
+      },
+      {
+        "id": "alumnos",
+        "icono": "👥",
+        "texto": "Alumnos",
+        "url": "alumnos.html"
+      },
+      {
+        "id": "calendario",
+        "icono": "📅",
+        "texto": "Calendario",
+        "url": "calendario.html"
+      },
+      {
+        "id": "curso",
+        "icono": "📚",
+        "texto": "Curso",
+        "url": "curso.html"
+      }
+    ],
+    "breadcrumbs": {
+      "dashboard": "Dashboard",
+      "alumnos": "Gestión de Alumnos",
+      "calendario": "Calendario",
+      "curso": "Editar Curso"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+/* modales.css - Estilos complementarios para modales */
+
+/* ===== ESTILOS BASE DEL MODAL (ya tiene inline styles, esto es para personalización extra) ===== */
+
+/* Overlay del modal */
+#elara-modal-overlay {
+  backdrop-filter: blur(2px);
+}
+
+/* Contenedor del modal */
+#elara-modal-container {
+  max-width: 500px;
+  width: 90%;
+}
+
+/* ===== MODAL DE TAMAÑO GRANDE ===== */
+.modal-lg #elara-modal-container {
+  max-width: 800px;
+  width: 95%;
+}
+
+/* ===== MODAL DE TAMAÑO PEQUEÑO ===== */
+.modal-sm #elara-modal-container {
+  max-width: 350px;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ===== MODAL CON FORMULARIO ===== */
+.modal-form {
+  padding: var(--spacing-6);
+}
+
+.modal-form h3 {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-primary);
+}
+
+.modal-form .form-group {
+  margin-bottom: var(--spacing-4);
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: var(--spacing-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+}
+
+.modal-form input,
+.modal-form select,
+.modal-form textarea {
+  width: 100%;
+  padding: var(--spacing-2) var(--spacing-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.modal-form input:focus,
+.modal-form select:focus,
+.modal-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: var(--spacing-3);
+  justify-content: flex-end;
+  margin-top: var(--spacing-6);
+}
+
+/* ===== CIERRE RÁPIDO ===== */
+.modal-close {
+  position: absolute;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.modal-close:hover {
+  color: var(--error);
+}
