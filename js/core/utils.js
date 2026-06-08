@@ -7,16 +7,19 @@
  * @returns {string} Ruta base (ej: '', '../', '../../')
  */
 function getBasePath() {
-  const path = window.location.pathname;
-  const depth = (path.match(/\//g) || []).length - 1;
-  
-  if (path.includes('/v2/')) {
-    const v2Depth = path.split('/v2/')[1].split('/').length - 1;
-    return v2Depth > 0 ? '../'.repeat(v2Depth) : './';
-  }
-  
-  if (depth <= 1) return './';
-  return '../'.repeat(depth - 1);
+    const path = window.location.pathname;
+    
+    // Si estamos en la raíz o en un archivo HTML en la raíz
+    if (path === '/' || path.endsWith('.html') && path.split('/').length === 2) {
+        return './';
+    }
+    
+    // Contar niveles de profundidad
+    const partes = path.split('/').filter(p => p && !p.includes('.html'));
+    const profundidad = partes.length;
+    
+    if (profundidad <= 1) return './';
+    return '../'.repeat(profundidad - 1);
 }
 
 /**

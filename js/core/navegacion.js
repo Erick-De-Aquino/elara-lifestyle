@@ -1,40 +1,50 @@
 // navegacion.js - Barra lateral y navegación dinámica
 
+// ===== OBTENER RUTA BASE CORRECTA =====
+function getRutaBase() {
+    const path = window.location.pathname;
+    // Si estamos en una subcarpeta (pages/alumno/ o pages/profesor/)
+    if (path.includes('/pages/')) {
+        return '../../';
+    }
+    // Si estamos en la raíz
+    return './';
+}
+
+// ===== CONSTRUIR RUTA COMPLETA =====
+function construirRuta(ruta) {
+    const base = getRutaBase();
+    return base + ruta;
+}
+
 // ===== CARGAR BARRA LATERAL =====
-/**
- * Carga la barra lateral según el rol del usuario
- * @param {string} rol - 'alumno' o 'profesor'
- * @param {string} paginaActual - Nombre de la página actual (para resaltar)
- */
 async function cargarSidebar(rol, paginaActual = '') {
   const sidebarContainer = document.getElementById('sidebar-container');
   if (!sidebarContainer) return;
 
-  // Definir menús según rol
   const menus = {
     alumno: [
-      { icono: '📚', texto: 'Mi Curso', url: 'curso.html', id: 'curso' },
-      { icono: '👤', texto: 'Mi Perfil', url: 'perfil.html', id: 'perfil' }
+      { icono: '📚', texto: 'Mi Curso', url: 'pages/alumno/curso.html', id: 'curso' },
+      { icono: '👤', texto: 'Mi Perfil', url: 'pages/alumno/perfil.html', id: 'perfil' }
     ],
     profesor: [
-      { icono: '📊', texto: 'Dashboard', url: 'dashboard.html', id: 'dashboard' },
-      { icono: '👥', texto: 'Alumnos', url: 'alumnos.html', id: 'alumnos' },
-      { icono: '📅', texto: 'Calendario', url: 'calendario.html', id: 'calendario' },
-      { icono: '📚', texto: 'Curso', url: 'curso.html', id: 'curso' }
+      { icono: '📊', texto: 'Dashboard', url: 'pages/profesor/dashboard.html', id: 'dashboard' },
+      { icono: '👥', texto: 'Alumnos', url: 'pages/profesor/alumnos.html', id: 'alumnos' },
+      { icono: '📅', texto: 'Calendario', url: 'pages/profesor/calendario.html', id: 'calendario' },
+      { icono: '📚', texto: 'Curso', url: 'pages/profesor/curso.html', id: 'curso' }
     ]
   };
 
   const items = menus[rol] || menus.alumno;
-  const basePath = window.utils?.getBasePath() || './';
+  const basePath = getRutaBase();
 
-  // Construir HTML del sidebar
   let sidebarHtml = `
     <div class="sidebar">
       <div class="sidebar-logo">
-        <img src="${basePath}assets/logos/nombreSolo.png" 
-             alt="Elara Method" 
+        <img src="/assets/logos/nombreSolo.png" 
+             alt="Elara LifeStyle" 
              class="logo-navbar"
-             onerror="this.src='${basePath}assets/logos/logoSolo.png'">
+             style="width: 80%; max-width: 180px; margin: 0 auto; display: block;">
       </div>
       <nav class="sidebar-nav">
   `;
@@ -43,7 +53,7 @@ async function cargarSidebar(rol, paginaActual = '') {
     const isActive = paginaActual === item.id;
     const activeClass = isActive ? 'sidebar-link active' : 'sidebar-link';
     sidebarHtml += `
-      <a href="${basePath}pages/${rol}/${item.url}" class="${activeClass}" data-page="${item.id}">
+      <a href="${basePath}${item.url}" class="${activeClass}" data-page="${item.id}">
         <span class="sidebar-icon">${item.icono}</span>
         <span class="sidebar-text">${item.texto}</span>
       </a>
@@ -67,7 +77,6 @@ async function cargarSidebar(rol, paginaActual = '') {
 
   sidebarContainer.innerHTML = sidebarHtml;
 
-  // Agregar event listeners
   const darkModeBtn = document.getElementById('sidebar-dark-mode-btn');
   if (darkModeBtn) {
     darkModeBtn.addEventListener('click', () => {
@@ -85,18 +94,12 @@ async function cargarSidebar(rol, paginaActual = '') {
           window.auth.logout();
         } else {
           localStorage.clear();
-          window.location.href = window.utils?.getBasePath() + 'index.html';
+          window.location.href = basePath + 'index.html';
         }
       });
     });
   }
 }
-
-// ===== ACTUALIZAR NOMBRE DE USUARIO =====
-/**
- * Actualiza el nombre del usuario en la barra superior
- * @param {string} nombre - Nombre del usuario
- */
 function actualizarUsuarioNavbar(nombre) {
   const userDisplay = document.getElementById('user-name-display');
   if (userDisplay) {
@@ -104,16 +107,11 @@ function actualizarUsuarioNavbar(nombre) {
   }
 }
 
-// ===== CARGAR ENCABEZADO SUPERIOR =====
-/**
- * Carga el header superior de la página
- * @param {string} titulo - Título de la página
- */
 function cargarHeader(titulo) {
   const headerContainer = document.getElementById('header-container');
   if (!headerContainer) return;
 
-  const basePath = window.utils?.getBasePath() || './';
+  const basePath = getRutaBase();
 
   headerContainer.innerHTML = `
     <div class="top-bar">
@@ -127,7 +125,6 @@ function cargarHeader(titulo) {
     </div>
   `;
 
-  // Menú móvil
   const mobileBtn = document.getElementById('mobile-menu-btn');
   if (mobileBtn) {
     mobileBtn.addEventListener('click', () => {
@@ -139,13 +136,6 @@ function cargarHeader(titulo) {
   }
 }
 
-// ===== INICIALIZAR NAVEGACIÓN =====
-/**
- * Inicializa la navegación de la página
- * @param {string} rol - 'alumno' o 'profesor'
- * @param {string} paginaActual - ID de la página actual
- * @param {string} nombreUsuario - Nombre del usuario
- */
 async function initNavegacion(rol, paginaActual, nombreUsuario = '') {
   await cargarSidebar(rol, paginaActual);
   cargarHeader(getTituloPagina(paginaActual));
@@ -154,7 +144,6 @@ async function initNavegacion(rol, paginaActual, nombreUsuario = '') {
   }
 }
 
-// ===== OBTENER TÍTULO DE PÁGINA =====
 function getTituloPagina(paginaId) {
   const titulos = {
     curso: 'Mi Curso',
@@ -166,7 +155,6 @@ function getTituloPagina(paginaId) {
   return titulos[paginaId] || 'Elara Method';
 }
 
-// Exportar para uso global
 if (typeof window !== 'undefined') {
   window.navegacion = {
     cargarSidebar,
