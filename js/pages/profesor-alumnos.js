@@ -128,11 +128,11 @@ function renderizarListaAlumnos() {
     });
     
     document.querySelectorAll('.btn-editar').forEach(btn => {
-        btn.addEventListener('click', () => editarAlumno(parseInt(btn.dataset.id)));
+        btn.addEventListener('click', () => editarAlumno(btn.dataset.id));
     });
     
     document.querySelectorAll('.btn-eliminar').forEach(btn => {
-        btn.addEventListener('click', () => eliminarAlumno(parseInt(btn.dataset.id), btn.dataset.nombre));
+        btn.addEventListener('click', () => eliminarAlumno(btn.dataset.id, btn.dataset.nombre));
     });
     
     document.querySelectorAll('.btn-next-clase').forEach(btn => {
