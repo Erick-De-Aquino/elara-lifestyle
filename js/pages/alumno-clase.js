@@ -114,8 +114,8 @@ function renderizarClase() {
     let videosHtml = '';
     if (claseData.videos && Array.isArray(claseData.videos)) {
         videosHtml = `<div class="videos-container">${claseData.videos.map(v => {
-            const url = typeof v === 'object' ? v.url : '#';
             const titulo = typeof v === 'object' ? v.titulo : v;
+            const url = typeof v === 'object' ? v.url : '#';
             return `<a href="${url}" class="video-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i> <span>${escapeHtml(titulo)}</span></a>`;
         }).join('')}</div>`;
     }

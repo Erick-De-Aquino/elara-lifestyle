@@ -67,8 +67,14 @@
         "practicaSemana": "Escribe cada día tu objetivo principal. Anota UNA cosa que te acerque a él y UNA que te aleje. Solo observa, no juzgues.",
         "practicaTip": "El objetivo es tomar conciencia, no cambiar todo de golpe.",
         "videos": [
-            "Carlos Jaramillo: \"Por qué fallamos al intentar cambiar hábitos\"",
-            "Dr. La Rosa: \"El poder del entendimiento en la salud metabólica\""
+            {
+                "titulo": "Carlos Jaramillo: \"Por Qué Fracasan Los Hábitos Saludables (Y Cómo Lograrlo)\"",
+                "url": "https://www.youtube.com/watch?v=Zq2xFbaehM8"
+            },
+            {
+                "titulo": "Dr. La Rosa: \"Cómo Cambiar tus Malos Hábitos\"",
+                "url": "https://www.youtube.com/watch?v=a3_ogNm8EIM&t=798s"
+            }
         ]
     },
     "clase2": {
@@ -128,8 +134,18 @@
         "practicaSemana": "Elige UN solo ajuste de sueño y aplícalo durante 7 días. Puede ser: apagar el móvil 1 hora antes, cenar 2-3 horas antes, bajar la temperatura, o hacer respiración 4-7-8.",
         "practicaTip": "No intentes aplicar todos los cambios a la vez. Elige UNO. Domínalo. Luego añade otro.",
         "videos": [
-            "Carlos Jaramillo: \"Sueño y metabolismo: la hormona del hambre\"",
-            "Dr. La Rosa: \"Cómo reparar tu sueño en 7 días\""
+            {
+                "titulo": "Carlos Jaramillo: \"¿Duermes mal y no sabes por qué? La guía definitiva\"",
+                "url": "https://www.youtube.com/watch?v=QF9Fd6nRFBk"
+            },
+            {
+                "titulo": "Dr. La Rosa: \"Cómo reparar el sueño de manera eficiente\"",
+                "url": "https://www.youtube.com/watch?v=DDRa6FVYXGo"
+            },
+            {
+                "titulo": "Matthew Walker: \"Por qué dormimos\" (resumen)",
+                "url": "https://www.youtube.com/watch?v=j80IfxXuU_0&t=317s"
+            }
         ]
     },
     "clase3": {
@@ -201,9 +217,15 @@
         "practicaSemana": "Elige UNA herramienta de las que vimos hoy (respiración, pausa activa) y aplícala cada día durante 7 días. Anota cómo te sientes antes y después.",
         "practicaTip": "No necesitas hacer todo. Una herramienta bien aplicada cambia tu día. Domínala y luego añade otra.",
         "videos": [
-            "Carlos Jaramillo: \"Cortisol, el enemigo silencioso\"",
-            "Dr. La Rosa: \"Estrés y alimentación emocional\""
-        ]
+            {
+                "titulo": "Carlos Jaramillo: \"¡ESTO TE ESTA MATANDO LENTAMENTE! EL ESTRÉS CAUSA TODO ESTO EN TU CUERPO\"",
+                "url": "https://www.youtube.com/watch?v=_9th8IlA7Jg"
+            },
+            {
+                "titulo": "Sharon Horesh Bergquist: \"Como afecta el estrés a su cuerpo\"",
+                "url": "https://www.youtube.com/watch?v=6LiMuJkp2Ig"
+            }
+    ]
     },
     "clase4": {
         "id": "clase4",
@@ -268,8 +290,14 @@
         "practicaSemana": "Haz UNA sesión de fuerza en casa esta semana, siguiendo la versión que corresponda a tu nivel (principiante, intermedio o avanzado).",
         "practicaTip": "No importa si empiezas desde cero. Una sesión de fuerza a la semana ya es mejor que ninguna.",
         "videos": [
-            "Carlos Jaramillo: \"Músculo y longevidad\"",
-            "Carlos Jaramillo: \"11 beneficios de hacer pesas\""
+            {
+                "titulo": "Carlos Jaramillo: 11 beneficios de hacer pesas",
+                "url": "https://www.youtube.com/watch?v=NrQ9I8KaBGw"
+            },
+            {
+                "titulo": "Oswaldo Restrepo RSC: Beneficios Del Ejercicio Físico Top 10",
+                "url": "https://www.youtube.com/watch?v=Z8OYBxgSfCM"
+            }
         ]
     },
     "clase5": {
@@ -327,8 +355,14 @@
         "practicaSemana": "Antes de comer (en una comida principal), identifica los 3 macronutrientes. Si falta alguno, piensa cómo podrías añadirlo la próxima vez.",
         "practicaTip": "No se trata de perfección, sino de conciencia. El primer paso es observar.",
         "videos": [
-            "Carlos Jaramillo: \"Macronutrientes explicados fácil\"",
-            "Dr. La Rosa: \"Proteína: cuánta y de dónde\""
+            {
+                "titulo": "Nutrición Inteligente: El Secreto para Elegir Alimentos que Transforman tu Cuerpo, tu Energía y Vida",
+                "url": "https://www.youtube.com/watch?v=nc1Oejm_-5E"
+            },
+            {
+                "titulo": "Nutrición Inteligente: Come Bien, Vive Mejor",
+                "url": "https://www.youtube.com/watch?v=UTUDcnFBX6k"
+            }
         ]
     },
     "clase6": {
@@ -388,8 +422,14 @@
         "practicaSemana": "Identifica y reemplaza UN no prioritario durante 7 días (refrescos, pan blanco, snack dulce o cereales azucarados).",
         "practicaTip": "No necesitas ser perfecto. Una semana de reemplazos transforma tu conciencia.",
         "videos": [
-            "Carlos Jaramillo: \"Qué pasa en tu cuerpo cuando dejas el azúcar\"",
-            "Dr. La Rosa: \"Ultraprocesados, inflamación silenciosa\""
+            {
+                "titulo": "Dr Carlos Jaramillo: ¡DESPÍDETE DE ESTOS 17 ALIMENTOS! MEJORA TU SALUD HOY",
+                "url": "https://www.youtube.com/watch?v=y1KJfQ1VZzc"
+            },
+            {
+                "titulo": "Dr Carlos Jaramillo: 8 comidas que cobran miles de vidas al año y NADIE te lo dice | Alimentos dañinos para el cuerpo",
+                "url": "https://www.youtube.com/watch?v=Scro_RyOqdc"
+            }
         ]
     },
     "clase7": {
@@ -438,8 +478,14 @@
         "practicaSemana": "Elige UN día, anota todos los alimentos que comes, calcula los macronutrientes aproximados y compáralos con tus números objetivo.",
         "practicaTip": "No se trata de acertar, se trata de tomar conciencia.",
         "videos": [
-            "Carlos Jaramillo: \"Cómo calcular proteína sin apps\"",
-            "Dr. La Rosa: \"Micronutrientes que cambian tu vida\""
+            {
+                "titulo": "Paula Suárez: CALCULA TUS MACROS DESDE CERO! - Cuánto comer de proteínas, carbos y grasas?",
+                "url": "https://www.youtube.com/watch?v=5TQn1rJ6gLw"
+            },
+            {
+                "titulo": "Jefillysh: Cómo calcular tus calorías diarias y macros recomendados (Mifflin-St Jeor)",
+                "url": "https://www.youtube.com/watch?v=GMhVzAauJTY"
+            }
         ]
     },
     "clase8": {
@@ -494,8 +540,14 @@
         "practicaSemana": "Revisa tu botiquín de suplementos. Clasifícalos en: útiles, innecesarios o peligrosos. Toma una decisión informada.",
         "practicaTip": "No se trata de tirar todo a la basura. Se trata de tomar decisiones informadas.",
         "videos": [
-            "Carlos Jaramillo: \"Creatina, el suplemento más estudiado\"",
-            "Dr. La Rosa: \"Magnesio, por qué todos deberíamos considerarlo\""
+            {
+                "titulo": "Carlos Jaramillo: \"Este Es El Tipo De MAGNESIO Que Tu Cuerpo Necesita\"",
+                "url": "https://www.youtube.com/watch?v=YRmdGxw0p54"
+            },
+            {
+                "titulo": "Dr. La Rosa: \"¿Necesitamos SUPLEMENTOS NUTRICIONALES? La verdad incómoda sobre nuestra alimentación\"",
+                "url": "https://www.youtube.com/watch?v=2L11yIV9MQc"
+            }
         ]
     },
     "clase9": {
@@ -549,8 +601,14 @@
         "practicaSemana": "Elige TRES acciones para revertir la resistencia a la insulina (reducir azúcar, caminar post-comida, entrenar fuerza, ayuno nocturno, cambiar orden del plato, dormir 7 horas).",
         "practicaTip": "No se trata de hacerlo perfecto. Se trata de empezar a abrir la cerradura oxidada.",
         "videos": [
-            "Carlos Jaramillo: \"Resistencia a la insulina explicada en 15 min\"",
-            "Dr. La Rosa: \"Cómo revertir la diabetes tipo 2\""
+            {
+                "titulo": "Dr. Carlos Jaramillo: \"¿QUÉ ES LA INSULINA? TODO LO QUE NECESITAS SABER - Dr. Carlos Jaramillo\"",
+                "url": "https://www.youtube.com/watch?v=igFwq9twgbo"
+            },
+            {
+                "titulo": "Dr. La Rosa: \"¿Resistencia a la insulina? 3 SEÑALES que tu CUERPO te está enviando\"",
+                "url": "http://youtube.com/watch?v=xdvWPHgfr2U"
+            }
         ]
     },
     "clase10": {
@@ -595,8 +653,14 @@
         "practicaSemana": "Haz el Test de la Silla. Practica levantarte sin manos 3 veces al día. Elige una acción adicional según tu nivel.",
         "practicaTip": "No te asustes si el Test te resultó difícil. Es un diagnóstico, no una sentencia.",
         "videos": [
-            "Carlos Jaramillo: \"Sarcopenia, la epidemia silenciosa\"",
-            "Carlos Jaramillo: \"Esto devora tus músculos\""
+            {
+                "titulo": "Carlos Jaramillo: ¡Todos Los MAYORES De 40 Años DEBEN Ver Este Video! Esto DEVORA tus MÚSCULOS | SARCOPENIA GRAVE",
+                "url": "https://www.youtube.com/watch?v=bDIUb71Xqk4&t=562s"
+            },
+            {
+                "titulo": "Centro Médico ABC: ¿Qué es la sarcopenia?",
+                "url": "https://www.youtube.com/watch?v=pHtmDn0KFGM"
+            }
         ]
     },
     "clase11": {
@@ -649,8 +713,14 @@
         "practicaSemana": "Prueba un ayuno de 12 horas un día esta semana (cena a las 20h, desayuno a las 8h). Observa cómo te sientes.",
         "practicaTip": "El ayuno no es una competición. Si 12 horas te funcionan, quédate ahí.",
         "videos": [
-            "Carlos Jaramillo: \"Ayuno intermitente, ¿sí o no?\"",
-            "Dr. La Rosa: \"Autofagia, el reciclaje celular\""
+            {
+                "titulo": "Carlos Jaramillo: AYUNO INTERMITENTE: ¿CÓMO HACERLO BIEN?",
+                "url": "https://www.youtube.com/watch?v=HnBATIXlI5k"
+            },
+            {
+                "titulo": "DR LA ROSA: Cómo el Ayuno Daña Unas Hormonas y Mejora Otras",
+                "url": "https://www.youtube.com/watch?v=ljzi1-Tg6AE"
+            }
         ]
     },
     "clase12": {
@@ -702,8 +772,14 @@
         "practicaSemana": "Haz una lista de compras estructurada. Sal al sol 10-15 minutos al despertar. Prueba pies fríos 10-15 segundos.",
         "practicaTip": "La estructura no es rigidez. Es una herramienta para liberar tu mente de decisiones triviales.",
         "videos": [
-            "Carlos Jaramillo: \"Cómo estructurar tu semana de comidas\"",
-            "Dr. La Rosa: \"Beneficios del frío y el sol\""
+            {
+                "titulo": "Fitness Revolucionario: Beneficios del Frío y Cómo Empezar",
+                "url": "https://www.youtube.com/watch?v=P2zCdXHpXOE&t=158s"
+            },
+            {
+                "titulo": "DR LA ROSA: Los BENEFICIOS del SOL que no conocías",
+                "url": "https://www.youtube.com/watch?v=VxwutVisImk&t=415s"
+            }
         ]
     },
     "clase13": {
@@ -760,8 +836,14 @@
         "practicaSemana": "Ve al supermercado con 3 productos que crees que son sanos. Lee sus etiquetas. Anota si te engañaron.",
         "practicaTip": "No te sientas mal si has comprado productos que creías sanos. El marketing está diseñado para confundir.",
         "videos": [
-            "Cómo leer etiquetas de alimentos (guía práctica)",
-            "Los 10 nombres del azúcar que debes conocer"
+            {
+                "titulo": "Doctablet: \"10 Reglas Para Leer La Etiqueta de un Alimento\"",
+                "url": "https://www.youtube.com/watch?v=r9wP1MLYRm0"
+            },
+            {
+                "titulo": "Dr Carlos Jaramillo: \"ASÍ SE LEEN LAS ETIQUETAS EN LOS ALIMENTOS! Te puedes salvar\"",
+                "url": "https://www.youtube.com/watch?v=DDnETndcY2A"
+            }
         ]
     },
     "clase14": {
