@@ -2,6 +2,7 @@ let resenasAlumno = [];
 let resenaPropia = null;
 let alumnoResenasActual = null;
 let puedeResenar = false;
+let totalClasesCurso = 0;
 
 function escResena(valor) {
   const div = document.createElement('div');
@@ -22,10 +23,15 @@ async function initAlumnoResenas() {
 
 async function cargarResenasAlumno() {
   const sb = window.supabaseClient;
-  const [{data: publicadas, error: e1}, {data: propia, error: e2}, {count, error: e3}] = await Promise.all([
+  const [
+    { data: publicadas, error: e1 },
+    { data: propia, error: e2 },
+    { count, error: e3 },
+    clasesResponse
+  ] = await Promise.all([
     sb.from('resenas').select('id, usuario_id, valoracion, comentario, status, created_at, usuarios(nombre)').eq('status','approved').neq('usuario_id', alumnoResenasActual.id).order('created_at',{ascending:false}),
     sb.from('resenas').select('id, usuario_id, valoracion, comentario, status, created_at, updated_at').eq('usuario_id', alumnoResenasActual.id).maybeSingle(),
-    sb.from('progreso').select('id',{count:'exact',head:true}).eq('usuario_id',alumnoResenasActual.id).eq('completada',true)
+    sb.from('progreso').select('id',{count:'exact',head:true}).eq('usuario_id',alumnoResenasActual.id).eq('completada', true),fetch(window.utils.getPath('data/clases.json'))
   ]);
   if (e1 || e2 || e3) {
     console.error('Error cargando reseñas:', e1 || e2 || e3);
@@ -33,7 +39,13 @@ async function cargarResenasAlumno() {
   }
   resenasAlumno = publicadas || [];
   resenaPropia = propia || null;
-  puedeResenar = (count || 0) >= 14;
+
+  const clases = await clasesResponse.json();
+  totalClasesCurso = Object.keys(clases || {}).length;
+
+  puedeResenar =
+    totalClasesCurso > 0 &&
+    (count || 0) >= totalClasesCurso;
 }
 
 function cardResena(r) {
@@ -52,7 +64,7 @@ function renderAlumnoResenas() {
     <div class="resena-stars">${estrellas(resenaPropia.valoracion)}</div><p class="resena-comment">${escResena(resenaPropia.comentario)}</p>
     <p class="resena-note">${resenaPropia.status==='approved' ? 'Tu reseña ya es visible para los alumnos.' : resenaPropia.status==='rejected' ? 'Puedes editarla y volver a enviarla para revisión.' : 'El profesor debe aprobarla antes de que sea pública para los alumnos.'}</p>
     <div class="resena-form-actions"><button class="btn-resena secondary" id="editar-resena">Editar reseña</button></div>
-  </section>` : puedeResenar ? `<section class="resenas-panel resena-own"><h2 style="margin-top:0;color:var(--text-primary)">Comparte tu experiencia</h2><p style="color:var(--text-secondary)">Has completado el curso. Tu reseña se publicará automáticamente cuando sea aprobada.</p><button class="btn-resena primary" id="crear-resena">Escribir reseña</button></section>` : `<section class="resenas-panel resena-own"><h2 style="margin-top:0;color:var(--text-primary)">Comparte tu experiencia</h2><p style="color:var(--text-secondary)">Completa las 14 clases para poder enviar una reseña.</p></section>`;
+  </section>` : puedeResenar ? `<section class="resenas-panel resena-own"><h2 style="margin-top:0;color:var(--text-primary)">Comparte tu experiencia</h2><p style="color:var(--text-secondary)">Has completado el curso. Tu reseña se publicará automáticamente cuando sea aprobada.</p><button class="btn-resena primary" id="crear-resena">Escribir reseña</button></section>` : `<section class="resenas-panel resena-own"><h2 style="margin-top:0;color:var(--text-primary)">Comparte tu experiencia</h2><p style="color:var(--text-secondary)">Completa las ${totalClasesCurso} clases para poder enviar una reseña.</p></section>`;
   c.innerHTML = `<section class="resenas-hero"><div><h2>⭐ Experiencias de alumnos</h2><p>Reseñas aprobadas de personas que completaron ELARA LifeStyle.</p></div></section>${propia}<h2 style="color:var(--text-primary);margin:0 0 14px">Reseñas publicadas</h2>${resenasAlumno.length ? `<div class="resenas-grid">${resenasAlumno.map(cardResena).join('')}</div>` : '<div class="resenas-empty">Todavía no hay reseñas publicadas.</div>'}`;
   document.getElementById('crear-resena')?.addEventListener('click',()=>abrirFormularioResena());
   document.getElementById('editar-resena')?.addEventListener('click',()=>abrirFormularioResena(resenaPropia));
