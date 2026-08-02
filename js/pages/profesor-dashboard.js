@@ -2,6 +2,7 @@
 
 let profesorActual = null;
 let todosLosAlumnos = [];
+let proximasClases = [];
 
 // ===== INICIALIZAR DASHBOARD =====
 async function initDashboard() {
@@ -36,16 +37,35 @@ async function cargarDatosReales() {
         const { data: alumnos, error } = await supabaseClient
             .from('usuarios')
             .select('id, nombre, email, telefono, created_at')
-            .eq('rol', 'alumno');
+            .eq('rol', 'alumno')
+            .order('nombre', { ascending: true });
         
         if (error) throw error;
         
         todosLosAlumnos = alumnos || [];
         console.log('Alumnos cargados:', todosLosAlumnos);
+
+        const { data: eventos, error: eventosError } = await supabaseClient
+            .from('eventos')
+            .select('id, titulo, fecha, hora, usuario_id, descripcion')
+            .order('fecha', { ascending: true })
+            .order('hora', { ascending: true });
+
+        if (eventosError) throw eventosError;
+
+        const ahora = new Date();
+        proximasClases = (eventos || [])
+            .map(evento => ({
+                ...evento,
+                fechaHora: obtenerFechaHoraEvento(evento)
+            }))
+            .filter(evento => evento.fechaHora && evento.fechaHora >= ahora)
+            .sort((a, b) => a.fechaHora - b.fechaHora);
         
     } catch (error) {
-        console.error('Error cargando alumnos:', error);
+        console.error('Error cargando datos del dashboard:', error);
         todosLosAlumnos = [];
+        proximasClases = [];
     }
 }
 
@@ -186,22 +206,37 @@ async function renderizarDashboard() {
             <button id="btnExportarCSV" class="btn-outline">📎 Exportar Alumnos</button>
         </div>
         
-        <div class="alumnos-table-container">
-            <table class="alumnos-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Fecha Registro</th>
-                        <th>Progreso</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody id="alumnos-table-body">
-                    ${renderizarFilasAlumnos(todosLosAlumnos.slice(0, 5))}
-                </tbody>
-            </table>
+        <div class="dashboard-main-grid">
+            <section class="dashboard-panel" aria-labelledby="dashboard-alumnos-title">
+                <div class="dashboard-panel-header">
+                    <h2 class="dashboard-panel-title" id="dashboard-alumnos-title">Alumnos</h2>
+                    <span class="dashboard-panel-count">${todosLosAlumnos.length}</span>
+                </div>
+                <div class="dashboard-panel-body">
+                    <table class="dashboard-students-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Progreso</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="alumnos-table-body">
+                            ${renderizarFilasAlumnos(todosLosAlumnos)}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="dashboard-panel" aria-labelledby="dashboard-clases-title">
+                <div class="dashboard-panel-header">
+                    <h2 class="dashboard-panel-title" id="dashboard-clases-title">Próximas clases</h2>
+                    <span class="dashboard-panel-count">${proximasClases.length}</span>
+                </div>
+                <div class="dashboard-panel-body">
+                    ${renderizarProximasClases(proximasClases)}
+                </div>
+            </section>
         </div>
         
         ${todosLosAlumnos.length === 0 ? `
@@ -244,26 +279,82 @@ async function renderizarDashboard() {
     cargarTodosLosProgresos();
 }
 
-// ===== RENDERIZAR FILAS =====
+// ===== RENDERIZAR FILAS DE ALUMNOS =====
 function renderizarFilasAlumnos(alumnos) {
     if (!alumnos || alumnos.length === 0) {
-        return `<tr><td colspan="6" style="text-align: center;">No hay alumnos registrados</td><tr>`;
+        return '<tr><td colspan="3" class="dashboard-empty-state">No hay alumnos registrados</td></tr>';
     }
     
     return alumnos.map(alumno => `
         <tr>
             <td><strong>${escapeHtml(alumno.nombre || 'Sin nombre')}</strong></td>
-            <td>${escapeHtml(alumno.email || '—')}</td>
-            <td>${alumno.telefono || '—'}</td>
-            <td>${window.utils?.formatearFecha(alumno.created_at) || '—'}</td>
             <td><span class="progreso-badge" data-id="${alumno.id}">cargando...</span></td>
             <td>
                 <div class="table-actions">
-                    <button class="action-btn edit btn-ver-alumno" data-id="${alumno.id}" title="Ver detalles">👁️</button>
+                    <button class="action-btn edit btn-ver-alumno" data-id="${alumno.id}" data-nombre="${escapeHtml(alumno.nombre || '')}" title="Ver detalles" aria-label="Ver detalles de ${escapeHtml(alumno.nombre || 'alumno')}">👁️</button>
                 </div>
             </td>
         </tr>
     `).join('');
+}
+
+// ===== RENDERIZAR PRÓXIMAS CLASES =====
+function renderizarProximasClases(eventos) {
+    if (!eventos || eventos.length === 0) {
+        return '<div class="dashboard-empty-state">No hay clases futuras agendadas.</div>';
+    }
+
+    return `
+        <div class="upcoming-classes-list">
+            ${eventos.map(evento => {
+                const fecha = evento.fechaHora;
+                const dia = String(fecha.getDate()).padStart(2, '0');
+                const mes = fecha.toLocaleDateString('es-ES', { month: 'short' }).replace('.', '');
+                const hora = evento.hora ? evento.hora.substring(0, 5) : 'Sin hora';
+                const alumno = todosLosAlumnos.find(item => String(item.id) === String(evento.usuario_id));
+                const alumnoNombre = alumno?.nombre || 'Alumno no identificado';
+
+                return `
+                    <article class="upcoming-class-item">
+                        <div class="upcoming-class-date" aria-hidden="true">
+                            <span class="upcoming-class-day">${dia}</span>
+                            <span class="upcoming-class-month">${escapeHtml(mes)}</span>
+                        </div>
+                        <div class="upcoming-class-content">
+                            <button
+                                type="button"
+                                class="upcoming-class-student btn-ver-alumno"
+                                data-id="${escapeHtml(String(evento.usuario_id || ''))}"
+                                data-nombre="${escapeHtml(alumnoNombre)}"
+                                aria-label="Ver detalles de ${escapeHtml(alumnoNombre)}"
+                            >
+                                ${escapeHtml(alumnoNombre)}
+                            </button>
+
+                            <div class="upcoming-class-meta">
+                                <span>🕐 ${escapeHtml(hora)}</span>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('')}
+        </div>
+    `;
+}
+
+// Construye la fecha y hora en horario local para evitar desplazamientos por UTC.
+function obtenerFechaHoraEvento(evento) {
+    if (!evento?.fecha) return null;
+
+    const partesFecha = evento.fecha.split('-').map(Number);
+    if (partesFecha.length !== 3 || partesFecha.some(Number.isNaN)) return null;
+
+    const [anio, mes, dia] = partesFecha;
+    const partesHora = (evento.hora || '23:59').substring(0, 5).split(':').map(Number);
+    const [hora = 23, minutos = 59] = partesHora;
+    const fechaHora = new Date(anio, mes - 1, dia, hora, minutos, 0, 0);
+
+    return Number.isNaN(fechaHora.getTime()) ? null : fechaHora;
 }
 
 // ===== EXPORTAR ALUMNOS =====
@@ -400,7 +491,7 @@ async function verDetalleAlumno(alumnoId, alumnoNombre) {
                     <button id="modalDetalleCerrar" style="background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
                 </div>
                 
-                <div style="background: var(--primary-bg); padding: 16px; border-radius: 12px; margin-bottom: 20px;">
+                <div style="background: var(--bg-body); color: var(--text-primary); padding: 16px; border-radius: 12px; margin-bottom: 20px; border-left: 3px solid var(--primary);">
                     <h3 style="margin: 0 0 8px 0;">👤 Datos Personales</h3>
                     <p><strong>Nombre:</strong> ${escapeHtml(alumno.nombre)}</p>
                     <p><strong>Email:</strong> ${escapeHtml(alumno.email)}</p>
@@ -439,6 +530,7 @@ async function verDetalleAlumno(alumnoId, alumnoNombre) {
         modal.innerHTML = modalHtml;
         overlay.appendChild(modal);
         document.body.appendChild(overlay);
+        window.elaraModals?.registrar(overlay, { cerrar: () => overlay.remove() });
         
         document.getElementById('modalDetalleCerrar')?.addEventListener('click', () => overlay.remove());
         overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });

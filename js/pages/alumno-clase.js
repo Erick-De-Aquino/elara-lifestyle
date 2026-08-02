@@ -238,6 +238,15 @@ function crearModalApuntes() {
         document.getElementById('modalApuntesLateral')?.classList.remove('active');
     };
     
+    const modalLateral = document.getElementById('modalApuntesLateral');
+    const fondoModalLateral = modalLateral?.querySelector('.modal-apuntes-overlay');
+    window.elaraModals?.registrar(modalLateral, {
+        cerrar: cerrarYGuardar,
+        estaAbierto: () => modalLateral?.classList.contains('active'),
+        fondo: fondoModalLateral,
+        cerrarAlPulsarFondo: false
+    });
+
     document.getElementById('btnCerrarApuntes')?.addEventListener('click', cerrarYGuardar);
     document.getElementById('modalApuntesLateral')?.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal-apuntes-overlay')) {

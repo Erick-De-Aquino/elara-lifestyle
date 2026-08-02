@@ -3,49 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Elara LifeStyle</title>
-    
-    <!-- CSS Base -->
+    <title>Gestión de Reseñas - Elara LifeStyle</title>
     <link rel="stylesheet" href="../../css/base/reset.css">
     <link rel="stylesheet" href="../../css/base/variables.css">
     <link rel="stylesheet" href="../../css/base/typography.css">
-    
-    <!-- CSS Components -->
     <link rel="stylesheet" href="../../css/components/navbar.css">
     <link rel="stylesheet" href="../../css/components/botones.css">
     <link rel="stylesheet" href="../../css/components/modales.css">
-    
-    <!-- CSS Layouts -->
+    <link rel="stylesheet" href="../../css/components/formularios.css">
     <link rel="stylesheet" href="../../css/layouts/profesor-layout.css">
-    <link rel="stylesheet" href="../../css/pages/profesor-dashboard.css">
-    
-    <!-- Tema oscuro -->
+    <link rel="stylesheet" href="../../css/pages/resenas.css">
     <link rel="stylesheet" href="../../css/themes/dark-mode.css">
-    
-    <!-- Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div id="sidebar-container"></div>
     <div id="header-container"></div>
-    
     <main class="main-content">
-        <div class="profesor-container" id="dashboard-container">
-            <div class="loading-container" style="text-align: center; padding: var(--spacing-12);">
-                <div style="width: 40px; height: 40px; border: 3px solid var(--gray-200); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto var(--spacing-4);"></div>
-                <p>Cargando dashboard...</p>
-            </div>
+        <div class="resenas-container" id="resenas-container">
+            <div class="resenas-loading">Cargando reseñas...</div>
         </div>
     </main>
-    
-    <!-- Core JS -->
     <script src="../../js/core/config.js"></script>
     <script src="../../js/core/utils.js"></script>
     <script src="../../js/core/modal.js"></script>
     <script src="../../js/core/dark-mode.js"></script>
     <script src="../../js/core/navegacion.js"></script>
     <script src="../../js/modules/auth.js"></script>
-    <script src="../../js/modules/alumnos.js"></script>
-    <script src="../../js/pages/profesor-dashboard.js"></script>
+    <script src="../../js/pages/profesor-resenas.js"></script>
 </body>
 </html>

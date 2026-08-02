@@ -8,6 +8,12 @@
         "url": "curso.html"
       },
       {
+        "id": "resenas",
+        "icono": "⭐",
+        "texto": "Reseñas",
+        "url": "resenas.html"
+      },
+      {
         "id": "perfil",
         "icono": "👤",
         "texto": "Mi Perfil",
@@ -17,7 +23,8 @@
     "breadcrumbs": {
       "curso": "Mi Curso",
       "clase": "Clase",
-      "perfil": "Mi Perfil"
+      "perfil": "Mi Perfil",
+      "resenas": "Reseñas"
     }
   },
   "profesor": {
@@ -45,13 +52,20 @@
         "icono": "📚",
         "texto": "Curso",
         "url": "curso.html"
+      },
+      {
+        "id": "resenas",
+        "icono": "⭐",
+        "texto": "Reseñas",
+        "url": "resenas.html"
       }
     ],
     "breadcrumbs": {
       "dashboard": "Dashboard",
       "alumnos": "Gestión de Alumnos",
       "calendario": "Calendario",
-      "curso": "Editar Curso"
+      "curso": "Editar Curso",
+      "resenas": "Gestión de Reseñas"
     }
   }
 }

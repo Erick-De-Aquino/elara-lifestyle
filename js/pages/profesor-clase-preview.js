@@ -389,6 +389,15 @@ function crearModalNotasLateral() {
         document.getElementById('modalNotasLateral')?.classList.remove('active');
     };
     
+    const modalLateral = document.getElementById('modalNotasLateral');
+    const fondoModalLateral = modalLateral?.querySelector('.modal-apuntes-overlay');
+    window.elaraModals?.registrar(modalLateral, {
+        cerrar: cerrarYGuardar,
+        estaAbierto: () => modalLateral?.classList.contains('active'),
+        fondo: fondoModalLateral,
+        cerrarAlPulsarFondo: false
+    });
+
     document.getElementById('btnCerrarNotasLateral')?.addEventListener('click', cerrarYGuardar);
     document.getElementById('modalNotasLateral')?.addEventListener('click', (e) => {
         if (e.target.classList.contains('modal-apuntes-overlay')) {

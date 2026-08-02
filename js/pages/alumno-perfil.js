@@ -346,6 +346,11 @@ function crearOverlay(contenidoHtml) {
     modal.style.cssText = 'background:var(--bg-card);border-radius:var(--border-radius-lg);max-width:500px;width:90%;padding:var(--spacing-6);';
     modal.innerHTML = contenidoHtml;
     overlay.appendChild(modal);
+
+    window.elaraModals?.registrar(overlay, {
+        cerrar: () => overlay.remove()
+    });
+
     return overlay;
 }
 

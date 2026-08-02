@@ -236,3 +236,426 @@
     align-self: flex-end;
   }
 }
+/* ===== VISTAS MES / SEMANA ===== */
+.calendario-periodo {
+  min-width: 240px;
+  text-align: center;
+  font-weight: var(--font-weight-semibold);
+}
+
+.calendario-grid-mes .calendario-dias {
+  grid-template-rows: repeat(6, 84px);
+}
+
+.calendario-grid-mes .calendario-dia {
+  min-height: 0;
+  height: 84px;
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-2);
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.calendario-grid-mes .calendario-dia:disabled {
+  cursor: default;
+}
+
+.calendario-grid-mes .calendario-dia.tiene-eventos:hover {
+  border-color: var(--primary);
+}
+
+.calendario-grid-mes .calendario-dia.hoy {
+  box-shadow: inset 0 0 0 2px var(--primary);
+}
+
+.calendario-puntos {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: var(--spacing-2);
+}
+
+.calendario-punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex: 0 0 auto;
+}
+
+.calendario-mas {
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: var(--font-weight-semibold);
+}
+
+.calendario-semanal {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: var(--spacing-3);
+}
+
+.semana-dia {
+  min-height: 470px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.semana-dia.hoy {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary), var(--shadow-sm);
+}
+
+.semana-dia-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+  border: 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+}
+
+.semana-dia-header strong {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+}
+
+.semana-dia-header:hover {
+  background: var(--gray-50);
+}
+
+.dark-mode .semana-dia-header:hover {
+  background: var(--gray-800);
+}
+
+.semana-dia-eventos {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2);
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.semana-evento {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  width: 100%;
+  padding: var(--spacing-2);
+  border: 0;
+  border-left: 3px solid var(--primary);
+  border-radius: var(--border-radius-sm);
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.dark-mode .semana-evento {
+  background: var(--bg-body);
+}
+
+.semana-evento:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.semana-evento-hora {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.semana-evento-alumno {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.semana-sin-eventos {
+  margin: var(--spacing-3) 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  text-align: center;
+}
+
+/* ===== MODAL DE CLASES DEL DÍA ===== */
+.calendario-modal-overlay > div {
+  max-width: 620px !important;
+}
+
+.modal-dia-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-4);
+}
+
+.modal-dia-header h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+}
+
+.modal-dia-cerrar {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal-dia-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.modal-dia-evento {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+}
+
+.modal-dia-detalle {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2);
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.modal-dia-detalle:hover .modal-dia-alumno {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.modal-dia-hora {
+  color: var(--primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.modal-dia-alumno {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: var(--font-weight-semibold);
+}
+
+.modal-dia-acciones {
+  display: flex;
+  gap: var(--spacing-1);
+}
+
+.modal-dia-vacio {
+  margin: 0;
+  padding: var(--spacing-6);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.modal-dia-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-4);
+}
+
+@media (max-width: 1100px) {
+  .calendario-semanal {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .semana-dia {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendario-controles {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .calendario-periodo {
+    min-width: 180px;
+    flex: 1;
+  }
+
+  .calendario-grid-mes .calendario-dias {
+    grid-template-rows: repeat(6, 68px);
+  }
+
+  .calendario-grid-mes .calendario-dia {
+    height: 68px;
+  }
+
+  .calendario-semanal {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .calendario-semanal {
+    grid-template-columns: 1fr;
+  }
+
+  .calendario-periodo {
+    order: -1;
+    flex-basis: 100%;
+  }
+
+  .modal-dia-evento {
+    align-items: flex-start;
+  }
+
+  .modal-dia-detalle {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+
+/* ===== DISTRIBUCIÓN MENSUAL CON AGENDA DE HOY ===== */
+.calendario-mensual-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(190px, 1fr);
+  gap: var(--spacing-4);
+  align-items: stretch;
+}
+
+.calendario-mensual-layout .calendario-grid {
+  margin-bottom: 0;
+}
+
+.agenda-hoy-card {
+  min-width: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.agenda-hoy-header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: var(--spacing-3);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.agenda-hoy-eyebrow {
+  color: var(--primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.agenda-hoy-header strong {
+  padding-right: 30px;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+
+.agenda-hoy-count {
+  position: absolute;
+  top: var(--spacing-3);
+  right: var(--spacing-3);
+  min-width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--primary-bg);
+  color: var(--primary);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.agenda-hoy-lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  max-height: 480px;
+  padding: var(--spacing-2);
+  overflow-y: auto;
+}
+
+.agenda-hoy-evento {
+  flex: 0 0 auto;
+}
+
+.agenda-hoy-vacia {
+  margin: 0;
+  padding: var(--spacing-5) var(--spacing-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (max-width: 1050px) {
+  .calendario-mensual-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .agenda-hoy-lista {
+    max-height: 240px;
+  }
+}
+
+/* Número y título de clase en agenda */
+.semana-evento-clase,
+.modal-dia-clase {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.25;
+}
+
+.form-help {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+}

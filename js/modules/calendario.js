@@ -43,6 +43,7 @@ async function crearEvento(eventoData) {
             .from('eventos')
             .insert([{
                 titulo: eventoData.titulo,
+                clase_id: eventoData.clase_id || null,
                 fecha: eventoData.fecha,
                 hora: eventoData.hora || null,
                 usuario_id: eventoData.usuario_id || null,
@@ -68,6 +69,7 @@ async function actualizarEvento(id, eventoData) {
             .from('eventos')
             .update({
                 titulo: eventoData.titulo,
+                clase_id: eventoData.clase_id || null,
                 fecha: eventoData.fecha,
                 hora: eventoData.hora || null,
                 descripcion: eventoData.descripcion || null

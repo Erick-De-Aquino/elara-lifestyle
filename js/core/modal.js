@@ -3,6 +3,78 @@
 // ===== ELEMENTOS DEL DOM =====
 let modalOverlay = null;
 let modalContainer = null;
+let modalCerrable = true;
+
+// Registro común para modales personalizados y laterales
+const modalesRegistrados = [];
+let listenerEscapeInstalado = false;
+
+function modalEstaVisible(registro) {
+  const elemento = registro.elemento;
+  if (!elemento || !elemento.isConnected) return false;
+  if (typeof registro.estaAbierto === 'function') return Boolean(registro.estaAbierto());
+  const estilos = window.getComputedStyle(elemento);
+  return estilos.display !== 'none' && estilos.visibility !== 'hidden';
+}
+
+function obtenerZIndex(elemento) {
+  const valor = Number.parseInt(window.getComputedStyle(elemento).zIndex, 10);
+  return Number.isFinite(valor) ? valor : 0;
+}
+
+function cerrarModalSuperiorConEscape() {
+  const candidatos = modalesRegistrados
+    .filter(modalEstaVisible)
+    .sort((a, b) => obtenerZIndex(b.elemento) - obtenerZIndex(a.elemento));
+
+  const modalSuperior = candidatos[0];
+  if (!modalSuperior) return;
+  if (typeof modalSuperior.puedeCerrar === 'function' && !modalSuperior.puedeCerrar()) return;
+  modalSuperior.cerrar();
+}
+
+function instalarListenerEscape() {
+  if (listenerEscapeInstalado) return;
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    const hayModalVisible = modalesRegistrados.some(modalEstaVisible);
+    if (!hayModalVisible) return;
+    event.preventDefault();
+    cerrarModalSuperiorConEscape();
+  });
+  listenerEscapeInstalado = true;
+}
+
+function registrarModal(elemento, opciones = {}) {
+  if (!elemento || typeof opciones.cerrar !== 'function') return () => {};
+
+  const registro = {
+    elemento,
+    cerrar: opciones.cerrar,
+    estaAbierto: opciones.estaAbierto,
+    puedeCerrar: opciones.puedeCerrar
+  };
+
+  modalesRegistrados.push(registro);
+  instalarListenerEscape();
+
+  const fondo = opciones.fondo || elemento;
+  const cerrarAlPulsarFondo = opciones.cerrarAlPulsarFondo !== false;
+  const onClickFondo = (event) => {
+    if (!cerrarAlPulsarFondo) return;
+    if (event.target !== fondo) return;
+    if (typeof registro.puedeCerrar === 'function' && !registro.puedeCerrar()) return;
+    registro.cerrar();
+  };
+
+  fondo?.addEventListener('click', onClickFondo);
+
+  return () => {
+    fondo?.removeEventListener('click', onClickFondo);
+    const indice = modalesRegistrados.indexOf(registro);
+    if (indice >= 0) modalesRegistrados.splice(indice, 1);
+  };
+}
 
 // ===== CREAR ESTRUCTURA DEL MODAL (si no existe) =====
 function crearEstructuraModal() {
@@ -42,15 +114,14 @@ function crearEstructuraModal() {
     animation: modalFadeIn 0.2s ease;
   `;
 
-  // Cerrar al hacer clic en el overlay
-  modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) {
-      cerrarModal();
-    }
-  });
-
   modalOverlay.appendChild(modalContainer);
   document.body.appendChild(modalOverlay);
+
+  registrarModal(modalOverlay, {
+    cerrar: cerrarModal,
+    estaAbierto: () => modalOverlay?.style.display === 'flex',
+    puedeCerrar: () => modalCerrable
+  });
 
   // Agregar animación
   const style = document.createElement('style');
@@ -122,6 +193,7 @@ function mostrarModal(mensaje, tipo = 'info', duracion = 3000) {
     </div>
   `;
 
+  modalCerrable = true;
   modalOverlay.style.display = 'flex';
 
   // Cerrar con botón
@@ -176,6 +248,7 @@ function mostrarConfirmacion(mensaje, onConfirm, onCancel) {
     </div>
   `;
 
+  modalCerrable = true;
   modalOverlay.style.display = 'flex';
 
   document.getElementById('modalConfirmarBtn').addEventListener('click', () => {
@@ -193,6 +266,7 @@ function mostrarConfirmacion(mensaje, onConfirm, onCancel) {
 function cerrarModal() {
   if (modalOverlay) {
     modalOverlay.style.display = 'none';
+    modalCerrable = true;
   }
 }
 
@@ -226,6 +300,7 @@ function mostrarModalCarga(mensaje = 'Cargando...') {
     document.head.appendChild(style);
   }
 
+  modalCerrable = false;
   modalOverlay.style.display = 'flex';
 }
 
@@ -236,5 +311,9 @@ if (typeof window !== 'undefined') {
     confirmar: mostrarConfirmacion,
     cerrar: cerrarModal,
     mostrarCarga: mostrarModalCarga
+  };
+
+  window.elaraModals = {
+    registrar: registrarModal
   };
 }

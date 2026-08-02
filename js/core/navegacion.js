@@ -25,13 +25,15 @@ async function cargarSidebar(rol, paginaActual = '') {
   const menus = {
     alumno: [
       { icono: '📚', texto: 'Mi Curso', url: 'pages/alumno/curso.html', id: 'curso' },
+      { icono: '⭐', texto: 'Reseñas', url: 'pages/alumno/resenas.html', id: 'resenas' },
       { icono: '👤', texto: 'Mi Perfil', url: 'pages/alumno/perfil.html', id: 'perfil' }
     ],
     profesor: [
       { icono: '📊', texto: 'Dashboard', url: 'pages/profesor/dashboard.html', id: 'dashboard' },
       { icono: '👥', texto: 'Alumnos', url: 'pages/profesor/alumnos.html', id: 'alumnos' },
       { icono: '📅', texto: 'Calendario', url: 'pages/profesor/calendario.html', id: 'calendario' },
-      { icono: '📚', texto: 'Curso', url: 'pages/profesor/curso.html', id: 'curso' }
+      { icono: '📚', texto: 'Curso', url: 'pages/profesor/curso.html', id: 'curso' },
+      { icono: '⭐', texto: 'Reseñas', url: 'pages/profesor/resenas.html', id: 'resenas' }
     ]
   };
 
@@ -162,7 +164,8 @@ function getTituloPagina(paginaId) {
     perfil: 'Mi Perfil',
     dashboard: 'Dashboard',
     alumnos: 'Gestión de Alumnos',
-    calendario: 'Calendario'
+    calendario: 'Calendario',
+    resenas: 'Reseñas'
   };
   return titulos[paginaId] || 'Elara Method';
 }

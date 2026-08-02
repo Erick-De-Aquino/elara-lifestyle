@@ -401,7 +401,7 @@ async function irSiguienteClaseAlumno(alumnoId, alumnoNombre) {
         }
     
     if (siguienteClaseNumero) {
-        window.open(`clase-preview.html?id=${siguienteClaseNumero}&alumnoId=${alumnoId}&alumnoNombre=${encodeURIComponent(alumnoNombre)}`, '_blank');
+        window.location.href = `clase-preview.html?id=${siguienteClaseNumero}&alumnoId=${alumnoId}&alumnoNombre=${encodeURIComponent(alumnoNombre)}`;
     } else {
         window.modal.mostrar(`🎉 ¡${alumnoNombre} ha completado todas las clases!`, 'exito');
     }
@@ -415,6 +415,11 @@ function crearOverlay(contenidoHtml) {
     modal.style.cssText = 'background:var(--bg-card);border-radius:var(--border-radius-lg);max-width:600px;width:90%;max-height:80vh;overflow-y:auto;padding:var(--spacing-6);';
     modal.innerHTML = contenidoHtml;
     overlay.appendChild(modal);
+
+    window.elaraModals?.registrar(overlay, {
+        cerrar: () => overlay.remove()
+    });
+
     return overlay;
 }
 
@@ -459,7 +464,7 @@ async function obtenerComentariosProfesor(alumnoId, alumnoNombre) {
             const clase = todasClases[coment.clase_id];
             const tituloClase = clase ? `Clase ${clase.numero}: ${clase.titulo}` : coment.clase_id;
             html += `
-                <div style="margin-bottom: 16px; padding: 12px; background: var(--gray-50); border-radius: 8px; border-left: 3px solid var(--primary);">
+                <div style="margin-bottom: 16px; padding: 12px; background: var(--bg-body); color: var(--text-primary); border-radius: 8px; border-left: 3px solid var(--primary);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                         <strong>${escapeHtml(tituloClase)}</strong>
                     </div>
