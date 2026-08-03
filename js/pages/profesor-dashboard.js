@@ -53,14 +53,23 @@ async function cargarDatosReales() {
 
         if (eventosError) throw eventosError;
 
-        const ahora = new Date();
-        proximasClases = (eventos || [])
-            .map(evento => ({
-                ...evento,
-                fechaHora: obtenerFechaHoraEvento(evento)
-            }))
-            .filter(evento => evento.fechaHora && evento.fechaHora >= ahora)
-            .sort((a, b) => a.fechaHora - b.fechaHora);
+        const hoy = new Date();
+            hoy.setHours(0, 0, 0, 0);
+
+            const manana = new Date(hoy);
+            manana.setDate(manana.getDate() + 1);
+
+            proximasClases = (eventos || [])
+                .map(evento => ({
+                    ...evento,
+                    fechaHora: obtenerFechaHoraEvento(evento)
+                }))
+                .filter(evento =>
+                    evento.fechaHora &&
+                    evento.fechaHora >= hoy &&
+                    evento.fechaHora < manana
+                )
+                .sort((a, b) => a.fechaHora - b.fechaHora);
         
     } catch (error) {
         console.error('Error cargando datos del dashboard:', error);
