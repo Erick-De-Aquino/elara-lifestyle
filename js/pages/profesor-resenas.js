@@ -24,11 +24,31 @@ async function initProfesorResenas(){
     await cargarResenasProfesor();renderProfesorResenas();
 }
 
-async function cargarResenasProfesor(){
-    const {data,error}=await window.supabaseClient
-    .from('resenas')
-    .select('id, usuario_id, valoracion, comentario, status, created_at, updated_at, usuarios(nombre,email)')
-    .order('created_at',{ascending:false});if(error)throw error;resenasProfesor=data||[];
+async function cargarResenasProfesor() {
+
+    const { data, error } = await window.supabaseClient
+        .from('resenas')
+        .select(`
+            id,
+            usuario_id,
+            valoracion,
+            comentario,
+            status,
+            created_at,
+            updated_at,
+            usuarios (
+                nombre,
+                email
+            )
+        `)
+        .order('created_at', { ascending: false });
+
+    console.log('ERROR RESENAS:', error);
+    console.log('DATA RESENAS:', data);
+
+    if (error) throw error;
+
+    resenasProfesor = data || [];
 }
 
 function renderProfesorResenas() {
