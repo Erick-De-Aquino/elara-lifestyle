@@ -66,14 +66,6 @@ async function cargarTodosLosProgresos() {
         // Guardamos el progreso para usarlo como filtro
         alumno.completadas = completadas;
         alumno.esGraduado = completadas >= TOTAL_CLASES;
-
-        const badge = document.querySelector(`.progreso-badge[data-id="${alumno.id}"]`);
-
-        if (badge) {
-            badge.textContent = `${completadas}/${TOTAL_CLASES}`;
-            badge.style.cssText =
-                'background: var(--primary-bg); color: var(--primary); padding: 2px 10px; border-radius: 20px; font-weight:500;';
-        }
     }
 
     // Cuando termina de calcular todos los progresos,
@@ -268,7 +260,17 @@ function renderizarFilas(alumnos) {
             <td>${escapeHtml(a.email)}</td>
             <td>${a.telefono || '—'}</td>
             <td>${window.utils?.formatearFecha(a.created_at) || '—'}</td>
-            <td><span class="progreso-badge" data-id="${a.id}">cargando...</span></td>
+            <td>
+                ${
+                    a.completadas !== undefined
+                        ? `<span class="progreso-badge" style="background: var(--primary-bg); color: var(--primary); padding: 2px 10px; border-radius: 20px; font-weight: 500;">
+                                ${a.completadas}/14
+                        </span>`
+                        : `<span class="progreso-badge">
+                                cargando...
+                        </span>`
+                }
+            </td>
             <td>
                 <div class="table-actions">
                     <button class="action-btn notas btn-notas" data-id="${a.id}" data-nombre="${escapeHtml(a.nombre)}" title="Notas">📝</button>
