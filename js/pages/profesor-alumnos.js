@@ -3,6 +3,7 @@
 let profesorActual = null;
 let todosLosAlumnos = [];
 let filtroActual = '';
+let filtroVista = 'encurso';
 
 // ===== INICIALIZAR =====
 async function initAlumnos() {
@@ -48,49 +49,131 @@ async function cargarAlumnos() {
 async function cargarTodosLosProgresos() {
     const supabase = window.supabaseClient;
     if (!supabase) return;
-    
+
+    const TOTAL_CLASES = 14;
+
     for (const alumno of todosLosAlumnos) {
+
         const { data: progreso } = await supabase
             .from('progreso')
             .select('completada')
             .eq('usuario_id', alumno.id);
-        
-        const completadas = progreso ? progreso.filter(p => p.completada).length : 0;
+
+        const completadas = progreso
+            ? progreso.filter(p => p.completada).length
+            : 0;
+
+        // Guardamos el progreso para usarlo como filtro
+        alumno.completadas = completadas;
+        alumno.esGraduado = completadas >= TOTAL_CLASES;
+
         const badge = document.querySelector(`.progreso-badge[data-id="${alumno.id}"]`);
+
         if (badge) {
-            badge.textContent = `${completadas}/14`;
-            badge.style.cssText = 'background: var(--primary-bg); color: var(--primary); padding: 2px 10px; border-radius: 20px; font-weight: 500;';
+            badge.textContent = `${completadas}/${TOTAL_CLASES}`;
+            badge.style.cssText =
+                'background: var(--primary-bg); color: var(--primary); padding: 2px 10px; border-radius: 20px; font-weight:500;';
         }
     }
+
+    // Cuando termina de calcular todos los progresos,
+    // vuelve a pintar la pantalla para aplicar el filtro.
+    renderizarListaAlumnos();
 }
 
 // ===== RENDERIZAR LISTA =====
 function renderizarListaAlumnos() {
+
     const container = document.getElementById('alumnos-container');
     if (!container) return;
-    
-    const alumnosFiltrados = filtroActual 
-        ? todosLosAlumnos.filter(a => 
+
+    const TOTAL_CLASES = 14;
+
+    // Si aún no se han calculado los progresos,
+    // mostramos todos temporalmente.
+    let alumnos = [...todosLosAlumnos];
+
+    if (todosLosAlumnos.some(a => a.completadas !== undefined)) {
+
+        if (filtroVista === 'graduados') {
+            alumnos = alumnos.filter(a => a.completadas >= TOTAL_CLASES);
+        } else {
+            alumnos = alumnos.filter(a => a.completadas < TOTAL_CLASES);
+        }
+    }
+
+    // Buscador
+    if (filtroActual) {
+        alumnos = alumnos.filter(a =>
             a.nombre.toLowerCase().includes(filtroActual.toLowerCase()) ||
             a.email.toLowerCase().includes(filtroActual.toLowerCase())
-          )
-        : todosLosAlumnos;
-    
-    const html = `
+        );
+    }
+
+    const enCurso =
+        todosLosAlumnos.filter(a => (a.completadas || 0) < TOTAL_CLASES).length;
+
+    const graduados =
+        todosLosAlumnos.filter(a => (a.completadas || 0) >= TOTAL_CLASES).length;
+
+    container.innerHTML = `
+
         <div class="action-buttons">
-            <button id="btnNuevoAlumno" class="btn-primary">+ Nuevo Alumno</button>
-            <button id="btnExportarCSV" class="btn-outline">📎 Exportar CSV</button>
+
+            <button id="btnNuevoAlumno" class="btn-primary">
+                + Nuevo Alumno
+            </button>
+
+            <button id="btnExportarCSV" class="btn-primary">
+                Exportar CSV
+            </button>
+
+            <button
+                class="${filtroVista === 'encurso' ? 'btn-outline' : 'btn-primary'}"
+                data-vista="encurso"
+                style="margin-left:12px;">
+
+                En curso (${enCurso})
+
+            </button>
+
+            <button
+                class="${filtroVista === 'graduados' ? 'btn-outline' : 'btn-primary'}"
+                data-vista="graduados">
+
+                Graduados (${graduados})
+
+            </button>
+
         </div>
-        
+
         <div class="search-bar">
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por nombre o email..." value="${escapeHtml(filtroActual)}">
-            <button id="btnBuscar" class="btn-secondary">🔍 Buscar</button>
-            ${filtroActual ? '<button id="btnLimpiar" class="btn-outline">✖ Limpiar</button>' : ''}
+
+            <input
+                type="text"
+                id="searchInput"
+                class="search-input"
+                placeholder="Buscar por nombre o email..."
+                value="${escapeHtml(filtroActual)}">
+
+            <button id="btnBuscar" class="btn-secondary">
+                🔍 Buscar
+            </button>
+
+            ${
+                filtroActual
+                    ? '<button id="btnLimpiar" class="btn-outline">✖ Limpiar</button>'
+                    : ''
+            }
+
         </div>
-        
+
         <div class="alumnos-table-container">
+
             <table class="alumnos-table">
+
                 <thead>
+
                     <tr>
                         <th>Nombre</th>
                         <th>Email</th>
@@ -99,61 +182,79 @@ function renderizarListaAlumnos() {
                         <th>Progreso</th>
                         <th>Acciones</th>
                     </tr>
+
                 </thead>
+
                 <tbody>
-                    ${renderizarFilas(alumnosFiltrados)}
+
+                    ${renderizarFilas(alumnos)}
+
                 </tbody>
+
             </table>
+
         </div>
-        
-        ${alumnosFiltrados.length === 0 ? `
-        <div style="text-align: center; padding: var(--spacing-8); color: var(--text-muted);">
-            <p>${filtroActual ? 'No se encontraron alumnos.' : 'No hay alumnos registrados.'}</p>
-        </div>
-        ` : ''}
+
     `;
-    
-    container.innerHTML = html;
-    
-    // Event listeners
+
     document.getElementById('btnNuevoAlumno')?.addEventListener('click', mostrarModalCrear);
+
     document.getElementById('btnExportarCSV')?.addEventListener('click', exportarCSV);
+
     document.getElementById('btnBuscar')?.addEventListener('click', () => {
         filtroActual = document.getElementById('searchInput').value;
         renderizarListaAlumnos();
     });
+
     document.getElementById('btnLimpiar')?.addEventListener('click', () => {
         filtroActual = '';
         renderizarListaAlumnos();
     });
-    
-    document.querySelectorAll('.btn-editar').forEach(btn => {
-        btn.addEventListener('click', () => editarAlumno(btn.dataset.id));
-    });
-    
-    document.querySelectorAll('.btn-eliminar').forEach(btn => {
-        btn.addEventListener('click', () => eliminarAlumno(btn.dataset.id, btn.dataset.nombre));
-    });
-    
-    document.querySelectorAll('.btn-next-clase').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const id = btn.getAttribute('data-id');
-            const nombre = btn.getAttribute('data-nombre');
-            irSiguienteClaseAlumno(id, nombre);
-        });
-    });
-    
-    // Cargar progresos después de renderizar
-    cargarTodosLosProgresos();
 
-        document.querySelectorAll('.btn-notas').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const id = btn.getAttribute('data-id');
-                const nombre = btn.getAttribute('data-nombre');
-                obtenerComentariosProfesor(id, nombre);
-            });
+    document.querySelectorAll('[data-vista]').forEach(btn => {
+
+        btn.addEventListener('click', () => {
+
+            filtroVista = btn.dataset.vista;
+
+            renderizarListaAlumnos();
+
         });
+
+    });
+
+    document.querySelectorAll('.btn-editar').forEach(btn =>
+        btn.addEventListener('click', () => editarAlumno(btn.dataset.id))
+    );
+
+    document.querySelectorAll('.btn-eliminar').forEach(btn =>
+        btn.addEventListener('click', () => eliminarAlumno(btn.dataset.id, btn.dataset.nombre))
+    );
+
+    document.querySelectorAll('.btn-next-clase').forEach(btn =>
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            irSiguienteClaseAlumno(
+                btn.dataset.id,
+                btn.dataset.nombre
+            );
+        })
+    );
+
+    document.querySelectorAll('.btn-notas').forEach(btn =>
+        btn.addEventListener('click', () =>
+            obtenerComentariosProfesor(
+                btn.dataset.id,
+                btn.dataset.nombre
+            )
+        )
+    );
+
+    // Sólo la primera vez calcula progresos
+    if (todosLosAlumnos.some(a => a.completadas === undefined)) {
+        cargarTodosLosProgresos();
+    }
+
 }
 
 function renderizarFilas(alumnos) {
