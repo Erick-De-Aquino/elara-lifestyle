@@ -62,11 +62,35 @@ async function cargarResenasAlumno() {
 
 function cardResena(r) {
   const nombre = r.usuarios?.nombre || 'Alumno';
-  return `<article class="resena-card">
-    <div class="resena-card-header"><div class="resena-avatar">${escResena(iniciales(nombre))}</div><div><p class="resena-name">${escResena(nombre)}</p><span class="resena-date">${new Date(r.created_at).toLocaleDateString('es-ES')}</span></div></div>
-    <div class="resena-stars" aria-label="${r.valoracion} de 5 estrellas">${estrellas(r.valoracion)}</div>
-    <p class="resena-comment">${escResena(r.comentario)}</p>
-  </article>`;
+
+  return `
+    <article class="resena-card">
+
+      <div class="resena-card-header">
+        <div class="resena-avatar">
+          ${escResena(iniciales(nombre))}
+        </div>
+
+        <div>
+          <p class="resena-name">${escResena(nombre)}</p>
+          <span class="resena-date">
+            ${new Date(r.created_at).toLocaleDateString('es-ES')}
+          </span>
+        </div>
+      </div>
+
+      <div
+        class="resena-stars"
+        aria-label="${r.valoracion} de 5 estrellas">
+        ${estrellas(r.valoracion)}
+      </div>
+
+      <p class="resena-comment">
+        ${escResena(r.comentario)}
+      </p>
+
+    </article>
+  `;
 }
 
 function renderAlumnoResenas() {
@@ -82,15 +106,111 @@ function renderAlumnoResenas() {
   document.getElementById('editar-resena')?.addEventListener('click',()=>abrirFormularioResena(resenaPropia));
 }
 
-function abrirFormularioResena(actual=null) {
-  const overlay=document.createElement('div'); overlay.className='modal-overlay'; overlay.style.display='flex'; overlay.style.zIndex='10000';
-  overlay.innerHTML=`<div class="modal-content" style="max-width:560px;width:92%;background:var(--bg-card);padding:24px;border-radius:14px"><h2 style="margin-top:0;color:var(--text-primary)">${actual?'Editar':'Escribir'} reseña</h2><form class="resena-form" id="resena-form"><label>Valoración<select id="resena-valoracion" required>${[5,4,3,2,1].map(v=>`<option value="${v}" ${actual?.valoracion===v?'selected':''}>${v} estrella${v===1?'':'s'}</option>`).join('')}</select></label><label>Tu experiencia<textarea id="resena-comentario" maxlength="1200" required placeholder="Cuéntanos cómo fue tu experiencia...">${escResena(actual?.comentario||'')}</textarea></label><p class="resena-note">Al guardar, la reseña quedará pendiente de aprobación.</p><div class="resena-form-actions"><button type="button" class="btn-resena secondary" id="cancelar-resena">Cancelar</button><button class="btn-resena primary" type="submit">Enviar para aprobación</button></div></form></div>`;
-  document.body.appendChild(overlay);
-  const cerrar=()=>overlay.remove();
-  window.elaraModals?.registrar?.(overlay,{cerrar,estaAbierto:()=>overlay.isConnected});
-  overlay.addEventListener('click',e=>{if(e.target===overlay) cerrar();});
-  document.getElementById('cancelar-resena').addEventListener('click',cerrar);
-  document.getElementById('resena-form').addEventListener('submit',async e=>{e.preventDefault(); const btn=e.submitter; btn.disabled=true; try { const payload={usuario_id:alumnoResenasActual.id,valoracion:Number(document.getElementById('resena-valoracion').value),comentario:document.getElementById('resena-comentario').value.trim(),status:'pending',updated_at:new Date().toISOString()}; const q=actual ? window.supabaseClient.from('resenas').update(payload).eq('id',actual.id) : window.supabaseClient.from('resenas').insert(payload); const {error}=await q; if(error) throw error; cerrar(); window.modal?.mostrar('Reseña enviada para aprobación','exito'); await cargarResenasAlumno(); renderAlumnoResenas(); } catch(err){ console.error(err); window.modal?.mostrar('No se pudo guardar la reseña','error'); btn.disabled=false; }});
+function abrirFormularioResena(actual = null) {
+  window.modal.personalizado(`
+    <div class="modal-form">
+      <h3>${actual ? 'Editar' : 'Escribir'} reseña</h3>
+
+      <form id="resena-form">
+
+        <div class="form-group">
+            <label>Tu valoración</label>
+            <div id="rating-selector"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="resena-comentario">Tu experiencia</label>
+          <textarea
+            id="resena-comentario"
+            maxlength="1200"
+            required
+            placeholder="Cuéntanos cómo fue tu experiencia..."
+          >${escResena(actual?.comentario || '')}</textarea>
+        </div>
+
+        <p class="resena-note">
+          Al guardar, la reseña quedará pendiente de aprobación.
+        </p>
+
+        <div class="modal-buttons">
+          <button
+            type="button"
+            class="btn-resena secondary"
+            id="cancelar-resena">
+            Cancelar
+          </button>
+
+          <button
+            class="btn-resena primary"
+            type="submit">
+            Enviar para aprobación
+          </button>
+        </div>
+
+      </form>
+    </div>
+  `);
+
+  const rating = window.RatingStars.create({
+      container: document.getElementById('rating-selector'),
+      value: actual?.valoracion || 0
+  });
+
+  document
+    .getElementById('cancelar-resena')
+    .addEventListener('click', () => window.modal.cerrar());
+
+  document
+    .getElementById('resena-form')
+    .addEventListener('submit', async (e) => {
+
+      e.preventDefault();
+
+      const btn = e.submitter;
+      btn.disabled = true;
+
+      try {
+
+        const payload = {
+          usuario_id: alumnoResenasActual.id,
+          valoracion: rating.getValue(),
+          comentario: document.getElementById('resena-comentario').value.trim(),
+          status: 'pending',
+          updated_at: new Date().toISOString()
+        };
+
+        const query = actual
+          ? window.supabaseClient
+              .from('resenas')
+              .update(payload)
+              .eq('id', actual.id)
+          : window.supabaseClient
+              .from('resenas')
+              .insert(payload);
+
+        const { error } = await query;
+
+        if (error) throw error;
+
+        window.modal.cerrar();
+        window.modal.mostrar('Reseña enviada para aprobación', 'exito');
+
+        await cargarResenasAlumno();
+        renderAlumnoResenas();
+
+      } catch (err) {
+
+        console.error(err);
+
+        window.modal.mostrar(
+          'No se pudo guardar la reseña',
+          'error'
+        );
+
+        btn.disabled = false;
+      }
+
+    });
 }
 
 document.addEventListener('DOMContentLoaded',()=>initAlumnoResenas().catch(err=>{console.error(err); document.getElementById('resenas-container').innerHTML='<div class="resenas-empty">No se pudieron cargar las reseñas. Comprueba que la migración de Supabase esté aplicada.</div>';}));

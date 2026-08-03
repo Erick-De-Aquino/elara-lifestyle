@@ -262,6 +262,28 @@ function mostrarConfirmacion(mensaje, onConfirm, onCancel) {
   });
 }
 
+// ===== MOSTRAR MODAL PERSONALIZADO =====
+function mostrarModalPersonalizado(html, opciones = {}) {
+  crearEstructuraModal();
+
+  modalContainer.innerHTML = html;
+
+  if (opciones.maxWidth) {
+    modalContainer.style.maxWidth = opciones.maxWidth;
+  } else {
+    modalContainer.style.maxWidth = '560px';
+  }
+
+  if (opciones.width) {
+    modalContainer.style.width = opciones.width;
+  } else {
+    modalContainer.style.width = '92%';
+  }
+
+  modalCerrable = opciones.cerrable !== false;
+  modalOverlay.style.display = 'flex';
+}
+
 // ===== CERRAR MODAL =====
 function cerrarModal() {
   if (modalOverlay) {
@@ -309,6 +331,7 @@ if (typeof window !== 'undefined') {
   window.modal = {
     mostrar: mostrarModal,
     confirmar: mostrarConfirmacion,
+    personalizado: mostrarModalPersonalizado,
     cerrar: cerrarModal,
     mostrarCarga: mostrarModalCarga
   };

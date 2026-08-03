@@ -120,14 +120,22 @@ function renderizarPerfil() {
     function getEstadoClase(clase) {
         const fechaClase = new Date(clase.fecha);
         fechaClase.setHours(0, 0, 0, 0);
+
         const hoy = new Date();
         hoy.setHours(0, 0, 0, 0);
+
         const esPasada = fechaClase < hoy;
-        const completada = progresoActual[`clase${clase.id}`] || false;
-        
-        if (!esPasada) return '<span style="color: var(--primary);">📌 Próxima</span>';
-        if (completada) return '<span style="color: var(--success);">✓ Completada</span>';
-        return '<span style="color: var(--error);">❌ No vista</span>';
+        const completada = progresoActual[clase.id] || false;
+
+        if (!esPasada) {
+            return '<span style="color: var(--primary);">📌 Próxima</span>';
+        }
+
+        if (completada) {
+            return '<span style="color: var(--success);">✓ Completada</span>';
+        }
+
+        return '<span style="color: var(--text-muted);">—</span>';
     }
     
     // Clases agendadas (futuras o hoy)
